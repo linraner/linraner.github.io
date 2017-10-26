@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://linraner.github.io/"/>
-  <updated>2017-10-25T04:52:33.091Z</updated>
+  <updated>2017-10-26T07:41:12.513Z</updated>
   <id>http://linraner.github.io/</id>
   
   <author>
@@ -17,25 +17,25 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>LeetCode 344. Reverse String</title>
-    <link href="http://linraner.github.io/2017/10/23/LeetCode-344-Reverse-String/"/>
-    <id>http://linraner.github.io/2017/10/23/LeetCode-344-Reverse-String/</id>
-    <published>2017-10-23T04:49:08.000Z</published>
-    <updated>2017-10-25T04:52:33.091Z</updated>
+    <title>初学使用Github</title>
+    <link href="http://linraner.github.io/2017/10/24/%E5%88%9D%E5%AD%A6%E4%BD%BF%E7%94%A8Github/"/>
+    <id>http://linraner.github.io/2017/10/24/初学使用Github/</id>
+    <published>2017-10-24T05:27:03.000Z</published>
+    <updated>2017-10-26T07:41:12.513Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>Write a function that takes a string as input and returns the string reversed.</p><p>Example:</p><p>Given s = “hello”, return “olleh”.</p><h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>头指针初始指向字符串首，尾指针初始指向字符串尾，每次交换两个指针指向字符串位置的字符；然后头指针向后移动一位，尾指针向前移动一位；如此循环，直到头尾指针相遇。</p><h3 id="Python"><a href="#Python" class="headerlink" title="Python"></a>Python</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">class Solution(object):</div><div class="line">    def reverseString(self, s):</div><div class="line">        &quot;&quot;&quot;</div><div class="line">        :type s: str</div><div class="line">        :rtype: str</div><div class="line">        &quot;&quot;&quot;</div><div class="line">        return s[::-1]</div></pre></td></tr></table></figure><h3 id="Java"><a href="#Java" class="headerlink" title="Java"></a>Java</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">public class Solution &#123;</div><div class="line">    public String reverseString(String s) &#123;</div><div class="line">        char[] charArray = s.toCharArray();</div><div class="line">        for (int i = 0, j = charArray.length - 1; i &lt; j; i++, j--) &#123;</div><div class="line">            char temp = charArray[i];</div><div class="line">            charArray[i] = charArray[j];</div><div class="line">            charArray[j] = temp;</div><div class="line">        &#125;</div><div class="line">        return new String(charArray);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure><h3 id="C"><a href="#C" class="headerlink" title="C++"></a>C++</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">class Solution &#123;</div><div class="line">public:</div><div class="line">    string reverseString(string s) &#123;</div><div class="line">        for (int i = 0, j = s.length() - 1; i &lt; j; i++, j--) &#123;</div><div class="line">            char temp = s[i];</div><div class="line">            s[i] = s[j];</div><div class="line">            s[j] = temp;</div><div class="line">        &#125;</div><div class="line">        return s;</div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>]]></content>
+    <content type="html"><![CDATA[<h2 id="Git使用规范流程"><a href="#Git使用规范流程" class="headerlink" title="Git使用规范流程"></a>Git使用规范流程</h2><p>Git是一个源码管理系统<br>我采取ThoughtBot的Git使用规范流程<br><img src="http://oxqn1kqf7.bkt.clouddn.com/17-10-26/83204462.jpg" alt=""></p><h3 id="第一步：新建分支"><a href="#第一步：新建分支" class="headerlink" title="第一步：新建分支"></a>第一步：新建分支</h3><p>每次开发新功能，都应该新建一个单独的分支。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">#获取主干最新代码</div><div class="line">$ git checkout master</div><div class="line">$ git pull</div><div class="line"></div><div class="line">#新建开发分支</div><div class="line">$ git checkout -b afeature</div></pre></td></tr></table></figure></p><h3 id="第二步：提交分支commit"><a href="#第二步：提交分支commit" class="headerlink" title="第二步：提交分支commit"></a>第二步：提交分支commit</h3><p>分支修改后，提交commit<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">#all为保存所有变化(包括新建、修改和删除)</div><div class="line">$ git add --all</div><div class="line">#查看发生变动的文件。</div><div class="line">$ git status</div><div class="line">#verbose会列出diff的结果</div><div class="line">$ git commit --verbose</div></pre></td></tr></table></figure></p><ul><li>diff是Unix系统的一个很重要的工具程序，具体见：<a href="http://www.ruanyifeng.com/blog/2012/08/how_to_read_diff.html" target="_blank" rel="external">读懂diff - 阮一峰的网络日志</a></li></ul><h3 id="第三步：撰写提交信息"><a href="#第三步：撰写提交信息" class="headerlink" title="第三步：撰写提交信息"></a>第三步：撰写提交信息</h3><p>提交commit时，必须给出完整扼要的提交信息。以下是一个范本：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">Persent-tense summary under 50 characters</div><div class="line">*More information about commit(under 72 characters)</div><div class="line">*More information about commit(under 72 characters)</div><div class="line">http://project.management-system.com/ticket/123</div></pre></td></tr></table></figure></p><p>第一行是不超过50个字的提要，然后空一行，罗列出改动原因、主要变动、需要注意的问题。最后，提供对应的网址。</p><h3 id="第四步：与主干同步"><a href="#第四步：与主干同步" class="headerlink" title="第四步：与主干同步"></a>第四步：与主干同步</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ git fetch orgin</div><div class="line">$ git rebase orgin/master</div></pre></td></tr></table></figure><h3 id="第五步：合并commit"><a href="#第五步：合并commit" class="headerlink" title="第五步：合并commit"></a>第五步：合并commit</h3><p>分支开发完成后，很可能有一堆commit，但是合并到主干的时候，往往希望只有一个(或最多两三个) commit，这样不仅清晰，也容易管理。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git rebase -i origin/master</div></pre></td></tr></table></figure></p><ul><li>具体参考：<a href="http://www.ruanyifeng.com/blog/2015/08/git-use-process.html" target="_blank" rel="external">Git 使用规范流程</a></li></ul><h3 id="第六步：推送到远程仓库"><a href="#第六步：推送到远程仓库" class="headerlink" title="第六步：推送到远程仓库"></a>第六步：推送到远程仓库</h3><p>合并commit，推送当前分支到远程仓库。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git push --force origin myfeature</div></pre></td></tr></table></figure></p><h3 id="第七步：发出Pull-Request"><a href="#第七步：发出Pull-Request" class="headerlink" title="第七步：发出Pull Request"></a>第七步：发出Pull Request</h3><p>提交到远程仓库以后，就可以发出Pull Request 到master 分支，然后请求别人进行代码review，确认可以合并到master。<br>未完—</p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;h2 id=&quot;题目描述&quot;&gt;&lt;a href=&quot;#题目描述&quot; class=&quot;headerlink&quot; title=&quot;题目描述&quot;&gt;&lt;/a&gt;题目描述&lt;/h2&gt;&lt;p&gt;Write a function that takes a string as input and returns the 
+        &lt;h2 id=&quot;Git使用规范流程&quot;&gt;&lt;a href=&quot;#Git使用规范流程&quot; class=&quot;headerlink&quot; title=&quot;Git使用规范流程&quot;&gt;&lt;/a&gt;Git使用规范流程&lt;/h2&gt;&lt;p&gt;Git是一个源码管理系统&lt;br&gt;我采取ThoughtBot的Git使用规范流程&lt;br
       
     
     </summary>
     
     
-      <category term="LeetCode" scheme="http://linraner.github.io/tags/LeetCode/"/>
+      <category term="skill" scheme="http://linraner.github.io/tags/skill/"/>
     
   </entry>
   
@@ -58,7 +58,7 @@
     <link href="http://linraner.github.io/2017/10/21/Jupyter-NoteBook%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE/"/>
     <id>http://linraner.github.io/2017/10/21/Jupyter-NoteBook常用快捷键/</id>
     <published>2017-10-21T07:39:41.000Z</published>
-    <updated>2017-10-25T04:53:12.161Z</updated>
+    <updated>2017-10-26T05:28:28.905Z</updated>
     
     <content type="html"><![CDATA[<p>Jupyter Notebook 有两种键盘输入模式，命令模式和编辑模式。与Vim类似。</p><p>命令模式按<strong>Esc</strong>进入，编辑模式按<strong>Enter</strong>进入</p><h4 id="命令模式快捷键"><a href="#命令模式快捷键" class="headerlink" title="命令模式快捷键"></a>命令模式快捷键</h4><table><thead><tr><th>快捷键</th><th>作用</th></tr></thead><tbody><tr><td>Shift+Enter</td><td>运行本单元，选中下一个单元</td></tr><tr><td>Ctrl+Enter</td><td>运行本单元</td></tr><tr><td>Alt+Enter</td><td>运行本单元在下插入新单元</td></tr><tr><td>Y</td><td>单元转入代码状态</td></tr><tr><td>M</td><td>单元转入markdown状态</td></tr><tr><td>R</td><td>单元转入raw状态</td></tr><tr><td>Up&amp;K/Down&amp;J</td><td>选中上方/下方单元</td></tr><tr><td>Shift+K/J</td><td>连续选择上方/下方单元</td></tr><tr><td>A/B</td><td>在上方/下方插入新单元</td></tr><tr><td>x/C</td><td>剪切/复制选中单元</td></tr><tr><td>Shift+V/V</td><td>粘贴到上方/下方单元</td></tr><tr><td>Z</td><td>恢复删除的最后一个单元</td></tr><tr><td>DD</td><td>删除选中的单元</td></tr><tr><td>Shift+M</td><td>合并选中的单元</td></tr><tr><td>Ctrl+S/S</td><td>保存当前文件</td></tr><tr><td>L</td><td>开关行号</td></tr><tr><td>O</td><td>转换输出</td></tr><tr><td>Shift+O</td><td>转换输出滚动</td></tr><tr><td>Esc/Q</td><td>关闭页面</td></tr><tr><td>H</td><td>显示快捷帮助</td></tr><tr><td>II/00</td><td>中断/重启NOteBook内核</td></tr><tr><td>Shift+Space/Space</td><td>向上/下滚动</td></tr></tbody></table><h4 id="编辑模式快捷键"><a href="#编辑模式快捷键" class="headerlink" title="编辑模式快捷键"></a>编辑模式快捷键</h4><table><thead><tr><th>快捷键</th><th>作用</th></tr></thead><tbody><tr><td>Tab</td><td>代码补全或者缩进</td></tr><tr><td>Shift+Tab</td><td>提示</td></tr><tr><td>Ctrl+]</td><td>向右缩进</td></tr><tr><td>Ctrl+[</td><td>向左缩进</td></tr><tr><td>Ctrl+Shift+Z/Ctrl+Y</td><td>重做</td></tr><tr><td>Ctrl+up/down</td><td>跳到单元开头/末尾</td></tr><tr><td>Ctrl+Left/Right</td><td>跳到左边/右边一个字首</td></tr><tr><td>Ctrl+BackSpace/Delete</td><td>删除前面一个字</td></tr><tr><td>Shift+Enter</td><td>运行本单元，选中下一个单元</td></tr><tr><td>Ctrl+M</td><td>切换到命令模式</td></tr><tr><td>Ctrl+Enter</td><td>运行本单元</td></tr><tr><td>Alt+Enter</td><td>运行本单元在下插入新单元</td></tr><tr><td>Ctrl+/</td><td>注释整行或者取消注释</td></tr></tbody></table>]]></content>
     
@@ -74,7 +74,7 @@
     </summary>
     
     
-      <category term="技巧" scheme="http://linraner.github.io/tags/%E6%8A%80%E5%B7%A7/"/>
+      <category term="skill" scheme="http://linraner.github.io/tags/skill/"/>
     
   </entry>
   

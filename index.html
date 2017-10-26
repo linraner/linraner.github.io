@@ -72,7 +72,7 @@
       <div id="main" class="wrapper">
         <div id="primary" class="site-content"><div id="content" role="main">
   
-    <article id="post-LeetCode-344-Reverse-String" class="post-LeetCode-344-Reverse-String post type-post status-publish format-standard hentry">
+    <article id="post-初学使用Github" class="post-初学使用Github post type-post status-publish format-standard hentry">
     <!---->
 
       <header class="entry-header">
@@ -80,40 +80,49 @@
         
   
     <h1 class="entry-title">
-      <a class="article-title" href="/2017/10/23/LeetCode-344-Reverse-String/">LeetCode 344. Reverse String</a>
+      <a class="article-title" href="/2017/10/24/初学使用Github/">初学使用Github</a>
     </h1>
   
 
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" data-url="http://linraner.github.io/2017/10/23/LeetCode-344-Reverse-String/" data-id="cj96kfjvj00019cj2r80nypjs" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+            <a href="javascript:void(0);" data-url="http://linraner.github.io/2017/10/24/初学使用Github/" data-id="cj985vwsp0004kgj2534mm1al" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
     <div class="entry-content">
       
-        <h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>Write a function that takes a string as input and returns the string reversed.</p>
-<p>Example:</p>
-<p>Given s = “hello”, return “olleh”.</p>
-<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>头指针初始指向字符串首，尾指针初始指向字符串尾，每次交换两个指针指向字符串位置的字符；然后头指针向后移动一位，尾指针向前移动一位；如此循环，直到头尾指针相遇。</p>
-<h3 id="Python"><a href="#Python" class="headerlink" title="Python"></a>Python</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">class Solution(object):</div><div class="line">    def reverseString(self, s):</div><div class="line">        &quot;&quot;&quot;</div><div class="line">        :type s: str</div><div class="line">        :rtype: str</div><div class="line">        &quot;&quot;&quot;</div><div class="line">        return s[::-1]</div></pre></td></tr></table></figure>
-<h3 id="Java"><a href="#Java" class="headerlink" title="Java"></a>Java</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">public class Solution &#123;</div><div class="line">    public String reverseString(String s) &#123;</div><div class="line">        char[] charArray = s.toCharArray();</div><div class="line">        for (int i = 0, j = charArray.length - 1; i &lt; j; i++, j--) &#123;</div><div class="line">            char temp = charArray[i];</div><div class="line">            charArray[i] = charArray[j];</div><div class="line">            charArray[j] = temp;</div><div class="line">        &#125;</div><div class="line">        return new String(charArray);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="C"><a href="#C" class="headerlink" title="C++"></a>C++</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">class Solution &#123;</div><div class="line">public:</div><div class="line">    string reverseString(string s) &#123;</div><div class="line">        for (int i = 0, j = s.length() - 1; i &lt; j; i++, j--) &#123;</div><div class="line">            char temp = s[i];</div><div class="line">            s[i] = s[j];</div><div class="line">            s[j] = temp;</div><div class="line">        &#125;</div><div class="line">        return s;</div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+        <h2 id="Git使用规范流程"><a href="#Git使用规范流程" class="headerlink" title="Git使用规范流程"></a>Git使用规范流程</h2><p>Git是一个源码管理系统<br>我采取ThoughtBot的Git使用规范流程<br><img src="http://oxqn1kqf7.bkt.clouddn.com/17-10-26/83204462.jpg" alt=""></p>
+<h3 id="第一步：新建分支"><a href="#第一步：新建分支" class="headerlink" title="第一步：新建分支"></a>第一步：新建分支</h3><p>每次开发新功能，都应该新建一个单独的分支。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">#获取主干最新代码</div><div class="line">$ git checkout master</div><div class="line">$ git pull</div><div class="line"></div><div class="line">#新建开发分支</div><div class="line">$ git checkout -b afeature</div></pre></td></tr></table></figure></p>
+<h3 id="第二步：提交分支commit"><a href="#第二步：提交分支commit" class="headerlink" title="第二步：提交分支commit"></a>第二步：提交分支commit</h3><p>分支修改后，提交commit<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">#all为保存所有变化(包括新建、修改和删除)</div><div class="line">$ git add --all</div><div class="line">#查看发生变动的文件。</div><div class="line">$ git status</div><div class="line">#verbose会列出diff的结果</div><div class="line">$ git commit --verbose</div></pre></td></tr></table></figure></p>
+<ul>
+<li>diff是Unix系统的一个很重要的工具程序，具体见：<a href="http://www.ruanyifeng.com/blog/2012/08/how_to_read_diff.html" target="_blank" rel="external">读懂diff - 阮一峰的网络日志</a></li>
+</ul>
+<h3 id="第三步：撰写提交信息"><a href="#第三步：撰写提交信息" class="headerlink" title="第三步：撰写提交信息"></a>第三步：撰写提交信息</h3><p>提交commit时，必须给出完整扼要的提交信息。以下是一个范本：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">Persent-tense summary under 50 characters</div><div class="line">*More information about commit(under 72 characters)</div><div class="line">*More information about commit(under 72 characters)</div><div class="line">http://project.management-system.com/ticket/123</div></pre></td></tr></table></figure></p>
+<p>第一行是不超过50个字的提要，然后空一行，罗列出改动原因、主要变动、需要注意的问题。最后，提供对应的网址。</p>
+<h3 id="第四步：与主干同步"><a href="#第四步：与主干同步" class="headerlink" title="第四步：与主干同步"></a>第四步：与主干同步</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ git fetch orgin</div><div class="line">$ git rebase orgin/master</div></pre></td></tr></table></figure>
+<h3 id="第五步：合并commit"><a href="#第五步：合并commit" class="headerlink" title="第五步：合并commit"></a>第五步：合并commit</h3><p>分支开发完成后，很可能有一堆commit，但是合并到主干的时候，往往希望只有一个(或最多两三个) commit，这样不仅清晰，也容易管理。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git rebase -i origin/master</div></pre></td></tr></table></figure></p>
+<ul>
+<li>具体参考：<a href="http://www.ruanyifeng.com/blog/2015/08/git-use-process.html" target="_blank" rel="external">Git 使用规范流程</a></li>
+</ul>
+<h3 id="第六步：推送到远程仓库"><a href="#第六步：推送到远程仓库" class="headerlink" title="第六步：推送到远程仓库"></a>第六步：推送到远程仓库</h3><p>合并commit，推送当前分支到远程仓库。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git push --force origin myfeature</div></pre></td></tr></table></figure></p>
+<h3 id="第七步：发出Pull-Request"><a href="#第七步：发出Pull-Request" class="headerlink" title="第七步：发出Pull Request"></a>第七步：发出Pull Request</h3><p>提交到远程仓库以后，就可以发出Pull Request 到master 分支，然后请求别人进行代码review，确认可以合并到master。<br>未完—</p>
+
       
     </div>
     <!-- .entry-content -->
 
     <footer class="entry-meta">
-    <a href="/2017/10/23/LeetCode-344-Reverse-String/">
-    <time datetime="2017-10-23T04:49:08.000Z" class="entry-date">
-        2017-10-23
+    <a href="/2017/10/24/初学使用Github/">
+    <time datetime="2017-10-24T05:27:03.000Z" class="entry-date">
+        2017-10-24
     </time>
 </a>
     
     
   <span class="article-delim">&#8226;</span>
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/LeetCode/">LeetCode</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/skill/">skill</a></li></ul>
 
     </footer>
 </article>
@@ -139,7 +148,7 @@
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" data-url="http://linraner.github.io/2017/10/22/通向外网的梯子/" data-id="cj96kfjw300059cj25h6tdrw4" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+            <a href="javascript:void(0);" data-url="http://linraner.github.io/2017/10/22/通向外网的梯子/" data-id="cj985vwsu0005kgj2i9r93sps" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -182,7 +191,7 @@
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" data-url="http://linraner.github.io/2017/10/21/Jupyter-NoteBook常用快捷键/" data-id="cj96kfjvb00009cj2fggr3qmk" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+            <a href="javascript:void(0);" data-url="http://linraner.github.io/2017/10/21/Jupyter-NoteBook常用快捷键/" data-id="cj985vwsa0000kgj2virmrbny" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -364,7 +373,7 @@
     
     
   <span class="article-delim">&#8226;</span>
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/技巧/">技巧</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/skill/">skill</a></li></ul>
 
     </footer>
 </article>
@@ -390,7 +399,7 @@
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" data-url="http://linraner.github.io/2017/10/14/Windows上好用的软件/" data-id="cj96kfjvr00039cj235a6npvl" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+            <a href="javascript:void(0);" data-url="http://linraner.github.io/2017/10/14/Windows上好用的软件/" data-id="cj985vwsn0003kgj22juhxzwh" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -453,7 +462,7 @@
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" data-url="http://linraner.github.io/2017/10/13/github-hexo搭建博客/" data-id="cj96kfjvw00049cj235xohvel" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+            <a href="javascript:void(0);" data-url="http://linraner.github.io/2017/10/13/github-hexo搭建博客/" data-id="cj985vwsh0001kgj28r4qfgk1" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -527,7 +536,7 @@
       <ul>
         
           <li>
-            <a href="/2017/10/23/LeetCode-344-Reverse-String/">LeetCode 344. Reverse String</a>
+            <a href="/2017/10/24/初学使用Github/">初学使用Github</a>
           </li>
         
           <li>
@@ -555,7 +564,7 @@
   <aside class="widget">
     <h3 class="widget-title">Tags</h3>
     <div class="widget-content">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/LeetCode/">LeetCode</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/blog/">blog</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/工具/">工具</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/技巧/">技巧</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/blog/">blog</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/skill/">skill</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/工具/">工具</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </aside>
 
@@ -564,7 +573,7 @@
   <aside class="widget">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget-content tagcloud">
-      <a href="/tags/LeetCode/" style="font-size: 10px;">LeetCode</a> <a href="/tags/blog/" style="font-size: 10px;">blog</a> <a href="/tags/工具/" style="font-size: 10px;">工具</a> <a href="/tags/技巧/" style="font-size: 10px;">技巧</a>
+      <a href="/tags/blog/" style="font-size: 10px;">blog</a> <a href="/tags/skill/" style="font-size: 20px;">skill</a> <a href="/tags/工具/" style="font-size: 10px;">工具</a>
     </div>
   </aside>
 
