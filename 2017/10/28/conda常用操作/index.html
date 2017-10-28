@@ -24,7 +24,7 @@
 <meta property="og:description" content="管理conda验证安装1$ conda --version 命令参阅可以用: conda –help 将conda更新到最新123$ conda update conda#有最新选择yesProceed ([y]/n)? y 管理环境创建环境123$ conda create --name snowflakes biopython#也可以指定python版本并安装Astroid和Babel$ co">
 <meta property="og:image" content="http://oxqn1kqf7.bkt.clouddn.com/17-10-28/22089148.jpg">
 <meta property="og:image" content="http://oxqn1kqf7.bkt.clouddn.com/17-10-28/43734134.jpg">
-<meta property="og:updated_time" content="2017-10-28T03:51:48.186Z">
+<meta property="og:updated_time" content="2017-10-28T03:56:38.602Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="conda常用操作(windows)">
 <meta name="twitter:description" content="管理conda验证安装1$ conda --version 命令参阅可以用: conda –help 将conda更新到最新123$ conda update conda#有最新选择yesProceed ([y]/n)? y 管理环境创建环境123$ conda create --name snowflakes biopython#也可以指定python版本并安装Astroid和Babel$ co">
@@ -90,7 +90,7 @@
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" data-url="http://linraner.github.io/2017/10/28/conda常用操作/" data-id="cj9asizhy0003soj2xzpbt9z6" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+            <a href="javascript:void(0);" data-url="http://linraner.github.io/2017/10/28/conda常用操作/" data-id="cj9asow590003ocj2a6z49jpx" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -110,7 +110,7 @@
 <h3 id="切换到另一个环境"><a href="#切换到另一个环境" class="headerlink" title="切换到另一个环境"></a>切换到另一个环境</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ activate another_environment</div></pre></td></tr></table></figure>
 <h3 id="克隆删除环境"><a href="#克隆删除环境" class="headerlink" title="克隆删除环境"></a>克隆删除环境</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">#克隆</div><div class="line">$ conda create --name flowers --clone snowflakes</div><div class="line">#删除</div><div class="line">$ conda remove --name flowers --all</div></pre></td></tr></table></figure>
 <h2 id="管理Python"><a href="#管理Python" class="headerlink" title="管理Python"></a>管理Python</h2><h3 id="检查可安装的python版本"><a href="#检查可安装的python版本" class="headerlink" title="检查可安装的python版本"></a>检查可安装的python版本</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ conda search --full-name python</div><div class="line">#列出包含python的所有包</div><div class="line">$ conda search python</div></pre></td></tr></table></figure>
-<h3 id="安装python3的环境并不覆盖2thon-7"><a href="#安装python3的环境并不覆盖2thon-7" class="headerlink" title="安装python3的环境并不覆盖2thon.7"></a>安装python3的环境并不覆盖2thon.7</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ conda create --name snackes pyhton=3</div></pre></td></tr></table></figure>
+<h3 id="安装python3环境并不覆盖python2"><a href="#安装python3环境并不覆盖python2" class="headerlink" title="安装python3环境并不覆盖python2"></a>安装python3环境并不覆盖python2</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ conda create --name snackes pyhton=3</div></pre></td></tr></table></figure>
 <h2 id="包管理"><a href="#包管理" class="headerlink" title="包管理"></a>包管理</h2><h3 id="看安装的包和版本列表"><a href="#看安装的包和版本列表" class="headerlink" title="看安装的包和版本列表"></a>看安装的包和版本列表</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ conda list</div></pre></td></tr></table></figure>
 <h3 id="查找、安装、删除"><a href="#查找、安装、删除" class="headerlink" title="查找、安装、删除"></a>查找、安装、删除</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ conda search beautifulsoup4</div><div class="line">$ conda install --name snowflakes beautifulsoup4    #未指定位置安装在当前位置</div><div class="line">$ conda remove --name snowflakes beautifulsoup4</div></pre></td></tr></table></figure>
 <h3 id="从Anaconda-org安装包"><a href="#从Anaconda-org安装包" class="headerlink" title="从Anaconda.org安装包"></a>从Anaconda.org安装包</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ conda install --channel https://conda.anaconda.org/pandas bottleneck</div></pre></td></tr></table></figure>
