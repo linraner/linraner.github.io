@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+  
+  
+  <meta name="description" content="永不止步" />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>快速幂 | Ryan</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="快速幂 通常算法：12345678910int Pow(int A, int n)&amp;#123;    if(n == 0) retur 1;    int rslt(1);    for(int i(0); i &amp;lt; n; ++i)    &amp;#123;        rslt *= A;    &amp;#125;    return rslt;&amp;#125; 其复杂度是O(n)的。一般来说，这样的复杂">
+<meta name="keywords" content="快乐的ACM">
+<meta property="og:type" content="article">
+<meta property="og:title" content="快速幂">
+<meta property="og:url" content="http://linraner.github.io/2017/10/31/快速幂/index.html">
+<meta property="og:site_name" content="Ryan">
+<meta property="og:description" content="快速幂 通常算法：12345678910int Pow(int A, int n)&amp;#123;    if(n == 0) retur 1;    int rslt(1);    for(int i(0); i &amp;lt; n; ++i)    &amp;#123;        rslt *= A;    &amp;#125;    return rslt;&amp;#125; 其复杂度是O(n)的。一般来说，这样的复杂">
+<meta property="og:image" content="http://oxqn1kqf7.bkt.clouddn.com/17-10-31/1725298.jpg">
+<meta property="og:updated_time" content="2017-10-31T11:19:30.974Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="快速幂">
+<meta name="twitter:description" content="快速幂 通常算法：12345678910int Pow(int A, int n)&amp;#123;    if(n == 0) retur 1;    int rslt(1);    for(int i(0); i &amp;lt; n; ++i)    &amp;#123;        rslt *= A;    &amp;#125;    return rslt;&amp;#125; 其复杂度是O(n)的。一般来说，这样的复杂">
+<meta name="twitter:image" content="http://oxqn1kqf7.bkt.clouddn.com/17-10-31/1725298.jpg">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+  
+  <!-- baidu webmaster push -->
+  <script src='//push.zhanzhang.baidu.com/push.js'></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Ryan" rel="home">Ryan</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">Your heart is free. Have the courage to follow it.</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">LeaveWord</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://github.com/linraner/linraner.github.io">Fork On Github</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://github.com/linraner">MyGithub</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        <div id="primary" class="site-content"><div id="content" role="main"><article id="post-快速幂" class="post-快速幂 post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        
+  
+    <h1 class="entry-title article-title">
+      快速幂
+    </h1>
+  
+
+        
+        <div class="comments-link">
+            
+            <a href="javascript:void(0);" data-url="http://linraner.github.io/2017/10/31/快速幂/" data-id="cj9fiuekw0008nsj23lnrt2zs" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <h3 id="快速幂"><a href="#快速幂" class="headerlink" title="快速幂"></a>快速幂</h3><p><img src="http://oxqn1kqf7.bkt.clouddn.com/17-10-31/1725298.jpg" alt=""></p>
+<p>通常算法：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">int Pow(int A, int n)</div><div class="line">&#123;</div><div class="line">    if(n == 0) retur 1;</div><div class="line">    int rslt(1);</div><div class="line">    for(int i(0); i &lt; n; ++i)</div><div class="line">    &#123;</div><div class="line">        rslt *= A;</div><div class="line">    &#125;</div><div class="line">    return rslt;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>其复杂度是O(n)的。一般来说，这样的复杂度并不会使我们困惑，但是一般应用幂运算的地方，指数都会非常非常的大，比如1 000 000 000这个级别的，这时候我们会遇到两个问题，第一个就是我们不能再用int来存储整数，必须用高精度整数类型来进行存储，另一个就是在指数是如此变态的数量级之下，我们的计算量会骤然上升，结果也会异常惊人的大。简单来说就是二分法。<br>举个栗子：<br>一般解法：<br><code>A^8 = A * A * A * A * A * A * A * A</code><br>总共需要7次乘法运算</p>
+<p>平均分解：<br><code>A^8 = (A * A * A * A) * (A * A * A * A) = (A * A * A * A) ^ 2</code><br>这样我们就只需要4次乘法运算</p>
+<p>再分解：<br><code>A^6 = [(A * A) * (A * A)] ^ 2 = [(A * A) ^ 2] ^ 2</code><br>这样就将乘法运算的次数减少为了3次</p>
+<p>种二分解法可以将原本n次的运算减少为logn / log2，这样的效果是惊人的，在1 000 000 000这样数量级的指数运算下，该方法可以将运算次数减少到30次</p>
+<p>整数的快速幂：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">int qPow(int A, int n)</div><div class="line">&#123;</div><div class="line">    if(n == 0) return 1;</div><div class="line">    int rslt(1);</div><div class="line"></div><div class="line">    while(n)</div><div class="line">    &#123;</div><div class="line">        if(n &amp; 1) // 若幂为奇数</div><div class="line">        &#123;</div><div class="line">            rslt *= A;</div><div class="line">        &#125;</div><div class="line">        A *= A;</div><div class="line">        n &gt;&gt;= 1; // 右位移等价于除以2</div><div class="line">    &#125;</div><div class="line">    return rslt;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>矩阵类的代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div></pre></td><td class="code"><pre><div class="line">class Matrix</div><div class="line">&#123;</div><div class="line">public:</div><div class="line">    int N; // 矩阵维数</div><div class="line">    int** m; // 存储矩阵的二维数组</div><div class="line"></div><div class="line">    Matrix(int n = 2)</div><div class="line">    &#123;</div><div class="line">        m = new int*[n];</div><div class="line">        for(int i(0); i &lt; n; ++i)</div><div class="line">        &#123;</div><div class="line">            m[i] = new int[n];</div><div class="line">        &#125;</div><div class="line">        N = n;</div><div class="line">        clear();</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    // 将矩阵清空为零矩阵</div><div class="line">    void clear()</div><div class="line">    &#123;</div><div class="line">        for(int i(0); i &lt; N; ++i)</div><div class="line">        &#123;</div><div class="line">            memset(m[i], 0, sizeof(int) * N);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    // 将矩阵设定为单位矩阵</div><div class="line">    void unit()</div><div class="line">    &#123;</div><div class="line">        clear();</div><div class="line">        for(int i(0); i &lt; N; ++i)</div><div class="line">        &#123;</div><div class="line">            m[i][i] = 1;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    // 矩阵的赋值</div><div class="line">    Matrix operator= (Matrix &amp;othr)</div><div class="line">    &#123;</div><div class="line">        Matrix(othr.N);</div><div class="line">        for(int i(0); i &lt; othr.N; ++i)</div><div class="line">        &#123;</div><div class="line">            for(int j(0); j &lt; othr.N; ++j)</div><div class="line">            &#123;</div><div class="line">                m[i][j] = othr.m[i][j];</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        return *this;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    // 矩阵的乘法</div><div class="line">    //!假设所有因子均为同阶方阵</div><div class="line">    Matrix operator* (Matrix &amp;othr)</div><div class="line">    &#123;</div><div class="line">        Matrix rslt(othr.N);</div><div class="line">        for(int i(0); i &lt; othr.N; ++i)</div><div class="line">        &#123;</div><div class="line">            for(int j(0); j &lt; othr.N; ++j)</div><div class="line">            &#123;</div><div class="line">                for(int k(0); k &lt; othr.N; ++k)</div><div class="line">                &#123;</div><div class="line">                    rslt.m[i][j] += m[i][k] * othr.m[k][j];</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        return rslt;</div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
+<p>矩阵快速幂的算法:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">Matrix qMPow(Matrix &amp;A, int n)</div><div class="line">&#123;</div><div class="line">    Matrix rslt(A.N);</div><div class="line">    rslt.unit();</div><div class="line">    if(n == 0) return rslt;</div><div class="line">    while(n)</div><div class="line">    &#123;</div><div class="line">        if(n &amp; 1) // 若幂为奇数</div><div class="line">        &#123;</div><div class="line">            rslt = rslt * A;</div><div class="line">        &#125;</div><div class="line">        A = A * A;</div><div class="line">        n &gt;&gt;= 1; // 右位移等价于除以2</div><div class="line">    &#125;</div><div class="line">    return rslt;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    <!-- .entry-content -->
+
+    <footer class="entry-meta">
+    <a href="/2017/10/31/快速幂/">
+    <time datetime="2017-10-31T10:57:58.000Z" class="entry-date">
+        2017-10-31
+    </time>
+</a>
+    
+    
+  <span class="article-delim">&#8226;</span>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/快乐的ACM/">快乐的ACM</a></li></ul>
+
+    </footer>
+</article>
+
+
+    
+<nav class="nav-single">
+    <h3 class="assistive-text">文章导航</h3>
+    
+    
+        <span class="nav-next"><a href="/2017/10/28/conda常用操作/" rel="next">conda常用操作(windows) <span class="meta-nav">→</span></a></span>
+    
+</nav><!-- .nav-single -->
+
+
+
+
+
+
+
+</div></div>
+        <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="搜索" />
+    </div>
+</form></aside>
+  
+    
+  <aside class="widget">
+    <h3 class="widget-title">Music</h3>
+    <div class="widget-content">
+      <audio src="http://oxqn1kqf7.bkt.clouddn.com/Radiohead%20-%20Paranoid%20Android.mp3" controls="controls"
+             style="width:100%">
+        您的浏览器不支持 audio 标签。
+      </audio>
+    </div>
+  </aside>
+
+  
+    
+  
+    
+  <aside class="widget">
+    <h3 class="widget-title">Recents</h3>
+    <div class="widget-content">
+      <ul>
+        
+          <li>
+            <a href="/2017/10/31/快速幂/">快速幂</a>
+          </li>
+        
+          <li>
+            <a href="/2017/10/28/conda常用操作/">conda常用操作(windows)</a>
+          </li>
+        
+          <li>
+            <a href="/2017/10/24/初学使用Github/">初学使用Github</a>
+          </li>
+        
+          <li>
+            <a href="/2017/10/22/通向外网的梯子/">通向外网的梯子</a>
+          </li>
+        
+          <li>
+            <a href="/2017/10/21/Jupyter-NoteBook常用快捷键/">Jupyter NoteBook常用快捷键</a>
+          </li>
+        
+      </ul>
+    </div>
+  </aside>
+
+  
+    
+  <aside class="widget">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget-content">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Blog/">Blog</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Skill/">Skill</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/工具/">工具</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/快乐的ACM/">快乐的ACM</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </aside>
+
+  
+    
+  <aside class="widget">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget-content tagcloud">
+      <a href="/tags/Blog/" style="font-size: 10px;">Blog</a> <a href="/tags/Skill/" style="font-size: 20px;">Skill</a> <a href="/tags/工具/" style="font-size: 15px;">工具</a> <a href="/tags/快乐的ACM/" style="font-size: 10px;">快乐的ACM</a>
+    </div>
+  </aside>
+
+  
+</div>
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2017 Ryan
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a></p>
+</footer>
+    <script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
+</html>
