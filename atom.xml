@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://linraner.github.io/"/>
-  <updated>2017-10-31T14:06:11.454Z</updated>
+  <updated>2017-11-06T04:53:03.168Z</updated>
   <id>http://linraner.github.io/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Git问题：Everything up-to-date解决</title>
+    <link href="http://linraner.github.io/2017/11/04/Git%E9%97%AE%E9%A2%98%EF%BC%9AEverything-up-to-date%E8%A7%A3%E5%86%B3/"/>
+    <id>http://linraner.github.io/2017/11/04/Git问题：Everything-up-to-date解决/</id>
+    <published>2017-11-04T04:39:28.000Z</published>
+    <updated>2017-11-06T04:53:03.168Z</updated>
+    
+    <content type="html"><![CDATA[<p>push代码时遇到提示：<code>Everything up-to-date</code>,无法push代码<br>原因是git提交改动到缓存，要push的时候不会将本地所有的分支都push掉，所以出现这个问题。我们应该告诉git提交哪个分支。</p><h2 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h2><p>在<a href="https://stackoverflow.com/questions/2936652/git-push-wont-do-anything-everything-up-to-date" target="_blank" rel="external">stackoverflow</a>有解决方案</p><h3 id="创建分支"><a href="#创建分支" class="headerlink" title="创建分支"></a>创建分支</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ git branch newbranch</div><div class="line">#查看分支</div><div class="line">$ git branch</div></pre></td></tr></table></figure><h3 id="切换分支"><a href="#切换分支" class="headerlink" title="切换分支"></a>切换分支</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git checkout newbranch</div></pre></td></tr></table></figure><h3 id="改动提交到新的分支"><a href="#改动提交到新的分支" class="headerlink" title="改动提交到新的分支"></a>改动提交到新的分支</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ git add .</div><div class="line">$ git commit -a</div></pre></td></tr></table></figure><h3 id="合并到master"><a href="#合并到master" class="headerlink" title="合并到master"></a>合并到master</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ git merge newbranch</div><div class="line">#查看冲突</div><div class="line">$ git diff</div></pre></td></tr></table></figure><h3 id="push代码"><a href="#push代码" class="headerlink" title="push代码"></a>push代码</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git push -u origin master</div></pre></td></tr></table></figure><h3 id="删除分支"><a href="#删除分支" class="headerlink" title="删除分支"></a>删除分支</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git branch -D newbranch</div></pre></td></tr></table></figure><ul><li>删除合并部分大写D改为小写d</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;push代码时遇到提示：&lt;code&gt;Everything up-to-date&lt;/code&gt;,无法push代码&lt;br&gt;原因是git提交改动到缓存，要push的时候不会将本地所有的分支都push掉，所以出现这个问题。我们应该告诉git提交哪个分支。&lt;/p&gt;
+&lt;h2 id=&quot;解
+      
+    
+    </summary>
+    
+    
+      <category term="skill" scheme="http://linraner.github.io/tags/skill/"/>
+    
+  </entry>
   
   <entry>
     <title>快速幂</title>

@@ -13,19 +13,19 @@
   
   
   
-  <title>Jupyter NoteBook常用快捷键 | Ryan</title>
+  <title>Git问题：Everything up-to-date解决 | Ryan</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Jupyter Notebook 有两种键盘输入模式，命令模式和编辑模式。与Vim类似。 命令模式按Esc进入，编辑模式按Enter进入 命令模式快捷键   快捷键 作用     Shift+Enter 运行本单元，选中下一个单元   Ctrl+Enter 运行本单元   Alt+Enter 运行本单元在下插入新单元   Y 单元转入代码状态   M 单元转入markdown状态   R 单元转入">
+  <meta name="description" content="push代码时遇到提示：Everything up-to-date,无法push代码原因是git提交改动到缓存，要push的时候不会将本地所有的分支都push掉，所以出现这个问题。我们应该告诉git提交哪个分支。 解决在stackoverflow有解决方案 创建分支123$ git branch newbranch#查看分支$ git branch 切换分支1$ git checkout newb">
 <meta name="keywords" content="skill">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Jupyter NoteBook常用快捷键">
-<meta property="og:url" content="http://linraner.github.io/2017/10/21/Jupyter-NoteBook常用快捷键/index.html">
+<meta property="og:title" content="Git问题：Everything up-to-date解决">
+<meta property="og:url" content="http://linraner.github.io/2017/11/04/Git问题：Everything-up-to-date解决/index.html">
 <meta property="og:site_name" content="Ryan">
-<meta property="og:description" content="Jupyter Notebook 有两种键盘输入模式，命令模式和编辑模式。与Vim类似。 命令模式按Esc进入，编辑模式按Enter进入 命令模式快捷键   快捷键 作用     Shift+Enter 运行本单元，选中下一个单元   Ctrl+Enter 运行本单元   Alt+Enter 运行本单元在下插入新单元   Y 单元转入代码状态   M 单元转入markdown状态   R 单元转入">
-<meta property="og:updated_time" content="2017-10-31T11:53:38.580Z">
+<meta property="og:description" content="push代码时遇到提示：Everything up-to-date,无法push代码原因是git提交改动到缓存，要push的时候不会将本地所有的分支都push掉，所以出现这个问题。我们应该告诉git提交哪个分支。 解决在stackoverflow有解决方案 创建分支123$ git branch newbranch#查看分支$ git branch 切换分支1$ git checkout newb">
+<meta property="og:updated_time" content="2017-11-06T04:53:03.168Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Jupyter NoteBook常用快捷键">
-<meta name="twitter:description" content="Jupyter Notebook 有两种键盘输入模式，命令模式和编辑模式。与Vim类似。 命令模式按Esc进入，编辑模式按Enter进入 命令模式快捷键   快捷键 作用     Shift+Enter 运行本单元，选中下一个单元   Ctrl+Enter 运行本单元   Alt+Enter 运行本单元在下插入新单元   Y 单元转入代码状态   M 单元转入markdown状态   R 单元转入">
+<meta name="twitter:title" content="Git问题：Everything up-to-date解决">
+<meta name="twitter:description" content="push代码时遇到提示：Everything up-to-date,无法push代码原因是git提交改动到缓存，要push的时候不会将本地所有的分支都push掉，所以出现这个问题。我们应该告诉git提交哪个分支。 解决在stackoverflow有解决方案 创建分支123$ git branch newbranch#查看分支$ git branch 切换分支1$ git checkout newb">
   
   
     <link rel="icon" href="/css/images/favicon.ico">
@@ -72,7 +72,7 @@
     </nav>
 </header>
       <div id="main" class="wrapper">
-        <div id="primary" class="site-content"><div id="content" role="main"><article id="post-Jupyter-NoteBook常用快捷键" class="post-Jupyter-NoteBook常用快捷键 post type-post status-publish format-standard hentry">
+        <div id="primary" class="site-content"><div id="content" role="main"><article id="post-Git问题：Everything-up-to-date解决" class="post-Git问题：Everything-up-to-date解决 post type-post status-publish format-standard hentry">
     <!---->
 
       <header class="entry-header">
@@ -80,190 +80,39 @@
         
   
     <h1 class="entry-title article-title">
-      Jupyter NoteBook常用快捷键
+      Git问题：Everything up-to-date解决
     </h1>
   
 
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" data-url="http://linraner.github.io/2017/10/21/Jupyter-NoteBook常用快捷键/" data-id="cj9npokkd000138j24xen0cq8" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+            <a href="javascript:void(0);" data-url="http://linraner.github.io/2017/11/04/Git问题：Everything-up-to-date解决/" data-id="cj9npokk5000038j2cmiiip3j" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
     <div class="entry-content">
       
-        <p>Jupyter Notebook 有两种键盘输入模式，命令模式和编辑模式。与Vim类似。</p>
-<p>命令模式按<strong>Esc</strong>进入，编辑模式按<strong>Enter</strong>进入</p>
-<h4 id="命令模式快捷键"><a href="#命令模式快捷键" class="headerlink" title="命令模式快捷键"></a>命令模式快捷键</h4><table>
-<thead>
-<tr>
-<th>快捷键</th>
-<th>作用</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Shift+Enter</td>
-<td>运行本单元，选中下一个单元</td>
-</tr>
-<tr>
-<td>Ctrl+Enter</td>
-<td>运行本单元</td>
-</tr>
-<tr>
-<td>Alt+Enter</td>
-<td>运行本单元在下插入新单元</td>
-</tr>
-<tr>
-<td>Y</td>
-<td>单元转入代码状态</td>
-</tr>
-<tr>
-<td>M</td>
-<td>单元转入markdown状态</td>
-</tr>
-<tr>
-<td>R</td>
-<td>单元转入raw状态</td>
-</tr>
-<tr>
-<td>Up&amp;K/Down&amp;J</td>
-<td>选中上方/下方单元</td>
-</tr>
-<tr>
-<td>Shift+K/J</td>
-<td>连续选择上方/下方单元</td>
-</tr>
-<tr>
-<td>A/B</td>
-<td>在上方/下方插入新单元</td>
-</tr>
-<tr>
-<td>x/C</td>
-<td>剪切/复制选中单元</td>
-</tr>
-<tr>
-<td>Shift+V/V</td>
-<td>粘贴到上方/下方单元</td>
-</tr>
-<tr>
-<td>Z</td>
-<td>恢复删除的最后一个单元</td>
-</tr>
-<tr>
-<td>DD</td>
-<td>删除选中的单元</td>
-</tr>
-<tr>
-<td>Shift+M</td>
-<td>合并选中的单元</td>
-</tr>
-<tr>
-<td>Ctrl+S/S</td>
-<td>保存当前文件</td>
-</tr>
-<tr>
-<td>L</td>
-<td>开关行号</td>
-</tr>
-<tr>
-<td>O</td>
-<td>转换输出</td>
-</tr>
-<tr>
-<td>Shift+O</td>
-<td>转换输出滚动</td>
-</tr>
-<tr>
-<td>Esc/Q</td>
-<td>关闭页面</td>
-</tr>
-<tr>
-<td>H</td>
-<td>显示快捷帮助</td>
-</tr>
-<tr>
-<td>II/00</td>
-<td>中断/重启NOteBook内核</td>
-</tr>
-<tr>
-<td>Shift+Space/Space</td>
-<td>向上/下滚动</td>
-</tr>
-</tbody>
-</table>
-<h4 id="编辑模式快捷键"><a href="#编辑模式快捷键" class="headerlink" title="编辑模式快捷键"></a>编辑模式快捷键</h4><table>
-<thead>
-<tr>
-<th>快捷键</th>
-<th>作用</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Tab</td>
-<td>代码补全或者缩进</td>
-</tr>
-<tr>
-<td>Shift+Tab</td>
-<td>提示</td>
-</tr>
-<tr>
-<td>Ctrl+]</td>
-<td>向右缩进</td>
-</tr>
-<tr>
-<td>Ctrl+[</td>
-<td>向左缩进</td>
-</tr>
-<tr>
-<td>Ctrl+Shift+Z/Ctrl+Y</td>
-<td>重做</td>
-</tr>
-<tr>
-<td>Ctrl+up/down</td>
-<td>跳到单元开头/末尾</td>
-</tr>
-<tr>
-<td>Ctrl+Left/Right</td>
-<td>跳到左边/右边一个字首</td>
-</tr>
-<tr>
-<td>Ctrl+BackSpace/Delete</td>
-<td>删除前面一个字</td>
-</tr>
-<tr>
-<td>Shift+Enter</td>
-<td>运行本单元，选中下一个单元</td>
-</tr>
-<tr>
-<td>Ctrl+M</td>
-<td>切换到命令模式</td>
-</tr>
-<tr>
-<td>Ctrl+Enter</td>
-<td>运行本单元</td>
-</tr>
-<tr>
-<td>Alt+Enter</td>
-<td>运行本单元在下插入新单元</td>
-</tr>
-<tr>
-<td>Ctrl+/</td>
-<td>注释整行或者取消注释</td>
-</tr>
-</tbody>
-</table>
+        <p>push代码时遇到提示：<code>Everything up-to-date</code>,无法push代码<br>原因是git提交改动到缓存，要push的时候不会将本地所有的分支都push掉，所以出现这个问题。我们应该告诉git提交哪个分支。</p>
+<h2 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h2><p>在<a href="https://stackoverflow.com/questions/2936652/git-push-wont-do-anything-everything-up-to-date" target="_blank" rel="external">stackoverflow</a>有解决方案</p>
+<h3 id="创建分支"><a href="#创建分支" class="headerlink" title="创建分支"></a>创建分支</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ git branch newbranch</div><div class="line">#查看分支</div><div class="line">$ git branch</div></pre></td></tr></table></figure>
+<h3 id="切换分支"><a href="#切换分支" class="headerlink" title="切换分支"></a>切换分支</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git checkout newbranch</div></pre></td></tr></table></figure>
+<h3 id="改动提交到新的分支"><a href="#改动提交到新的分支" class="headerlink" title="改动提交到新的分支"></a>改动提交到新的分支</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ git add .</div><div class="line">$ git commit -a</div></pre></td></tr></table></figure>
+<h3 id="合并到master"><a href="#合并到master" class="headerlink" title="合并到master"></a>合并到master</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ git merge newbranch</div><div class="line">#查看冲突</div><div class="line">$ git diff</div></pre></td></tr></table></figure>
+<h3 id="push代码"><a href="#push代码" class="headerlink" title="push代码"></a>push代码</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git push -u origin master</div></pre></td></tr></table></figure>
+<h3 id="删除分支"><a href="#删除分支" class="headerlink" title="删除分支"></a>删除分支</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git branch -D newbranch</div></pre></td></tr></table></figure>
+<ul>
+<li>删除合并部分大写D改为小写d</li>
+</ul>
 
       
     </div>
     <!-- .entry-content -->
 
     <footer class="entry-meta">
-    <a href="/2017/10/21/Jupyter-NoteBook常用快捷键/">
-    <time datetime="2017-10-21T07:39:41.000Z" class="entry-date">
-        2017-10-21
+    <a href="/2017/11/04/Git问题：Everything-up-to-date解决/">
+    <time datetime="2017-11-04T04:39:28.000Z" class="entry-date">
+        2017-11-04
     </time>
 </a>
     
@@ -279,10 +128,8 @@
 <nav class="nav-single">
     <h3 class="assistive-text">文章导航</h3>
     
-        <span class="nav-previous"><a href="/2017/10/22/通向外网的梯子/" rel="prev"><span class="meta-nav">←</span> 通向外网的梯子</a></span>
     
-    
-        <span class="nav-next"><a href="/2017/10/14/Windows上好用的软件/" rel="next">Windows上好用的软件 <span class="meta-nav">→</span></a></span>
+        <span class="nav-next"><a href="/2017/10/31/快速幂/" rel="next">快速幂 <span class="meta-nav">→</span></a></span>
     
 </nav><!-- .nav-single -->
 
@@ -387,6 +234,23 @@
 
 <div id="bg"></div>
 
-  </div><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  </div><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
 </body>
 </html>

@@ -72,6 +72,63 @@
       <div id="main" class="wrapper">
         <div id="primary" class="site-content"><div id="content" role="main">
   
+    <article id="post-Git问题：Everything-up-to-date解决" class="post-Git问题：Everything-up-to-date解决 post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        
+  
+    <h1 class="entry-title">
+      <a class="article-title" href="/2017/11/04/Git问题：Everything-up-to-date解决/">Git问题：Everything up-to-date解决</a>
+    </h1>
+  
+
+        
+        <div class="comments-link">
+            
+            <a href="javascript:void(0);" data-url="http://linraner.github.io/2017/11/04/Git问题：Everything-up-to-date解决/" data-id="cj9npokk5000038j2cmiiip3j" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <p>push代码时遇到提示：<code>Everything up-to-date</code>,无法push代码<br>原因是git提交改动到缓存，要push的时候不会将本地所有的分支都push掉，所以出现这个问题。我们应该告诉git提交哪个分支。</p>
+<h2 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h2><p>在<a href="https://stackoverflow.com/questions/2936652/git-push-wont-do-anything-everything-up-to-date" target="_blank" rel="external">stackoverflow</a>有解决方案</p>
+<h3 id="创建分支"><a href="#创建分支" class="headerlink" title="创建分支"></a>创建分支</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ git branch newbranch</div><div class="line">#查看分支</div><div class="line">$ git branch</div></pre></td></tr></table></figure>
+<h3 id="切换分支"><a href="#切换分支" class="headerlink" title="切换分支"></a>切换分支</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git checkout newbranch</div></pre></td></tr></table></figure>
+<h3 id="改动提交到新的分支"><a href="#改动提交到新的分支" class="headerlink" title="改动提交到新的分支"></a>改动提交到新的分支</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ git add .</div><div class="line">$ git commit -a</div></pre></td></tr></table></figure>
+<h3 id="合并到master"><a href="#合并到master" class="headerlink" title="合并到master"></a>合并到master</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ git merge newbranch</div><div class="line">#查看冲突</div><div class="line">$ git diff</div></pre></td></tr></table></figure>
+<h3 id="push代码"><a href="#push代码" class="headerlink" title="push代码"></a>push代码</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git push -u origin master</div></pre></td></tr></table></figure>
+<h3 id="删除分支"><a href="#删除分支" class="headerlink" title="删除分支"></a>删除分支</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git branch -D newbranch</div></pre></td></tr></table></figure>
+<ul>
+<li>删除合并部分大写D改为小写d</li>
+</ul>
+
+      
+    </div>
+    <!-- .entry-content -->
+
+    <footer class="entry-meta">
+    <a href="/2017/11/04/Git问题：Everything-up-to-date解决/">
+    <time datetime="2017-11-04T04:39:28.000Z" class="entry-date">
+        2017-11-04
+    </time>
+</a>
+    
+    
+  <span class="article-delim">&#8226;</span>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/skill/">skill</a></li></ul>
+
+    </footer>
+</article>
+
+
+
+
+
+
+  
     <article id="post-快速幂" class="post-快速幂 post type-post status-publish format-standard hentry">
     <!---->
 
@@ -87,7 +144,7 @@
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" data-url="http://linraner.github.io/2017/10/31/快速幂/" data-id="cj9fosyj10004hcj25e8dtjta" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+            <a href="javascript:void(0);" data-url="http://linraner.github.io/2017/10/31/快速幂/" data-id="cj9npokkz000938j2skaboffp" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -142,7 +199,7 @@
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" data-url="http://linraner.github.io/2017/10/28/conda常用操作/" data-id="cj9fosyjj000chcj29i0an8tb" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+            <a href="javascript:void(0);" data-url="http://linraner.github.io/2017/10/28/conda常用操作/" data-id="cj9npokkm000338j29blnpq4u" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -209,7 +266,7 @@
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" data-url="http://linraner.github.io/2017/10/24/初学使用Github/" data-id="cj9fosyj30006hcj2m628q5fr" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+            <a href="javascript:void(0);" data-url="http://linraner.github.io/2017/10/24/初学使用Github/" data-id="cj9npokkx000838j29or477hh" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -271,7 +328,7 @@
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" data-url="http://linraner.github.io/2017/10/22/通向外网的梯子/" data-id="cj9fosyjl000dhcj2kdg9dao9" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+            <a href="javascript:void(0);" data-url="http://linraner.github.io/2017/10/22/通向外网的梯子/" data-id="cj9npokl7000c38j2trnfi0j3" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -318,7 +375,7 @@
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" data-url="http://linraner.github.io/2017/10/21/Jupyter-NoteBook常用快捷键/" data-id="cj9fosyjn000fhcj2h1w03uzb" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+            <a href="javascript:void(0);" data-url="http://linraner.github.io/2017/10/21/Jupyter-NoteBook常用快捷键/" data-id="cj9npokkd000138j24xen0cq8" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -526,7 +583,7 @@
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" data-url="http://linraner.github.io/2017/10/14/Windows上好用的软件/" data-id="cj9fosyiy0003hcj2pjm9wkrx" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+            <a href="javascript:void(0);" data-url="http://linraner.github.io/2017/10/14/Windows上好用的软件/" data-id="cj9npokkr000538j2od4s3r64" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -590,7 +647,7 @@
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" data-url="http://linraner.github.io/2017/10/13/github-hexo搭建博客/" data-id="cj9fosyib0000hcj2bz0hhvki" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+            <a href="javascript:void(0);" data-url="http://linraner.github.io/2017/10/13/github-hexo搭建博客/" data-id="cj9npokko000438j24h4f1x0f" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -664,6 +721,10 @@
       <ul>
         
           <li>
+            <a href="/2017/11/04/Git问题：Everything-up-to-date解决/">Git问题：Everything up-to-date解决</a>
+          </li>
+        
+          <li>
             <a href="/2017/10/31/快速幂/">快速幂</a>
           </li>
         
@@ -679,10 +740,6 @@
             <a href="/2017/10/22/通向外网的梯子/">通向外网的梯子</a>
           </li>
         
-          <li>
-            <a href="/2017/10/21/Jupyter-NoteBook常用快捷键/">Jupyter NoteBook常用快捷键</a>
-          </li>
-        
       </ul>
     </div>
   </aside>
@@ -692,7 +749,7 @@
   <aside class="widget">
     <h3 class="widget-title">Tags</h3>
     <div class="widget-content">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/blog/">blog</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/skill/">skill</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/工具/">工具</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/快乐的ACM/">快乐的ACM</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/blog/">blog</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/skill/">skill</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/工具/">工具</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/快乐的ACM/">快乐的ACM</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </aside>
 
