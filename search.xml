@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title><![CDATA[欧拉函数]]></title>
+    <url>%2F2017%2F11%2F23%2F%E6%AC%A7%E6%8B%89%E5%87%BD%E6%95%B0%2F</url>
+    <content type="text"><![CDATA[欧拉函数： 在数论中，对正整数n，欧拉函数φ(n)是小于或等于n的正整数中与n互质的数的数目。它又称为Euler’s totient function、φ函数、欧拉商数等。例如 φ，因为1,3,5,7均和8互质。—— 维基百科 定理 phi(1) = 1 n为质数, phi(n) = n - 1 m 和 n 互质, phi(mn) = phi(m) * phi(n) n为奇数, phi(2n) = phi(n) 通用公式：phi(n) = n * (1 - 1 / p1) * (1 - 1 / p2) * ... * (1 - 1 / pr)其中 n = p1^k1 * p2^k2 * ... * pr^kr 具体见： 看云-欧拉函数 常规代码123456789101112int phi(int n) &#123; int t = n; for (int i = 2; i &lt;= n; i++) &#123; if (n % i == 0) &#123; n /= i; t = t - t / i; &#125; while (n % i == 0) n /= i; &#125; return t;&#125; 时间复杂度O(n),对于1e9会超时。 改良之后123456789101112131415int phi(int n) &#123; int t = n; //降低时间复杂度 for (int i = 2; i * i &lt;= n; i++) &#123; if (n % i == 0) &#123; n /= i; t = t - t / i; &#125; while (n % i == 0) n /= i; &#125; if (n &gt; 1) t = t - t / n; return t;&#125;]]></content>
+      <tags>
+        <tag>数论</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Git问题：Everything up-to-date解决]]></title>
+    <url>%2F2017%2F11%2F04%2FGit%E9%97%AE%E9%A2%98%EF%BC%9AEverything-up-to-date%E8%A7%A3%E5%86%B3%2F</url>
+    <content type="text"><![CDATA[push代码时遇到提示：Everything up-to-date,无法push代码原因是git提交改动到缓存，要push的时候不会将本地所有的分支都push掉，所以出现这个问题。我们应该告诉git提交哪个分支。 解决在stackoverflow有解决方案 创建分支123$ git branch newbranch#查看分支$ git branch 切换分支1$ git checkout newbranch 改动提交到新的分支12$ git add .$ git commit -a 合并到master123$ git merge newbranch#查看冲突$ git diff push代码1$ git push -u origin master 删除分支1$ git branch -D newbranch 删除合并部分大写D改为小写d]]></content>
+      <tags>
+        <tag>skill</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[快速幂]]></title>
+    <url>%2F2017%2F10%2F31%2F%E5%BF%AB%E9%80%9F%E5%B9%82%2F</url>
+    <content type="text"><![CDATA[快速幂 通常算法：123456789int Pow(int A, int n)&#123; if(n == 0) return 1; int rslt(1); for(int i(0); i &lt; n; ++i) rslt *= A; return rslt;&#125; 其复杂度是O(n)的。一般来说，这样的复杂度并不会使我们困惑，但是一般应用幂运算的地方，指数都会非常非常的大，比如1 000 000 000这个级别的，这时候我们会遇到两个问题，第一个就是我们不能再用int来存储整数，必须用高精度整数类型来进行存储，另一个就是在指数是如此变态的数量级之下，我们的计算量会骤然上升，结果也会异常惊人的大。简单来说就是二分法。举个栗子：一般解法：A^8 = A * A * A * A * A * A * A * A总共需要7次乘法运算 平均分解：A^8 = (A * A * A * A) * (A * A * A * A) = (A * A * A * A) ^ 2这样我们就只需要4次乘法运算 再分解：A^6 = [(A * A) * (A * A)] ^ 2 = [(A * A) ^ 2] ^ 2这样就将乘法运算的次数减少为了3次 这种二分解法可以将原本n次的运算减少为logn / log2，这样的效果是惊人的，在1 000 000 000这样数量级的指数运算下，该方法可以将运算次数减少到30次 整数的快速幂：1234567891011121314151617int qPow(int A, int n)&#123; if(n == 0) return 1; int rslt(1); while(n) &#123; if(n &amp; 1) // 若幂为奇数 &#123; rslt *= A; &#125; A *= A; n &gt;&gt;= 1; // 右位移等价于除以2 &#125; return rslt;&#125; 矩阵类的代码：1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768class Matrix&#123;public: int N; // 矩阵维数 int** m; // 存储矩阵的二维数组 Matrix(int n = 2) &#123; m = new int*[n]; for(int i(0); i &lt; n; ++i) &#123; m[i] = new int[n]; &#125; N = n; clear(); &#125; // 将矩阵清空为零矩阵 void clear() &#123; for(int i(0); i &lt; N; ++i) &#123; memset(m[i], 0, sizeof(int) * N); &#125; &#125; // 将矩阵设定为单位矩阵 void unit() &#123; clear(); for(int i(0); i &lt; N; ++i) &#123; m[i][i] = 1; &#125; &#125; // 矩阵的赋值 Matrix operator= (Matrix &amp;othr) &#123; Matrix(othr.N); for(int i(0); i &lt; othr.N; ++i) &#123; for(int j(0); j &lt; othr.N; ++j) &#123; m[i][j] = othr.m[i][j]; &#125; &#125; return *this; &#125; // 矩阵的乘法 //!假设所有因子均为同阶方阵 Matrix operator* (Matrix &amp;othr) &#123; Matrix rslt(othr.N); for(int i(0); i &lt; othr.N; ++i) &#123; for(int j(0); j &lt; othr.N; ++j) &#123; for(int k(0); k &lt; othr.N; ++k) &#123; rslt.m[i][j] += m[i][k] * othr.m[k][j]; &#125; &#125; &#125; return rslt; &#125;&#125;; 矩阵快速幂的算法:12345678910111213141516Matrix qMPow(Matrix &amp;A, int n)&#123; Matrix rslt(A.N); rslt.unit(); if(n == 0) return rslt; while(n) &#123; if(n &amp; 1) // 若幂为奇数 &#123; rslt = rslt * A; &#125; A = A * A; n &gt;&gt;= 1; // 右位移等价于除以2 &#125; return rslt;&#125;]]></content>
+      <tags>
+        <tag>acm</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[conda常用操作(windows)]]></title>
+    <url>%2F2017%2F10%2F28%2Fconda%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C%2F</url>
+    <content type="text"><![CDATA[管理conda验证安装1$ conda --version 命令参阅可以用: conda –help 将conda更新到最新123$ conda update conda#有最新选择yesProceed ([y]/n)? y 管理环境创建环境123$ conda create --name snowflakes biopython#也可以指定python版本并安装Astroid和Babel$ conda create --name snowflakes python3.5 astroid babel 使用biopython创建一个snowflakes的环境 不指定目录即为默认目录/envs 使用环境123$ activate newen#切换回根目录$ deactivate 显示安装过的环境1$ conda info --envs 括号显示为当前环境 切换到另一个环境1$ activate another_environment 克隆删除环境1234#克隆$ conda create --name flowers --clone snowflakes#删除$ conda remove --name flowers --all 管理Python检查可安装的python版本123$ conda search --full-name python#列出包含python的所有包$ conda search python 安装python3环境并不覆盖python21$ conda create --name snackes pyhton=3 包管理看安装的包和版本列表1$ conda list 查找、安装、删除123$ conda search beautifulsoup4$ conda install --name snowflakes beautifulsoup4 #未指定位置安装在当前位置$ conda remove --name snowflakes beautifulsoup4 从Anaconda.org安装包1$ conda install --channel https://conda.anaconda.org/pandas bottleneck 更多命令具体参考：Getting started]]></content>
+      <tags>
+        <tag>skill</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[初学使用Github]]></title>
+    <url>%2F2017%2F10%2F24%2F%E5%88%9D%E5%AD%A6%E4%BD%BF%E7%94%A8Github%2F</url>
+    <content type="text"><![CDATA[Git使用规范流程Git是一个源码管理系统我采取ThoughtBot的Git使用规范流程 第一步：新建分支每次开发新功能，都应该新建一个单独的分支。123456#获取主干最新代码$ git checkout master$ git pull#新建开发分支$ git checkout -b afeature 第二步：提交分支commit分支修改后，提交commit123456#all为保存所有变化(包括新建、修改和删除)$ git add --all#查看发生变动的文件。$ git status#verbose会列出diff的结果$ git commit --verbose diff是Unix系统的一个很重要的工具程序，具体见：读懂diff - 阮一峰的网络日志 第三步：撰写提交信息提交commit时，必须给出完整扼要的提交信息。以下是一个范本：1234Persent-tense summary under 50 characters*More information about commit(under 72 characters)*More information about commit(under 72 characters)http://project.management-system.com/ticket/123 第一行是不超过50个字的提要，然后空一行，罗列出改动原因、主要变动、需要注意的问题。最后，提供对应的网址。 第四步：与主干同步12$ git fetch orgin$ git rebase orgin/master 第五步：合并commit分支开发完成后，很可能有一堆commit，但是合并到主干的时候，往往希望只有一个(或最多两三个) commit，这样不仅清晰，也容易管理。1$ git rebase -i origin/master 具体参考：Git 使用规范流程 第六步：推送到远程仓库合并commit，推送当前分支到远程仓库。1$ git push --force origin myfeature 第七步：发出Pull Request提交到远程仓库以后，就可以发出Pull Request 到master 分支，然后请求别人进行代码review，确认可以合并到master。 Git常用操作]]></content>
+      <tags>
+        <tag>skill</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[通向外网的梯子]]></title>
+    <url>%2F2017%2F10%2F22%2F%E9%80%9A%E5%90%91%E5%A4%96%E7%BD%91%E7%9A%84%E6%A2%AF%E5%AD%90%2F</url>
+    <content type="text"><![CDATA[能来到这里想必你已翻出来了，也就没什么说的]]></content>
+      <tags>
+        <tag>工具</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Jupyter NoteBook常用快捷键]]></title>
+    <url>%2F2017%2F10%2F21%2FJupyter-NoteBook%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE%2F</url>
+    <content type="text"><![CDATA[Jupyter Notebook 有两种键盘输入模式，命令模式和编辑模式。与Vim类似。 命令模式按Esc进入，编辑模式按Enter进入 命令模式快捷键 快捷键 作用 Shift+Enter 运行本单元，选中下一个单元 Ctrl+Enter 运行本单元 Alt+Enter 运行本单元在下插入新单元 Y 单元转入代码状态 M 单元转入markdown状态 R 单元转入raw状态 Up&amp;K/Down&amp;J 选中上方/下方单元 Shift+K/J 连续选择上方/下方单元 A/B 在上方/下方插入新单元 x/C 剪切/复制选中单元 Shift+V/V 粘贴到上方/下方单元 Z 恢复删除的最后一个单元 DD 删除选中的单元 Shift+M 合并选中的单元 Ctrl+S/S 保存当前文件 L 开关行号 O 转换输出 Shift+O 转换输出滚动 Esc/Q 关闭页面 H 显示快捷帮助 II/00 中断/重启NOteBook内核 Shift+Space/Space 向上/下滚动 编辑模式快捷键 快捷键 作用 Tab 代码补全或者缩进 Shift+Tab 提示 Ctrl+] 向右缩进 Ctrl+[ 向左缩进 Ctrl+Shift+Z/Ctrl+Y 重做 Ctrl+up/down 跳到单元开头/末尾 Ctrl+Left/Right 跳到左边/右边一个字首 Ctrl+BackSpace/Delete 删除前面一个字 Shift+Enter 运行本单元，选中下一个单元 Ctrl+M 切换到命令模式 Ctrl+Enter 运行本单元 Alt+Enter 运行本单元在下插入新单元 Ctrl+/ 注释整行或者取消注释]]></content>
+      <tags>
+        <tag>skill</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Windows上好用的软件]]></title>
+    <url>%2F2017%2F10%2F14%2FWindows%E4%B8%8A%E5%A5%BD%E7%94%A8%E7%9A%84%E8%BD%AF%E4%BB%B6%2F</url>
+    <content type="text"><![CDATA[WoxWox：是开源免费强大的快捷启动器辅助工具，快速高效率打开软件,搜索文件打开输入框：alt + space 同类软件也有: Listary , Rolan 包管理工具Chocolatey：如果你认为没有包管理的操作系统是反人类的就用这个吧，Chocolatey 这套包管理系统目前已经包含了近 500 多款常用软件，常用的有Sublime text,git,Google Chrome······ cmdercmder： 不多说，windows命令行神器，支持tab补全，支持了大部分的Linux命令······ 文本编辑器Sublime text3：基于 Python 语言的外挂 API,跨平台（Windows、Linux 和 Mac OS X）,兼容 TextMate 的语言标记语法。关于软件的配置方面见：这里sublime text 3 3143 license 12345678910111213—– BEGIN LICENSE —–TwitterInc200 User LicenseEA7E-8900071D77F72E 390CDD93 4DCBA022 FAF6079061AA12C0 A37081C5 D0316412 4584D13694D7F7D4 95BC8C1C 527DA828 560BB037D1EDDD8C AE7B379F 50C9D69D B35179EF2FE898C4 8E4277A8 555CE714 E1FB0E43D5D52613 C3D12E98 BC49967F 7652EED29D2D2E61 67610860 6D338B72 5CF95C69E36B85CC 84991F19 7575D828 470A92AB—— END LICENSE —— 同类也有： Atom：Atom是由GitHub开发的自由及开放源代码的文字与代码编辑器，支持OS X、Windows和Linux操作系统，支持Node.js所写的插件，并内置Git版本控制系统。(维基百科)，插件需要科学上网 VS Code：毕竟宇宙级的 Notepad++：Notepad++，由台湾人侯今吾基于同是开放源代码的Scintilla文本编辑组件并独力研发，整个项目托管于SourceForge.net之上，并两度获得SourceForge社区选择奖——最佳开发工具。（维基百科） IDE没什么说的，大多数网上都能下载，JetBrains家的东西都不错，由于对学生免费，即用教育网邮箱注册，就能获得大学在校的使用时间，分享一个用于接收EDU邮箱的网站：点击这里 待续—– 注：0x13哒的缘故，上面网址有的需要突破GFW的封锁，科学上网详见：这里]]></content>
+      <tags>
+        <tag>工具</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[github+hexo搭建博客]]></title>
+    <url>%2F2017%2F10%2F13%2Fgithub-hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%2F</url>
+    <content type="text"><![CDATA[Hexo是一款基于Node.js的静态博客框架，依赖少易于安装使用，可以方便的生成静态网页。 准备 Node.js：点击 Github账号：点击注册 Git：点击 WindowsNode.js在命令行输入:12$ node -v$ npm -v 显示版本信息即可进行下一步 Git配置文档]]></content>
+      <tags>
+        <tag>blog</tag>
+      </tags>
+  </entry>
+</search>
