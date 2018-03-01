@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>Ryan</title>
+  <title>Frank</title>
   
   <subtitle>Your heart is free. Have the courage to follow it.</subtitle>
   <link href="/atom.xml" rel="self"/>
@@ -10,7 +10,7 @@
   <id>http://linraner.github.io/</id>
   
   <author>
-    <name>Ryan</name>
+    <name>Frank</name>
     
   </author>
   
