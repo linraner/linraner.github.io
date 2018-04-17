@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://linraner.github.io/"/>
-  <updated>2018-04-17T11:38:29.590Z</updated>
+  <updated>2018-04-01T10:36:49.174Z</updated>
   <id>http://linraner.github.io/</id>
   
   <author>
@@ -15,29 +15,6 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>temp</title>
-    <link href="http://linraner.github.io/2018/10/14/temp/"/>
-    <id>http://linraner.github.io/2018/10/14/temp/</id>
-    <published>2018-10-14T15:15:47.000Z</published>
-    <updated>2018-04-17T11:38:29.590Z</updated>
-    
-    <content type="html"><![CDATA[<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">import</span> java.util.*;</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Calendar</span></span>&#123;</div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(string argc[])</span></span>&#123;</div><div class="line">Scanner in = <span class="keyword">new</span> Scanner(System.in);</div><div class="line"><span class="keyword">int</span> year=in.nextInt();</div><div class="line"><span class="keyword">int</span> month=in.nextInt();</div><div class="line">in.close();</div><div class="line"><span class="keyword">int</span>[] a=<span class="keyword">new</span> <span class="keyword">int</span>[]&#123;<span class="number">31</span>,<span class="number">28</span>,<span class="number">31</span>,<span class="number">30</span>,<span class="number">31</span>,<span class="number">30</span>,<span class="number">31</span>,<span class="number">31</span>,<span class="number">30</span>,<span class="number">31</span>,<span class="number">30</span>,<span class="number">31</span>&#125;;</div><div class="line"><span class="keyword">if</span>(year%<span class="number">4</span>==<span class="number">0</span>&amp;&amp;year%<span class="number">100</span>!=<span class="number">0</span>||year%<span class="number">400</span>==<span class="number">0</span>)&#123;</div><div class="line">a[<span class="number">2</span>]=<span class="number">29</span>;</div><div class="line">&#125;</div><div class="line">string b[<span class="number">7</span>]=&#123;<span class="string">"日"</span>,<span class="string">"一"</span>,<span class="string">"二"</span>,<span class="string">"三"</span>,<span class="string">"四"</span>,<span class="string">"五"</span>,<span class="string">"六"</span>&#125;</div><div class="line"><span class="keyword">int</span> sum=(<span class="number">365</span>*(year-<span class="number">1900</span>))%<span class="number">7</span>;</div><div class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1900</span>;i&lt;year;i++) &#123;</div><div class="line"><span class="keyword">if</span>(year%<span class="number">4</span>==<span class="number">0</span>&amp;&amp;year%<span class="number">100</span>!=<span class="number">0</span>||year%<span class="number">400</span>==<span class="number">0</span>)&#123;</div><div class="line">    sum++;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">sum%=<span class="number">7</span>;</div><div class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;month;i++)&#123;</div><div class="line">sum+a[i-<span class="number">1</span>];</div><div class="line">&#125;</div><div class="line">sum%=<span class="number">7</span>;</div><div class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;<span class="number">7</span>;i++)&#123;</div><div class="line">System.out.print(b[i]+<span class="string">"  "</span>);</div><div class="line">&#125;</div><div class="line">System.out.println();</div><div class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;sum;i++)&#123;</div><div class="line">System.out.print(<span class="string">"   "</span>);</div><div class="line">&#125;</div><div class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;a[month-<span class="number">1</span>];i++)&#123;</div><div class="line">System.out.printf(<span class="string">"%2d "</span>,i);</div><div class="line">            <span class="keyword">if</span>((i+sum)%<span class="number">7</span>==<span class="number">6</span>)&#123;</div><div class="line">            System.out.println();</div><div class="line">            &#125;</div><div class="line">&#125;</div><div class="line">&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div
-      
-    
-    </summary>
-    
-    
-      <category term="temp" scheme="http://linraner.github.io/tags/temp/"/>
-    
-  </entry>
   
   <entry>
     <title>BFS</title>

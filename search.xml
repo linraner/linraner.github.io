@@ -1,14 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[temp]]></title>
-    <url>%2F2018%2F10%2F14%2Ftemp%2F</url>
-    <content type="text"><![CDATA[123456789101112131415161718192021222324252627282930313233343536373839import java.util.*;public class Calendar&#123; public static void main(string argc[])&#123; Scanner in = new Scanner(System.in); int year=in.nextInt(); int month=in.nextInt(); in.close(); int[] a=new int[]&#123;31,28,31,30,31,30,31,31,30,31,30,31&#125;; if(year%4==0&amp;&amp;year%100!=0||year%400==0)&#123; a[2]=29; &#125; string b[7]=&#123;"日","一","二","三","四","五","六"&#125; int sum=(365*(year-1900))%7; for (int i=1900;i&lt;year;i++) &#123; if(year%4==0&amp;&amp;year%100!=0||year%400==0)&#123; sum++; &#125; &#125; sum%=7; for(int i=1;i&lt;month;i++)&#123; sum+a[i-1]; &#125; sum%=7; for(int i=0;i&lt;7;i++)&#123; System.out.print(b[i]+" "); &#125; System.out.println(); for(int i=0;i&lt;sum;i++)&#123; System.out.print(" "); &#125; for(int i=0;i&lt;a[month-1];i++)&#123; System.out.printf("%2d ",i); if((i+sum)%7==6)&#123; System.out.println(); &#125; &#125; &#125;&#125;]]></content>
-      <tags>
-        <tag>temp</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[BFS]]></title>
     <url>%2F2018%2F04%2F01%2FBFS%2F</url>
     <content type="text"><![CDATA[入门迷宫问题（最短路径）INPUT:1234565 5SXXXX...XX.X.....XXX....G 123456786 6.......S..X.XXX.......X..X..XX.GX... OUPUT:12810 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970#include &lt;iostream&gt;#include &lt;queue&gt;using namespace std;const int INF = 100000007;const int mx = 1007;typedef pair&lt;int, int&gt; P;char maze[mx][mx];//地图int n, m;int sx, sy;//开始坐标 int gx, gy;//结束坐标 int d[mx][mx];//到各个位置的最短距离数组 int dx[4] = &#123;1,0,-1,0&#125;, dy[4] = &#123;0,1,0,-1&#125;;//移动向量 //（sx,sy)----&gt;(gx,gy)最短路径//无法到达就是 INF int bfs()&#123; queue&lt;P&gt; que; //初始化所有位置为INF for(int i=0;i&lt;n;i++)&#123; for(int j=0;j&lt;m;j++)&#123; d[i][j]=INF; &#125; &#125; //放入起点 que.push(P(sx,sy)); d[sx][sy]=0; //队列不为空一直执行 while(que.size())&#123; //取出队列前端元素 P p=que.front(); que.pop(); //取出为终点结束搜索 if(p.first==gx&amp;&amp;p.second==gy) break; //4个方向的移动 for(int i=0;i&lt;4;i++)&#123; //移动之后的位置 int nx=p.first+dx[i], ny=p.second+dy[i]; //判断是否访问过 if(0&lt;=nx&amp;&amp;nx&lt;n&amp;&amp;0&lt;=ny&amp;&amp;ny&lt;m&amp;&amp;d[nx][ny]==INF&amp;&amp;maze[nx][ny]!='X')&#123; que.push(P(nx,ny));//放入队列， 并到该位置的距离+1 d[nx][ny]=d[p.first][p.second]+1; &#125; &#125; &#125; return d[gx][gy];&#125;void solve()&#123; int ans=bfs(); cout &lt;&lt; ans;&#125;int main() &#123; cin&gt;&gt;n&gt;&gt;m; for(int i=0;i&lt;n;i++)&#123; scanf("%s",maze[i]); for(int j=0;j&lt;m;j++)&#123; if(maze[i][j]=='S')&#123; sx=i;sy=j; &#125; if(maze[i][j]=='G')&#123; gx=i;gy=j; &#125; &#125; &#125; solve(); return 0;&#125;]]></content>
