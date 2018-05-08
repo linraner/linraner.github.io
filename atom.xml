@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://linraner.github.io/"/>
-  <updated>2018-04-01T10:36:49.174Z</updated>
+  <updated>2018-05-08T10:01:18.357Z</updated>
   <id>http://linraner.github.io/</id>
   
   <author>
@@ -15,6 +15,54 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Windows10 WIFI 热点问题</title>
+    <link href="http://linraner.github.io/2018/05/08/Window-WIFI-%E7%83%AD%E7%82%B9%E9%97%AE%E9%A2%98/"/>
+    <id>http://linraner.github.io/2018/05/08/Window-WIFI-热点问题/</id>
+    <published>2018-05-08T09:51:53.000Z</published>
+    <updated>2018-05-08T10:01:18.357Z</updated>
+    
+    <content type="html"><![CDATA[<p>win10玄学bug之一</p><p>解决方案 ： </p><p>命令行输入<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="meta">$</span> netsh wlan set hostednetwork mode=allow ssid=NAME key=PASSWORD</div><div class="line"><span class="meta">$</span> netsh wlan start hostednetwork</div></pre></td></tr></table></figure></p><p>然后在网络适配器的本地连接-&gt;属性-&gt;共享-&gt;设置共享刚才设置的WIFI热点</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;win10玄学bug之一&lt;/p&gt;
+&lt;p&gt;解决方案 ： &lt;/p&gt;
+&lt;p&gt;命令行输入&lt;br&gt;&lt;figure class=&quot;highlight shell&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;
+      
+    
+    </summary>
+    
+    
+      <category term="windows10" scheme="http://linraner.github.io/tags/windows10/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Python解决字符编码问题</title>
+    <link href="http://linraner.github.io/2018/05/05/Python%E8%A7%A3%E5%86%B3%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%81%E9%97%AE%E9%A2%98/"/>
+    <id>http://linraner.github.io/2018/05/05/Python解决字符编码问题/</id>
+    <published>2018-05-05T14:33:02.000Z</published>
+    <updated>2018-05-05T14:44:03.115Z</updated>
+    
+    <content type="html"><![CDATA[<p>字符串分为unicode 和 str 两种类型</p><p>文本字符和二进制数据分别用 str 和 byte表示</p><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#系统默认编码设置为utf-8</span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">import</span> sys</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>sys.getdefultencoding</div><div class="line"><span class="string">'utf-8'</span></div><div class="line">&gt;&gt;&gt;</div></pre></td></tr></table></figure><p>str 与 bytes 之间的转换可以用 encode 和从decode<br><img src="https://foofish.net/images/python3-str2.jpg" alt=""></p><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span>s = <span class="string">"Python测试"</span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span>s = s.encode()</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>print(s)</div><div class="line"><span class="string">b'Python\xe6\xb5\x8b\xe8\xaf\x95'</span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span>s = s.decode()</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>print(s)</div><div class="line"><span class="string">'Python测试'</span></div></pre></td></tr></table></figure><hr><p>参考 ： <a href="https://foofish.net/how-python3-handle-charset-encoding.html" target="_blank" rel="noopener">https://foofish.net/how-python3-handle-charset-encoding.html</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;字符串分为unicode 和 str 两种类型&lt;/p&gt;
+&lt;p&gt;文本字符和二进制数据分别用 str 和 byte表示&lt;/p&gt;
+&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div cl
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>BFS</title>
