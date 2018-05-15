@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Ubuntu错误-Could not get lock /var/lib/dpkg/lock]]></title>
+    <url>%2F2018%2F05%2F15%2FUbuntu%E9%94%99%E8%AF%AF-Could-not-get-lock-var-lib-dpkg-lock%2F</url>
+    <content type="text"><![CDATA[报错信息12E: Could not get lock /var/lib/dpkg/lock - open (11: Resource temporarily unavailable) E: Unable to lock the administration directory (/var/lib/dpkg/), is another process using it? 解决办法查看运行的线程123ps -A | grep apt-get# sudo kill processnumber# 关闭apt进程 我的没有发现进程， 可能是上次运行安装或更新时没有正常完成造成的 终端输入12sudo rm /var/cache/apt/archives/locksudo rm /var/lib/dpkg/lock]]></content>
+  </entry>
+  <entry>
     <title><![CDATA[c++ std::ios_base::sync_with_stdio 加速输入输出]]></title>
     <url>%2F2018%2F05%2F14%2Fc-std-ios-base-sync-with-stdio-%E5%8A%A0%E9%80%9F%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%2F</url>
     <content type="text"><![CDATA[static bool sync_with_stdio( bool sync = true );设置标准 C++ 流是否与标准 C 流在每次输入/输出操作后同步。 遇到cin TLE时可以用于取消cin同步, 取消之后不能和 scanf，sscanf, getchar, fgets 之类同用。 123456789#include &lt;iostream&gt;#include &lt;cstdio&gt; int main() &#123; std::ios::sync_with_stdio(false); std::cout &lt;&lt; "a\n"; std::printf("b\n"); std::cout &lt;&lt; "c\n";&#125; 默认的情况下cin绑定的是cout，每次执行 &lt;&lt; 操作符的时候都要调用flush，这样会增加IO负担。 12std::ios::sync_with_stdio(false);std::cin.tie(0); 参考一 ： http://zh.cppreference.com/w/cpp/io/ios_base/sync_with_stdio 参考二 ：http://www.hankcs.com/program/cpp/cin-tie-with-sync_with_stdio-acceleration-input-and-output.html]]></content>

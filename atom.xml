@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://linraner.github.io/"/>
-  <updated>2018-05-14T07:06:36.876Z</updated>
+  <updated>2018-05-15T09:50:28.074Z</updated>
   <id>http://linraner.github.io/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Ubuntu错误-Could not get lock /var/lib/dpkg/lock</title>
+    <link href="http://linraner.github.io/2018/05/15/Ubuntu%E9%94%99%E8%AF%AF-Could-not-get-lock-var-lib-dpkg-lock/"/>
+    <id>http://linraner.github.io/2018/05/15/Ubuntu错误-Could-not-get-lock-var-lib-dpkg-lock/</id>
+    <published>2018-05-15T09:45:02.000Z</published>
+    <updated>2018-05-15T09:50:28.074Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="报错信息"><a href="#报错信息" class="headerlink" title="报错信息"></a>报错信息</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">E: Could not get lock /var/lib/dpkg/lock - open (11: Resource temporarily unavailable) </div><div class="line">E: Unable to lock the administration directory (/var/lib/dpkg/), is another process using it?</div></pre></td></tr></table></figure><h3 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h3><h4 id="查看运行的线程"><a href="#查看运行的线程" class="headerlink" title="查看运行的线程"></a>查看运行的线程</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">ps -A | grep apt-get</div><div class="line"><span class="meta">#</span> sudo kill processnumber</div><div class="line"><span class="meta">#</span> 关闭apt进程</div></pre></td></tr></table></figure><p>我的没有发现进程， 可能是上次运行安装或更新时没有正常完成造成的</p><h4 id="终端输入"><a href="#终端输入" class="headerlink" title="终端输入"></a>终端输入</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">sudo rm /var/cache/apt/archives/lock</div><div class="line">sudo rm /var/lib/dpkg/lock</div></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;报错信息&quot;&gt;&lt;a href=&quot;#报错信息&quot; class=&quot;headerlink&quot; title=&quot;报错信息&quot;&gt;&lt;/a&gt;报错信息&lt;/h3&gt;&lt;figure class=&quot;highlight shell&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pr
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>c++ std::ios_base::sync_with_stdio 加速输入输出</title>
@@ -455,31 +476,6 @@
     
     
       <category term="工具" scheme="http://linraner.github.io/tags/%E5%B7%A5%E5%85%B7/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>github+hexo搭建博客</title>
-    <link href="http://linraner.github.io/2017/10/13/github-hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/"/>
-    <id>http://linraner.github.io/2017/10/13/github-hexo搭建博客/</id>
-    <published>2017-10-13T11:36:16.000Z</published>
-    <updated>2017-10-31T11:22:30.545Z</updated>
-    
-    <content type="html"><![CDATA[<p>Hexo是一款基于Node.js的静态博客框架，依赖少易于安装使用，可以方便的生成静态网页。</p><h3 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h3><ul><li><strong>Node.js：</strong><a href="http://nodejs.cn/download/" target="_blank" rel="noopener">点击</a></li><li><strong>Github账号：</strong><a href="https://github.com" target="_blank" rel="noopener">点击注册</a></li><li><strong>Git：</strong><a href="https://git-scm.com/downloads" target="_blank" rel="noopener">点击</a></li><li><strong>Windows</strong><h3 id="Node-js"><a href="#Node-js" class="headerlink" title="Node.js"></a>Node.js</h3>在命令行输入:<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ node -v</div><div class="line">$ npm -v</div></pre></td></tr></table></figure></li></ul><p><br>显示版本信息即可进行下一步</p><h3 id="Git配置"><a href="#Git配置" class="headerlink" title="Git配置"></a>Git配置</h3><p><a href="https://git-scm.com/doc" target="_blank" rel="noopener">文档</a></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;Hexo是一款基于Node.js的静态博客框架，依赖少易于安装使用，可以方便的生成静态网页。&lt;/p&gt;
-&lt;h3 id=&quot;准备&quot;&gt;&lt;a href=&quot;#准备&quot; class=&quot;headerlink&quot; title=&quot;准备&quot;&gt;&lt;/a&gt;准备&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;No
-      
-    
-    </summary>
-    
-    
-      <category term="blog" scheme="http://linraner.github.io/tags/blog/"/>
     
   </entry>
   
