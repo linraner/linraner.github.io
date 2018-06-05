@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[nothing added to commit but untracked files present解决方法]]></title>
+    <url>%2F2018%2F05%2F30%2Fnothing-added-to-commit-but-untracked-files-present%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95%2F</url>
+    <content type="text"><![CDATA[问题描述123456789101112$ git commit On branch master Initial commit Untracked files: .gitignore Test/ blogpost/ manage.py nothing added to commit but untracked files present 文件被追踪，但是没有被添加git中 解决git status 列出当前目录所有还没有被git管理的文件和被git管理且被修改但还未提交(git commit)的文件 1234$ git add manage.py$ git add blogpost\$ git add Test\$ git add .gitignore]]></content>
+      <tags>
+        <tag>git skill</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[c++枚举next_premutation]]></title>
+    <url>%2F2018%2F05%2F28%2Fc%2B%2B%E6%9E%9A%E4%B8%BEnext_premutation%2F</url>
+    <content type="text"><![CDATA[平均复杂度即为O(n)123next_permutation() 会改变区间[begin,end)内的元素次序，使它们符合“下一个排列次序”；prev_permutation() 会改变区间[begin,end)内的元素次序，使它们符合“上一个排列次序”； 1234567891011121314151617181920212223242526272829#include &lt;iostream&gt;#include &lt;algorithm&gt;#include &lt;vector&gt;using namespace std;void f(vector&lt;int&gt; v)&#123; for(int i=0;i&lt;v.size();i++)&#123; cout&lt;&lt;v[i]&lt;&lt;" "; &#125; cout&lt;&lt;endl;&#125;int main() &#123; vector&lt;int&gt; v; v.push_back(1); v.push_back(3); v.push_back(2); cout&lt;&lt;"原排列 ： "; f(v); for(int i=0;i&lt;10;i++)&#123; next_permutation(v.begin(),v.end());//升序序列 或者下一个排列次序 按照字典序生成下一个序列 f(v); &#125; //for(int i=0;i&lt;5;i++)&#123; // prev_permutation(v.begin(),v.end());//降序 // f(v); //&#125; return 0;&#125;]]></content>
+  </entry>
+  <entry>
     <title><![CDATA[Ubuntu错误-Could not get lock /var/lib/dpkg/lock]]></title>
     <url>%2F2018%2F05%2F15%2FUbuntu%E9%94%99%E8%AF%AF-Could-not-get-lock-var-lib-dpkg-lock%2F</url>
     <content type="text"><![CDATA[报错信息12E: Could not get lock /var/lib/dpkg/lock - open (11: Resource temporarily unavailable) E: Unable to lock the administration directory (/var/lib/dpkg/), is another process using it? 解决办法查看运行的线程123ps -A | grep apt-get# sudo kill processnumber# 关闭apt进程 我的没有发现进程， 可能是上次运行安装或更新时没有正常完成造成的 终端输入12sudo rm /var/cache/apt/archives/locksudo rm /var/lib/dpkg/lock]]></content>

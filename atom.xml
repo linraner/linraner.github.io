@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://linraner.github.io/"/>
-  <updated>2018-05-15T09:50:28.074Z</updated>
+  <updated>2018-05-30T09:11:30.647Z</updated>
   <id>http://linraner.github.io/</id>
   
   <author>
@@ -15,6 +15,50 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>nothing added to commit but untracked files present解决方法</title>
+    <link href="http://linraner.github.io/2018/05/30/nothing-added-to-commit-but-untracked-files-present%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/"/>
+    <id>http://linraner.github.io/2018/05/30/nothing-added-to-commit-but-untracked-files-present解决方法/</id>
+    <published>2018-05-30T09:05:53.000Z</published>
+    <updated>2018-05-30T09:11:30.647Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="meta">$</span> git commit                                                         </div><div class="line">On branch master                                                     </div><div class="line">                                                                     </div><div class="line">Initial commit                                                       </div><div class="line">                                                                     </div><div class="line">Untracked files:                                                     </div><div class="line">        .gitignore                                                   </div><div class="line">        Test/                                                        </div><div class="line">        blogpost/                                                    </div><div class="line">        manage.py                                                    </div><div class="line">                                                                     </div><div class="line">nothing added to commit but untracked files present</div></pre></td></tr></table></figure><p><strong>文件被追踪，但是没有被添加git中</strong></p><h2 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h2><p><strong>git status 列出当前目录所有还没有被git管理的文件和被git管理且被修改但还未提交(git commit)的文件</strong></p><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="meta">$</span> git add manage.py</div><div class="line"><span class="meta">$</span> git add blogpost\</div><div class="line"><span class="meta">$</span> git add Test\</div><div class="line"><span class="meta">$</span> git add .gitignore</div></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;问题描述&quot;&gt;&lt;a href=&quot;#问题描述&quot; class=&quot;headerlink&quot; title=&quot;问题描述&quot;&gt;&lt;/a&gt;问题描述&lt;/h2&gt;&lt;figure class=&quot;highlight shell&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pr
+      
+    
+    </summary>
+    
+    
+      <category term="git skill" scheme="http://linraner.github.io/tags/git-skill/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>c++枚举next_premutation</title>
+    <link href="http://linraner.github.io/2018/05/28/c++%E6%9E%9A%E4%B8%BEnext_premutation/"/>
+    <id>http://linraner.github.io/2018/05/28/c++枚举next_premutation/</id>
+    <published>2018-05-28T02:39:53.000Z</published>
+    <updated>2018-05-28T02:40:55.030Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="平均复杂度即为O-n"><a href="#平均复杂度即为O-n" class="headerlink" title="平均复杂度即为O(n)"></a>平均复杂度即为O(n)</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">next_permutation()    会改变区间[begin,end)内的元素次序，使它们符合“下一个排列次序”；</div><div class="line"></div><div class="line">prev_permutation()    会改变区间[begin,end)内的元素次序，使它们符合“上一个排列次序”；</div></pre></td></tr></table></figure><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">f</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; v)</span></span>&#123;</div><div class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;v.size();i++)&#123;</div><div class="line"><span class="built_in">cout</span>&lt;&lt;v[i]&lt;&lt;<span class="string">" "</span>;</div><div class="line">&#125;</div><div class="line"><span class="built_in">cout</span>&lt;&lt;<span class="built_in">endl</span>;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</div><div class="line"></div><div class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; v;</div><div class="line">v.push_back(<span class="number">1</span>);</div><div class="line">v.push_back(<span class="number">3</span>);</div><div class="line">v.push_back(<span class="number">2</span>);</div><div class="line"><span class="built_in">cout</span>&lt;&lt;<span class="string">"原排列 ： "</span>;</div><div class="line">f(v); </div><div class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;<span class="number">10</span>;i++)&#123;</div><div class="line">next_permutation(v.begin(),v.end());<span class="comment">//升序序列  或者下一个排列次序 按照字典序生成下一个序列 </span></div><div class="line">f(v);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">//for(int i=0;i&lt;5;i++)&#123;</span></div><div class="line"><span class="comment">//prev_permutation(v.begin(),v.end());//降序 </span></div><div class="line"><span class="comment">//f(v);</span></div><div class="line"><span class="comment">//&#125; </span></div><div class="line"><span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;平均复杂度即为O-n&quot;&gt;&lt;a href=&quot;#平均复杂度即为O-n&quot; class=&quot;headerlink&quot; title=&quot;平均复杂度即为O(n)&quot;&gt;&lt;/a&gt;平均复杂度即为O(n)&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>Ubuntu错误-Could not get lock /var/lib/dpkg/lock</title>
@@ -422,54 +466,6 @@
       
       
         &lt;h2 id=&quot;现在最优雅的方式-：-SSR&quot;&gt;&lt;a href=&quot;#现在最优雅的方式-：-SSR&quot; class=&quot;headerlink&quot; title=&quot; 现在最优雅的方式 ： SSR &quot;&gt;&lt;/a&gt;&lt;strong&gt; 现在最优雅的方式 ： SSR &lt;/strong&gt;&lt;/h2&gt;&lt;h2 
-      
-    
-    </summary>
-    
-    
-      <category term="工具" scheme="http://linraner.github.io/tags/%E5%B7%A5%E5%85%B7/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Jupyter NoteBook常用快捷键</title>
-    <link href="http://linraner.github.io/2017/10/21/Jupyter-NoteBook%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE/"/>
-    <id>http://linraner.github.io/2017/10/21/Jupyter-NoteBook常用快捷键/</id>
-    <published>2017-10-21T07:39:41.000Z</published>
-    <updated>2017-10-31T11:53:38.580Z</updated>
-    
-    <content type="html"><![CDATA[<p>Jupyter Notebook 有两种键盘输入模式，命令模式和编辑模式。与Vim类似。</p><p>命令模式按<strong>Esc</strong>进入，编辑模式按<strong>Enter</strong>进入</p><h4 id="命令模式快捷键"><a href="#命令模式快捷键" class="headerlink" title="命令模式快捷键"></a>命令模式快捷键</h4><table><thead><tr><th>快捷键</th><th>作用</th></tr></thead><tbody><tr><td>Shift+Enter</td><td>运行本单元，选中下一个单元</td></tr><tr><td>Ctrl+Enter</td><td>运行本单元</td></tr><tr><td>Alt+Enter</td><td>运行本单元在下插入新单元</td></tr><tr><td>Y</td><td>单元转入代码状态</td></tr><tr><td>M</td><td>单元转入markdown状态</td></tr><tr><td>R</td><td>单元转入raw状态</td></tr><tr><td>Up&amp;K/Down&amp;J</td><td>选中上方/下方单元</td></tr><tr><td>Shift+K/J</td><td>连续选择上方/下方单元</td></tr><tr><td>A/B</td><td>在上方/下方插入新单元</td></tr><tr><td>x/C</td><td>剪切/复制选中单元</td></tr><tr><td>Shift+V/V</td><td>粘贴到上方/下方单元</td></tr><tr><td>Z</td><td>恢复删除的最后一个单元</td></tr><tr><td>DD</td><td>删除选中的单元</td></tr><tr><td>Shift+M</td><td>合并选中的单元</td></tr><tr><td>Ctrl+S/S</td><td>保存当前文件</td></tr><tr><td>L</td><td>开关行号</td></tr><tr><td>O</td><td>转换输出</td></tr><tr><td>Shift+O</td><td>转换输出滚动</td></tr><tr><td>Esc/Q</td><td>关闭页面</td></tr><tr><td>H</td><td>显示快捷帮助</td></tr><tr><td>II/00</td><td>中断/重启NOteBook内核</td></tr><tr><td>Shift+Space/Space</td><td>向上/下滚动</td></tr></tbody></table><h4 id="编辑模式快捷键"><a href="#编辑模式快捷键" class="headerlink" title="编辑模式快捷键"></a>编辑模式快捷键</h4><table><thead><tr><th>快捷键</th><th>作用</th></tr></thead><tbody><tr><td>Tab</td><td>代码补全或者缩进</td></tr><tr><td>Shift+Tab</td><td>提示</td></tr><tr><td>Ctrl+]</td><td>向右缩进</td></tr><tr><td>Ctrl+[</td><td>向左缩进</td></tr><tr><td>Ctrl+Shift+Z/Ctrl+Y</td><td>重做</td></tr><tr><td>Ctrl+up/down</td><td>跳到单元开头/末尾</td></tr><tr><td>Ctrl+Left/Right</td><td>跳到左边/右边一个字首</td></tr><tr><td>Ctrl+BackSpace/Delete</td><td>删除前面一个字</td></tr><tr><td>Shift+Enter</td><td>运行本单元，选中下一个单元</td></tr><tr><td>Ctrl+M</td><td>切换到命令模式</td></tr><tr><td>Ctrl+Enter</td><td>运行本单元</td></tr><tr><td>Alt+Enter</td><td>运行本单元在下插入新单元</td></tr><tr><td>Ctrl+/</td><td>注释整行或者取消注释</td></tr></tbody></table>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;Jupyter Notebook 有两种键盘输入模式，命令模式和编辑模式。与Vim类似。&lt;/p&gt;
-&lt;p&gt;命令模式按&lt;strong&gt;Esc&lt;/strong&gt;进入，编辑模式按&lt;strong&gt;Enter&lt;/strong&gt;进入&lt;/p&gt;
-&lt;h4 id=&quot;命令模式快捷键&quot;&gt;&lt;a hre
-      
-    
-    </summary>
-    
-    
-      <category term="skill" scheme="http://linraner.github.io/tags/skill/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Windows上好用的软件</title>
-    <link href="http://linraner.github.io/2017/10/14/Windows%E4%B8%8A%E5%A5%BD%E7%94%A8%E7%9A%84%E8%BD%AF%E4%BB%B6/"/>
-    <id>http://linraner.github.io/2017/10/14/Windows上好用的软件/</id>
-    <published>2017-10-14T15:15:47.000Z</published>
-    <updated>2018-04-17T11:38:06.716Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="Wox"><a href="#Wox" class="headerlink" title="Wox"></a>Wox</h2><p><strong><a href="https://github.com/Wox-launcher/Wox" target="_blank" rel="noopener">Wox</a>：</strong>是开源免费强大的快捷启动器辅助工具，快速高效率打开软件,搜索文件<br>打开输入框：alt + space</p><ul><li>同类软件也有:   <strong> <a href="http://www.listary.com/" target="_blank" rel="noopener">Listary</a></strong>  ,  <strong><a href="http://www.irolan.com/" target="_blank" rel="noopener">Rolan</a></strong></li></ul><h2 id="包管理工具"><a href="#包管理工具" class="headerlink" title="包管理工具"></a>包管理工具</h2><p><strong><a href="https://chocolatey.org/" target="_blank" rel="noopener">Chocolatey</a>：</strong>如果你认为没有包管理的操作系统是反人类的就用这个吧，Chocolatey 这套包管理系统目前已经包含了近 500 多款常用软件，常用的有Sublime text,git,Google Chrome······</p><h2 id="命令行工具"><a href="#命令行工具" class="headerlink" title="命令行工具"></a>命令行工具</h2><p><strong><a href="https://mobaxterm.mobatek.net/" target="_blank" rel="noopener">MobaXterm</a></strong>, 功能强大<br><strong><a href="http://cmder.net/" target="_blank" rel="noopener">cmder</a>：</strong>  不多说，windows命令行神器，支持tab补全，支持了大部分的Linux命令······</p><h2 id="文本编辑器"><a href="#文本编辑器" class="headerlink" title="文本编辑器"></a>文本编辑器</h2><p><strong><a href="https://www.sublimetext.com/" target="_blank" rel="noopener">Sublime text3</a>：</strong>基于 Python 语言的外挂 API,跨平台（Windows、Linux 和 Mac OS X）,兼容 TextMate 的语言标记语法。<br>关于软件的配置方面见：<strong><a href="https://jeffjade.com/2015/12/15/2015-04-17-toss-sublime-text/" target="_blank" rel="noopener">这里</a></strong><br><strong>sublime text 3 3143 license</strong></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">—– BEGIN LICENSE —–</div><div class="line">TwitterInc</div><div class="line">200 User License</div><div class="line">EA7E-890007</div><div class="line">1D77F72E 390CDD93 4DCBA022 FAF60790</div><div class="line">61AA12C0 A37081C5 D0316412 4584D136</div><div class="line">94D7F7D4 95BC8C1C 527DA828 560BB037</div><div class="line">D1EDDD8C AE7B379F 50C9D69D B35179EF</div><div class="line">2FE898C4 8E4277A8 555CE714 E1FB0E43</div><div class="line">D5D52613 C3D12E98 BC49967F 7652EED2</div><div class="line">9D2D2E61 67610860 6D338B72 5CF95C69</div><div class="line">E36B85CC 84991F19 7575D828 470A92AB</div><div class="line">—— END LICENSE ——</div></pre></td></tr></table></figure><h4 id="同类也有："><a href="#同类也有：" class="headerlink" title="同类也有："></a>同类也有：</h4><ul><li><strong><a href="https://code.visualstudio.com/" target="_blank" rel="noopener">VS Code</a>：</strong>毕竟宇宙级的</li><li><strong><a href="https://atom.io/" target="_blank" rel="noopener">Atom</a>：</strong>Atom是由GitHub开发的自由及开放源代码的文字与代码编辑器，支持OS X、Windows和Linux操作系统，支持Node.js所写的插件，并内置Git版本控制系统。(维基百科)，插件需要科学上网</li><li><strong><a href="https://notepad-plus-plus.org/" target="_blank" rel="noopener">Notepad++</a>：</strong>Notepad++，由台湾人侯今吾基于同是开放源代码的Scintilla文本编辑组件并独力研发，整个项目托管于SourceForge.net之上，并两度获得SourceForge社区选择奖——最佳开发工具。（维基百科）</li><li>由于sublime现在有些功能没有， 我现在使用的是VScode</li></ul><h2 id="IDE"><a href="#IDE" class="headerlink" title="IDE"></a>IDE</h2><p>没什么说的，大多数网上都能下载，<strong><a href="https://account.jetbrains.com" target="_blank" rel="noopener">JetBrains</a></strong>家的东西都不错，由于对学生免费，即用教育网邮箱注册，就能获得大学在校的使用时间，分享一个用于接收EDU邮箱的网站：<strong><a href="http://mail.anime.edu.gr:3000/" target="_blank" rel="noopener">点击这里</a></strong></p><p>待续—–</p><ul><li><strong>注：</strong>0x13哒的缘故，上面网址有的需要突破GFW的封锁，科学上网详见：<a href="https://linraner.github.io/2017/10/22/%E9%80%9A%E5%90%91%E5%A4%96%E7%BD%91%E7%9A%84%E6%A2%AF%E5%AD%90/">这里</a></li></ul>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;Wox&quot;&gt;&lt;a href=&quot;#Wox&quot; class=&quot;headerlink&quot; title=&quot;Wox&quot;&gt;&lt;/a&gt;Wox&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;&lt;a href=&quot;https://github.com/Wox-launcher/Wox&quot; target=&quot;_bla
       
     
     </summary>
