@@ -70,7 +70,7 @@
 
 
 
-  <meta name="keywords" content="hexo acm 算法" />
+  <meta name="keywords" content="skill,python," />
 
 
 
@@ -84,6 +84,7 @@
 
 
 <meta name="description" content="字符串分为unicode 和 str 两种类型 文本字符和二进制数据分别用 str 和 byte表示 12345#系统默认编码设置为utf-8&amp;gt;&amp;gt;&amp;gt; import sys&amp;gt;&amp;gt;&amp;gt; sys.getdefultencoding&apos;utf-8&apos;&amp;gt;&amp;gt;&amp;gt; str 与 bytes 之间的转换可以用 encode 和从decode 1234567&amp;gt;&amp;gt;">
+<meta name="keywords" content="skill,python">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Python解决字符编码问题">
 <meta property="og:url" content="http://linraner.github.io/2018/05/05/Python解决字符编码问题/index.html">
@@ -91,7 +92,7 @@
 <meta property="og:description" content="字符串分为unicode 和 str 两种类型 文本字符和二进制数据分别用 str 和 byte表示 12345#系统默认编码设置为utf-8&amp;gt;&amp;gt;&amp;gt; import sys&amp;gt;&amp;gt;&amp;gt; sys.getdefultencoding&apos;utf-8&apos;&amp;gt;&amp;gt;&amp;gt; str 与 bytes 之间的转换可以用 encode 和从decode 1234567&amp;gt;&amp;gt;">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="https://foofish.net/images/python3-str2.jpg">
-<meta property="og:updated_time" content="2018-05-05T14:44:03.115Z">
+<meta property="og:updated_time" content="2018-06-15T07:15:22.587Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python解决字符编码问题">
 <meta name="twitter:description" content="字符串分为unicode 和 str 两种类型 文本字符和二进制数据分别用 str 和 byte表示 12345#系统默认编码设置为utf-8&amp;gt;&amp;gt;&amp;gt; import sys&amp;gt;&amp;gt;&amp;gt; sys.getdefultencoding&apos;utf-8&apos;&amp;gt;&amp;gt;&amp;gt; str 与 bytes 之间的转换可以用 encode 和从decode 1234567&amp;gt;&amp;gt;">
@@ -374,6 +375,7 @@
 <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#系统默认编码设置为utf-8</span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">import</span> sys</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>sys.getdefultencoding</div><div class="line"><span class="string">'utf-8'</span></div><div class="line">&gt;&gt;&gt;</div></pre></td></tr></table></figure>
 <p>str 与 bytes 之间的转换可以用 encode 和从decode<br><img src="https://foofish.net/images/python3-str2.jpg" alt=""></p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span>s = <span class="string">"Python测试"</span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span>s = s.encode()</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>print(s)</div><div class="line"><span class="string">b'Python\xe6\xb5\x8b\xe8\xaf\x95'</span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span>s = s.decode()</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>print(s)</div><div class="line"><span class="string">'Python测试'</span></div></pre></td></tr></table></figure>
+<h2 id="base64"><a href="#base64" class="headerlink" title="base64"></a>base64</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">import</span> base64</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>s = <span class="string">"asdasd"</span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span>s = base64.b64encode(s)</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>print(s)</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>s = base64.b64decode(s)</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>print(s)</div></pre></td></tr></table></figure>
 <hr>
 <p>参考 ： <a href="https://foofish.net/how-python3-handle-charset-encoding.html" target="_blank" rel="noopener">https://foofish.net/how-python3-handle-charset-encoding.html</a></p>
 
@@ -390,6 +392,14 @@
     
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/skill/" rel="tag"># skill</a>
+          
+            <a href="/tags/python/" rel="tag"># python</a>
+          
+        </div>
       
 
       
@@ -464,8 +474,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -484,7 +503,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">23</span>
+                  <span class="site-state-item-count">24</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -497,7 +516,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">16</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -549,6 +568,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#base64"><span class="nav-number">1.</span> <span class="nav-text">base64</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
