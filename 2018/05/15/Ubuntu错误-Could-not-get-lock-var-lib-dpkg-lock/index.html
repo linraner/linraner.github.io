@@ -83,18 +83,18 @@
 
 
 
-<meta name="description" content="报错信息12E: Could not get lock /var/lib/dpkg/lock - open (11: Resource temporarily unavailable) E: Unable to lock the administration directory (/var/lib/dpkg/), is another process using it? 解决办法查看运行的线程12">
+<meta name="description" content="报错信息12E: Could not get lock /var/lib/dpkg/lock - open (11: Resource temporarily unavailable) E: Unable to lock the administration directory (/var/lib/dpkg/), is another process using it? 解决办法">
 <meta name="keywords" content="skill,ubuntu">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Ubuntu错误-Could not get lock &#x2F;var&#x2F;lib&#x2F;dpkg&#x2F;lock">
 <meta property="og:url" content="http://linraner.github.io/2018/05/15/Ubuntu错误-Could-not-get-lock-var-lib-dpkg-lock/index.html">
 <meta property="og:site_name" content="Frank">
-<meta property="og:description" content="报错信息12E: Could not get lock /var/lib/dpkg/lock - open (11: Resource temporarily unavailable) E: Unable to lock the administration directory (/var/lib/dpkg/), is another process using it? 解决办法查看运行的线程12">
+<meta property="og:description" content="报错信息12E: Could not get lock /var/lib/dpkg/lock - open (11: Resource temporarily unavailable) E: Unable to lock the administration directory (/var/lib/dpkg/), is another process using it? 解决办法">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-06-15T07:15:46.295Z">
+<meta property="og:updated_time" content="2018-07-01T16:54:32.589Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Ubuntu错误-Could not get lock &#x2F;var&#x2F;lib&#x2F;dpkg&#x2F;lock">
-<meta name="twitter:description" content="报错信息12E: Could not get lock /var/lib/dpkg/lock - open (11: Resource temporarily unavailable) E: Unable to lock the administration directory (/var/lib/dpkg/), is another process using it? 解决办法查看运行的线程12">
+<meta name="twitter:description" content="报错信息12E: Could not get lock /var/lib/dpkg/lock - open (11: Resource temporarily unavailable) E: Unable to lock the administration directory (/var/lib/dpkg/), is another process using it? 解决办法">
 
 
 
@@ -346,8 +346,8 @@
               
                 <span class="post-meta-item-text">Post modified&#58;</span>
               
-              <time title="Post modified" itemprop="dateModified" datetime="2018-06-15T15:15:46+08:00">
-                2018-06-15
+              <time title="Post modified" itemprop="dateModified" datetime="2018-07-02T00:54:32+08:00">
+                2018-07-02
               </time>
             
           </span>
@@ -400,7 +400,8 @@
 
       
         <h3 id="报错信息"><a href="#报错信息" class="headerlink" title="报错信息"></a>报错信息</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">E: Could not get lock /var/lib/dpkg/lock - open (11: Resource temporarily unavailable) </div><div class="line">E: Unable to lock the administration directory (/var/lib/dpkg/), is another process using it?</div></pre></td></tr></table></figure>
-<h3 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h3><h4 id="查看运行的线程"><a href="#查看运行的线程" class="headerlink" title="查看运行的线程"></a>查看运行的线程</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">ps -A | grep apt-get</div><div class="line"><span class="meta">#</span> sudo kill processnumber</div><div class="line"><span class="meta">#</span> 关闭apt进程</div></pre></td></tr></table></figure>
+<h3 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h3><a id="more"></a>
+<h4 id="查看运行的线程"><a href="#查看运行的线程" class="headerlink" title="查看运行的线程"></a>查看运行的线程</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">ps -A | grep apt-get</div><div class="line"><span class="meta">#</span> sudo kill processnumber</div><div class="line"><span class="meta">#</span> 关闭apt进程</div></pre></td></tr></table></figure>
 <p>我的没有发现进程， 可能是上次运行安装或更新时没有正常完成造成的</p>
 <h4 id="终端输入"><a href="#终端输入" class="headerlink" title="终端输入"></a>终端输入</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">sudo rm /var/cache/apt/archives/lock</div><div class="line">sudo rm /var/lib/dpkg/lock</div></pre></td></tr></table></figure>
       

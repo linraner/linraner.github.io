@@ -83,19 +83,19 @@
 
 
 
-<meta name="description" content="快速幂 通常算法：123456789int Pow(int A, int n)&amp;#123;    if(n == 0)         return 1;    int rslt(1);    for(int i(0); i &amp;lt; n; ++i)        rslt *= A;    return rslt;&amp;#125; 其复杂度是O(n)的。一般来说，这样的复杂度并不会使我们困惑，但是一">
+<meta name="description" content="快速幂 通常算法：123456789int Pow(int A, int n)&amp;#123;    if(n == 0)         return 1;    int rslt(1);    for(int i(0); i &amp;lt; n; ++i)        rslt *= A;    return rslt;&amp;#125;">
 <meta name="keywords" content="acm,数论">
 <meta property="og:type" content="article">
 <meta property="og:title" content="快速幂">
 <meta property="og:url" content="http://linraner.github.io/2017/10/31/快速幂/index.html">
 <meta property="og:site_name" content="Frank">
-<meta property="og:description" content="快速幂 通常算法：123456789int Pow(int A, int n)&amp;#123;    if(n == 0)         return 1;    int rslt(1);    for(int i(0); i &amp;lt; n; ++i)        rslt *= A;    return rslt;&amp;#125; 其复杂度是O(n)的。一般来说，这样的复杂度并不会使我们困惑，但是一">
+<meta property="og:description" content="快速幂 通常算法：123456789int Pow(int A, int n)&amp;#123;    if(n == 0)         return 1;    int rslt(1);    for(int i(0); i &amp;lt; n; ++i)        rslt *= A;    return rslt;&amp;#125;">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http://oxqn1kqf7.bkt.clouddn.com/17-10-31/1725298.jpg">
-<meta property="og:updated_time" content="2018-06-15T07:12:25.908Z">
+<meta property="og:updated_time" content="2018-07-01T17:00:52.480Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="快速幂">
-<meta name="twitter:description" content="快速幂 通常算法：123456789int Pow(int A, int n)&amp;#123;    if(n == 0)         return 1;    int rslt(1);    for(int i(0); i &amp;lt; n; ++i)        rslt *= A;    return rslt;&amp;#125; 其复杂度是O(n)的。一般来说，这样的复杂度并不会使我们困惑，但是一">
+<meta name="twitter:description" content="快速幂 通常算法：123456789int Pow(int A, int n)&amp;#123;    if(n == 0)         return 1;    int rslt(1);    for(int i(0); i &amp;lt; n; ++i)        rslt *= A;    return rslt;&amp;#125;">
 <meta name="twitter:image" content="http://oxqn1kqf7.bkt.clouddn.com/17-10-31/1725298.jpg">
 
 
@@ -348,8 +348,8 @@
               
                 <span class="post-meta-item-text">Post modified&#58;</span>
               
-              <time title="Post modified" itemprop="dateModified" datetime="2018-06-15T15:12:25+08:00">
-                2018-06-15
+              <time title="Post modified" itemprop="dateModified" datetime="2018-07-02T01:00:52+08:00">
+                2018-07-02
               </time>
             
           </span>
@@ -403,6 +403,7 @@
       
         <h3 id="快速幂"><a href="#快速幂" class="headerlink" title="快速幂"></a>快速幂</h3><p><img src="http://oxqn1kqf7.bkt.clouddn.com/17-10-31/1725298.jpg" alt=""></p>
 <p>通常算法：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">int Pow(int A, int n)</div><div class="line">&#123;</div><div class="line">    if(n == 0) </div><div class="line">        return 1;</div><div class="line">    int rslt(1);</div><div class="line">    for(int i(0); i &lt; n; ++i)</div><div class="line">        rslt *= A;</div><div class="line">    return rslt;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<a id="more"></a>
 <p>其复杂度是O(n)的。一般来说，这样的复杂度并不会使我们困惑，但是一般应用幂运算的地方，指数都会非常非常的大，比如1 000 000 000这个级别的，这时候我们会遇到两个问题，第一个就是我们不能再用int来存储整数，必须用高精度整数类型来进行存储，另一个就是在指数是如此变态的数量级之下，我们的计算量会骤然上升，结果也会异常惊人的大。简单来说就是二分法。<br>举个栗子：<br>一般解法：<br><code>A^8 = A * A * A * A * A * A * A * A</code><br>总共需要7次乘法运算</p>
 <p>平均分解：<br><code>A^8 = (A * A * A * A) * (A * A * A * A) = (A * A * A * A) ^ 2</code><br>这样我们就只需要4次乘法运算</p>
 <p>再分解：<br><code>A^6 = [(A * A) * (A * A)] ^ 2 = [(A * A) ^ 2] ^ 2</code><br>这样就将乘法运算的次数减少为了3次</p>

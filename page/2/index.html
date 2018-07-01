@@ -347,8 +347,8 @@
               
                 <span class="post-meta-item-text">Post modified&#58;</span>
               
-              <time title="Post modified" itemprop="dateModified" datetime="2018-06-15T15:14:15+08:00">
-                2018-06-15
+              <time title="Post modified" itemprop="dateModified" datetime="2018-07-02T00:57:22+08:00">
+                2018-07-02
               </time>
             
           </span>
@@ -375,7 +375,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  152
+                  154
                 </span>
               
 
@@ -401,11 +401,16 @@
 
       
         
-          
-            <h2 id="入门"><a href="#入门" class="headerlink" title="入门"></a>入门</h2><h3 id="求连通块"><a href="#求连通块" class="headerlink" title="求连通块"></a>求连通块</h3><h3 id="INPUT"><a href="#INPUT" class="headerlink" title="INPUT :"></a>INPUT :</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">1 1</div><div class="line">*</div><div class="line">3 5</div><div class="line">*@*@*</div><div class="line">**@**</div><div class="line">*@*@*</div><div class="line">1 8</div><div class="line">@@****@*</div><div class="line">5 5 </div><div class="line">****@</div><div class="line">*@@*@</div><div class="line">*@**@</div><div class="line">@@@*@</div><div class="line">@@**@</div><div class="line">0 0</div></pre></td></tr></table></figure>
+          <h2 id="入门"><a href="#入门" class="headerlink" title="入门"></a>入门</h2><h3 id="求连通块"><a href="#求连通块" class="headerlink" title="求连通块"></a>求连通块</h3><h3 id="INPUT"><a href="#INPUT" class="headerlink" title="INPUT :"></a>INPUT :</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">1 1</div><div class="line">*</div><div class="line">3 5</div><div class="line">*@*@*</div><div class="line">**@**</div><div class="line">*@*@*</div><div class="line">1 8</div><div class="line">@@****@*</div><div class="line">5 5 </div><div class="line">****@</div><div class="line">*@@*@</div><div class="line">*@**@</div><div class="line">@@@*@</div><div class="line">@@**@</div><div class="line">0 0</div></pre></td></tr></table></figure>
 <h3 id="OUTPUT"><a href="#OUTPUT" class="headerlink" title="OUTPUT :"></a>OUTPUT :</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">0</div><div class="line">1</div><div class="line">2</div><div class="line">2</div></pre></td></tr></table></figure>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="keyword">const</span> <span class="keyword">int</span> mx = <span class="number">10007</span>;</div><div class="line"><span class="keyword">int</span> n, m;</div><div class="line"><span class="keyword">char</span> field[mx][mx];<span class="comment">//地图 </span></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y)</span></span>&#123;</div><div class="line">	field[x][y] = <span class="string">'*'</span>;<span class="comment">//替换现在位置 </span></div><div class="line">	<span class="comment">//遍历8个方向 </span></div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> dx=<span class="number">-1</span>;dx&lt;=<span class="number">1</span>;dx++)&#123;</div><div class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> dy=<span class="number">-1</span>;dy&lt;=<span class="number">1</span>;dy++)&#123;</div><div class="line">			<span class="keyword">int</span> nx=x+dx, ny=y+dy;</div><div class="line">			<span class="keyword">if</span>(<span class="number">0</span>&lt;=nx&amp;&amp;nx&lt;n&amp;&amp;<span class="number">0</span>&lt;=ny&amp;&amp;ny&lt;m&amp;&amp;field[nx][ny]==<span class="string">'@'</span>)</div><div class="line">				dfs(nx,ny);</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">	<span class="keyword">return</span> ;</div><div class="line">&#125;</div><div class="line"> </div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">solve</span><span class="params">()</span></span>&#123;</div><div class="line">	<span class="keyword">int</span> ans=<span class="number">0</span>;</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)&#123;</div><div class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;m;j++)&#123;</div><div class="line">			<span class="comment">//从@处开始遍历 </span></div><div class="line">			<span class="keyword">if</span>(field[i][j]==<span class="string">'@'</span>)&#123;</div><div class="line">				dfs(i,j);</div><div class="line">				ans++;</div><div class="line">			&#125;	</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	<span class="built_in">cout</span>&lt;&lt;ans;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</div><div class="line">	<span class="built_in">cin</span>&gt;&gt;n&gt;&gt;m;</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)&#123;</div><div class="line">		<span class="built_in">scanf</span>(<span class="string">"%s"</span>,field[i]);</div><div class="line">	&#125;	</div><div class="line">	solve();</div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-          
+<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/04/01/DFS/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -499,8 +504,8 @@
               
                 <span class="post-meta-item-text">Post modified&#58;</span>
               
-              <time title="Post modified" itemprop="dateModified" datetime="2018-06-15T15:13:54+08:00">
-                2018-06-15
+              <time title="Post modified" itemprop="dateModified" datetime="2018-07-02T00:59:10+08:00">
+                2018-07-02
               </time>
             
           </span>
@@ -553,18 +558,18 @@
 
       
         
-          
-            <h3 id="数字转字符串"><a href="#数字转字符串" class="headerlink" title="数字转字符串"></a>数字转字符串</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;sstream&gt;</span></span></div><div class="line"><span class="keyword">double</span> a = <span class="number">123.456</span>;</div><div class="line"><span class="built_in">string</span> s;</div><div class="line"><span class="built_in">stringstream</span> ss;</div><div class="line">ss &lt;&lt; a;</div><div class="line">ss &gt;&gt; s;</div><div class="line">ss.clear();</div></pre></td></tr></table></figure>
+          <h3 id="数字转字符串"><a href="#数字转字符串" class="headerlink" title="数字转字符串"></a>数字转字符串</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;sstream&gt;</span></span></div><div class="line"><span class="keyword">double</span> a = <span class="number">123.456</span>;</div><div class="line"><span class="built_in">string</span> s;</div><div class="line"><span class="built_in">stringstream</span> ss;</div><div class="line">ss &lt;&lt; a;</div><div class="line">ss &gt;&gt; s;</div><div class="line">ss.clear();</div></pre></td></tr></table></figure>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;map&gt;</span></span></div><div class="line"><span class="built_in">map</span>&lt;<span class="keyword">int</span>, <span class="keyword">char</span>&gt; m;</div><div class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++) &#123;</div><div class="line">	m[i] = i + <span class="string">'0'</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></div><div class="line"><span class="keyword">char</span> str[<span class="number">10</span>];</div><div class="line"><span class="keyword">double</span> a = <span class="number">123.456</span>;</div><div class="line"><span class="built_in">sprintf</span>(str, <span class="string">"%.3lf"</span>, a);</div></pre></td></tr></table></figure>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">char</span> str[<span class="number">10</span>];</div><div class="line"><span class="keyword">int</span> a=<span class="number">175</span>;</div><div class="line"><span class="built_in">sprintf</span>(str,<span class="string">"%x"</span>,a);<span class="comment">//10进制转换成16进制，如果输出大写的字母是sprintf(str,"%X",a)</span></div></pre></td></tr></table></figure>
-<h3 id="字符串转数字"><a href="#字符串转数字" class="headerlink" title="字符串转数字"></a>字符串转数字</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;sstream&gt;</span></span></div><div class="line"><span class="built_in">string</span> s = <span class="string">"123.456"</span>;</div><div class="line"><span class="keyword">double</span> a;</div><div class="line"><span class="built_in">stringstream</span> ss;</div><div class="line">ss &lt;&lt; s;</div><div class="line">ss &gt;&gt; a;</div><div class="line">ss.clear();</div></pre></td></tr></table></figure>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;map&gt;</span></span></div><div class="line"><span class="built_in">map</span>&lt;<span class="keyword">char</span>, <span class="keyword">int</span>&gt; m;</div><div class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++) &#123;</div><div class="line">    m[i+<span class="string">'0'</span>] = i;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></div><div class="line"><span class="keyword">char</span> str[] = <span class="string">"123.456"</span>;</div><div class="line"><span class="keyword">double</span> a;</div><div class="line"><span class="built_in">sscanf</span>(str, <span class="string">"%lf"</span>, &amp;a);</div></pre></td></tr></table></figure>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">char</span> str[]=<span class="string">"AF"</span>;</div><div class="line"><span class="keyword">int</span> a;</div><div class="line"><span class="built_in">sscanf</span>(str,<span class="string">"%x"</span>,&amp;a); <span class="comment">//16进制转换成10进制</span></div></pre></td></tr></table></figure>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdlib&gt;</span></span></div><div class="line"><span class="keyword">int</span> a;<span class="keyword">float</span> b;<span class="keyword">long</span> c;</div><div class="line">a=atoi(<span class="string">"32"</span>);</div><div class="line">b=atof(<span class="string">"3.1415"</span>);</div><div class="line">c=atol(<span class="string">"567283"</span>);</div><div class="line"><span class="built_in">printf</span> (<span class="string">"%d\n%f\n%d\n"</span>,a,b,c);</div></pre></td></tr></table></figure>
-
-          
+<h3 id="字符串转数字"><a href="#字符串转数字" class="headerlink" title="字符串转数字"></a>字符串转数字</h3>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/03/22/c++的字符串与数字的转换/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1115,8 +1120,8 @@
               
                 <span class="post-meta-item-text">Post modified&#58;</span>
               
-              <time title="Post modified" itemprop="dateModified" datetime="2018-06-15T15:17:34+08:00">
-                2018-06-15
+              <time title="Post modified" itemprop="dateModified" datetime="2018-07-02T00:59:49+08:00">
+                2018-07-02
               </time>
             
           </span>
@@ -1169,39 +1174,16 @@
 
       
         
-          
-            <p>数论被“数学王子”高斯誉为整个数学王国的皇后</p>
+          <p>数论被“数学王子”高斯誉为整个数学王国的皇后</p>
 <h2 id="欧几里得算法"><a href="#欧几里得算法" class="headerlink" title="欧几里得算法"></a>欧几里得算法</h2><h3 id="最大公约数"><a href="#最大公约数" class="headerlink" title="最大公约数"></a>最大公约数</h3><p>欧几里得的辗转相除法计算的是两个自然数a和b的最大公约数g</p>
-<h4 id="代码示例"><a href="#代码示例" class="headerlink" title="代码示例"></a>代码示例</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">//递归</div><div class="line">int gcd(int a, int b) &#123;</div><div class="line">    return b == 0 ? a : gcd(b, a % b);</div><div class="line">&#125;</div><div class="line">//迭代</div><div class="line">int gcd(int a, int b) &#123;</div><div class="line">    while(b != 0) &#123;</div><div class="line">        int r = b;</div><div class="line">        b = a % b;</div><div class="line">        a = r;</div><div class="line">    &#125;</div><div class="line">    return a;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="唯一分解定理"><a href="#唯一分解定理" class="headerlink" title="唯一分解定理"></a>唯一分解定理</h3><h3 id="扩展欧几里得算法"><a href="#扩展欧几里得算法" class="headerlink" title="扩展欧几里得算法"></a>扩展欧几里得算法</h3><p><a href="">题目</a></p>
-<p>直线上的点。求直线<code>ax+by+c=0</code>上有多少整数点(x,y)满足x&lt;-[x1, x2], y &lt;- [y1, y2]<br>定理：若a和b为正整数，则存在整数x,y使得<code>gcd(a,b)=ax+by</code></p>
-<h4 id="代码示例-1"><a href="#代码示例-1" class="headerlink" title="代码示例"></a>代码示例</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">gcd</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b, <span class="keyword">int</span>&amp; d, <span class="keyword">int</span>&amp; x, <span class="keyword">int</span>&amp; y)</span> </span>&#123;</div><div class="line">    <span class="keyword">if</span> (!b) &#123;</div><div class="line">        d = a;</div><div class="line">        x = <span class="number">1</span>;</div><div class="line">        y = <span class="number">0</span>;</div><div class="line">    &#125; <span class="keyword">else</span> &#123;</div><div class="line">        gcd(b, a % b, d, y, x);</div><div class="line">        y -= x * (a / b);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="素数筛选"><a href="#素数筛选" class="headerlink" title="素数筛选"></a>素数筛选</h3><p><a href="http://acm.hdu.edu.cn/diy/contest_showproblem.php?pid=1001&amp;cid=32790" target="_blank" rel="noopener">题目</a></p>
-<h4 id="代码示例-2"><a href="#代码示例-2" class="headerlink" title="代码示例"></a>代码示例</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//一般判定是否是素数</span></div><div class="line"><span class="function"><span class="keyword">bool</span> <span class="title">is_prime</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</div><div class="line">	<span class="keyword">if</span> (n &lt; <span class="number">2</span>)</div><div class="line">		<span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i &lt;= <span class="built_in">sqrt</span>(n); i++) &#123;</div><div class="line">		<span class="keyword">if</span> (n % i == <span class="number">0</span>)</div><div class="line">			<span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> <span class="literal">true</span>;</div><div class="line">&#125;</div><div class="line"><span class="comment">//普通筛选n内的素数</span></div><div class="line"><span class="function"><span class="keyword">bool</span>* <span class="title">com_prime</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</div><div class="line">	<span class="keyword">bool</span>* ans = <span class="keyword">new</span> <span class="keyword">bool</span>[n];</div><div class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) </div><div class="line">		ans[i] = <span class="literal">false</span>;</div><div class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i &lt; n; i++) &#123;</div><div class="line">		<span class="keyword">if</span> (is_prime(i))</div><div class="line">			ans[i] = <span class="literal">true</span>;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> ans;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h4 id="筛选法示例"><a href="#筛选法示例" class="headerlink" title="筛选法示例"></a>筛选法示例</h4><p>一、初始化如下列表。</p>
-<p> 2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30</p>
-<p>二、把第一个数（2）取出来，去掉所有可以被2整除的数。</p>
-<p> 2  3     5     7     9    11    13    15    17    19    21    23    25    27    29</p>
-<p>三、取第二个数（3），去掉所有可以被 3整除的数。</p>
-<p> 2  3     5     7          11    13          17    19          23    25          29</p>
-<p>四、取第三个数（5），因为4已经被去除了，再去掉所有可以被5整除的数。</p>
-<p> 2  3     5     7          11    13          17    19          23                29</p>
-<p>接下来的数是7，但是7的平方是49，其大于了30，所以我们可以停止计算了。剩下的数就是所有的质数了。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> MAX 1000</span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="function"><span class="keyword">bool</span> <span class="title">is_prime</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</div><div class="line">	<span class="keyword">if</span> (n &lt; <span class="number">2</span>)</div><div class="line">		<span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i * i &lt;= n; i++) &#123;</div><div class="line">		<span class="keyword">if</span> (n % i == <span class="number">0</span>)</div><div class="line">			<span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> <span class="literal">true</span>;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">bool</span>* <span class="title">sieve_prime</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</div><div class="line">	<span class="keyword">bool</span>* value = <span class="keyword">new</span> <span class="keyword">bool</span>[n];</div><div class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)</div><div class="line">		value[i] = <span class="literal">true</span>;</div><div class="line">	value[<span class="number">0</span>] = <span class="literal">false</span>;</div><div class="line">	value[<span class="number">1</span>] = <span class="literal">false</span>;</div><div class="line">	</div><div class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i &lt;= <span class="built_in">sqrt</span>(n); i++) &#123;</div><div class="line">		<span class="keyword">if</span> (value[i] &amp;&amp; is_prime(i)) &#123;</div><div class="line">			<span class="keyword">int</span> c = <span class="number">2</span>;</div><div class="line">			<span class="keyword">int</span> j = i * c;</div><div class="line">			<span class="keyword">while</span> (j &lt; n) &#123;</div><div class="line">				value[j] = <span class="literal">false</span>;</div><div class="line">				j = i * c++;</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> value;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</div><div class="line">    <span class="keyword">bool</span>* prime = sieve_prime(MAX);</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;=<span class="number">100</span>; i++) &#123; <span class="comment">//输出100内的素数</span></div><div class="line">        <span class="keyword">if</span> (prime[i])</div><div class="line">            <span class="built_in">cout</span> &lt;&lt; i &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h2 id="欧拉函数"><a href="#欧拉函数" class="headerlink" title="欧拉函数"></a>欧拉函数</h2><p><strong>欧拉函数：</strong> 在数论中，对正整数n，欧拉函数φ(n)是小于或等于n的正整数中与n互质的数的数目。它又称为Euler’s totient function、φ函数、欧拉商数等。<br>例如 φ，因为1,3,5,7均和8互质。—— 维基百科</p>
-<h3 id="定理"><a href="#定理" class="headerlink" title="定理"></a>定理</h3><ul>
-<li>phi(1) = 1</li>
-<li>n为质数, phi(n) = n - 1</li>
-<li>m 和 n 互质, phi(mn) = phi(m) * phi(n)</li>
-<li>n为奇数, phi(2n) = phi(n)</li>
-<li>通用公式：<code>phi(n) = n * (1 - 1 / p1) * (1 - 1 / p2) * ... * (1 - 1 / pr)</code><br>其中 <code>n = p1^k1 * p2^k2 * ... * pr^kr</code></li>
-<li><strong>具体参考：</strong> <a href="https://www.kancloud.cn/kancloud/rsa_algorithm/48486" target="_blank" rel="noopener">看云-欧拉函数</a></li>
-</ul>
-<h4 id="常规代码"><a href="#常规代码" class="headerlink" title="常规代码"></a>常规代码</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">int phi(int n) &#123;</div><div class="line">    int t = n;</div><div class="line">    for (int i = 2; i &lt;= n; i++) &#123;</div><div class="line">        if (n % i == 0) &#123;</div><div class="line">            n /= i;</div><div class="line">            t = t - t / i;</div><div class="line">        &#125;</div><div class="line">        while (n % i == 0)</div><div class="line">            n /= i;</div><div class="line">    &#125;</div><div class="line">    return t;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>时间复杂度O(n),对于1e9会超时。</p>
-<h4 id="改良之后"><a href="#改良之后" class="headerlink" title="改良之后"></a>改良之后</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">int phi(int n) &#123;</div><div class="line">    int t = n;</div><div class="line">    //降低时间复杂度</div><div class="line">    for (int  i = 2; i * i &lt;= n; i++) &#123;</div><div class="line">        if (n % i == 0) &#123;</div><div class="line">        n /= i;</div><div class="line">        t = t - t / i;</div><div class="line">        &#125;</div><div class="line">        while (n % i == 0) </div><div class="line">            n /= i;</div><div class="line">    &#125;</div><div class="line">    if (n &gt; 1)</div><div class="line">    t = t - t / n;</div><div class="line">    return t;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-
-          
+<h4 id="代码示例"><a href="#代码示例" class="headerlink" title="代码示例"></a>代码示例</h4>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/12/31/数论初步/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1295,8 +1277,8 @@
               
                 <span class="post-meta-item-text">Post modified&#58;</span>
               
-              <time title="Post modified" itemprop="dateModified" datetime="2018-06-15T15:15:31+08:00">
-                2018-06-15
+              <time title="Post modified" itemprop="dateModified" datetime="2018-07-02T01:00:05+08:00">
+                2018-07-02
               </time>
             
           </span>
@@ -1349,17 +1331,16 @@
 
       
         
-          
-            <h4 id="调用格式-scanf-quot-lt-格式化字符串-gt-quot-lt-地址表-gt"><a href="#调用格式-scanf-quot-lt-格式化字符串-gt-quot-lt-地址表-gt" class="headerlink" title="调用格式: scanf(&quot;&lt;格式化字符串&gt;&quot;, &lt;地址表&gt;);"></a><strong>调用格式:</strong> <code>scanf(&quot;&lt;格式化字符串&gt;&quot;, &lt;地址表&gt;);</code></h4><p>一、为变量赋值时表示成功读取变量的个数, &lt;格式化字符串&gt;与&lt;地址表&gt;是严格匹配的</p>
+          <h4 id="调用格式-scanf-quot-lt-格式化字符串-gt-quot-lt-地址表-gt"><a href="#调用格式-scanf-quot-lt-格式化字符串-gt-quot-lt-地址表-gt" class="headerlink" title="调用格式: scanf(&quot;&lt;格式化字符串&gt;&quot;, &lt;地址表&gt;);"></a><strong>调用格式:</strong> <code>scanf(&quot;&lt;格式化字符串&gt;&quot;, &lt;地址表&gt;);</code></h4><p>一、为变量赋值时表示成功读取变量的个数, &lt;格式化字符串&gt;与&lt;地址表&gt;是严格匹配的</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">scanf</span>(<span class="string">"%c %c"</span>, &amp;a, &amp;b); <span class="comment">//函数返回值是2，并丢弃不想使用的空白符</span></div><div class="line"><span class="built_in">scanf</span>(<span class="string">"%d,%d"</span>, &amp;a, &amp;b); <span class="comment">//输入必须有逗号， 多个空格为一个空格</span></div></pre></td></tr></table></figure>
-<p>二、 <code>%s</code> 读取遇到空格停止读取，因此一般可以用fgets去读取字符串</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">scanf</span>(<span class="string">"%[a-z]"</span>, &amp;str);  <span class="comment">//遇到不再a-z字符停止读取</span></div><div class="line"><span class="built_in">scanf</span>(<span class="string">"666%[0-9]"</span>, &amp;str);  <span class="comment">//666开头并且在0-9字符读取，不是则停止</span></div><div class="line"><span class="built_in">scanf</span>(<span class="string">"%[^\n]"</span>, &amp;str);     <span class="comment">//^表示求反集，即这句话不是回车一直开始读取</span></div></pre></td></tr></table></figure>
-<p>三、压缩输入：在格式码前加上*，则用户就可以告诉scanf()读这个域，但不把它赋予任何变量。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">scanf</span>(<span class="string">"%c%*c, &amp;ch); 使用此方法可以在字符处理时吃掉多余的回车。</span></div></pre></td></tr></table></figure>
-<p><a href="https://docs.microsoft.com/zh-cn/dotnet/standard/base-types/regular-expression-language-quick-reference" target="_blank" rel="noopener">更多正则表达式语言参考</a></p>
-<h4 id="sscanf、scanf的一些示例"><a href="#sscanf、scanf的一些示例" class="headerlink" title="sscanf、scanf的一些示例"></a>sscanf、scanf的一些示例</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div></pre></td></tr></table></figure>
-
-          
+<p>二、 <code>%s</code> 读取遇到空格停止读取，因此一般可以用fgets去读取字符串<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/12/01/scanf中的正则表达式/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1453,8 +1434,8 @@
               
                 <span class="post-meta-item-text">Post modified&#58;</span>
               
-              <time title="Post modified" itemprop="dateModified" datetime="2018-06-15T15:14:47+08:00">
-                2018-06-15
+              <time title="Post modified" itemprop="dateModified" datetime="2018-07-02T01:00:32+08:00">
+                2018-07-02
               </time>
             
           </span>
@@ -1507,20 +1488,17 @@
 
       
         
-          
-            <p>push代码时遇到提示：<code>Everything up-to-date</code>,无法push代码<br>原因是git提交改动到缓存，要push的时候不会将本地所有的分支都push掉，所以出现这个问题。我们应该告诉git提交哪个分支。</p>
+          <p>push代码时遇到提示：<code>Everything up-to-date</code>,无法push代码<br>原因是git提交改动到缓存，要push的时候不会将本地所有的分支都push掉，所以出现这个问题。我们应该告诉git提交哪个分支。</p>
 <h2 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h2><p>在<a href="https://stackoverflow.com/questions/2936652/git-push-wont-do-anything-everything-up-to-date" target="_blank" rel="noopener">stackoverflow</a>有解决方案</p>
 <h3 id="创建分支"><a href="#创建分支" class="headerlink" title="创建分支"></a>创建分支</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ git branch newbranch</div><div class="line">#查看分支</div><div class="line">$ git branch</div></pre></td></tr></table></figure>
 <h3 id="切换分支"><a href="#切换分支" class="headerlink" title="切换分支"></a>切换分支</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git checkout newbranch</div></pre></td></tr></table></figure>
-<h3 id="改动提交到新的分支"><a href="#改动提交到新的分支" class="headerlink" title="改动提交到新的分支"></a>改动提交到新的分支</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ git add .</div><div class="line">$ git commit -a</div></pre></td></tr></table></figure>
-<h3 id="合并到master"><a href="#合并到master" class="headerlink" title="合并到master"></a>合并到master</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ git merge newbranch</div><div class="line">#查看冲突</div><div class="line">$ git diff</div></pre></td></tr></table></figure>
-<h3 id="push代码"><a href="#push代码" class="headerlink" title="push代码"></a>push代码</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git push -u origin master</div></pre></td></tr></table></figure>
-<h3 id="删除分支"><a href="#删除分支" class="headerlink" title="删除分支"></a>删除分支</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git branch -D newbranch</div></pre></td></tr></table></figure>
-<ul>
-<li>删除合并部分大写D改为小写d</li>
-</ul>
-
-          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/11/04/Git问题：Everything-up-to-date解决/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1614,8 +1592,8 @@
               
                 <span class="post-meta-item-text">Post modified&#58;</span>
               
-              <time title="Post modified" itemprop="dateModified" datetime="2018-06-15T15:12:25+08:00">
-                2018-06-15
+              <time title="Post modified" itemprop="dateModified" datetime="2018-07-02T01:00:52+08:00">
+                2018-07-02
               </time>
             
           </span>
@@ -1668,18 +1646,15 @@
 
       
         
-          
-            <h3 id="快速幂"><a href="#快速幂" class="headerlink" title="快速幂"></a>快速幂</h3><p><img src="http://oxqn1kqf7.bkt.clouddn.com/17-10-31/1725298.jpg" alt=""></p>
+          <h3 id="快速幂"><a href="#快速幂" class="headerlink" title="快速幂"></a>快速幂</h3><p><img src="http://oxqn1kqf7.bkt.clouddn.com/17-10-31/1725298.jpg" alt=""></p>
 <p>通常算法：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">int Pow(int A, int n)</div><div class="line">&#123;</div><div class="line">    if(n == 0) </div><div class="line">        return 1;</div><div class="line">    int rslt(1);</div><div class="line">    for(int i(0); i &lt; n; ++i)</div><div class="line">        rslt *= A;</div><div class="line">    return rslt;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>其复杂度是O(n)的。一般来说，这样的复杂度并不会使我们困惑，但是一般应用幂运算的地方，指数都会非常非常的大，比如1 000 000 000这个级别的，这时候我们会遇到两个问题，第一个就是我们不能再用int来存储整数，必须用高精度整数类型来进行存储，另一个就是在指数是如此变态的数量级之下，我们的计算量会骤然上升，结果也会异常惊人的大。简单来说就是二分法。<br>举个栗子：<br>一般解法：<br><code>A^8 = A * A * A * A * A * A * A * A</code><br>总共需要7次乘法运算</p>
-<p>平均分解：<br><code>A^8 = (A * A * A * A) * (A * A * A * A) = (A * A * A * A) ^ 2</code><br>这样我们就只需要4次乘法运算</p>
-<p>再分解：<br><code>A^6 = [(A * A) * (A * A)] ^ 2 = [(A * A) ^ 2] ^ 2</code><br>这样就将乘法运算的次数减少为了3次</p>
-<p>这种二分解法可以将原本n次的运算减少为logn / log2，这样的效果是惊人的，在1 000 000 000这样数量级的指数运算下，该方法可以将运算次数减少到30次</p>
-<p>整数的快速幂：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">int qPow(int A, int n)</div><div class="line">&#123;</div><div class="line">    if(n == 0) </div><div class="line">        return 1;</div><div class="line">    int rslt(1);</div><div class="line"></div><div class="line">    while(n)</div><div class="line">    &#123;</div><div class="line">        if(n &amp; 1) // 若幂为奇数</div><div class="line">        &#123;</div><div class="line">            rslt *= A;</div><div class="line">        &#125;</div><div class="line">        A *= A;</div><div class="line">        n &gt;&gt;= 1; // 右位移等价于除以2</div><div class="line">    &#125;</div><div class="line">    return rslt;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>矩阵类的代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div></pre></td><td class="code"><pre><div class="line">class Matrix</div><div class="line">&#123;</div><div class="line">public:</div><div class="line">    int N; // 矩阵维数</div><div class="line">    int** m; // 存储矩阵的二维数组</div><div class="line"></div><div class="line">    Matrix(int n = 2)</div><div class="line">    &#123;</div><div class="line">        m = new int*[n];</div><div class="line">        for(int i(0); i &lt; n; ++i)</div><div class="line">        &#123;</div><div class="line">            m[i] = new int[n];</div><div class="line">        &#125;</div><div class="line">        N = n;</div><div class="line">        clear();</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    // 将矩阵清空为零矩阵</div><div class="line">    void clear()</div><div class="line">    &#123;</div><div class="line">        for(int i(0); i &lt; N; ++i)</div><div class="line">        &#123;</div><div class="line">            memset(m[i], 0, sizeof(int) * N);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    // 将矩阵设定为单位矩阵</div><div class="line">    void unit()</div><div class="line">    &#123;</div><div class="line">        clear();</div><div class="line">        for(int i(0); i &lt; N; ++i)</div><div class="line">        &#123;</div><div class="line">            m[i][i] = 1;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    // 矩阵的赋值</div><div class="line">    Matrix operator= (Matrix &amp;othr)</div><div class="line">    &#123;</div><div class="line">        Matrix(othr.N);</div><div class="line">        for(int i(0); i &lt; othr.N; ++i)</div><div class="line">        &#123;</div><div class="line">            for(int j(0); j &lt; othr.N; ++j)</div><div class="line">            &#123;</div><div class="line">                m[i][j] = othr.m[i][j];</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        return *this;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    // 矩阵的乘法</div><div class="line">    //!假设所有因子均为同阶方阵</div><div class="line">    Matrix operator* (Matrix &amp;othr)</div><div class="line">    &#123;</div><div class="line">        Matrix rslt(othr.N);</div><div class="line">        for(int i(0); i &lt; othr.N; ++i)</div><div class="line">        &#123;</div><div class="line">            for(int j(0); j &lt; othr.N; ++j)</div><div class="line">            &#123;</div><div class="line">                for(int k(0); k &lt; othr.N; ++k)</div><div class="line">                &#123;</div><div class="line">                    rslt.m[i][j] += m[i][k] * othr.m[k][j];</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        return rslt;</div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
-<p>矩阵快速幂的算法:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">Matrix qMPow(Matrix &amp;A, int n)</div><div class="line">&#123;</div><div class="line">    Matrix rslt(A.N);</div><div class="line">    rslt.unit();</div><div class="line">    if(n == 0) return rslt;</div><div class="line">    while(n)</div><div class="line">    &#123;</div><div class="line">        if(n &amp; 1) // 若幂为奇数</div><div class="line">        &#123;</div><div class="line">            rslt = rslt * A;</div><div class="line">        &#125;</div><div class="line">        A = A * A;</div><div class="line">        n &gt;&gt;= 1; // 右位移等价于除以2</div><div class="line">    &#125;</div><div class="line">    return rslt;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-
-          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/10/31/快速幂/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1773,8 +1748,8 @@
               
                 <span class="post-meta-item-text">Post modified&#58;</span>
               
-              <time title="Post modified" itemprop="dateModified" datetime="2018-06-15T15:14:05+08:00">
-                2018-06-15
+              <time title="Post modified" itemprop="dateModified" datetime="2018-07-02T01:01:16+08:00">
+                2018-07-02
               </time>
             
           </span>
@@ -1827,30 +1802,16 @@
 
       
         
-          
-            <h2 id="管理conda"><a href="#管理conda" class="headerlink" title="管理conda"></a>管理conda</h2><h3 id="验证安装"><a href="#验证安装" class="headerlink" title="验证安装"></a>验证安装</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ conda --version</div></pre></td></tr></table></figure>
+          <h2 id="管理conda"><a href="#管理conda" class="headerlink" title="管理conda"></a>管理conda</h2><h3 id="验证安装"><a href="#验证安装" class="headerlink" title="验证安装"></a>验证安装</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ conda --version</div></pre></td></tr></table></figure>
 <p>命令参阅可以用: conda –help</p>
 <h3 id="将conda更新到最新"><a href="#将conda更新到最新" class="headerlink" title="将conda更新到最新"></a>将conda更新到最新</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ conda update conda</div><div class="line">#有最新选择yes</div><div class="line">Proceed ([y]/n)? y</div></pre></td></tr></table></figure>
-<h2 id="管理环境"><a href="#管理环境" class="headerlink" title="管理环境"></a>管理环境</h2><h3 id="创建环境"><a href="#创建环境" class="headerlink" title="创建环境"></a>创建环境</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ conda create --name snowflakes biopython</div><div class="line">#也可以指定python版本并安装Astroid和Babel</div><div class="line">$ conda create --name snowflakes python3.5 astroid babel</div></pre></td></tr></table></figure>
-<p>使用biopython创建一个snowflakes的环境</p>
-<ul>
-<li>不指定目录即为默认目录/envs</li>
-</ul>
-<h3 id="使用环境"><a href="#使用环境" class="headerlink" title="使用环境"></a>使用环境</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ activate newen</div><div class="line">#切换回根目录</div><div class="line">$ deactivate</div></pre></td></tr></table></figure>
-<h3 id="显示安装过的环境"><a href="#显示安装过的环境" class="headerlink" title="显示安装过的环境"></a>显示安装过的环境</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ conda info --envs</div></pre></td></tr></table></figure>
-<p><img src="http://oxqn1kqf7.bkt.clouddn.com/17-10-28/22089148.jpg" alt="显示安装过的环境"><br>括号显示为当前环境<br><img src="http://oxqn1kqf7.bkt.clouddn.com/17-10-28/43734134.jpg" alt="括号显示为当前环境"></p>
-<h3 id="切换到另一个环境"><a href="#切换到另一个环境" class="headerlink" title="切换到另一个环境"></a>切换到另一个环境</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ activate another_environment</div></pre></td></tr></table></figure>
-<h3 id="克隆删除环境"><a href="#克隆删除环境" class="headerlink" title="克隆删除环境"></a>克隆删除环境</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">#克隆</div><div class="line">$ conda create --name flowers --clone snowflakes</div><div class="line">#删除</div><div class="line">$ conda remove --name flowers --all</div></pre></td></tr></table></figure>
-<h2 id="管理Python"><a href="#管理Python" class="headerlink" title="管理Python"></a>管理Python</h2><h3 id="检查可安装的python版本"><a href="#检查可安装的python版本" class="headerlink" title="检查可安装的python版本"></a>检查可安装的python版本</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ conda search --full-name python</div><div class="line">#列出包含python的所有包</div><div class="line">$ conda search python</div></pre></td></tr></table></figure>
-<h3 id="安装python3环境并不覆盖python2"><a href="#安装python3环境并不覆盖python2" class="headerlink" title="安装python3环境并不覆盖python2"></a>安装python3环境并不覆盖python2</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ conda create --name snackes pyhton=3</div></pre></td></tr></table></figure>
-<h2 id="包管理"><a href="#包管理" class="headerlink" title="包管理"></a>包管理</h2><h3 id="看安装的包和版本列表"><a href="#看安装的包和版本列表" class="headerlink" title="看安装的包和版本列表"></a>看安装的包和版本列表</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ conda list</div></pre></td></tr></table></figure>
-<h3 id="查找、安装、删除"><a href="#查找、安装、删除" class="headerlink" title="查找、安装、删除"></a>查找、安装、删除</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ conda search beautifulsoup4</div><div class="line">$ conda install --name snowflakes beautifulsoup4    #未指定位置安装在当前位置</div><div class="line">$ conda remove --name snowflakes beautifulsoup4</div></pre></td></tr></table></figure>
-<h3 id="从Anaconda-org安装包"><a href="#从Anaconda-org安装包" class="headerlink" title="从Anaconda.org安装包"></a>从Anaconda.org安装包</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ conda install --channel https://conda.anaconda.org/pandas bottleneck</div></pre></td></tr></table></figure>
-<ul>
-<li><strong>更多命令具体参考：</strong><a href="https://conda.io/docs/user-guide/tasks/view-command-line-help.html" target="_blank" rel="noopener">Getting started</a></li>
-</ul>
-
-          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/10/28/conda常用操作/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
