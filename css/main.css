@@ -1822,7 +1822,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #a8f409;
+  background: #ffffbf;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2906,10 +2906,15 @@ hr {
 }
 @media screen and (min-width: 1200px) {
   body {
-    background: rgba(255,255,255,0.9);
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: 50% 50%;
+  }
+  .main-inner {
+    margin-top: 60px;
+    padding: 60px 60px 60px 60px;
+    background: #fff;
+    min-height: 500px;
   }
   #footer a {
     color: #eee;

@@ -1,6 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[django链接MySQL问题]]></title>
+    <url>%2F2018%2F06%2F21%2Fdjango%E9%93%BE%E6%8E%A5mysql%E9%97%AE%E9%A2%98%2F</url>
+    <content type="text"><![CDATA[错误1（django.db.utils.OperationalError: (1045, &quot;Access denied for user &apos;root&apos;@&apos;localhost&apos; (using password: NO)&quot;)） 环境： Django2.0 MySQL8.0.11 错误代码：1django.db.utils.OperationalError: (1045, "Access denied for user 'root'@'localhost' (using password: NO) Mysql 8.0 的部分语法，密码的加密方式发生了改变，在8.0 中的用户密码采用的是cha2 加密方法, 从而密码认证错误。 解决:123$ mysql -u root -pmysql&gt; use mysql;mysql&gt; ALTER USER &apos;root&apos;@&apos;localhost&apos; IDENTIFIED WITH mysql_native_password BY &apos;password&apos;;]]></content>
+      <tags>
+        <tag>skill</tag>
+        <tag>django</tag>
+        <tag>mysql</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[一次acm区域赛后的想法]]></title>
     <url>%2F2018%2F06%2F06%2F%E4%B8%80%E6%AC%A1acm%E5%8C%BA%E5%9F%9F%E8%B5%9B%E5%90%8E%E7%9A%84%E6%83%B3%E6%B3%95%2F</url>
     <content type="text"><![CDATA[这次比赛也算是进一步加深了对算法竞赛的理解把，大佬始终是大佬（做什么都是大佬）。 从大一开始接触acm到现在其实真正练习的也就大二半个学期，有时候也能感觉到，有的人总会是适合这一行，或者是不适合那一行，虽然努力是有回报的，但是计算机这个行业是比较靠天赋的把，或者说大学就是找到自己感兴趣的并为之奋斗，譬如创业or就业，我在编程这条路上走得并不是很远，2年了，也深有感触。 对我来说，算法竞赛可能不是很适合，努力只能拉短与别人的差距但不足以让你走的更远更高，这是需要天赋的，或者说区域赛的铜牌银牌吸引力不是那么的大，区域赛的时候打了一个ctf的线上赛，网络安全也是未来的一个风口，一边学习，一般做题，也刷了一千三百多分，算法熟练了，快速学习能力，思维能力也不会太差，很多东西就是相通的。大学教育在很大程度上是教会学生良好的学习方法，这些学习方法可以帮助学生快速、高效地汲取自己需要的知识。适合和兴趣，2年了，我也接触过互联网的很多领域，也该有一个选择了，或是又有点迷茫……昨天晚上又梦到了高考，或许这又是一个人生的关口吧。 acm，其实也是有天花板的。。最后附上一句话，计算机的任何东西，都不是学完再干，你学不完的。]]></content>
