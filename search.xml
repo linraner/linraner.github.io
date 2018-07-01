@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[django链接MySQL问题]]></title>
     <url>%2F2018%2F06%2F21%2Fdjango%E9%93%BE%E6%8E%A5mysql%E9%97%AE%E9%A2%98%2F</url>
-    <content type="text"><![CDATA[错误1（django.db.utils.OperationalError: (1045, &quot;Access denied for user &apos;root&apos;@&apos;localhost&apos; (using password: NO)&quot;)） 环境： Django2.0 MySQL8.0.11 错误代码：1django.db.utils.OperationalError: (1045, "Access denied for user 'root'@'localhost' (using password: NO) Mysql 8.0 的部分语法，密码的加密方式发生了改变，在8.0 中的用户密码采用的是cha2 加密方法, 从而密码认证错误。 解决:123$ mysql -u root -pmysql&gt; use mysql;mysql&gt; ALTER USER &apos;root&apos;@&apos;localhost&apos; IDENTIFIED WITH mysql_native_password BY &apos;password&apos;;]]></content>
+    <content type="text"><![CDATA[错误1（django.db.utils.OperationalError: (1045, &quot;Access denied for user &apos;root&apos;@&apos;localhost&apos; (using password: NO)&quot;)） 环境： Django2.0 MySQL8.0.11 Mysql 8.0 的部分语法，密码的加密方式发生了改变，在8.0 中的用户密码采用的是cha2 加密方法, 从而密码认证错误。 解决:123$ mysql -u root -pmysql&gt; use mysql;mysql&gt; ALTER USER &apos;root&apos;@&apos;localhost&apos; IDENTIFIED WITH mysql_native_password BY &apos;password&apos;;]]></content>
       <tags>
         <tag>skill</tag>
         <tag>django</tag>

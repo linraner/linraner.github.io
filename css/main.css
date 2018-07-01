@@ -1609,8 +1609,8 @@ pre .javascript .function {
 .posts-expand .post-eof {
   display: block;
   margin: 80px auto 60px;
-  width: 8%;
-  height: 1px;
+  width: 50%;
+  height: 5px;
   background: #ccc;
   text-align: center;
 }
@@ -1822,7 +1822,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #41ff74;
+  background: #493295;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2604,7 +2604,7 @@ hr {
   height: 2px;
 }
 .main-inner {
-  margin-top: 80px;
+  margin-top: 50px;
 }
 .header {
   background: #f5f5f5;
@@ -2766,7 +2766,7 @@ hr {
   display: none;
 }
 .posts-expand .post {
-  margin-top: 120px;
+  margin-top: 65px;
 }
 .posts-expand .post:first-child {
   margin-top: 0;
@@ -2904,35 +2904,12 @@ hr {
     text-align: center;
   }
 }
-@media screen and (min-width: 1200px) {
-  body {
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: 50% 50%;
-  }
-  .main-inner {
-    margin-top: 60px;
-    padding: 60px 60px 60px 60px;
-    background: #fff;
-    min-height: 500px;
-  }
-  #footer a {
-    color: #eee;
-  }
-}
 .headband {
   height: 0px;
   background-image: linear-gradient(90deg, #f79533 0%, #f37055 15%, #ef4e7b 30%, #a166ab 44%, #5073b8 58%, #1098ad 72%, #07b39b 86%, #6dba82 100%);
 }
 .header {
   line-height: 1.5;
-}
-.post {
-  margin-top: 60px;
-  margin-bottom: 60px;
-  padding: 25px;
-  -webkit-box-shadow: 0 0 5px rgba(202,203,203,0.5);
-  -moz-box-shadow: 0 0 5px rgba(202,203,204,0.5);
 }
 .myButton {
   background-color: #0f94bd;
