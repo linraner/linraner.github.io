@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Django重置后台密码]]></title>
+    <url>%2F2018%2F07%2F05%2FDjango%E9%87%8D%E7%BD%AE%E5%90%8E%E5%8F%B0%E5%AF%86%E7%A0%81%2F</url>
+    <content type="text"><![CDATA[emmm时间长忘记密码了 执行1$ python manage.py shell 修改12345In [1]: from django.contrib.auth.models import UserIn [2]: user = User.objects.get(username='Username')In [3]: user.set_password('Password')In [4]: user.save()In [5]: exit()]]></content>
+      <tags>
+        <tag>Django</tag>
+        <tag>skill</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[django链接MySQL问题]]></title>
     <url>%2F2018%2F06%2F21%2Fdjango%E9%93%BE%E6%8E%A5mysql%E9%97%AE%E9%A2%98%2F</url>
     <content type="text"><![CDATA[错误1（django.db.utils.OperationalError: (1045, &quot;Access denied for user &apos;root&apos;@&apos;localhost&apos; (using password: NO)&quot;)） 环境： Django2.0 MySQL8.0.11 Mysql 8.0 的部分语法，密码的加密方式发生了改变，在8.0 中的用户密码采用的是cha2 加密方法, 从而密码认证错误。 解决:123$ mysql -u root -pmysql&gt; use mysql;mysql&gt; ALTER USER &apos;root&apos;@&apos;localhost&apos; IDENTIFIED WITH mysql_native_password BY &apos;password&apos;;]]></content>
@@ -176,8 +185,8 @@
     <url>%2F2017%2F10%2F28%2Fconda%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C%2F</url>
     <content type="text"><![CDATA[管理conda验证安装1$ conda --version 命令参阅可以用: conda –help 将conda更新到最新123$ conda update conda#有最新选择yesProceed ([y]/n)? y 管理环境创建环境123$ conda create --name snowflakes biopython#也可以指定python版本并安装Astroid和Babel$ conda create --name snowflakes python3.5 astroid babel 使用biopython创建一个snowflakes的环境 不指定目录即为默认目录/envs 使用环境123$ activate newen#切换回根目录$ deactivate 显示安装过的环境1$ conda info --envs 括号显示为当前环境 切换到另一个环境1$ activate another_environment 克隆删除环境1234#克隆$ conda create --name flowers --clone snowflakes#删除$ conda remove --name flowers --all 管理Python检查可安装的python版本123$ conda search --full-name python#列出包含python的所有包$ conda search python 安装python3环境并不覆盖python21$ conda create --name snackes pyhton=3 包管理看安装的包和版本列表1$ conda list 查找、安装、删除123$ conda search beautifulsoup4$ conda install --name snowflakes beautifulsoup4 #未指定位置安装在当前位置$ conda remove --name snowflakes beautifulsoup4 从Anaconda.org安装包1$ conda install --channel https://conda.anaconda.org/pandas bottleneck 更多命令具体参考：Getting started]]></content>
       <tags>
-        <tag>tools</tag>
         <tag>skill</tag>
+        <tag>tools</tag>
       </tags>
   </entry>
   <entry>
@@ -202,8 +211,8 @@
     <url>%2F2017%2F10%2F21%2FJupyter-NoteBook%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE%2F</url>
     <content type="text"><![CDATA[Jupyter Notebook 有两种键盘输入模式，命令模式和编辑模式。与Vim类似。 命令模式按Esc进入，编辑模式按Enter进入 命令模式快捷键 快捷键 作用 Shift+Enter 运行本单元，选中下一个单元 Ctrl+Enter 运行本单元 Alt+Enter 运行本单元在下插入新单元 Y 单元转入代码状态 M 单元转入markdown状态 R 单元转入raw状态 Up&amp;K/Down&amp;J 选中上方/下方单元 Shift+K/J 连续选择上方/下方单元 A/B 在上方/下方插入新单元 x/C 剪切/复制选中单元 Shift+V/V 粘贴到上方/下方单元 Z 恢复删除的最后一个单元 DD 删除选中的单元 Shift+M 合并选中的单元 Ctrl+S/S 保存当前文件 L 开关行号 O 转换输出 Shift+O 转换输出滚动 Esc/Q 关闭页面 H 显示快捷帮助 II/00 中断/重启NOteBook内核 Shift+Space/Space 向上/下滚动 编辑模式快捷键 快捷键 作用 Tab 代码补全或者缩进 Shift+Tab 提示 Ctrl+] 向右缩进 Ctrl+[ 向左缩进 Ctrl+Shift+Z/Ctrl+Y 重做 Ctrl+up/down 跳到单元开头/末尾 Ctrl+Left/Right 跳到左边/右边一个字首 Ctrl+BackSpace/Delete 删除前面一个字 Shift+Enter 运行本单元，选中下一个单元 Ctrl+M 切换到命令模式 Ctrl+Enter 运行本单元 Alt+Enter 运行本单元在下插入新单元 Ctrl+/ 注释整行或者取消注释]]></content>
       <tags>
-        <tag>tools</tag>
         <tag>skill</tag>
+        <tag>tools</tag>
       </tags>
   </entry>
   <entry>

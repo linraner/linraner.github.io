@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://linraner.github.io/"/>
-  <updated>2018-07-01T16:12:58.600Z</updated>
+  <updated>2018-07-11T01:18:51.620Z</updated>
   <id>http://linraner.github.io/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Django重置后台密码</title>
+    <link href="http://linraner.github.io/2018/07/05/Django%E9%87%8D%E7%BD%AE%E5%90%8E%E5%8F%B0%E5%AF%86%E7%A0%81/"/>
+    <id>http://linraner.github.io/2018/07/05/Django重置后台密码/</id>
+    <published>2018-07-05T07:21:24.426Z</published>
+    <updated>2018-07-11T01:18:51.620Z</updated>
+    
+    <content type="html"><![CDATA[<p>emmm时间长忘记密码了</p><h3 id="执行"><a href="#执行" class="headerlink" title="执行"></a>执行</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="meta">$</span> python manage.py shell</div></pre></td></tr></table></figure><h3 id="修改"><a href="#修改" class="headerlink" title="修改"></a>修改</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">In [<span class="number">1</span>]: <span class="keyword">from</span> django.contrib.auth.models <span class="keyword">import</span> User</div><div class="line">In [<span class="number">2</span>]: user = User.objects.get(username=<span class="string">'Username'</span>)</div><div class="line">In [<span class="number">3</span>]: user.set_password(<span class="string">'Password'</span>)</div><div class="line">In [<span class="number">4</span>]: user.save()</div><div class="line">In [<span class="number">5</span>]: exit()</div></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;emmm时间长忘记密码了&lt;/p&gt;
+&lt;h3 id=&quot;执行&quot;&gt;&lt;a href=&quot;#执行&quot; class=&quot;headerlink&quot; title=&quot;执行&quot;&gt;&lt;/a&gt;执行&lt;/h3&gt;&lt;figure class=&quot;highlight shell&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=
+      
+    
+    </summary>
+    
+    
+      <category term="Django" scheme="http://linraner.github.io/tags/Django/"/>
+    
+      <category term="skill" scheme="http://linraner.github.io/tags/skill/"/>
+    
+  </entry>
   
   <entry>
     <title>django链接MySQL问题</title>
@@ -488,30 +514,6 @@
       <category term="acm" scheme="http://linraner.github.io/tags/acm/"/>
     
       <category term="数论" scheme="http://linraner.github.io/tags/%E6%95%B0%E8%AE%BA/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>conda常用操作(windows)</title>
-    <link href="http://linraner.github.io/2017/10/28/conda%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C/"/>
-    <id>http://linraner.github.io/2017/10/28/conda常用操作/</id>
-    <published>2017-10-28T02:22:46.000Z</published>
-    <updated>2018-07-01T17:01:16.160Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="管理conda"><a href="#管理conda" class="headerlink" title="管理conda"></a>管理conda</h2><h3 id="验证安装"><a href="#验证安装" class="headerlink" title="验证安装"></a>验证安装</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ conda --version</div></pre></td></tr></table></figure><p>命令参阅可以用: conda –help</p><h3 id="将conda更新到最新"><a href="#将conda更新到最新" class="headerlink" title="将conda更新到最新"></a>将conda更新到最新</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ conda update conda</div><div class="line">#有最新选择yes</div><div class="line">Proceed ([y]/n)? y</div></pre></td></tr></table></figure><a id="more"></a><h2 id="管理环境"><a href="#管理环境" class="headerlink" title="管理环境"></a>管理环境</h2><h3 id="创建环境"><a href="#创建环境" class="headerlink" title="创建环境"></a>创建环境</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ conda create --name snowflakes biopython</div><div class="line">#也可以指定python版本并安装Astroid和Babel</div><div class="line">$ conda create --name snowflakes python3.5 astroid babel</div></pre></td></tr></table></figure><p>使用biopython创建一个snowflakes的环境</p><ul><li>不指定目录即为默认目录/envs</li></ul><h3 id="使用环境"><a href="#使用环境" class="headerlink" title="使用环境"></a>使用环境</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ activate newen</div><div class="line">#切换回根目录</div><div class="line">$ deactivate</div></pre></td></tr></table></figure><h3 id="显示安装过的环境"><a href="#显示安装过的环境" class="headerlink" title="显示安装过的环境"></a>显示安装过的环境</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ conda info --envs</div></pre></td></tr></table></figure><p><img src="http://oxqn1kqf7.bkt.clouddn.com/17-10-28/22089148.jpg" alt="显示安装过的环境"><br>括号显示为当前环境<br><img src="http://oxqn1kqf7.bkt.clouddn.com/17-10-28/43734134.jpg" alt="括号显示为当前环境"></p><h3 id="切换到另一个环境"><a href="#切换到另一个环境" class="headerlink" title="切换到另一个环境"></a>切换到另一个环境</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ activate another_environment</div></pre></td></tr></table></figure><h3 id="克隆删除环境"><a href="#克隆删除环境" class="headerlink" title="克隆删除环境"></a>克隆删除环境</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">#克隆</div><div class="line">$ conda create --name flowers --clone snowflakes</div><div class="line">#删除</div><div class="line">$ conda remove --name flowers --all</div></pre></td></tr></table></figure><h2 id="管理Python"><a href="#管理Python" class="headerlink" title="管理Python"></a>管理Python</h2><h3 id="检查可安装的python版本"><a href="#检查可安装的python版本" class="headerlink" title="检查可安装的python版本"></a>检查可安装的python版本</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ conda search --full-name python</div><div class="line">#列出包含python的所有包</div><div class="line">$ conda search python</div></pre></td></tr></table></figure><h3 id="安装python3环境并不覆盖python2"><a href="#安装python3环境并不覆盖python2" class="headerlink" title="安装python3环境并不覆盖python2"></a>安装python3环境并不覆盖python2</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ conda create --name snackes pyhton=3</div></pre></td></tr></table></figure><h2 id="包管理"><a href="#包管理" class="headerlink" title="包管理"></a>包管理</h2><h3 id="看安装的包和版本列表"><a href="#看安装的包和版本列表" class="headerlink" title="看安装的包和版本列表"></a>看安装的包和版本列表</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ conda list</div></pre></td></tr></table></figure><h3 id="查找、安装、删除"><a href="#查找、安装、删除" class="headerlink" title="查找、安装、删除"></a>查找、安装、删除</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ conda search beautifulsoup4</div><div class="line">$ conda install --name snowflakes beautifulsoup4    #未指定位置安装在当前位置</div><div class="line">$ conda remove --name snowflakes beautifulsoup4</div></pre></td></tr></table></figure><h3 id="从Anaconda-org安装包"><a href="#从Anaconda-org安装包" class="headerlink" title="从Anaconda.org安装包"></a>从Anaconda.org安装包</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ conda install --channel https://conda.anaconda.org/pandas bottleneck</div></pre></td></tr></table></figure><ul><li><strong>更多命令具体参考：</strong><a href="https://conda.io/docs/user-guide/tasks/view-command-line-help.html" target="_blank" rel="noopener">Getting started</a></li></ul>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;管理conda&quot;&gt;&lt;a href=&quot;#管理conda&quot; class=&quot;headerlink&quot; title=&quot;管理conda&quot;&gt;&lt;/a&gt;管理conda&lt;/h2&gt;&lt;h3 id=&quot;验证安装&quot;&gt;&lt;a href=&quot;#验证安装&quot; class=&quot;headerlink&quot; title=&quot;验证安装&quot;&gt;&lt;/a&gt;验证安装&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;$ conda --version&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;命令参阅可以用: conda –help&lt;/p&gt;
-&lt;h3 id=&quot;将conda更新到最新&quot;&gt;&lt;a href=&quot;#将conda更新到最新&quot; class=&quot;headerlink&quot; title=&quot;将conda更新到最新&quot;&gt;&lt;/a&gt;将conda更新到最新&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;$ conda update conda&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;#有最新选择yes&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;Proceed ([y]/n)? y&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-    
-    </summary>
-    
-    
-      <category term="tools" scheme="http://linraner.github.io/tags/tools/"/>
-    
-      <category term="skill" scheme="http://linraner.github.io/tags/skill/"/>
     
   </entry>
   
