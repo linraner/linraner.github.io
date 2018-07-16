@@ -1,6 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[lambda表达式]]></title>
+    <url>%2F2018%2F07%2F15%2Flambda%E8%A1%A8%E8%BE%BE%E5%BC%8F%2F</url>
+    <content type="text"><![CDATA[lambda表达式是一行函数，是函数式编程的一种特性。 pythonlambda &lt;参数&gt;: 表达式123&gt;&gt;&gt; f = lambda a,b: a + b&gt;&gt;&gt; type(f)#&lt;type 'function'&gt; 获取整除2的数字12&gt;&gt;&gt; list(filter(lambda x: x%2==0, range(10)))#[0, 2, 4, 6, 8] 列表并行排序1234&gt;&gt;&gt; list1 = [1,2,3,2,3];list2 = [9,4,3,5,6]&gt;&gt;&gt; data = zip(list1, list2)&gt;&gt;&gt; data = sorted(data)&gt;&gt;&gt; list1, list2 = map(lambda t: list(t), zip(*data)) cpp c++里的形式是这样的[capture list] (parameter list) -&gt;return type {function body} 示例123456789101112131415161718192021222324252627#include &lt;iostream&gt;#include &lt;string&gt;#include &lt;algorithm&gt;#include &lt;vector&gt;using namespace std;int main() &#123; //call the func. auto f1 = []() &#123; cout &lt;&lt; "test" &lt;&lt; endl; &#125;; f1(); int y = 2; auto f2 = [y](int x) &#123; cout &lt;&lt; x + y &lt;&lt; endl; &#125;; f2(4); //STL vector&lt;int&gt; v; for (int i = 0; i &lt; 10; ++i) &#123; v.push_back(i); &#125; for_each(v.begin(), v.end(), [](int n) &#123; if (n % 2 == 0) &#123; cout &lt;&lt; n &lt;&lt; " "; &#125; &#125;); return 0;&#125;]]></content>
+      <tags>
+        <tag>python</tag>
+        <tag>函数式编程</tag>
+        <tag>cpp</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Django重置后台密码]]></title>
     <url>%2F2018%2F07%2F05%2FDjango%E9%87%8D%E7%BD%AE%E5%90%8E%E5%8F%B0%E5%AF%86%E7%A0%81%2F</url>
     <content type="text"><![CDATA[emmm时间长忘记密码了 执行1$ python manage.py shell 修改12345In [1]: from django.contrib.auth.models import UserIn [2]: user = User.objects.get(username='Username')In [3]: user.set_password('Password')In [4]: user.save()In [5]: exit()]]></content>
