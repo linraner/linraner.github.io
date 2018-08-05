@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://linraner.github.io/"/>
-  <updated>2018-07-16T00:30:14.706Z</updated>
+  <updated>2018-08-05T12:25:00.961Z</updated>
   <id>http://linraner.github.io/</id>
   
   <author>
@@ -15,6 +15,60 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>星期天</title>
+    <link href="http://linraner.github.io/2018/08/05/%E6%98%9F%E6%9C%9F%E5%A4%A9/"/>
+    <id>http://linraner.github.io/2018/08/05/星期天/</id>
+    <published>2018-08-05T12:21:13.616Z</published>
+    <updated>2018-08-05T12:25:00.961Z</updated>
+    
+    <content type="html"><![CDATA[<ul><li>那时的我们，如夏夜，温暖而沉浸在自己的睡梦中。未知黎明之前，我们都是夜幕下的精灵。</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;ul&gt;
+&lt;li&gt;那时的我们，如夏夜，温暖而沉浸在自己的睡梦中。未知黎明之前，我们都是夜幕下的精灵。&lt;/li&gt;
+&lt;/ul&gt;
+
+      
+    
+    </summary>
+    
+    
+      <category term="随笔" scheme="http://linraner.github.io/tags/%E9%9A%8F%E7%AC%94/"/>
+    
+      <category term="心情" scheme="http://linraner.github.io/tags/%E5%BF%83%E6%83%85/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>20行代码的签到脚本(Python)</title>
+    <link href="http://linraner.github.io/2018/07/28/20%E8%A1%8C%E4%BB%A3%E7%A0%81%E7%9A%84%E7%AD%BE%E5%88%B0%E8%84%9A%E6%9C%AC/"/>
+    <id>http://linraner.github.io/2018/07/28/20行代码的签到脚本/</id>
+    <published>2018-07-27T16:00:00.000Z</published>
+    <updated>2018-08-05T12:28:00.916Z</updated>
+    
+    <content type="html"><![CDATA[<p>懒得每天在某个网站签到，写了一个python脚本扔在云主机上。网站很简单，代码就几十行。</p><h3 id="签到脚本"><a href="#签到脚本" class="headerlink" title="签到脚本"></a>签到脚本</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> requests</div><div class="line"></div><div class="line">username = <span class="string">"####"</span></div><div class="line">password = <span class="string">"####"</span></div><div class="line">loginUrl = <span class="string">"登录路径/auth/login"</span></div><div class="line">s = requests.Session()</div><div class="line">logindata = &#123;</div><div class="line">    <span class="string">'email'</span>:username,</div><div class="line">    <span class="string">'passwd'</span>:password,</div><div class="line">    <span class="string">'remember_me'</span>:<span class="string">'ture'</span>,</div><div class="line">&#125;</div><div class="line">r = s.post(loginUrl,data=logindata)</div><div class="line">r = s.get(loginUrl)</div><div class="line">checkinUrl=<span class="string">"签到的路径/user/checkin"</span></div><div class="line">rr = s.post(checkinUrl)<span class="comment">#执行签到</span></div><div class="line">rr = s.get(loginUrl)</div><div class="line"><span class="comment"># print(rr)</span></div><div class="line"><span class="comment"># print(rr._content.decode())</span></div><div class="line">exit()</div></pre></td></tr></table></figure><h3 id="在Linux上定时执行"><a href="#在Linux上定时执行" class="headerlink" title="在Linux上定时执行"></a>在Linux上定时执行</h3><a id="more"></a><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">crontab -e</div></pre></td></tr></table></figure><p>进入编辑模式，设置每天8:00运行一次。<br>crontab的语法规范<br>分钟 小时 日期 月份 周 命令</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">00 8 * * * python /opt/checkin.py</div></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;懒得每天在某个网站签到，写了一个python脚本扔在云主机上。网站很简单，代码就几十行。&lt;/p&gt;
+&lt;h3 id=&quot;签到脚本&quot;&gt;&lt;a href=&quot;#签到脚本&quot; class=&quot;headerlink&quot; title=&quot;签到脚本&quot;&gt;&lt;/a&gt;签到脚本&lt;/h3&gt;&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;12&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;13&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;14&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;15&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;16&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;17&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;18&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;19&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt; requests&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;username = &lt;span class=&quot;string&quot;&gt;&quot;####&quot;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;password = &lt;span class=&quot;string&quot;&gt;&quot;####&quot;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;loginUrl = &lt;span class=&quot;string&quot;&gt;&quot;登录路径/auth/login&quot;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;s = requests.Session()&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;logindata = &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;string&quot;&gt;&#39;email&#39;&lt;/span&gt;:username,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;string&quot;&gt;&#39;passwd&#39;&lt;/span&gt;:password,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;string&quot;&gt;&#39;remember_me&#39;&lt;/span&gt;:&lt;span class=&quot;string&quot;&gt;&#39;ture&#39;&lt;/span&gt;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;r = s.post(loginUrl,data=logindata)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;r = s.get(loginUrl)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;checkinUrl=&lt;span class=&quot;string&quot;&gt;&quot;签到的路径/user/checkin&quot;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;rr = s.post(checkinUrl)&lt;span class=&quot;comment&quot;&gt;#执行签到&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;rr = s.get(loginUrl)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# print(rr)&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# print(rr._content.decode())&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;exit()&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;在Linux上定时执行&quot;&gt;&lt;a href=&quot;#在Linux上定时执行&quot; class=&quot;headerlink&quot; title=&quot;在Linux上定时执行&quot;&gt;&lt;/a&gt;在Linux上定时执行&lt;/h3&gt;
+    
+    </summary>
+    
+    
+      <category term="python" scheme="http://linraner.github.io/tags/python/"/>
+    
+      <category term="skill" scheme="http://linraner.github.io/tags/skill/"/>
+    
+      <category term="linux" scheme="http://linraner.github.io/tags/linux/"/>
+    
+  </entry>
   
   <entry>
     <title>lambda表达式</title>
@@ -64,9 +118,9 @@
     </summary>
     
     
-      <category term="Django" scheme="http://linraner.github.io/tags/Django/"/>
-    
       <category term="skill" scheme="http://linraner.github.io/tags/skill/"/>
+    
+      <category term="Django" scheme="http://linraner.github.io/tags/Django/"/>
     
   </entry>
   
@@ -262,9 +316,9 @@
     </summary>
     
     
-      <category term="skill" scheme="http://linraner.github.io/tags/skill/"/>
-    
       <category term="python" scheme="http://linraner.github.io/tags/python/"/>
+    
+      <category term="skill" scheme="http://linraner.github.io/tags/skill/"/>
     
   </entry>
   
@@ -363,9 +417,9 @@
     
       <category term="acm" scheme="http://linraner.github.io/tags/acm/"/>
     
-      <category term="c++" scheme="http://linraner.github.io/tags/c/"/>
-    
       <category term="字符串" scheme="http://linraner.github.io/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
+    
+      <category term="c++" scheme="http://linraner.github.io/tags/c/"/>
     
   </entry>
   
@@ -472,53 +526,6 @@
       <category term="acm" scheme="http://linraner.github.io/tags/acm/"/>
     
       <category term="数论" scheme="http://linraner.github.io/tags/%E6%95%B0%E8%AE%BA/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>scanf中的正则表达式</title>
-    <link href="http://linraner.github.io/2017/12/01/scanf%E4%B8%AD%E7%9A%84%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/"/>
-    <id>http://linraner.github.io/2017/12/01/scanf中的正则表达式/</id>
-    <published>2017-12-01T10:57:58.000Z</published>
-    <updated>2018-07-01T17:00:05.467Z</updated>
-    
-    <content type="html"><![CDATA[<h4 id="调用格式-scanf-quot-lt-格式化字符串-gt-quot-lt-地址表-gt"><a href="#调用格式-scanf-quot-lt-格式化字符串-gt-quot-lt-地址表-gt" class="headerlink" title="调用格式: scanf(&quot;&lt;格式化字符串&gt;&quot;, &lt;地址表&gt;);"></a><strong>调用格式:</strong> <code>scanf(&quot;&lt;格式化字符串&gt;&quot;, &lt;地址表&gt;);</code></h4><p>一、为变量赋值时表示成功读取变量的个数, &lt;格式化字符串&gt;与&lt;地址表&gt;是严格匹配的</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">scanf</span>(<span class="string">"%c %c"</span>, &amp;a, &amp;b); <span class="comment">//函数返回值是2，并丢弃不想使用的空白符</span></div><div class="line"><span class="built_in">scanf</span>(<span class="string">"%d,%d"</span>, &amp;a, &amp;b); <span class="comment">//输入必须有逗号， 多个空格为一个空格</span></div></pre></td></tr></table></figure><p>二、 <code>%s</code> 读取遇到空格停止读取，因此一般可以用fgets去读取字符串<br><a id="more"></a><br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">scanf</span>(<span class="string">"%[a-z]"</span>, &amp;str);  <span class="comment">//遇到不再a-z字符停止读取</span></div><div class="line"><span class="built_in">scanf</span>(<span class="string">"666%[0-9]"</span>, &amp;str);  <span class="comment">//666开头并且在0-9字符读取，不是则停止</span></div><div class="line"><span class="built_in">scanf</span>(<span class="string">"%[^\n]"</span>, &amp;str);     <span class="comment">//^表示求反集，即这句话不是回车一直开始读取</span></div></pre></td></tr></table></figure></p><p>三、压缩输入：在格式码前加上*，则用户就可以告诉scanf()读这个域，但不把它赋予任何变量。</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">scanf</span>(<span class="string">"%c%*c, &amp;ch); 使用此方法可以在字符处理时吃掉多余的回车。</span></div></pre></td></tr></table></figure><p><a href="https://docs.microsoft.com/zh-cn/dotnet/standard/base-types/regular-expression-language-quick-reference" target="_blank" rel="noopener">更多正则表达式语言参考</a></p><h4 id="sscanf、scanf的一些示例"><a href="#sscanf、scanf的一些示例" class="headerlink" title="sscanf、scanf的一些示例"></a>sscanf、scanf的一些示例</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h4 id=&quot;调用格式-scanf-quot-lt-格式化字符串-gt-quot-lt-地址表-gt&quot;&gt;&lt;a href=&quot;#调用格式-scanf-quot-lt-格式化字符串-gt-quot-lt-地址表-gt&quot; class=&quot;headerlink&quot; title=&quot;调用格式: scanf(&amp;quot;&amp;lt;格式化字符串&amp;gt;&amp;quot;, &amp;lt;地址表&amp;gt;);&quot;&gt;&lt;/a&gt;&lt;strong&gt;调用格式:&lt;/strong&gt; &lt;code&gt;scanf(&amp;quot;&amp;lt;格式化字符串&amp;gt;&amp;quot;, &amp;lt;地址表&amp;gt;);&lt;/code&gt;&lt;/h4&gt;&lt;p&gt;一、为变量赋值时表示成功读取变量的个数, &amp;lt;格式化字符串&amp;gt;与&amp;lt;地址表&amp;gt;是严格匹配的&lt;/p&gt;
-&lt;figure class=&quot;highlight cpp&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;scanf&lt;/span&gt;(&lt;span class=&quot;string&quot;&gt;&quot;%c %c&quot;&lt;/span&gt;, &amp;amp;a, &amp;amp;b); &lt;span class=&quot;comment&quot;&gt;//函数返回值是2，并丢弃不想使用的空白符&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;scanf&lt;/span&gt;(&lt;span class=&quot;string&quot;&gt;&quot;%d,%d&quot;&lt;/span&gt;, &amp;amp;a, &amp;amp;b); &lt;span class=&quot;comment&quot;&gt;//输入必须有逗号， 多个空格为一个空格&lt;/span&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;二、 &lt;code&gt;%s&lt;/code&gt; 读取遇到空格停止读取，因此一般可以用fgets去读取字符串&lt;br&gt;
-    
-    </summary>
-    
-    
-      <category term="acm" scheme="http://linraner.github.io/tags/acm/"/>
-    
-      <category term="c++" scheme="http://linraner.github.io/tags/c/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Git问题：Everything up-to-date解决</title>
-    <link href="http://linraner.github.io/2017/11/04/Git%E9%97%AE%E9%A2%98%EF%BC%9AEverything-up-to-date%E8%A7%A3%E5%86%B3/"/>
-    <id>http://linraner.github.io/2017/11/04/Git问题：Everything-up-to-date解决/</id>
-    <published>2017-11-04T04:39:28.000Z</published>
-    <updated>2018-07-01T17:00:32.171Z</updated>
-    
-    <content type="html"><![CDATA[<p>push代码时遇到提示：<code>Everything up-to-date</code>,无法push代码<br>原因是git提交改动到缓存，要push的时候不会将本地所有的分支都push掉，所以出现这个问题。我们应该告诉git提交哪个分支。</p><h2 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h2><p>在<a href="https://stackoverflow.com/questions/2936652/git-push-wont-do-anything-everything-up-to-date" target="_blank" rel="noopener">stackoverflow</a>有解决方案</p><h3 id="创建分支"><a href="#创建分支" class="headerlink" title="创建分支"></a>创建分支</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ git branch newbranch</div><div class="line">#查看分支</div><div class="line">$ git branch</div></pre></td></tr></table></figure><h3 id="切换分支"><a href="#切换分支" class="headerlink" title="切换分支"></a>切换分支</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git checkout newbranch</div></pre></td></tr></table></figure><a id="more"></a><h3 id="改动提交到新的分支"><a href="#改动提交到新的分支" class="headerlink" title="改动提交到新的分支"></a>改动提交到新的分支</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ git add .</div><div class="line">$ git commit -a</div></pre></td></tr></table></figure><h3 id="合并到master"><a href="#合并到master" class="headerlink" title="合并到master"></a>合并到master</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ git merge newbranch</div><div class="line">#查看冲突</div><div class="line">$ git diff</div></pre></td></tr></table></figure><h3 id="push代码"><a href="#push代码" class="headerlink" title="push代码"></a>push代码</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git push -u origin master</div></pre></td></tr></table></figure><h3 id="删除分支"><a href="#删除分支" class="headerlink" title="删除分支"></a>删除分支</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git branch -D newbranch</div></pre></td></tr></table></figure><ul><li>删除合并部分大写D改为小写d</li></ul>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;push代码时遇到提示：&lt;code&gt;Everything up-to-date&lt;/code&gt;,无法push代码&lt;br&gt;原因是git提交改动到缓存，要push的时候不会将本地所有的分支都push掉，所以出现这个问题。我们应该告诉git提交哪个分支。&lt;/p&gt;
-&lt;h2 id=&quot;解决&quot;&gt;&lt;a href=&quot;#解决&quot; class=&quot;headerlink&quot; title=&quot;解决&quot;&gt;&lt;/a&gt;解决&lt;/h2&gt;&lt;p&gt;在&lt;a href=&quot;https://stackoverflow.com/questions/2936652/git-push-wont-do-anything-everything-up-to-date&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;stackoverflow&lt;/a&gt;有解决方案&lt;/p&gt;
-&lt;h3 id=&quot;创建分支&quot;&gt;&lt;a href=&quot;#创建分支&quot; class=&quot;headerlink&quot; title=&quot;创建分支&quot;&gt;&lt;/a&gt;创建分支&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;$ git branch newbranch&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;#查看分支&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;$ git branch&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h3 id=&quot;切换分支&quot;&gt;&lt;a href=&quot;#切换分支&quot; class=&quot;headerlink&quot; title=&quot;切换分支&quot;&gt;&lt;/a&gt;切换分支&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;$ git checkout newbranch&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-    
-    </summary>
-    
-    
-      <category term="git" scheme="http://linraner.github.io/tags/git/"/>
     
   </entry>
   
