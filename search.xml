@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[九月 (海子)]]></title>
+    <url>%2F2018%2F09%2F03%2F%E4%B9%9D%E6%9C%88%2F</url>
+    <content type="text"><![CDATA[目击众神死亡的草原上野花一片远在远方的风比远方更远我的琴声呜咽 泪水全无我把这远方的远归还草原一个叫木头 一个叫马尾我的琴声呜咽 泪水全无 远方只有在死亡中凝聚野花一片明月如镜高悬草原映照千年岁月我的琴声呜咽 泪水全无只身打马过草原]]></content>
+      <tags>
+        <tag>随笔</tag>
+        <tag>心情</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[星期天]]></title>
     <url>%2F2018%2F08%2F05%2F%E6%98%9F%E6%9C%9F%E5%A4%A9%2F</url>
     <content type="text"><![CDATA[那时的我们，如夏夜，温暖而沉浸在自己的睡梦中。未知黎明之前，我们都是夜幕下的精灵。]]></content>
@@ -12,7 +21,7 @@
   <entry>
     <title><![CDATA[20行代码的签到脚本(Python)]]></title>
     <url>%2F2018%2F07%2F28%2F20%E8%A1%8C%E4%BB%A3%E7%A0%81%E7%9A%84%E7%AD%BE%E5%88%B0%E8%84%9A%E6%9C%AC%2F</url>
-    <content type="text"><![CDATA[懒得每天在某个网站签到，写了一个python脚本扔在云主机上。网站很简单，代码就几十行。 签到脚本12345678910111213141516171819import requestsusername = "####"password = "####"loginUrl = "登录路径/auth/login"s = requests.Session()logindata = &#123; 'email':username, 'passwd':password, 'remember_me':'ture',&#125;r = s.post(loginUrl,data=logindata)r = s.get(loginUrl)checkinUrl="签到的路径/user/checkin"rr = s.post(checkinUrl)#执行签到rr = s.get(loginUrl)# print(rr)# print(rr._content.decode())exit() 在Linux上定时执行 1crontab -e 进入编辑模式，设置每天8:00运行一次。crontab的语法规范分钟 小时 日期 月份 周 命令 100 8 * * * python /opt/checkin.py]]></content>
+    <content type="text"><![CDATA[懒得每天在某个网站签到，写了一个python脚本扔在云主机上。网站很简单，代码就几十行。 签到脚本12345678910111213141516171819import requestsusername = "####"password = "####"loginUrl = "登录路径/auth/login"s = requests.Session()logindata = &#123; 'email':username, 'passwd':password, 'remember_me':'ture',&#125;r = s.post(loginUrl,data=logindata)r = s.get(loginUrl)checkinUrl="签到的路径/user/checkin"rr = s.post(checkinUrl)#执行签到rr = s.get(loginUrl)# print(rr)# print(rr._content.decode())exit() 在Linux上定时执行这个脚本 1crontab -e 进入编辑模式，设置每天8:00运行一次。crontab的语法规范分钟 小时 日期 月份 周 命令 100 8 * * * python /opt/checkin.py]]></content>
       <tags>
         <tag>python</tag>
         <tag>skill</tag>
