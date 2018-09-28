@@ -1,8 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[星期天]]></title>
+    <url>%2F2018%2F09%2F28%2F%E6%98%9F%E6%9C%9F%E5%A4%A9%2F</url>
+    <content type="text"><![CDATA[那时的我们，如夏夜，温暖而沉浸在自己的睡梦中。未知黎明之前，我们都是夜幕下的精灵。]]></content>
+      <tags>
+        <tag>随笔</tag>
+        <tag>心情</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[信仰是理智的终结]]></title>
+    <url>%2F2018%2F09%2F28%2F%E4%BF%A1%E4%BB%B0%E6%98%AF%E7%90%86%E6%99%BA%E7%9A%84%E7%BB%88%E7%BB%93%2F</url>
+    <content type="text"><![CDATA[一个相信共产主义的人]]></content>
+      <tags>
+        <tag>随笔</tag>
+        <tag>心情</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[九月 (海子)]]></title>
-    <url>%2F2018%2F09%2F03%2F%E4%B9%9D%E6%9C%88%2F</url>
+    <url>%2F2018%2F09%2F28%2F%E4%B9%9D%E6%9C%88%2F</url>
     <content type="text"><![CDATA[目击众神死亡的草原上野花一片远在远方的风比远方更远我的琴声呜咽 泪水全无我把这远方的远归还草原一个叫木头 一个叫马尾我的琴声呜咽 泪水全无 远方只有在死亡中凝聚野花一片明月如镜高悬草原映照千年岁月我的琴声呜咽 泪水全无只身打马过草原]]></content>
       <tags>
         <tag>随笔</tag>
@@ -10,12 +28,50 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[星期天]]></title>
-    <url>%2F2018%2F08%2F05%2F%E6%98%9F%E6%9C%9F%E5%A4%A9%2F</url>
-    <content type="text"><![CDATA[那时的我们，如夏夜，温暖而沉浸在自己的睡梦中。未知黎明之前，我们都是夜幕下的精灵。]]></content>
+    <title><![CDATA[世界充满谎言]]></title>
+    <url>%2F2018%2F09%2F28%2F%E4%B8%96%E7%95%8C%E5%85%85%E6%BB%A1%E8%B0%8E%E8%A8%80%2F</url>
+    <content type="text"><![CDATA[人与人，人与物，都会欺骗]]></content>
       <tags>
         <tag>随笔</tag>
         <tag>心情</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[一念花开]]></title>
+    <url>%2F2018%2F09%2F28%2F%E4%B8%80%E5%BF%B5%E8%8A%B1%E5%BC%80%2F</url>
+    <content type="text"><![CDATA[所有的存在都是虚无的]]></content>
+      <tags>
+        <tag>随笔</tag>
+        <tag>心情</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[lambda表达式]]></title>
+    <url>%2F2018%2F09%2F28%2Flambda%E8%A1%A8%E8%BE%BE%E5%BC%8F%2F</url>
+    <content type="text"><![CDATA[lambda表达式是一行函数，是函数式编程的一种特性。 pythonlambda &lt;参数&gt;: 表达式123&gt;&gt;&gt; f = lambda a,b: a + b&gt;&gt;&gt; type(f)#&lt;type 'function'&gt; 获取整除2的数字12&gt;&gt;&gt; list(filter(lambda x: x%2==0, range(10)))#[0, 2, 4, 6, 8] 列表并行排序1234&gt;&gt;&gt; list1 = [1,2,3,2,3];list2 = [9,4,3,5,6]&gt;&gt;&gt; data = zip(list1, list2)&gt;&gt;&gt; data = sorted(data)&gt;&gt;&gt; list1, list2 = map(lambda t: list(t), zip(*data)) cpp c++里的形式是这样的[capture list] (parameter list) -&gt;return type {function body} 示例123456789101112131415161718192021222324252627#include &lt;iostream&gt;#include &lt;string&gt;#include &lt;algorithm&gt;#include &lt;vector&gt;using namespace std;int main() &#123; //call the func. auto f1 = []() &#123; cout &lt;&lt; "test" &lt;&lt; endl; &#125;; f1(); int y = 2; auto f2 = [y](int x) &#123; cout &lt;&lt; x + y &lt;&lt; endl; &#125;; f2(4); //STL vector&lt;int&gt; v; for (int i = 0; i &lt; 10; ++i) &#123; v.push_back(i); &#125; for_each(v.begin(), v.end(), [](int n) &#123; if (n % 2 == 0) &#123; cout &lt;&lt; n &lt;&lt; " "; &#125; &#125;); return 0;&#125;]]></content>
+      <tags>
+        <tag>python</tag>
+        <tag>函数式编程</tag>
+        <tag>cpp</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Django重置后台密码]]></title>
+    <url>%2F2018%2F09%2F28%2FDjango%E9%87%8D%E7%BD%AE%E5%90%8E%E5%8F%B0%E5%AF%86%E7%A0%81%2F</url>
+    <content type="text"><![CDATA[emmm时间长忘记密码了 执行1$ python manage.py shell 修改12345In [1]: from django.contrib.auth.models import UserIn [2]: user = User.objects.get(username='Username')In [3]: user.set_password('Password')In [4]: user.save()In [5]: exit()]]></content>
+      <tags>
+        <tag>skill</tag>
+        <tag>Django</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[c++的字符串与数字的转换]]></title>
+    <url>%2F2018%2F09%2F28%2Fc%2B%2B%E7%9A%84%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%8E%E6%95%B0%E5%AD%97%E7%9A%84%E8%BD%AC%E6%8D%A2%2F</url>
+    <content type="text"><![CDATA[数字转字符串1234567#include &lt;sstream&gt;double a = 123.456;string s;stringstream ss;ss &lt;&lt; a;ss &gt;&gt; s;ss.clear(); 12345#include &lt;map&gt;map&lt;int, char&gt; m;for (int i = 0; i &lt; 10; i++) &#123; m[i] = i + '0';&#125; 1234#include &lt;cstdio&gt;char str[10];double a = 123.456;sprintf(str, "%.3lf", a); 123char str[10];int a=175;sprintf(str,"%x",a);//10进制转换成16进制，如果输出大写的字母是sprintf(str,"%X",a) 字符串转数字 1234567#include &lt;sstream&gt;string s = "123.456";double a;stringstream ss;ss &lt;&lt; s;ss &gt;&gt; a;ss.clear(); 12345#include &lt;map&gt;map&lt;char, int&gt; m;for (int i = 0; i &lt; 10; i++) &#123; m[i+'0'] = i;&#125; 1234#include &lt;cstdio&gt;char str[] = "123.456";double a;sscanf(str, "%lf", &amp;a); 123char str[]="AF";int a;sscanf(str,"%x",&amp;a); //16进制转换成10进制 123456#include &lt;cstdlib&gt;int a;float b;long c;a=atoi("32");b=atof("3.1415");c=atol("567283");printf ("%d\n%f\n%d\n",a,b,c);]]></content>
+      <tags>
+        <tag>acm</tag>
+        <tag>c++</tag>
+        <tag>字符串</tag>
       </tags>
   </entry>
   <entry>
@@ -26,25 +82,6 @@
         <tag>python</tag>
         <tag>skill</tag>
         <tag>linux</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[lambda表达式]]></title>
-    <url>%2F2018%2F07%2F15%2Flambda%E8%A1%A8%E8%BE%BE%E5%BC%8F%2F</url>
-    <content type="text"><![CDATA[lambda表达式是一行函数，是函数式编程的一种特性。 pythonlambda &lt;参数&gt;: 表达式123&gt;&gt;&gt; f = lambda a,b: a + b&gt;&gt;&gt; type(f)#&lt;type 'function'&gt; 获取整除2的数字12&gt;&gt;&gt; list(filter(lambda x: x%2==0, range(10)))#[0, 2, 4, 6, 8] 列表并行排序1234&gt;&gt;&gt; list1 = [1,2,3,2,3];list2 = [9,4,3,5,6]&gt;&gt;&gt; data = zip(list1, list2)&gt;&gt;&gt; data = sorted(data)&gt;&gt;&gt; list1, list2 = map(lambda t: list(t), zip(*data)) cpp c++里的形式是这样的[capture list] (parameter list) -&gt;return type {function body} 示例123456789101112131415161718192021222324252627#include &lt;iostream&gt;#include &lt;string&gt;#include &lt;algorithm&gt;#include &lt;vector&gt;using namespace std;int main() &#123; //call the func. auto f1 = []() &#123; cout &lt;&lt; "test" &lt;&lt; endl; &#125;; f1(); int y = 2; auto f2 = [y](int x) &#123; cout &lt;&lt; x + y &lt;&lt; endl; &#125;; f2(4); //STL vector&lt;int&gt; v; for (int i = 0; i &lt; 10; ++i) &#123; v.push_back(i); &#125; for_each(v.begin(), v.end(), [](int n) &#123; if (n % 2 == 0) &#123; cout &lt;&lt; n &lt;&lt; " "; &#125; &#125;); return 0;&#125;]]></content>
-      <tags>
-        <tag>python</tag>
-        <tag>函数式编程</tag>
-        <tag>cpp</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[Django重置后台密码]]></title>
-    <url>%2F2018%2F07%2F05%2FDjango%E9%87%8D%E7%BD%AE%E5%90%8E%E5%8F%B0%E5%AF%86%E7%A0%81%2F</url>
-    <content type="text"><![CDATA[emmm时间长忘记密码了 执行1$ python manage.py shell 修改12345In [1]: from django.contrib.auth.models import UserIn [2]: user = User.objects.get(username='Username')In [3]: user.set_password('Password')In [4]: user.save()In [5]: exit()]]></content>
-      <tags>
-        <tag>skill</tag>
-        <tag>Django</tag>
       </tags>
   </entry>
   <entry>
@@ -144,43 +181,6 @@
       <tags>
         <tag>acm</tag>
         <tag>图论</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[c++的字符串与数字的转换]]></title>
-    <url>%2F2018%2F03%2F22%2Fc%2B%2B%E7%9A%84%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%8E%E6%95%B0%E5%AD%97%E7%9A%84%E8%BD%AC%E6%8D%A2%2F</url>
-    <content type="text"><![CDATA[数字转字符串1234567#include &lt;sstream&gt;double a = 123.456;string s;stringstream ss;ss &lt;&lt; a;ss &gt;&gt; s;ss.clear(); 12345#include &lt;map&gt;map&lt;int, char&gt; m;for (int i = 0; i &lt; 10; i++) &#123; m[i] = i + '0';&#125; 1234#include &lt;cstdio&gt;char str[10];double a = 123.456;sprintf(str, "%.3lf", a); 123char str[10];int a=175;sprintf(str,"%x",a);//10进制转换成16进制，如果输出大写的字母是sprintf(str,"%X",a) 字符串转数字 1234567#include &lt;sstream&gt;string s = "123.456";double a;stringstream ss;ss &lt;&lt; s;ss &gt;&gt; a;ss.clear(); 12345#include &lt;map&gt;map&lt;char, int&gt; m;for (int i = 0; i &lt; 10; i++) &#123; m[i+'0'] = i;&#125; 1234#include &lt;cstdio&gt;char str[] = "123.456";double a;sscanf(str, "%lf", &amp;a); 123char str[]="AF";int a;sscanf(str,"%x",&amp;a); //16进制转换成10进制 123456#include &lt;cstdlib&gt;int a;float b;long c;a=atoi("32");b=atof("3.1415");c=atol("567283");printf ("%d\n%f\n%d\n",a,b,c);]]></content>
-      <tags>
-        <tag>acm</tag>
-        <tag>c++</tag>
-        <tag>字符串</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[世界充满谎言]]></title>
-    <url>%2F2018%2F03%2F10%2F%E4%B8%96%E7%95%8C%E5%85%85%E6%BB%A1%E8%B0%8E%E8%A8%80%2F</url>
-    <content type="text"><![CDATA[人与人，人与物，都会欺骗]]></content>
-      <tags>
-        <tag>随笔</tag>
-        <tag>心情</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[信仰是理智的终结]]></title>
-    <url>%2F2018%2F03%2F08%2F%E4%BF%A1%E4%BB%B0%E6%98%AF%E7%90%86%E6%99%BA%E7%9A%84%E7%BB%88%E7%BB%93%2F</url>
-    <content type="text"><![CDATA[一个相信共产主义的人]]></content>
-      <tags>
-        <tag>随笔</tag>
-        <tag>心情</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[一念花开]]></title>
-    <url>%2F2018%2F03%2F08%2F%E4%B8%80%E5%BF%B5%E8%8A%B1%E5%BC%80%2F</url>
-    <content type="text"><![CDATA[所有的存在都是虚无的]]></content>
-      <tags>
-        <tag>随笔</tag>
-        <tag>心情</tag>
       </tags>
   </entry>
   <entry>

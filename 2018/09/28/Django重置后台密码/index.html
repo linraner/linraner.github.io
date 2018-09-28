@@ -70,7 +70,7 @@
 
 
 
-  <meta name="keywords" content="python,函数式编程,cpp," />
+  <meta name="keywords" content="skill,Django," />
 
 
 
@@ -83,18 +83,18 @@
 
 
 
-<meta name="description" content="lambda表达式是一行函数，是函数式编程的一种特性。 pythonlambda &amp;lt;参数&amp;gt;: 表达式123&amp;gt;&amp;gt;&amp;gt; f = lambda a,b: a + b&amp;gt;&amp;gt;&amp;gt; type(f)#&amp;lt;type &apos;function&apos;&amp;gt; 获取整除2的数字12&amp;gt;&amp;gt;&amp;gt; list(filter(lambda x: x%2==0, range(10)">
-<meta name="keywords" content="python,函数式编程,cpp">
+<meta name="description" content="emmm时间长忘记密码了 执行1$ python manage.py shell 修改12345In [1]: from django.contrib.auth.models import UserIn [2]: user = User.objects.get(username=&apos;Username&apos;)In [3]: user.set_password(&apos;Password&apos;)In [4]: user">
+<meta name="keywords" content="skill,Django">
 <meta property="og:type" content="article">
-<meta property="og:title" content="lambda表达式">
-<meta property="og:url" content="http://linraner.github.io/2018/07/15/lambda表达式/index.html">
+<meta property="og:title" content="Django重置后台密码">
+<meta property="og:url" content="http://linraner.github.io/2018/09/28/Django重置后台密码/index.html">
 <meta property="og:site_name" content="Frank">
-<meta property="og:description" content="lambda表达式是一行函数，是函数式编程的一种特性。 pythonlambda &amp;lt;参数&amp;gt;: 表达式123&amp;gt;&amp;gt;&amp;gt; f = lambda a,b: a + b&amp;gt;&amp;gt;&amp;gt; type(f)#&amp;lt;type &apos;function&apos;&amp;gt; 获取整除2的数字12&amp;gt;&amp;gt;&amp;gt; list(filter(lambda x: x%2==0, range(10)">
+<meta property="og:description" content="emmm时间长忘记密码了 执行1$ python manage.py shell 修改12345In [1]: from django.contrib.auth.models import UserIn [2]: user = User.objects.get(username=&apos;Username&apos;)In [3]: user.set_password(&apos;Password&apos;)In [4]: user">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-07-16T00:30:14.706Z">
+<meta property="og:updated_time" content="2018-07-11T01:18:51.620Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="lambda表达式">
-<meta name="twitter:description" content="lambda表达式是一行函数，是函数式编程的一种特性。 pythonlambda &amp;lt;参数&amp;gt;: 表达式123&amp;gt;&amp;gt;&amp;gt; f = lambda a,b: a + b&amp;gt;&amp;gt;&amp;gt; type(f)#&amp;lt;type &apos;function&apos;&amp;gt; 获取整除2的数字12&amp;gt;&amp;gt;&amp;gt; list(filter(lambda x: x%2==0, range(10)">
+<meta name="twitter:title" content="Django重置后台密码">
+<meta name="twitter:description" content="emmm时间长忘记密码了 执行1$ python manage.py shell 修改12345In [1]: from django.contrib.auth.models import UserIn [2]: user = User.objects.get(username=&apos;Username&apos;)In [3]: user.set_password(&apos;Password&apos;)In [4]: user">
 
 
 
@@ -124,13 +124,13 @@
 
 
 
-  <link rel="canonical" href="http://linraner.github.io/2018/07/15/lambda表达式/"/>
+  <link rel="canonical" href="http://linraner.github.io/2018/09/28/Django重置后台密码/"/>
 
 
 
 
 
-  <title>lambda表达式 | Frank</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  <title>Django重置后台密码 | Frank</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
   
 
 
@@ -301,7 +301,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://linraner.github.io/2018/07/15/lambda表达式/">
+    <link itemprop="mainEntityOfPage" href="http://linraner.github.io/2018/09/28/Django重置后台密码/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Frank">
@@ -318,7 +318,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">lambda表达式</h2>
+          <h2 class="post-title" itemprop="name headline">Django重置后台密码</h2>
         
 
         <div class="post-meta">
@@ -330,8 +330,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-07-15T22:34:10+08:00">
-                2018-07-15
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-09-28T23:20:13+08:00">
+                2018-09-28
               </time>
             
 
@@ -368,13 +368,9 @@
       
 
       
-        <p>lambda表达式是一行函数，是函数式编程的一种特性。</p>
-<h2 id="python"><a href="#python" class="headerlink" title="python"></a>python</h2><p>lambda &lt;参数&gt;: 表达式<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span>f = <span class="keyword">lambda</span> a,b: a + b</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>type(f)</div><div class="line"><span class="comment">#&lt;type 'function'&gt;</span></div></pre></td></tr></table></figure></p>
-<p>获取整除2的数字<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span>list(filter(<span class="keyword">lambda</span> x: x%<span class="number">2</span>==<span class="number">0</span>, range(<span class="number">10</span>)))</div><div class="line"><span class="comment">#[0, 2, 4, 6, 8]</span></div></pre></td></tr></table></figure></p>
-<p>列表并行排序<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span>list1 = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">2</span>,<span class="number">3</span>];list2 = [<span class="number">9</span>,<span class="number">4</span>,<span class="number">3</span>,<span class="number">5</span>,<span class="number">6</span>]</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>data = zip(list1, list2)</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>data = sorted(data)</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>list1, list2 = map(<span class="keyword">lambda</span> t: list(t), zip(*data))</div></pre></td></tr></table></figure></p>
-<h2 id="cpp"><a href="#cpp" class="headerlink" title="cpp"></a>cpp</h2><a id="more"></a>
-<p>c++里的形式是这样的<br>[capture list] (parameter list) -&gt;return type {function body}</p>
-<h3 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</div><div class="line">    <span class="comment">//call the func.</span></div><div class="line">    <span class="keyword">auto</span> f1 = []() &#123; <span class="built_in">cout</span> &lt;&lt; <span class="string">"test"</span> &lt;&lt; <span class="built_in">endl</span>; &#125;; </div><div class="line">    f1();</div><div class="line">    <span class="keyword">int</span> y = <span class="number">2</span>;</div><div class="line">    <span class="keyword">auto</span> f2 = [y](<span class="keyword">int</span> x) &#123;</div><div class="line">        <span class="built_in">cout</span> &lt;&lt; x + y &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">    &#125;;</div><div class="line">    f2(<span class="number">4</span>);</div><div class="line">    <span class="comment">//STL</span></div><div class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; v;</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; ++i) &#123;</div><div class="line">        v.push_back(i);</div><div class="line">    &#125;</div><div class="line">    for_each(v.begin(), v.end(), [](<span class="keyword">int</span> n) &#123; </div><div class="line">        <span class="keyword">if</span> (n % <span class="number">2</span> == <span class="number">0</span>) &#123;</div><div class="line">            <span class="built_in">cout</span> &lt;&lt; n &lt;&lt; <span class="string">" "</span>;</div><div class="line">        &#125;</div><div class="line">    &#125;);</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+        <p>emmm时间长忘记密码了</p>
+<h3 id="执行"><a href="#执行" class="headerlink" title="执行"></a>执行</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="meta">$</span> python manage.py shell</div></pre></td></tr></table></figure>
+<h3 id="修改"><a href="#修改" class="headerlink" title="修改"></a>修改</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">In [<span class="number">1</span>]: <span class="keyword">from</span> django.contrib.auth.models <span class="keyword">import</span> User</div><div class="line">In [<span class="number">2</span>]: user = User.objects.get(username=<span class="string">'Username'</span>)</div><div class="line">In [<span class="number">3</span>]: user.set_password(<span class="string">'Password'</span>)</div><div class="line">In [<span class="number">4</span>]: user.save()</div><div class="line">In [<span class="number">5</span>]: exit()</div></pre></td></tr></table></figure>
 
       
     </div>
@@ -392,11 +388,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/python/" rel="tag"><i class="fa fa-tag"></i>python</a>
+            <a href="/tags/skill/" rel="tag"><i class="fa fa-tag"></i>skill</a>
           
-            <a href="/tags/函数式编程/" rel="tag"><i class="fa fa-tag"></i>函数式编程</a>
-          
-            <a href="/tags/cpp/" rel="tag"><i class="fa fa-tag"></i>cpp</a>
+            <a href="/tags/Django/" rel="tag"><i class="fa fa-tag"></i>Django</a>
           
         </div>
       
@@ -409,8 +403,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/07/05/Django重置后台密码/" rel="next" title="Django重置后台密码">
-                <i class="fa fa-chevron-left"></i> Django重置后台密码
+              <a href="/2018/09/28/c++的字符串与数字的转换/" rel="next" title="c++的字符串与数字的转换">
+                <i class="fa fa-chevron-left"></i> c++的字符串与数字的转换
               </a>
             
           </div>
@@ -419,8 +413,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/07/28/20行代码的签到脚本/" rel="prev" title="20行代码的签到脚本(Python)">
-                20行代码的签到脚本(Python) <i class="fa fa-chevron-right"></i>
+              <a href="/2018/09/28/lambda表达式/" rel="prev" title="lambda表达式">
+                lambda表达式 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -577,7 +571,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#python"><span class="nav-number">1.</span> <span class="nav-text">python</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#cpp"><span class="nav-number">2.</span> <span class="nav-text">cpp</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#示例"><span class="nav-number">2.1.</span> <span class="nav-text">示例</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#执行"><span class="nav-number">1.</span> <span class="nav-text">执行</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改"><span class="nav-number">2.</span> <span class="nav-text">修改</span></a></li></ol></div>
             
 
           </div>
