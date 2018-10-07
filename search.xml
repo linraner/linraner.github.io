@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[JSP 九大内置对象常用方法]]></title>
+    <url>%2F2018%2F10%2F01%2FJSP%20%E4%B9%9D%E5%A4%A7%E5%86%85%E7%BD%AE%E5%AF%B9%E8%B1%A1%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95%2F</url>
+    <content type="text"><![CDATA[1. request 对象常用方法request 是来自客户端的请求. 客户端的请求信息封装在 request 对象中. 以下 HttpServletRequest 类的实例. 方法 ( 类型 + 方法名 ) 描述 String getParameter(String strTextName) 获取表单提交信息 Enumeration getParameterNames() 返回可用参数的枚举 String[] getParameterValues(String name) 返回包含参数 name 的所有的数组 Enumeration getAttributeNames() 返回所有属性名的属性值 Object getAttribute(String name) 返回指定属性的属性值 String getCharacterEncoding() 返回字节编码方式 String getProtocol() 获取用户使用的协议 String getServletPath() 获取用户提交信息的页面 String getMethod() 获取客户提交信息的方式 BufferReader getHeader() 获取 HTTP 头文件的 accept、accept-encoding 和 Host 的值 String getRemoteAddr() 获取客户的 IP 地址 String getRemoteHost() 获取客户机的名称 String getserverName() 获取服务器的名称 int getServerPort() 获取服务器端口号 2. resopnse 对象常用方法resopnse 对象代表的是对客户端的相应. 向客户端发送文字时直接使用. 以下是 HttpServletResopnse 类的实例. 方法 ( 类型 + 方法名 ) 描述 String getCharacterEncoding() 返回响应用的是什么字符编码 ServletOutputStream getOutputStream() 返回响应的一个二进制输出流 PrintWrite getWrite() 返回可以向客户端输出字符的一个对象 void setContentLength(int len) 设置响应头长度 void setContentTye(String type) 设置响应的 MIME 类型 void sendRedirect(Java.lang.String location) 重新定向客户端的请求 3. session 常用方法session 指的是客户端与服务器的一次回话, 从客户连接到服务器的一个 WebApplication 开始, 直到客户端与服务器断开连接为止.]]></content>
+      <tags>
+        <tag>JSP</tag>
+        <tag>Java</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[星期天]]></title>
     <url>%2F2018%2F09%2F28%2F%E6%98%9F%E6%9C%9F%E5%A4%A9%2F</url>
     <content type="text"><![CDATA[那时的我们，如夏夜，温暖而沉浸在自己的睡梦中。未知黎明之前，我们都是夜幕下的精灵。]]></content>

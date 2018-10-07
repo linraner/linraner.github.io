@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://linraner.github.io/"/>
-  <updated>2018-08-05T12:25:00.961Z</updated>
+  <updated>2018-10-07T12:38:53.225Z</updated>
   <id>http://linraner.github.io/</id>
   
   <author>
@@ -15,6 +15,129 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>JSP 九大内置对象常用方法</title>
+    <link href="http://linraner.github.io/2018/10/01/JSP%20%E4%B9%9D%E5%A4%A7%E5%86%85%E7%BD%AE%E5%AF%B9%E8%B1%A1%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95/"/>
+    <id>http://linraner.github.io/2018/10/01/JSP 九大内置对象常用方法/</id>
+    <published>2018-10-01T10:16:21.000Z</published>
+    <updated>2018-10-07T12:38:53.225Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="1-request-对象常用方法"><a href="#1-request-对象常用方法" class="headerlink" title="1. request 对象常用方法"></a>1. request 对象常用方法</h2><p><code>request</code> 是来自客户端的请求. 客户端的请求信息封装在 <code>request</code> 对象中. 以下 <code>HttpServletRequest</code> 类的实例.</p><table><thead><tr><th>方法 ( 类型 + 方法名 )</th><th>描述</th></tr></thead><tbody><tr><td>String getParameter(String strTextName)</td><td>获取表单提交信息</td></tr><tr><td>Enumeration getParameterNames()</td><td>返回可用参数的枚举</td></tr><tr><td>String[] getParameterValues(String name)</td><td>返回包含参数 name 的所有的数组</td></tr><tr><td>Enumeration getAttributeNames()</td><td>返回所有属性名的属性值</td></tr><tr><td>Object getAttribute(String name)</td><td>返回指定属性的属性值</td></tr><tr><td>String getCharacterEncoding()</td><td>返回字节编码方式</td></tr><tr><td>String getProtocol()</td><td>获取用户使用的协议</td></tr><tr><td>String getServletPath()</td><td>获取用户提交信息的页面</td></tr><tr><td>String getMethod()</td><td>获取客户提交信息的方式</td></tr><tr><td>BufferReader getHeader()</td><td>获取 HTTP 头文件的 accept、accept-encoding 和 Host 的值</td></tr><tr><td>String getRemoteAddr()</td><td>获取客户的 IP 地址</td></tr><tr><td>String getRemoteHost()</td><td>获取客户机的名称</td></tr><tr><td>String getserverName()</td><td>获取服务器的名称</td></tr><tr><td>int getServerPort()</td><td>获取服务器端口号</td></tr></tbody></table><h2 id="2-resopnse-对象常用方法"><a href="#2-resopnse-对象常用方法" class="headerlink" title="2. resopnse 对象常用方法"></a>2. resopnse 对象常用方法</h2><p><code>resopnse</code> 对象代表的是对客户端的相应. 向客户端发送文字时直接使用. 以下是 <code>HttpServletResopnse</code> 类的实例.</p><table><thead><tr><th>方法 ( 类型 + 方法名 )</th><th>描述</th></tr></thead><tbody><tr><td>String getCharacterEncoding()</td><td>返回响应用的是什么字符编码</td></tr><tr><td>ServletOutputStream getOutputStream()</td><td>返回响应的一个二进制输出流</td></tr><tr><td>PrintWrite getWrite()</td><td>返回可以向客户端输出字符的一个对象</td></tr><tr><td>void setContentLength(int len)</td><td>设置响应头长度</td></tr><tr><td>void setContentTye(String type)</td><td>设置响应的 MIME 类型</td></tr><tr><td>void sendRedirect(Java.lang.String location)</td><td>重新定向客户端的请求</td></tr></tbody></table><a id="more"></a><h2 id="3-session-常用方法"><a href="#3-session-常用方法" class="headerlink" title="3. session 常用方法"></a>3. session 常用方法</h2><p><code>session</code> 指的是客户端与服务器的一次回话, 从客户连接到服务器的一个 WebApplication 开始, 直到客户端与服务器断开连接为止. </p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;1-request-对象常用方法&quot;&gt;&lt;a href=&quot;#1-request-对象常用方法&quot; class=&quot;headerlink&quot; title=&quot;1. request 对象常用方法&quot;&gt;&lt;/a&gt;1. request 对象常用方法&lt;/h2&gt;&lt;p&gt;&lt;code&gt;request&lt;/code&gt; 是来自客户端的请求. 客户端的请求信息封装在 &lt;code&gt;request&lt;/code&gt; 对象中. 以下 &lt;code&gt;HttpServletRequest&lt;/code&gt; 类的实例.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;方法 ( 类型 + 方法名 )&lt;/th&gt;
+&lt;th&gt;描述&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;String getParameter(String strTextName)&lt;/td&gt;
+&lt;td&gt;获取表单提交信息&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Enumeration getParameterNames()&lt;/td&gt;
+&lt;td&gt;返回可用参数的枚举&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;String[] getParameterValues(String name)&lt;/td&gt;
+&lt;td&gt;返回包含参数 name 的所有的数组&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Enumeration getAttributeNames()&lt;/td&gt;
+&lt;td&gt;返回所有属性名的属性值&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Object getAttribute(String name)&lt;/td&gt;
+&lt;td&gt;返回指定属性的属性值&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;String getCharacterEncoding()&lt;/td&gt;
+&lt;td&gt;返回字节编码方式&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;String getProtocol()&lt;/td&gt;
+&lt;td&gt;获取用户使用的协议&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;String getServletPath()&lt;/td&gt;
+&lt;td&gt;获取用户提交信息的页面&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;String getMethod()&lt;/td&gt;
+&lt;td&gt;获取客户提交信息的方式&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;BufferReader getHeader()&lt;/td&gt;
+&lt;td&gt;获取 HTTP 头文件的 accept、accept-encoding 和 Host 的值&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;String getRemoteAddr()&lt;/td&gt;
+&lt;td&gt;获取客户的 IP 地址&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;String getRemoteHost()&lt;/td&gt;
+&lt;td&gt;获取客户机的名称&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;String getserverName()&lt;/td&gt;
+&lt;td&gt;获取服务器的名称&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;int getServerPort()&lt;/td&gt;
+&lt;td&gt;获取服务器端口号&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&quot;2-resopnse-对象常用方法&quot;&gt;&lt;a href=&quot;#2-resopnse-对象常用方法&quot; class=&quot;headerlink&quot; title=&quot;2. resopnse 对象常用方法&quot;&gt;&lt;/a&gt;2. resopnse 对象常用方法&lt;/h2&gt;&lt;p&gt;&lt;code&gt;resopnse&lt;/code&gt; 对象代表的是对客户端的相应. 向客户端发送文字时直接使用. 以下是 &lt;code&gt;HttpServletResopnse&lt;/code&gt; 类的实例.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;方法 ( 类型 + 方法名 )&lt;/th&gt;
+&lt;th&gt;描述&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;String getCharacterEncoding()&lt;/td&gt;
+&lt;td&gt;返回响应用的是什么字符编码&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;ServletOutputStream getOutputStream()&lt;/td&gt;
+&lt;td&gt;返回响应的一个二进制输出流&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;PrintWrite getWrite()&lt;/td&gt;
+&lt;td&gt;返回可以向客户端输出字符的一个对象&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;void setContentLength(int len)&lt;/td&gt;
+&lt;td&gt;设置响应头长度&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;void setContentTye(String type)&lt;/td&gt;
+&lt;td&gt;设置响应的 MIME 类型&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;void sendRedirect(Java.lang.String location)&lt;/td&gt;
+&lt;td&gt;重新定向客户端的请求&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+    
+    </summary>
+    
+    
+      <category term="JSP" scheme="http://linraner.github.io/tags/JSP/"/>
+    
+      <category term="Java" scheme="http://linraner.github.io/tags/Java/"/>
+    
+  </entry>
   
   <entry>
     <title>星期天</title>
@@ -504,30 +627,6 @@
       <category term="acm" scheme="http://linraner.github.io/tags/acm/"/>
     
       <category term="algorithm" scheme="http://linraner.github.io/tags/algorithm/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>DFS</title>
-    <link href="http://linraner.github.io/2018/04/01/DFS/"/>
-    <id>http://linraner.github.io/2018/04/01/DFS/</id>
-    <published>2018-04-01T10:15:02.000Z</published>
-    <updated>2018-07-01T16:57:22.397Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="入门"><a href="#入门" class="headerlink" title="入门"></a>入门</h2><h3 id="求连通块"><a href="#求连通块" class="headerlink" title="求连通块"></a>求连通块</h3><h3 id="INPUT"><a href="#INPUT" class="headerlink" title="INPUT :"></a>INPUT :</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">1 1</div><div class="line">*</div><div class="line">3 5</div><div class="line">*@*@*</div><div class="line">**@**</div><div class="line">*@*@*</div><div class="line">1 8</div><div class="line">@@****@*</div><div class="line">5 5 </div><div class="line">****@</div><div class="line">*@@*@</div><div class="line">*@**@</div><div class="line">@@@*@</div><div class="line">@@**@</div><div class="line">0 0</div></pre></td></tr></table></figure><h3 id="OUTPUT"><a href="#OUTPUT" class="headerlink" title="OUTPUT :"></a>OUTPUT :</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">0</div><div class="line">1</div><div class="line">2</div><div class="line">2</div></pre></td></tr></table></figure><h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><a id="more"></a><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="keyword">const</span> <span class="keyword">int</span> mx = <span class="number">10007</span>;</div><div class="line"><span class="keyword">int</span> n, m;</div><div class="line"><span class="keyword">char</span> field[mx][mx];<span class="comment">//地图 </span></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y)</span></span>&#123;</div><div class="line">field[x][y] = <span class="string">'*'</span>;<span class="comment">//替换现在位置 </span></div><div class="line"><span class="comment">//遍历8个方向 </span></div><div class="line"><span class="keyword">for</span>(<span class="keyword">int</span> dx=<span class="number">-1</span>;dx&lt;=<span class="number">1</span>;dx++)&#123;</div><div class="line"><span class="keyword">for</span>(<span class="keyword">int</span> dy=<span class="number">-1</span>;dy&lt;=<span class="number">1</span>;dy++)&#123;</div><div class="line"><span class="keyword">int</span> nx=x+dx, ny=y+dy;</div><div class="line"><span class="keyword">if</span>(<span class="number">0</span>&lt;=nx&amp;&amp;nx&lt;n&amp;&amp;<span class="number">0</span>&lt;=ny&amp;&amp;ny&lt;m&amp;&amp;field[nx][ny]==<span class="string">'@'</span>)</div><div class="line">dfs(nx,ny);</div><div class="line">&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">return</span> ;</div><div class="line">&#125;</div><div class="line"> </div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">solve</span><span class="params">()</span></span>&#123;</div><div class="line"><span class="keyword">int</span> ans=<span class="number">0</span>;</div><div class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)&#123;</div><div class="line"><span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;m;j++)&#123;</div><div class="line"><span class="comment">//从@处开始遍历 </span></div><div class="line"><span class="keyword">if</span>(field[i][j]==<span class="string">'@'</span>)&#123;</div><div class="line">dfs(i,j);</div><div class="line">ans++;</div><div class="line">&#125;</div><div class="line">&#125;</div><div class="line">&#125;</div><div class="line"><span class="built_in">cout</span>&lt;&lt;ans;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</div><div class="line"><span class="built_in">cin</span>&gt;&gt;n&gt;&gt;m;</div><div class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)&#123;</div><div class="line"><span class="built_in">scanf</span>(<span class="string">"%s"</span>,field[i]);</div><div class="line">&#125;</div><div class="line">solve();</div><div class="line"><span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;入门&quot;&gt;&lt;a href=&quot;#入门&quot; class=&quot;headerlink&quot; title=&quot;入门&quot;&gt;&lt;/a&gt;入门&lt;/h2&gt;&lt;h3 id=&quot;求连通块&quot;&gt;&lt;a href=&quot;#求连通块&quot; class=&quot;headerlink&quot; title=&quot;求连通块&quot;&gt;&lt;/a&gt;求连通块&lt;/h3&gt;&lt;h3 id=&quot;INPUT&quot;&gt;&lt;a href=&quot;#INPUT&quot; class=&quot;headerlink&quot; title=&quot;INPUT :&quot;&gt;&lt;/a&gt;INPUT :&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;12&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;13&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;14&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;15&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1 1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;*&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3 5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;*@*@*&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;**@**&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;*@*@*&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;1 8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;@@****@*&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5 5 &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;****@&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;*@@*@&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;*@**@&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;@@@*@&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;@@**@&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;0 0&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h3 id=&quot;OUTPUT&quot;&gt;&lt;a href=&quot;#OUTPUT&quot; class=&quot;headerlink&quot; title=&quot;OUTPUT :&quot;&gt;&lt;/a&gt;OUTPUT :&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;0&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h3 id=&quot;代码&quot;&gt;&lt;a href=&quot;#代码&quot; class=&quot;headerlink&quot; title=&quot;代码&quot;&gt;&lt;/a&gt;代码&lt;/h3&gt;
-    
-    </summary>
-    
-    
-      <category term="acm" scheme="http://linraner.github.io/tags/acm/"/>
-    
-      <category term="图论" scheme="http://linraner.github.io/tags/%E5%9B%BE%E8%AE%BA/"/>
     
   </entry>
   
