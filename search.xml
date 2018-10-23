@@ -21,7 +21,7 @@
   <entry>
     <title><![CDATA[JSP 九大内置对象常用方法]]></title>
     <url>%2F2018%2F10%2F01%2FJSP%20%E4%B9%9D%E5%A4%A7%E5%86%85%E7%BD%AE%E5%AF%B9%E8%B1%A1%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95%2F</url>
-    <content type="text"><![CDATA[1. request 对象常用方法request 是来自客户端的请求. 客户端的请求信息封装在 request 对象中. 以下 HttpServletRequest 类的实例. 方法 ( 类型 + 方法名 ) 描述 String getParameter(String strTextName) 获取表单提交信息 Enumeration getParameterNames() 返回可用参数的枚举 String[] getParameterValues(String name) 返回包含参数 name 的所有的数组 Enumeration getAttributeNames() 返回所有属性名的属性值 Object getAttribute(String name) 返回指定属性的属性值 String getCharacterEncoding() 返回字节编码方式 String getProtocol() 获取用户使用的协议 String getServletPath() 获取用户提交信息的页面 String getMethod() 获取客户提交信息的方式 BufferReader getHeader() 获取 HTTP 头文件的 accept、accept-encoding 和 Host 的值 String getRemoteAddr() 获取客户的 IP 地址 String getRemoteHost() 获取客户机的名称 String getserverName() 获取服务器的名称 int getServerPort() 获取服务器端口号 2. resopnse 对象常用方法resopnse 对象代表的是对客户端的相应. 向客户端发送文字时直接使用. 以下是 HttpServletResopnse 类的实例. 方法 ( 类型 + 方法名 ) 描述 String getCharacterEncoding() 返回响应用的是什么字符编码 ServletOutputStream getOutputStream() 返回响应的一个二进制输出流 PrintWrite getWrite() 返回可以向客户端输出字符的一个对象 void setContentLength(int len) 设置响应头长度 void setContentTye(String type) 设置响应的 MIME 类型 void sendRedirect(Java.lang.String location) 重新定向客户端的请求 3. session 常用方法session 指的是客户端与服务器的一次回话, 从客户连接到服务器的一个 WebApplication 开始, 直到客户端与服务器断开连接为止. 它是 HttpSession 类的实例. 方法 ( 类型 + 方法名 ) 描述 long getCreationTime() 创建SESSION创建时间 public String getId() 返回SESSION创建时JSP引擎为它设置的唯一ID号 long getLastAccessedTime() 返回SESSION里客户端最近一次请求时间 int getMaxInactiveInterval() 返回两次请求间隔多长时间此SESSION被取消 String[] getValueNames() 返回一个包含此SESSION中所有可用属性的数组 void invalidate() 取消SESSION, 使SESSION不可用 boolean isNew() 返回服务器创建爱你的一个SESSION, 客户端是否已经加入 void removeValue(String name) 删除SESSION中指定的属性 void setMaxInactiveInterval() SESSION被取消 (ms) 4. out 常用方法out 对象是 JspWriter 类的实例, 是向客户端输出内容常用的对象. 方法 ( 类型 + 方法名 ) 描述 void clear() 清除缓冲区的内容 void clearBuffer() 清除缓冲区的当前内容 void flush() 清空流 int getBufferSize() 返回缓冲区以字节数的大小,如果不设置为0 int getRemaining() 返回缓冲区还有多少剩余可用 bool isAutoFlush() 返回缓冲区满时,是自动清空还是抛出异常 void close() 关闭输出流 5. page 常用方法page 指当前 JSP 页面本身, 有点像类中的 this 指针, 它是 java.langlObject 类的实例. 「page」对象代表正在运行的由 jsp 文件产生的类对象. 方法 ( 类型 + 方法名 ) 描述 class getClass() 返回此Object的类 int hashCode() 返回此Object的hash码 boolean equals(Object obj) 判断此Object是否与指定的Object对象相等 void copy(Object obj) 把此Object拷贝到指定的Object对象中 Object clone() 克隆此Object对象 String toString() 把此Object对象转换成String类的对象 void notify() 唤醒一个等待的进程]]></content>
+    <content type="text"><![CDATA[1. request 对象常用方法request 是来自客户端的请求. 客户端的请求信息封装在 request 对象中. 以下 HttpServletRequest 类的实例. 方法 ( 类型 + 方法名 ) 描述 String getParameter(String strTextName) 获取表单提交信息 Enumeration getParameterNames() 返回可用参数的枚举 String[] getParameterValues(String name) 返回包含参数 name 的所有的数组 Enumeration getAttributeNames() 返回所有属性名的属性值 Object getAttribute(String name) 返回指定属性的属性值 String getCharacterEncoding() 返回字节编码方式 String getProtocol() 获取用户使用的协议 String getServletPath() 获取用户提交信息的页面 String getMethod() 获取客户提交信息的方式 BufferReader getHeader() 获取 HTTP 头文件的 accept、accept-encoding 和 Host 的值 String getRemoteAddr() 获取客户的 IP 地址 String getRemoteHost() 获取客户机的名称 String getserverName() 获取服务器的名称 int getServerPort() 获取服务器端口号 2. resopnse 对象常用方法resopnse 对象代表的是对客户端的相应. 向客户端发送文字时直接使用. 以下是 HttpServletResopnse 类的实例. 方法 ( 类型 + 方法名 ) 描述 String getCharacterEncoding() 返回响应用的是什么字符编码 ServletOutputStream getOutputStream() 返回响应的一个二进制输出流 PrintWrite getWrite() 返回可以向客户端输出字符的一个对象 void setContentLength(int len) 设置响应头长度 void setContentTye(String type) 设置响应的 MIME 类型 void sendRedirect(Java.lang.String location) 重新定向客户端的请求 3. session 常用方法session 指的是客户端与服务器的一次回话, 从客户连接到服务器的一个 WebApplication 开始, 直到客户端与服务器断开连接为止. 它是 HttpSession 类的实例. 方法 ( 类型 + 方法名 ) 描述 long getCreationTime() 创建 session 创建时间 public String getId() 返回 session 创建时JSP引擎为它设置的唯一ID号 long getLastAccessedTime() 返回 session 里客户端最近一次请求时间 int getMaxInactiveInterval() 返回两次请求间隔多长时间此 session 被取消 String[] getValueNames() 返回一个包含此 session 中所有可用属性的数组 void invalidate() 取消 session , 使 session 不可用 boolean isNew() 返回服务器创建爱你的一个 session , 客户端是否已经加入 void removeValue(String name) 删除 session 中指定的属性 void setMaxInactiveInterval() session 被取消 (ms) 4. out 常用方法out 对象是 JspWriter 类的实例, 是向客户端输出内容常用的对象. 方法 ( 类型 + 方法名 ) 描述 void clear() 清除缓冲区的内容 void clearBuffer() 清除缓冲区的当前内容 void flush() 清空流 int getBufferSize() 返回缓冲区以字节数的大小,如果不设置为0 int getRemaining() 返回缓冲区还有多少剩余可用 bool isAutoFlush() 返回缓冲区满时,是自动清空还是抛出异常 void close() 关闭输出流 5. page 常用方法page 指当前 JSP 页面本身, 有点像类中的 this 指针, 它是 java.langlObject 类的实例. 「page」对象代表正在运行的由 jsp 文件产生的类对象. 方法 ( 类型 + 方法名 ) 描述 class getClass() 返回此 Object 的类 int hashCode() 返回此 Object 的 hash 码 boolean equals(Object obj) 判断此 Object 是否与指定的 Object 对象相等 void copy(Object obj) 把此 Object 拷贝到指定的 Object 对象中 Object clone() 克隆此 Object 对象 String toString() 把此 Object 对象转换成 String 类的对象 void notify() 唤醒一个等待的进程 void notifyAll() 唤醒所有等待的进程 void wait(int timeout) 使一个进程处于等待直到 timeout 结束或者被唤醒 void wait() 使一个线程处于等待直到被唤醒 void enterMonitor() 对 Object 进行加锁 void exitMonitor() 对 Object 进行开锁 6. application 常用方法application 实现了用户间数据的共享, 可存放全局变量. 它开始于服务器的启动, 直到服务器的关闭, 在此期间, 此对象将一直存在; 这样在用户的前后连接或者不同用户之间的连接中, 可以对此对象的同一属性进行操作; 在任何地方对此对象属性的操作, 都将影响到其他对象对此的访问. 服务器的启动和关闭决定了 application 对象的生命. 它是 ServletContest类的实例.]]></content>
       <tags>
         <tag>JSP</tag>
         <tag>Java</tag>
@@ -87,8 +87,8 @@
     <url>%2F2018%2F09%2F28%2FDjango%E9%87%8D%E7%BD%AE%E5%90%8E%E5%8F%B0%E5%AF%86%E7%A0%81%2F</url>
     <content type="text"><![CDATA[emmm时间长忘记密码了 执行1$ python manage.py shell 修改12345In [1]: from django.contrib.auth.models import UserIn [2]: user = User.objects.get(username='Username')In [3]: user.set_password('Password')In [4]: user.save()In [5]: exit()]]></content>
       <tags>
-        <tag>skill</tag>
         <tag>Django</tag>
+        <tag>skill</tag>
       </tags>
   </entry>
   <entry>
@@ -106,8 +106,8 @@
     <url>%2F2018%2F07%2F28%2F20%E8%A1%8C%E4%BB%A3%E7%A0%81%E7%9A%84%E7%AD%BE%E5%88%B0%E8%84%9A%E6%9C%AC%2F</url>
     <content type="text"><![CDATA[懒得每天在某个网站签到，写了一个python脚本扔在云主机上。网站很简单，代码就几十行。 签到脚本12345678910111213141516171819import requestsusername = "####"password = "####"loginUrl = "登录路径/auth/login"s = requests.Session()logindata = &#123; 'email':username, 'passwd':password, 'remember_me':'ture',&#125;r = s.post(loginUrl,data=logindata)r = s.get(loginUrl)checkinUrl="签到的路径/user/checkin"rr = s.post(checkinUrl)#执行签到rr = s.get(loginUrl)# print(rr)# print(rr._content.decode())exit() 在Linux上定时执行这个脚本 1crontab -e 进入编辑模式，设置每天8:00运行一次。crontab的语法规范分钟 小时 日期 月份 周 命令 100 8 * * * python /opt/checkin.py]]></content>
       <tags>
-        <tag>python</tag>
         <tag>skill</tag>
+        <tag>python</tag>
         <tag>linux</tag>
       </tags>
   </entry>
@@ -178,8 +178,8 @@
     <url>%2F2018%2F05%2F05%2FPython%E8%A7%A3%E5%86%B3%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%81%E9%97%AE%E9%A2%98%2F</url>
     <content type="text"><![CDATA[字符串分为unicode 和 str 两种类型 文本字符和二进制数据分别用 str 和 byte表示 12345#系统默认编码设置为utf-8&gt;&gt;&gt; import sys&gt;&gt;&gt; sys.getdefultencoding'utf-8'&gt;&gt;&gt; str 与 bytes 之间的转换可以用 encode 和从decode 1234567&gt;&gt;&gt; s = "Python测试"&gt;&gt;&gt; s = s.encode()&gt;&gt;&gt; print(s)b'Python\xe6\xb5\x8b\xe8\xaf\x95'&gt;&gt;&gt; s = s.decode()&gt;&gt;&gt; print(s)'Python测试' base64123456&gt;&gt;&gt; import base64&gt;&gt;&gt; s = "asdasd"&gt;&gt;&gt; s = base64.b64encode(s)&gt;&gt;&gt; print(s)&gt;&gt;&gt; s = base64.b64decode(s)&gt;&gt;&gt; print(s) 参考 ： https://foofish.net/how-python3-handle-charset-encoding.html]]></content>
       <tags>
-        <tag>python</tag>
         <tag>skill</tag>
+        <tag>python</tag>
       </tags>
   </entry>
   <entry>
