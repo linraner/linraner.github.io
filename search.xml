@@ -28,45 +28,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[星期天]]></title>
-    <url>%2F2018%2F09%2F28%2F%E6%98%9F%E6%9C%9F%E5%A4%A9%2F</url>
-    <content type="text"><![CDATA[那时的我们，如夏夜，温暖而沉浸在自己的睡梦中。未知黎明之前，我们都是夜幕下的精灵。]]></content>
-      <tags>
-        <tag>随笔</tag>
-        <tag>心情</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[信仰是理智的终结]]></title>
-    <url>%2F2018%2F09%2F28%2F%E4%BF%A1%E4%BB%B0%E6%98%AF%E7%90%86%E6%99%BA%E7%9A%84%E7%BB%88%E7%BB%93%2F</url>
-    <content type="text"><![CDATA[一个相信共产主义的人]]></content>
-      <tags>
-        <tag>随笔</tag>
-        <tag>心情</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[九月 (海子)]]></title>
     <url>%2F2018%2F09%2F28%2F%E4%B9%9D%E6%9C%88%2F</url>
     <content type="text"><![CDATA[目击众神死亡的草原上野花一片远在远方的风比远方更远我的琴声呜咽 泪水全无我把这远方的远归还草原一个叫木头 一个叫马尾我的琴声呜咽 泪水全无 远方只有在死亡中凝聚野花一片明月如镜高悬草原映照千年岁月我的琴声呜咽 泪水全无只身打马过草原]]></content>
-      <tags>
-        <tag>随笔</tag>
-        <tag>心情</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[世界充满谎言]]></title>
-    <url>%2F2018%2F09%2F28%2F%E4%B8%96%E7%95%8C%E5%85%85%E6%BB%A1%E8%B0%8E%E8%A8%80%2F</url>
-    <content type="text"><![CDATA[人与人，人与物，都会欺骗]]></content>
-      <tags>
-        <tag>随笔</tag>
-        <tag>心情</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[一念花开]]></title>
-    <url>%2F2018%2F09%2F28%2F%E4%B8%80%E5%BF%B5%E8%8A%B1%E5%BC%80%2F</url>
-    <content type="text"><![CDATA[所有的存在都是虚无的]]></content>
       <tags>
         <tag>随笔</tag>
         <tag>心情</tag>
@@ -87,8 +51,8 @@
     <url>%2F2018%2F09%2F28%2FDjango%E9%87%8D%E7%BD%AE%E5%90%8E%E5%8F%B0%E5%AF%86%E7%A0%81%2F</url>
     <content type="text"><![CDATA[emmm时间长忘记密码了 执行1$ python manage.py shell 修改12345In [1]: from django.contrib.auth.models import UserIn [2]: user = User.objects.get(username='Username')In [3]: user.set_password('Password')In [4]: user.save()In [5]: exit()]]></content>
       <tags>
-        <tag>Django</tag>
         <tag>skill</tag>
+        <tag>Django</tag>
       </tags>
   </entry>
   <entry>
@@ -106,8 +70,8 @@
     <url>%2F2018%2F07%2F28%2F20%E8%A1%8C%E4%BB%A3%E7%A0%81%E7%9A%84%E7%AD%BE%E5%88%B0%E8%84%9A%E6%9C%AC%2F</url>
     <content type="text"><![CDATA[懒得每天在某个网站签到，写了一个python脚本扔在云主机上。网站很简单，代码就几十行。 签到脚本12345678910111213141516171819import requestsusername = "####"password = "####"loginUrl = "登录路径/auth/login"s = requests.Session()logindata = &#123; 'email':username, 'passwd':password, 'remember_me':'ture',&#125;r = s.post(loginUrl,data=logindata)r = s.get(loginUrl)checkinUrl="签到的路径/user/checkin"rr = s.post(checkinUrl)#执行签到rr = s.get(loginUrl)# print(rr)# print(rr._content.decode())exit() 在Linux上定时执行这个脚本 1crontab -e 进入编辑模式，设置每天8:00运行一次。crontab的语法规范分钟 小时 日期 月份 周 命令 100 8 * * * python /opt/checkin.py]]></content>
       <tags>
-        <tag>skill</tag>
         <tag>python</tag>
+        <tag>skill</tag>
         <tag>linux</tag>
       </tags>
   </entry>
@@ -119,15 +83,6 @@
         <tag>skill</tag>
         <tag>django</tag>
         <tag>mysql</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[一次acm区域赛后的想法]]></title>
-    <url>%2F2018%2F06%2F06%2F%E4%B8%80%E6%AC%A1acm%E5%8C%BA%E5%9F%9F%E8%B5%9B%E5%90%8E%E7%9A%84%E6%83%B3%E6%B3%95%2F</url>
-    <content type="text"><![CDATA[这次比赛也算是进一步加深了对算法竞赛的理解把，大佬始终是大佬（做什么都是大佬）。 从大一开始接触acm到现在其实真正练习的也就大二半个学期，有时候也能感觉到，有的人总会是适合这一行，或者是不适合那一行，虽然努力是有回报的，但是计算机这个行业是比较靠天赋的把，或者说大学就是找到自己感兴趣的并为之奋斗，譬如创业or就业，我在编程这条路上走得并不是很远，2年了，也深有感触。 对我来说，算法竞赛可能不是很适合，努力只能拉短与别人的差距但不足以让你走的更远更高，这是需要天赋的，或者说区域赛的铜牌银牌吸引力不是那么的大，区域赛的时候打了一个ctf的线上赛，网络安全也是未来的一个风口，一边学习，一般做题，也刷了一千三百多分，算法熟练了，快速学习能力，思维能力也不会太差，很多东西就是相通的。大学教育在很大程度上是教会学生良好的学习方法，这些学习方法可以帮助学生快速、高效地汲取自己需要的知识。适合和兴趣，2年了，我也接触过互联网的很多领域，也该有一个选择了，或是又有点迷茫……昨天晚上又梦到了高考，或许这又是一个人生的关口吧。 acm，其实也是有天花板的。。最后附上一句话，计算机的任何东西，都不是学完再干，你学不完的。]]></content>
-      <tags>
-        <tag>随笔</tag>
-        <tag>心情</tag>
       </tags>
   </entry>
   <entry>
@@ -178,8 +133,8 @@
     <url>%2F2018%2F05%2F05%2FPython%E8%A7%A3%E5%86%B3%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%81%E9%97%AE%E9%A2%98%2F</url>
     <content type="text"><![CDATA[字符串分为unicode 和 str 两种类型 文本字符和二进制数据分别用 str 和 byte表示 12345#系统默认编码设置为utf-8&gt;&gt;&gt; import sys&gt;&gt;&gt; sys.getdefultencoding'utf-8'&gt;&gt;&gt; str 与 bytes 之间的转换可以用 encode 和从decode 1234567&gt;&gt;&gt; s = "Python测试"&gt;&gt;&gt; s = s.encode()&gt;&gt;&gt; print(s)b'Python\xe6\xb5\x8b\xe8\xaf\x95'&gt;&gt;&gt; s = s.decode()&gt;&gt;&gt; print(s)'Python测试' base64123456&gt;&gt;&gt; import base64&gt;&gt;&gt; s = "asdasd"&gt;&gt;&gt; s = base64.b64encode(s)&gt;&gt;&gt; print(s)&gt;&gt;&gt; s = base64.b64decode(s)&gt;&gt;&gt; print(s) 参考 ： https://foofish.net/how-python3-handle-charset-encoding.html]]></content>
       <tags>
-        <tag>skill</tag>
         <tag>python</tag>
+        <tag>skill</tag>
       </tags>
   </entry>
   <entry>
