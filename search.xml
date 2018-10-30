@@ -10,9 +10,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Java8 Date Time API]]></title>
+    <title><![CDATA[Java8 Date AND Time API]]></title>
     <url>%2F2018%2F10%2F05%2FJava8%20Date%20Time%20API%2F</url>
-    <content type="text"><![CDATA[Java8 引入了新的时间类 12]]></content>
+    <content type="text"><![CDATA[Java8 引入了新的时间类使用 LocalDate 和 LocalTime创建 LocalDate 对象并读取值1234567891011121314151617//2013-03-06LocalDate date = LocalDate.of(2012,03,06);//2012int year = date.getYear();//MARCHMonth month = date.getMonth();//TUESDAYDayOfWeek dow = date.getDayOfWeek();//6int day = date.getDayOfMonth();//31int len = date.lengthOfMonth();//falseboolean leap = date.isLeapYear();//使用工厂方法获取系统日期LocalDate today = LocalDate.now();LocalTime time = LocalTime.now().withNano(0);//去除毫秒 TemporalField 是一个接口, 定义了如何访问 temporal 对象某个字段的值. ChronoField 枚举实现这一接口. 123int year = date.get(ChronoField.YEAR);int month = date.get(ChronoField.MONTH_OF_YEAR);int day = date.get(ChronoField.DAY_OF_MONTH); LocalDate 和 LocalTime 都可以解析字符串创建. 12LocalDate date = LocalDate.parse("2012-12-22");LocalTime time = LocalTime.parse("22:22:22"); 操作、解析和格式化使用 TemporalAdjuster]]></content>
       <tags>
         <tag>java</tag>
         <tag>note</tag>
@@ -61,8 +61,8 @@
     <content type="text"><![CDATA[数字转字符串1234567#include &lt;sstream&gt;double a = 123.456;string s;stringstream ss;ss &lt;&lt; a;ss &gt;&gt; s;ss.clear(); 12345#include &lt;map&gt;map&lt;int, char&gt; m;for (int i = 0; i &lt; 10; i++) &#123; m[i] = i + '0';&#125; 1234#include &lt;cstdio&gt;char str[10];double a = 123.456;sprintf(str, "%.3lf", a); 123char str[10];int a=175;sprintf(str,"%x",a);//10进制转换成16进制，如果输出大写的字母是sprintf(str,"%X",a) 字符串转数字 1234567#include &lt;sstream&gt;string s = "123.456";double a;stringstream ss;ss &lt;&lt; s;ss &gt;&gt; a;ss.clear(); 12345#include &lt;map&gt;map&lt;char, int&gt; m;for (int i = 0; i &lt; 10; i++) &#123; m[i+'0'] = i;&#125; 1234#include &lt;cstdio&gt;char str[] = "123.456";double a;sscanf(str, "%lf", &amp;a); 123char str[]="AF";int a;sscanf(str,"%x",&amp;a); //16进制转换成10进制 123456#include &lt;cstdlib&gt;int a;float b;long c;a=atoi("32");b=atof("3.1415");c=atol("567283");printf ("%d\n%f\n%d\n",a,b,c);]]></content>
       <tags>
         <tag>acm</tag>
-        <tag>c++</tag>
         <tag>字符串</tag>
+        <tag>c++</tag>
       </tags>
   </entry>
   <entry>
