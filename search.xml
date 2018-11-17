@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title></title>
-    <url>%2F2018%2F11%2F10%2F%E6%B8%85%E9%99%A4%E6%8F%90%E4%BA%A4%E5%88%B0github%E4%B8%8A%E7%9A%84%E8%B4%A6%E5%8F%B7%E5%AF%86%E7%A0%81%2F</url>
-    <content type="text"><![CDATA[title: 清除提交到github上的账号密码date: 2018-11-00 00:00:00 tags: git一、删库。。。。 二、使用BFG Repo-Cleaner地址： BFG Repo-Cleaner 简单使用12345#克隆副本git clone --mirror git://example.com/example.git#清理分支java -jar bfg-1.13.0.jar --replace-text pwd.txt example.gitcd example.git &amp; git reflog expire --expire=now --all &amp;&amp; git gc --prune=now --aggressive &amp; git push git 取消对某个文件的track.gitignore无法对已经track的文件忽略123git rm --cached example.filesgit commiitgit push]]></content>
+    <title><![CDATA[清除提交到github上的账号密码]]></title>
+    <url>%2F2018%2F11%2F01%2F%E6%B8%85%E9%99%A4%E6%8F%90%E4%BA%A4%E5%88%B0github%E4%B8%8A%E7%9A%84%E8%B4%A6%E5%8F%B7%E5%AF%86%E7%A0%81%2F</url>
+    <content type="text"><![CDATA[一、删库。。。。 二、使用BFG Repo-Cleaner地址： BFG Repo-Cleaner 简单使用12345#克隆副本git clone --mirror git://example.com/example.git#清理分支java -jar bfg-1.13.0.jar --replace-text pwd.txt example.gitcd example.git &amp; git reflog expire --expire=now --all &amp;&amp; git gc --prune=now --aggressive &amp; git push git 取消对某个文件的track.gitignore无法对已经track的文件忽略123git rm --cached example.filesgit commiitgit push]]></content>
+      <tags>
+        <tag>git</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[Java8 Stream]]></title>
@@ -56,8 +59,8 @@
     <url>%2F2018%2F09%2F28%2FDjango%E9%87%8D%E7%BD%AE%E5%90%8E%E5%8F%B0%E5%AF%86%E7%A0%81%2F</url>
     <content type="text"><![CDATA[emmm时间长忘记密码了 执行1$ python manage.py shell 修改12345In [1]: from django.contrib.auth.models import UserIn [2]: user = User.objects.get(username='Username')In [3]: user.set_password('Password')In [4]: user.save()In [5]: exit()]]></content>
       <tags>
-        <tag>skill</tag>
         <tag>Django</tag>
+        <tag>skill</tag>
       </tags>
   </entry>
   <entry>
@@ -75,8 +78,8 @@
     <url>%2F2018%2F07%2F28%2F20%E8%A1%8C%E4%BB%A3%E7%A0%81%E7%9A%84%E7%AD%BE%E5%88%B0%E8%84%9A%E6%9C%AC%2F</url>
     <content type="text"><![CDATA[懒得每天在某个网站签到，写了一个python脚本扔在云主机上。网站很简单，代码就几十行。 签到脚本12345678910111213141516171819import requestsusername = "####"password = "####"loginUrl = "登录路径/auth/login"s = requests.Session()logindata = &#123; 'email':username, 'passwd':password, 'remember_me':'ture',&#125;r = s.post(loginUrl,data=logindata)r = s.get(loginUrl)checkinUrl="签到的路径/user/checkin"rr = s.post(checkinUrl)#执行签到rr = s.get(loginUrl)# print(rr)# print(rr._content.decode())exit() 在Linux上定时执行这个脚本 1crontab -e 进入编辑模式，设置每天8:00运行一次。crontab的语法规范分钟 小时 日期 月份 周 命令 100 8 * * * python /opt/checkin.py]]></content>
       <tags>
-        <tag>python</tag>
         <tag>skill</tag>
+        <tag>python</tag>
         <tag>linux</tag>
       </tags>
   </entry>
@@ -138,8 +141,8 @@
     <url>%2F2018%2F05%2F05%2FPython%E8%A7%A3%E5%86%B3%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%81%E9%97%AE%E9%A2%98%2F</url>
     <content type="text"><![CDATA[字符串分为unicode 和 str 两种类型 文本字符和二进制数据分别用 str 和 byte表示 12345#系统默认编码设置为utf-8&gt;&gt;&gt; import sys&gt;&gt;&gt; sys.getdefultencoding'utf-8'&gt;&gt;&gt; str 与 bytes 之间的转换可以用 encode 和从decode 1234567&gt;&gt;&gt; s = "Python测试"&gt;&gt;&gt; s = s.encode()&gt;&gt;&gt; print(s)b'Python\xe6\xb5\x8b\xe8\xaf\x95'&gt;&gt;&gt; s = s.decode()&gt;&gt;&gt; print(s)'Python测试' base64123456&gt;&gt;&gt; import base64&gt;&gt;&gt; s = "asdasd"&gt;&gt;&gt; s = base64.b64encode(s)&gt;&gt;&gt; print(s)&gt;&gt;&gt; s = base64.b64decode(s)&gt;&gt;&gt; print(s) 参考 ： https://foofish.net/how-python3-handle-charset-encoding.html]]></content>
       <tags>
-        <tag>python</tag>
         <tag>skill</tag>
+        <tag>python</tag>
       </tags>
   </entry>
   <entry>
