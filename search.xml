@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[清除提交到github上的账号密码]]></title>
     <url>%2F2018%2F11%2F01%2F%E6%B8%85%E9%99%A4%E6%8F%90%E4%BA%A4%E5%88%B0github%E4%B8%8A%E7%9A%84%E8%B4%A6%E5%8F%B7%E5%AF%86%E7%A0%81%2F</url>
-    <content type="text"><![CDATA[一、删库。。。。 二、使用BFG Repo-Cleaner地址： BFG Repo-Cleaner 简单使用12345#克隆副本git clone --mirror git://example.com/example.git#清理分支java -jar bfg-1.13.0.jar --replace-text pwd.txt example.gitcd example.git &amp; git reflog expire --expire=now --all &amp;&amp; git gc --prune=now --aggressive &amp; git push git 取消对某个文件的track.gitignore无法对已经track的文件忽略123git rm --cached example.filesgit commiitgit push]]></content>
+    <content type="text"><![CDATA[一、删库。。。。 二、使用BFG Repo-Cleaner地址： BFG Repo-Cleaner 简单使用12345#克隆副本git clone --mirror git://example.com/example.git#清理分支java -jar bfg-1.13.0.jar --replace-text pwd.txt example.gitcd example.git &amp; git reflog expire --expire=now --all &amp;&amp; git gc --prune=now --aggressive &amp; git push git 取消对某个文件的track.gitignore无法对已经track的文件忽略123git rm --cached example.filesgit commitgit push]]></content>
       <tags>
         <tag>git</tag>
       </tags>
