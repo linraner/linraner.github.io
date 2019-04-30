@@ -208,32 +208,6 @@
   </entry>
   
   <entry>
-    <title>九月  (海子)</title>
-    <link href="http://linraner.github.io/2018/09/28/%E4%B9%9D%E6%9C%88/"/>
-    <id>http://linraner.github.io/2018/09/28/九月/</id>
-    <published>2018-09-28T15:20:13.520Z</published>
-    <updated>2018-09-03T07:23:53.053Z</updated>
-    
-    <content type="html"><![CDATA[<p>目击众神死亡的草原上野花一片<br>远在远方的风比远方更远<br>我的琴声呜咽 泪水全无<br>我把这远方的远归还草原<br>一个叫木头 一个叫马尾<br>我的琴声呜咽 泪水全无</p><p>远方只有在死亡中凝聚野花一片<br>明月如镜高悬草原映照千年岁月<br>我的琴声呜咽 泪水全无<br>只身打马过草原</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;目击众神死亡的草原上野花一片&lt;br&gt;远在远方的风比远方更远&lt;br&gt;我的琴声呜咽 泪水全无&lt;br&gt;我把这远方的远归还草原&lt;br&gt;一个叫木头 一个叫马尾&lt;br&gt;我的琴声呜咽 泪水全无&lt;/p&gt;
-&lt;p&gt;远方只有在死亡中凝聚野花一片&lt;br&gt;明月如镜高悬草原映照千年岁月&lt;br&gt;我的琴声
-      
-    
-    </summary>
-    
-    
-      <category term="随笔" scheme="http://linraner.github.io/tags/%E9%9A%8F%E7%AC%94/"/>
-    
-      <category term="心情" scheme="http://linraner.github.io/tags/%E5%BF%83%E6%83%85/"/>
-    
-  </entry>
-  
-  <entry>
     <title>lambda表达式</title>
     <link href="http://linraner.github.io/2018/09/28/lambda%E8%A1%A8%E8%BE%BE%E5%BC%8F/"/>
     <id>http://linraner.github.io/2018/09/28/lambda表达式/</id>
@@ -610,6 +584,30 @@
       <category term="acm" scheme="http://linraner.github.io/tags/acm/"/>
     
       <category term="数论" scheme="http://linraner.github.io/tags/%E6%95%B0%E8%AE%BA/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>scanf中的正则表达式</title>
+    <link href="http://linraner.github.io/2017/12/01/scanf%E4%B8%AD%E7%9A%84%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/"/>
+    <id>http://linraner.github.io/2017/12/01/scanf中的正则表达式/</id>
+    <published>2017-12-01T10:57:58.000Z</published>
+    <updated>2018-07-01T17:00:05.467Z</updated>
+    
+    <content type="html"><![CDATA[<h4 id="调用格式-scanf-quot-lt-格式化字符串-gt-quot-lt-地址表-gt"><a href="#调用格式-scanf-quot-lt-格式化字符串-gt-quot-lt-地址表-gt" class="headerlink" title="调用格式: scanf(&quot;&lt;格式化字符串&gt;&quot;, &lt;地址表&gt;);"></a><strong>调用格式:</strong> <code>scanf(&quot;&lt;格式化字符串&gt;&quot;, &lt;地址表&gt;);</code></h4><p>一、为变量赋值时表示成功读取变量的个数, &lt;格式化字符串&gt;与&lt;地址表&gt;是严格匹配的</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">scanf</span>(<span class="string">"%c %c"</span>, &amp;a, &amp;b); <span class="comment">//函数返回值是2，并丢弃不想使用的空白符</span></div><div class="line"><span class="built_in">scanf</span>(<span class="string">"%d,%d"</span>, &amp;a, &amp;b); <span class="comment">//输入必须有逗号， 多个空格为一个空格</span></div></pre></td></tr></table></figure><p>二、 <code>%s</code> 读取遇到空格停止读取，因此一般可以用fgets去读取字符串<br><a id="more"></a><br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">scanf</span>(<span class="string">"%[a-z]"</span>, &amp;str);  <span class="comment">//遇到不再a-z字符停止读取</span></div><div class="line"><span class="built_in">scanf</span>(<span class="string">"666%[0-9]"</span>, &amp;str);  <span class="comment">//666开头并且在0-9字符读取，不是则停止</span></div><div class="line"><span class="built_in">scanf</span>(<span class="string">"%[^\n]"</span>, &amp;str);     <span class="comment">//^表示求反集，即这句话不是回车一直开始读取</span></div></pre></td></tr></table></figure></p><p>三、压缩输入：在格式码前加上*，则用户就可以告诉scanf()读这个域，但不把它赋予任何变量。</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">scanf</span>(<span class="string">"%c%*c, &amp;ch); 使用此方法可以在字符处理时吃掉多余的回车。</span></div></pre></td></tr></table></figure><p><a href="https://docs.microsoft.com/zh-cn/dotnet/standard/base-types/regular-expression-language-quick-reference" target="_blank" rel="noopener">更多正则表达式语言参考</a></p><h4 id="sscanf、scanf的一些示例"><a href="#sscanf、scanf的一些示例" class="headerlink" title="sscanf、scanf的一些示例"></a>sscanf、scanf的一些示例</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h4 id=&quot;调用格式-scanf-quot-lt-格式化字符串-gt-quot-lt-地址表-gt&quot;&gt;&lt;a href=&quot;#调用格式-scanf-quot-lt-格式化字符串-gt-quot-lt-地址表-gt&quot; class=&quot;headerlink&quot; title=&quot;调用格式: scanf(&amp;quot;&amp;lt;格式化字符串&amp;gt;&amp;quot;, &amp;lt;地址表&amp;gt;);&quot;&gt;&lt;/a&gt;&lt;strong&gt;调用格式:&lt;/strong&gt; &lt;code&gt;scanf(&amp;quot;&amp;lt;格式化字符串&amp;gt;&amp;quot;, &amp;lt;地址表&amp;gt;);&lt;/code&gt;&lt;/h4&gt;&lt;p&gt;一、为变量赋值时表示成功读取变量的个数, &amp;lt;格式化字符串&amp;gt;与&amp;lt;地址表&amp;gt;是严格匹配的&lt;/p&gt;
+&lt;figure class=&quot;highlight cpp&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;scanf&lt;/span&gt;(&lt;span class=&quot;string&quot;&gt;&quot;%c %c&quot;&lt;/span&gt;, &amp;amp;a, &amp;amp;b); &lt;span class=&quot;comment&quot;&gt;//函数返回值是2，并丢弃不想使用的空白符&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;scanf&lt;/span&gt;(&lt;span class=&quot;string&quot;&gt;&quot;%d,%d&quot;&lt;/span&gt;, &amp;amp;a, &amp;amp;b); &lt;span class=&quot;comment&quot;&gt;//输入必须有逗号， 多个空格为一个空格&lt;/span&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;二、 &lt;code&gt;%s&lt;/code&gt; 读取遇到空格停止读取，因此一般可以用fgets去读取字符串&lt;br&gt;
+    
+    </summary>
+    
+    
+      <category term="acm" scheme="http://linraner.github.io/tags/acm/"/>
+    
+      <category term="c++" scheme="http://linraner.github.io/tags/c/"/>
     
   </entry>
   

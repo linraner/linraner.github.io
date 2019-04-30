@@ -36,15 +36,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[九月 (海子)]]></title>
-    <url>%2F2018%2F09%2F28%2F%E4%B9%9D%E6%9C%88%2F</url>
-    <content type="text"><![CDATA[目击众神死亡的草原上野花一片远在远方的风比远方更远我的琴声呜咽 泪水全无我把这远方的远归还草原一个叫木头 一个叫马尾我的琴声呜咽 泪水全无 远方只有在死亡中凝聚野花一片明月如镜高悬草原映照千年岁月我的琴声呜咽 泪水全无只身打马过草原]]></content>
-      <tags>
-        <tag>随笔</tag>
-        <tag>心情</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[lambda表达式]]></title>
     <url>%2F2018%2F09%2F28%2Flambda%E8%A1%A8%E8%BE%BE%E5%BC%8F%2F</url>
     <content type="text"><![CDATA[lambda表达式是一行函数，是函数式编程的一种特性。 pythonlambda &lt;参数&gt;: 表达式123&gt;&gt;&gt; f = lambda a,b: a + b&gt;&gt;&gt; type(f)#&lt;type 'function'&gt; 获取整除2的数字12&gt;&gt;&gt; list(filter(lambda x: x%2==0, range(10)))#[0, 2, 4, 6, 8] 列表并行排序1234&gt;&gt;&gt; list1 = [1,2,3,2,3];list2 = [9,4,3,5,6]&gt;&gt;&gt; data = zip(list1, list2)&gt;&gt;&gt; data = sorted(data)&gt;&gt;&gt; list1, list2 = map(lambda t: list(t), zip(*data)) cpp c++里的形式是这样的[capture list] (parameter list) -&gt;return type {function body} 示例123456789101112131415161718192021222324252627#include &lt;iostream&gt;#include &lt;string&gt;#include &lt;algorithm&gt;#include &lt;vector&gt;using namespace std;int main() &#123; //call the func. auto f1 = []() &#123; cout &lt;&lt; "test" &lt;&lt; endl; &#125;; f1(); int y = 2; auto f2 = [y](int x) &#123; cout &lt;&lt; x + y &lt;&lt; endl; &#125;; f2(4); //STL vector&lt;int&gt; v; for (int i = 0; i &lt; 10; ++i) &#123; v.push_back(i); &#125; for_each(v.begin(), v.end(), [](int n) &#123; if (n % 2 == 0) &#123; cout &lt;&lt; n &lt;&lt; " "; &#125; &#125;); return 0;&#125;]]></content>
