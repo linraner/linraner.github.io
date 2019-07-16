@@ -255,9 +255,9 @@
     </summary>
     
     
-      <category term="skill" scheme="http://linraner.github.io/tags/skill/"/>
-    
       <category term="Django" scheme="http://linraner.github.io/tags/Django/"/>
+    
+      <category term="skill" scheme="http://linraner.github.io/tags/skill/"/>
     
   </entry>
   
@@ -283,9 +283,9 @@
     
       <category term="acm" scheme="http://linraner.github.io/tags/acm/"/>
     
-      <category term="c++" scheme="http://linraner.github.io/tags/c/"/>
-    
       <category term="字符串" scheme="http://linraner.github.io/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
+    
+      <category term="c++" scheme="http://linraner.github.io/tags/c/"/>
     
   </entry>
   
@@ -307,9 +307,9 @@
     </summary>
     
     
-      <category term="python" scheme="http://linraner.github.io/tags/python/"/>
-    
       <category term="skill" scheme="http://linraner.github.io/tags/skill/"/>
+    
+      <category term="python" scheme="http://linraner.github.io/tags/python/"/>
     
       <category term="linux" scheme="http://linraner.github.io/tags/linux/"/>
     
@@ -484,9 +484,9 @@
     </summary>
     
     
-      <category term="python" scheme="http://linraner.github.io/tags/python/"/>
-    
       <category term="skill" scheme="http://linraner.github.io/tags/skill/"/>
+    
+      <category term="python" scheme="http://linraner.github.io/tags/python/"/>
     
   </entry>
   
