@@ -1,6 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[面试-设计模式复习]]></title>
+    <url>%2F2019%2F04%2F01%2F%E9%9D%A2%E8%AF%95-%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%A4%8D%E4%B9%A0%2F</url>
+    <content type="text"><![CDATA[设计模式复习23种设计模式主要分为三类：创建型模式、结构型模式、行为型模式。 创建型模式单例模式 实现单例模式的思路是：一个类能返回对象一个引用(永远是同一个)和一个获得该实例的方法（必须是静态方法，通常使用getInstance这个名称）；当我们调用这个方法时，如果类持有的引用不为空就返回这个引用，如果类保持的引用为空就创建该类的实例并将实例的引用赋予该类保持的引用；同时我们还将该类的构造函数定义为私有方法，这样其他处的代码就无法通过调用该类的构造函数来实例化该类的对象，只有通过该类提供的静态方法来得到该类的唯一实例。 代码实现 饿汉式 线程安全1234567class Singleton &#123; private static Singleton instance = new Singleton(); private Singleton() &#123;&#125; public static Singleton getInstance() &#123; return instance; &#125; &#125; 懒汉式 双向检查锁定12345678910111213141516class Singleton &#123; // volatile 多线程安全, 但屏蔽Java虚拟机优化, 效率降低 private volatile static Singleton instance = null; private Singleton() &#123;&#125; public static Singleton getInstance() &#123; if (instance == null) &#123; // 锁定代码块 synchronized (Singleton.class) &#123; if (instance == null) &#123; instance = new Singleton(); &#125; &#125; &#125; return instance; &#125;&#125; 使用静态内部类实现 12345678910// IoDH 初始化不会失败使用, 延迟加载public class Singleton &#123; private static class SingletonHolder &#123; private static final Singleton instance = new Singleton(); &#125; public static Singleton getInstance()&#123; return SingletonHolder.instance; &#125; private Singleton() &#123;&#125;&#125; 使用枚举类型 123public enum Singleton&#123; INSTANCE;&#125; 枚举类反编译之后会被转换成形如public final class T extends Enum的定义。枚举中的各个枚举项通过static来定义。 一个Java类第一次被真正使用到的时候静态资源被初始化、Java类的加载和初始化过程都是线程安全的（因为虚拟机在加载枚举的类的时候，会使用ClassLoader的loadClass方法，而这个方法使用同步代码块保证了线程安全），所以枚举类是线程安全的。 结构型模式代理模式 给某一个对象提供一个代理或占位符，并由代理对象来控制对原对象的访问，必须经过代理才能访问被代理对象。在应用场景上不同于装饰者模式，更偏向于代理的含义，代理模式重点在于控制对象的行为，而装饰模式侧重于增加对象的职能，为对象增加额外的职能。 结构如下： Java中实现动态代理Java中代理模式有动态代理、静态代理、Cglib代理。 Java中实现动态代理的步骤：1.定义一个委托类和公共接口。 2.自己定义一个类（调用处理器类，即实现 InvocationHandler 接口），这个类的目的是指定运行时将生成的代理类需要完成的具体任务（包括Preprocess和Postprocess），即代理类调用任何方法都会经过这个调用处理器类 3.生成代理对象（当然也会生成代理类），需要为他指定(1)委托对象(2)实现的一系列接口(3)调用处理器类的实例。因此可以看出一个代理对象对应一个委托对象，对应一个调用处理器实例。 4.Java 实现动态代理主要涉及以下几个类： ①java.lang.reflect.Proxy: 这是生成代理类的主类，通过 Proxy 类生成的代理类都继承了 Proxy 类，即 DynamicProxyClass extends Proxy。 ②java.lang.reflect.InvocationHandler: 这里称他为”调用处理器”，他是一个接口，我们动态生成的代理类需要完成的具体内容需要自己定义一个类，而这个类必须实现 InvocationHandler 接口。 例子：12345678910111213141516171819202122232425262728293031323334353637383940414243444546/** * 接口 */interface Subject &#123; void request();&#125;public class DynamicProxyDemo01 &#123; public static void main(String[] args) &#123; RealSubject realSubject = new RealSubject();//1.创建委托对象 ProxyHandler handler = new ProxyHandler(realSubject);//2.创建调用处理器对象 //3.动态生成代理对象 Subject proxySubject = (Subject) Proxy.newProxyInstance(RealSubject.class.getClassLoader(), RealSubject.class.getInterfaces(), handler); proxySubject.request(); //4.通过代理对象调用方法 &#125;&#125;/** * 委托类 */class RealSubject implements Subject &#123; public void request() &#123; System.out.println("Real Subject Request"); &#125;&#125;/** * 代理类的调用处理器 */class ProxyHandler implements InvocationHandler &#123; private Subject subject; public ProxyHandler(Subject subject) &#123; this.subject = subject; &#125; @Override public Object invoke(Object proxy, Method method, Object[] args) throws Throwable &#123; //定义预处理的工作，当然你也可以根据 method 的不同进行不同的预处理工作 System.out.println("====before===="); Object result = method.invoke(subject, args); System.out.println("====after===="); return result; &#125;&#125; 行为型模式观察者模式 观察者模式优点： 观察者模式在被观察者和观察者之间建立一个抽象的耦合。被观察者角色所知道的只是一个具体观察者列表，每一个具体观察者都符合一个抽象观察者的接口。被观察者并不认识任何一个具体观察者，它只知道它们都有一个共同的接口。由于被观察者和观察者没有紧密地耦合在一起，因此它们可以属于不同的抽象化层次。如果被观察者和观察者都被扔到一起，那么这个对象必然跨越抽象化和具体化层次。 观察者模式缺点： 如果一个被观察者对象有很多的直接和间接的观察者的话，将所有的观察者都通知到会花费很多时间。 如果在被观察者之间有循环依赖的话，被观察者会触发它们之间进行循环调用，导致系统崩溃。在使用观察者模式是要特别注意这一点。 如果对观察者的通知是通过另外的线程进行异步投递的话，系统必须保证投递是以自恰的方式进行的。 虽然观察者模式可以随时使观察者知道所观察的对象发生了变化，但是观察者模式没有相应的机制使观察者知道所观察的对象是怎么发生变化的。 策略模式 策略模式也叫政策模式，是一种行为型设计模式，是一种比较简单的设计模式。策略模式采用了面向对象的继承和多态机制。略模式适合使用在：1.多个类只有在算法或行为上稍有不同的场景。2.算法需要自由切换的场景。3.需要屏蔽算法规则的场景。 使用策略模式当然也有需要注意的地方，那么就是策略类不要太多，如果一个策略家族的具体策略数量超过4个，则需要考虑混合模式，解决策略类膨胀和对外暴露问题。在实际项目中，我们一般通过工厂方法模式来实现策略类的声明。 优点：算法可以自由切换。2.避免使用多重条件判断。3.扩展性良好。 参考 为什么我墙裂建议大家使用枚举来实现单例。 代理模式及Java实现动态代理]]></content>
+      <tags>
+        <tag>interview</tag>
+        <tag>notes</tag>
+        <tag>设计模式</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[清除提交到github上的账号密码]]></title>
     <url>%2F2018%2F11%2F01%2F%E6%B8%85%E9%99%A4%E6%8F%90%E4%BA%A4%E5%88%B0github%E4%B8%8A%E7%9A%84%E8%B4%A6%E5%8F%B7%E5%AF%86%E7%A0%81%2F</url>
     <content type="text"><![CDATA[一、删库。。。。 二、使用BFG Repo-Cleaner地址： BFG Repo-Cleaner 简单使用12345#克隆副本git clone --mirror git://example.com/example.git#清理分支java -jar bfg-1.13.0.jar --replace-text pwd.txt example.gitcd example.git &amp; git reflog expire --expire=now --all &amp;&amp; git gc --prune=now --aggressive &amp; git push git 取消对某个文件的track.gitignore无法对已经track的文件忽略123git rm --cached example.filesgit commitgit push]]></content>
@@ -50,8 +60,8 @@
     <url>%2F2018%2F09%2F28%2FDjango%E9%87%8D%E7%BD%AE%E5%90%8E%E5%8F%B0%E5%AF%86%E7%A0%81%2F</url>
     <content type="text"><![CDATA[emmm时间长忘记密码了 执行1$ python manage.py shell 修改12345In [1]: from django.contrib.auth.models import UserIn [2]: user = User.objects.get(username='Username')In [3]: user.set_password('Password')In [4]: user.save()In [5]: exit()]]></content>
       <tags>
-        <tag>Django</tag>
         <tag>skill</tag>
+        <tag>Django</tag>
       </tags>
   </entry>
   <entry>
@@ -60,8 +70,8 @@
     <content type="text"><![CDATA[数字转字符串1234567#include &lt;sstream&gt;double a = 123.456;string s;stringstream ss;ss &lt;&lt; a;ss &gt;&gt; s;ss.clear(); 12345#include &lt;map&gt;map&lt;int, char&gt; m;for (int i = 0; i &lt; 10; i++) &#123; m[i] = i + '0';&#125; 1234#include &lt;cstdio&gt;char str[10];double a = 123.456;sprintf(str, "%.3lf", a); 123char str[10];int a=175;sprintf(str,"%x",a);//10进制转换成16进制，如果输出大写的字母是sprintf(str,"%X",a) 字符串转数字 1234567#include &lt;sstream&gt;string s = "123.456";double a;stringstream ss;ss &lt;&lt; s;ss &gt;&gt; a;ss.clear(); 12345#include &lt;map&gt;map&lt;char, int&gt; m;for (int i = 0; i &lt; 10; i++) &#123; m[i+'0'] = i;&#125; 1234#include &lt;cstdio&gt;char str[] = "123.456";double a;sscanf(str, "%lf", &amp;a); 123char str[]="AF";int a;sscanf(str,"%x",&amp;a); //16进制转换成10进制 123456#include &lt;cstdlib&gt;int a;float b;long c;a=atoi("32");b=atof("3.1415");c=atol("567283");printf ("%d\n%f\n%d\n",a,b,c);]]></content>
       <tags>
         <tag>acm</tag>
-        <tag>字符串</tag>
         <tag>c++</tag>
+        <tag>字符串</tag>
       </tags>
   </entry>
   <entry>
@@ -69,8 +79,8 @@
     <url>%2F2018%2F07%2F28%2F20%E8%A1%8C%E4%BB%A3%E7%A0%81%E7%9A%84%E7%AD%BE%E5%88%B0%E8%84%9A%E6%9C%AC%2F</url>
     <content type="text"><![CDATA[懒得每天在某个网站签到，写了一个python脚本扔在云主机上。网站很简单，代码就几十行。 签到脚本12345678910111213141516171819import requestsusername = "####"password = "####"loginUrl = "登录路径/auth/login"s = requests.Session()logindata = &#123; 'email':username, 'passwd':password, 'remember_me':'ture',&#125;r = s.post(loginUrl,data=logindata)r = s.get(loginUrl)checkinUrl="签到的路径/user/checkin"rr = s.post(checkinUrl)#执行签到rr = s.get(loginUrl)# print(rr)# print(rr._content.decode())exit() 在Linux上定时执行这个脚本 1crontab -e 进入编辑模式，设置每天8:00运行一次。crontab的语法规范分钟 小时 日期 月份 周 命令 100 8 * * * python /opt/checkin.py]]></content>
       <tags>
-        <tag>skill</tag>
         <tag>python</tag>
+        <tag>skill</tag>
         <tag>linux</tag>
       </tags>
   </entry>
@@ -132,8 +142,8 @@
     <url>%2F2018%2F05%2F05%2FPython%E8%A7%A3%E5%86%B3%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%81%E9%97%AE%E9%A2%98%2F</url>
     <content type="text"><![CDATA[字符串分为unicode 和 str 两种类型 文本字符和二进制数据分别用 str 和 byte表示 12345#系统默认编码设置为utf-8&gt;&gt;&gt; import sys&gt;&gt;&gt; sys.getdefultencoding'utf-8'&gt;&gt;&gt; str 与 bytes 之间的转换可以用 encode 和从decode 1234567&gt;&gt;&gt; s = "Python测试"&gt;&gt;&gt; s = s.encode()&gt;&gt;&gt; print(s)b'Python\xe6\xb5\x8b\xe8\xaf\x95'&gt;&gt;&gt; s = s.decode()&gt;&gt;&gt; print(s)'Python测试' base64123456&gt;&gt;&gt; import base64&gt;&gt;&gt; s = "asdasd"&gt;&gt;&gt; s = base64.b64encode(s)&gt;&gt;&gt; print(s)&gt;&gt;&gt; s = base64.b64decode(s)&gt;&gt;&gt; print(s) 参考 ： https://foofish.net/how-python3-handle-charset-encoding.html]]></content>
       <tags>
-        <tag>skill</tag>
         <tag>python</tag>
+        <tag>skill</tag>
       </tags>
   </entry>
   <entry>
@@ -219,7 +229,7 @@
   <entry>
     <title><![CDATA[通向外网的梯子]]></title>
     <url>%2F2017%2F10%2F22%2F%E9%80%9A%E5%90%91%E5%A4%96%E7%BD%91%E7%9A%84%E6%A2%AF%E5%AD%90%2F</url>
-    <content type="text"><![CDATA[现在最优雅的方式 ： SSR 一些收集 ：]]></content>
+    <content type="text"><![CDATA[机场最为方便 v2ray适合自建 …]]></content>
       <tags>
         <tag>tools</tag>
         <tag>gfw</tag>
