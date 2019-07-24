@@ -92,7 +92,7 @@
 <meta property="og:description" content="事务 数据库管理系统执行过程中的一个逻辑单位，由一个有限的数据库操作序列构成。  特性事务应该具有4个属性：原子性、一致性、隔离性、持久性。 原子性（Atomicity）：数据库事务是一个不可分割的单位。只有事务中所有的数据库操作成功，才算整个事务才算成功。只读操作，保证一致性很简单，一旦出现错误，要么重试，要么返回错误代码。 一致性（Consistency）：事务将数据库从一种状态转变为下一种">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://i.loli.net/2019/07/25/5d3880fd4ae2c60183.png">
-<meta property="og:updated_time" content="2019-07-24T16:05:00.888Z">
+<meta property="og:updated_time" content="2019-07-24T16:07:52.437Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数据库事务">
 <meta name="twitter:description" content="事务 数据库管理系统执行过程中的一个逻辑单位，由一个有限的数据库操作序列构成。  特性事务应该具有4个属性：原子性、一致性、隔离性、持久性。 原子性（Atomicity）：数据库事务是一个不可分割的单位。只有事务中所有的数据库操作成功，才算整个事务才算成功。只读操作，保证一致性很简单，一旦出现错误，要么重试，要么返回错误代码。 一致性（Consistency）：事务将数据库从一种状态转变为下一种">
@@ -354,7 +354,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  2,011
+                  2,031
                 </span>
               
 
@@ -469,6 +469,8 @@
 <p>1.解析存在的事务日志，分析哪些事务需要回滚，哪些需要写盘(还没来得及写盘，数据库就崩溃了)。</p>
 <p>2.Redo，进行写盘。检测对应数据所在数据页的LSN，如果数据页的LSN&gt;=事务操作的LSN，说明已经写过盘，不然进行写盘操作。</p>
 <p>3.Undo, 按照LSN倒序进行回滚</p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="https://zhuanlan.zhihu.com/p/43493165" target="_blank" rel="noopener">深入理解数据库事务</a></p>
+<p><a href="https://www.jianshu.com/p/eb150b4f7ce0" target="_blank" rel="noopener">我理解的数据库事务</a></p>
 
       
     </div>
@@ -667,7 +669,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#事务"><span class="nav-number">1.</span> <span class="nav-text">事务</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#特性"><span class="nav-number">2.</span> <span class="nav-text">特性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分类"><span class="nav-number">3.</span> <span class="nav-text">分类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#隔离级别"><span class="nav-number">4.</span> <span class="nav-text">隔离级别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#持久化"><span class="nav-number">5.</span> <span class="nav-text">持久化</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#事务日志"><span class="nav-number">5.1.</span> <span class="nav-text">事务日志</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据库恢复"><span class="nav-number">5.2.</span> <span class="nav-text">数据库恢复</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#事务"><span class="nav-number">1.</span> <span class="nav-text">事务</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#特性"><span class="nav-number">2.</span> <span class="nav-text">特性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分类"><span class="nav-number">3.</span> <span class="nav-text">分类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#隔离级别"><span class="nav-number">4.</span> <span class="nav-text">隔离级别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#持久化"><span class="nav-number">5.</span> <span class="nav-text">持久化</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#事务日志"><span class="nav-number">5.1.</span> <span class="nav-text">事务日志</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据库恢复"><span class="nav-number">5.2.</span> <span class="nav-text">数据库恢复</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考"><span class="nav-number">6.</span> <span class="nav-text">参考</span></a></li></ol></div>
             
 
           </div>
