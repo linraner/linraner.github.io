@@ -92,7 +92,7 @@
 <meta property="og:description" content="事务 数据库管理系统执行过程中的一个逻辑单位，由一个有限的数据库操作序列构成。  特性事务应该具有4个属性：原子性、一致性、隔离性、持久性。 原子性（Atomicity）：数据库事务是一个不可分割的单位。只有事务中所有的数据库操作成功，才算整个事务才算成功。只读操作，保证一致性很简单，一旦出现错误，要么重试，要么返回错误代码。 一致性（Consistency）：事务将数据库从一种状态转变为下一种">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://i.loli.net/2019/07/25/5d3880fd4ae2c60183.png">
-<meta property="og:updated_time" content="2019-07-24T16:07:52.437Z">
+<meta property="og:updated_time" content="2019-07-24T16:08:59.652Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数据库事务">
 <meta name="twitter:description" content="事务 数据库管理系统执行过程中的一个逻辑单位，由一个有限的数据库操作序列构成。  特性事务应该具有4个属性：原子性、一致性、隔离性、持久性。 原子性（Atomicity）：数据库事务是一个不可分割的单位。只有事务中所有的数据库操作成功，才算整个事务才算成功。只读操作，保证一致性很简单，一旦出现错误，要么重试，要么返回错误代码。 一致性（Consistency）：事务将数据库从一种状态转变为下一种">
@@ -400,7 +400,7 @@
 <p><strong>一致性</strong>（Consistency）：事务将数据库从一种状态转变为下一种一致的状态。事务开始之前和结束之后，数据库的完整性约束没有被破坏。例如，数据操作失败，表中姓名字段在唯一的情况下，撤销之后导致重复，从而破坏了事务的一致性。</p>
 <p><strong>隔离性</strong>（Isolation）：别的称呼，并发控制（concurrency control）、可串行化（serialzability）、锁（locking）等。事务隔离性要求每个读写事务对其他事务的操作对象能实现相互分离，即事务提交之前对其他事务不可见，通常使用锁实现。</p>
 <p><strong>持久性</strong>（Durability）：事务一旦提交结果是永久性的，发生宕机等事故，数据库也能将数据恢复。持久性事务保证的是高可靠性，而不是高可用性，事务本身不能完成，需要系统共同配合来实现。</p>
-<h2 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h2><p>扁平事务、带有保存点的扁平事务、链事务、嵌套事务、分布式事务。</p>
+<h2 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h2><p>扁平事务、带有保存点的扁平事务、链事务、嵌套事务、分布式事务。<br><a id="more"></a></p>
 <h2 id="隔离级别"><a href="#隔离级别" class="headerlink" title="隔离级别"></a>隔离级别</h2><ul>
 <li>未提交读(Read Uncommitted)：允许脏读，也就是可能读取到其他会话中未提交事务修改的数据</li>
 <li>提交读(Read Committed)：只能读取到已经提交的数据。Oracle等多数数据库默认都是该级别 (不重复读)</li>
