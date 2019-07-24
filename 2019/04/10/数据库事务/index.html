@@ -83,19 +83,19 @@
 
 
 
-<meta name="description" content="事务 数据库管理系统执行过程中的一个逻辑单位，由一个有限的数据库操作序列构成。  特性事务应该具有4个属性：原子性、一致性、隔离性、持久性。 原子性（Atomicity）：数据库事务是一个不可分割的单位。只有事务中所有的数据库操作成功，才算整个事务才算成功。只读操作，保证一致性很简单，一旦出现错误，要么重试，要么返回错误代码。 一致性（Consistency）：事务将数据库从一种状态转变为下一种一">
+<meta name="description" content="事务 数据库管理系统执行过程中的一个逻辑单位，由一个有限的数据库操作序列构成。  特性事务应该具有4个属性：原子性、一致性、隔离性、持久性。 原子性（Atomicity）：数据库事务是一个不可分割的单位。只有事务中所有的数据库操作成功，才算整个事务才算成功。只读操作，保证一致性很简单，一旦出现错误，要么重试，要么返回错误代码。 一致性（Consistency）：事务将数据库从一种状态转变为下一种">
 <meta name="keywords" content="database,MySQL,notes">
 <meta property="og:type" content="article">
 <meta property="og:title" content="数据库事务">
 <meta property="og:url" content="http://linraner.github.io/2019/04/10/数据库事务/index.html">
 <meta property="og:site_name" content="Frank">
-<meta property="og:description" content="事务 数据库管理系统执行过程中的一个逻辑单位，由一个有限的数据库操作序列构成。  特性事务应该具有4个属性：原子性、一致性、隔离性、持久性。 原子性（Atomicity）：数据库事务是一个不可分割的单位。只有事务中所有的数据库操作成功，才算整个事务才算成功。只读操作，保证一致性很简单，一旦出现错误，要么重试，要么返回错误代码。 一致性（Consistency）：事务将数据库从一种状态转变为下一种一">
+<meta property="og:description" content="事务 数据库管理系统执行过程中的一个逻辑单位，由一个有限的数据库操作序列构成。  特性事务应该具有4个属性：原子性、一致性、隔离性、持久性。 原子性（Atomicity）：数据库事务是一个不可分割的单位。只有事务中所有的数据库操作成功，才算整个事务才算成功。只读操作，保证一致性很简单，一旦出现错误，要么重试，要么返回错误代码。 一致性（Consistency）：事务将数据库从一种状态转变为下一种">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://i.loli.net/2019/07/25/5d3880fd4ae2c60183.png">
-<meta property="og:updated_time" content="2019-07-24T16:03:05.674Z">
+<meta property="og:updated_time" content="2019-07-24T16:05:00.888Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数据库事务">
-<meta name="twitter:description" content="事务 数据库管理系统执行过程中的一个逻辑单位，由一个有限的数据库操作序列构成。  特性事务应该具有4个属性：原子性、一致性、隔离性、持久性。 原子性（Atomicity）：数据库事务是一个不可分割的单位。只有事务中所有的数据库操作成功，才算整个事务才算成功。只读操作，保证一致性很简单，一旦出现错误，要么重试，要么返回错误代码。 一致性（Consistency）：事务将数据库从一种状态转变为下一种一">
+<meta name="twitter:description" content="事务 数据库管理系统执行过程中的一个逻辑单位，由一个有限的数据库操作序列构成。  特性事务应该具有4个属性：原子性、一致性、隔离性、持久性。 原子性（Atomicity）：数据库事务是一个不可分割的单位。只有事务中所有的数据库操作成功，才算整个事务才算成功。只读操作，保证一致性很简单，一旦出现错误，要么重试，要么返回错误代码。 一致性（Consistency）：事务将数据库从一种状态转变为下一种">
 <meta name="twitter:image" content="https://i.loli.net/2019/07/25/5d3880fd4ae2c60183.png">
 
 
@@ -391,7 +391,8 @@
       
 
       
-        <h2 id="事务"><a href="#事务" class="headerlink" title="事务"></a>事务</h2><blockquote>
+        <hr>
+<h2 id="事务"><a href="#事务" class="headerlink" title="事务"></a>事务</h2><blockquote>
 <p>数据库管理系统执行过程中的一个逻辑单位，由一个有限的数据库操作序列构成。</p>
 </blockquote>
 <h2 id="特性"><a href="#特性" class="headerlink" title="特性"></a>特性</h2><p>事务应该具有4个属性：<strong>原子性</strong>、<strong>一致性</strong>、<strong>隔离性</strong>、<strong>持久性</strong>。</p>

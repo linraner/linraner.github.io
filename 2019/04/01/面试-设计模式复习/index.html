@@ -94,7 +94,7 @@
 <meta property="og:image" content="https://i.loli.net/2019/07/16/5d2d6cc468f4062204.png">
 <meta property="og:image" content="https://i.loli.net/2019/07/16/5d2d6cdfcf79f34132.png">
 <meta property="og:image" content="https://i.loli.net/2019/07/16/5d2d6ceedac8664650.png">
-<meta property="og:updated_time" content="2019-07-24T09:43:23.255Z">
+<meta property="og:updated_time" content="2019-07-24T16:04:29.697Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="设计模式复习">
 <meta name="twitter:description" content="设计模式复习23种设计模式主要分为三类：创建型模式、结构型模式、行为型模式。 创建型模式单例模式 实现单例模式的思路是：一个类能返回对象一个引用(永远是同一个)和一个获得该实例的方法（必须是静态方法，通常使用getInstance这个名称）；当我们调用这个方法时，如果类持有的引用不为空就返回这个引用，如果类保持的引用为空就创建该类的实例并将实例的引用赋予该类保持的引用；同时我们还将该类的构造函数">
@@ -412,6 +412,7 @@
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="keyword">enum</span> Singleton&#123;</div><div class="line">    INSTANCE;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 </li>
 </ol>
+<a id="more"></a>
 <p>枚举类反编译之后会被转换成形如public final class T extends Enum的定义。枚举中的各个枚举项通过static来定义。</p>
 <p>一个Java类第一次被真正使用到的时候静态资源被初始化、Java类的加载和初始化过程都是线程安全的（因为虚拟机在加载枚举的类的时候，会使用ClassLoader的loadClass方法，而这个方法使用同步代码块保证了线程安全），所以枚举类是线程安全的。</p>
 <h2 id="结构型模式"><a href="#结构型模式" class="headerlink" title="结构型模式"></a>结构型模式</h2><h3 id="代理模式"><a href="#代理模式" class="headerlink" title="代理模式"></a>代理模式</h3><blockquote>

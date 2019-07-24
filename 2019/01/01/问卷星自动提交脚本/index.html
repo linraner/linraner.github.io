@@ -83,21 +83,21 @@
 
 
 
-<meta name="description" content="python实现对问卷星问卷的批量答题.思路 分析页面结构, 问题标号: q+第几题, 问题选项: q+第几题+_第几个选项.">
+<meta name="description" content="思路 分析页面结构, 问题标号: q+第几题, 问题选项: q+第几题+_第几个选项.">
 <meta name="keywords" content="skill,Python">
 <meta property="og:type" content="article">
 <meta property="og:title" content="问卷星自动提交脚本">
 <meta property="og:url" content="http://linraner.github.io/2019/01/01/问卷星自动提交脚本/index.html">
 <meta property="og:site_name" content="Frank">
-<meta property="og:description" content="python实现对问卷星问卷的批量答题.思路 分析页面结构, 问题标号: q+第几题, 问题选项: q+第几题+_第几个选项.">
+<meta property="og:description" content="思路 分析页面结构, 问题标号: q+第几题, 问题选项: q+第几题+_第几个选项.">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://i.loli.net/2019/07/24/5d38688779d8545711.png">
 <meta property="og:image" content="https://i.loli.net/2019/07/24/5d3868b80e17938093.png">
 <meta property="og:image" content="https://i.loli.net/2019/07/24/5d3868c51134133886.png">
-<meta property="og:updated_time" content="2019-07-24T14:21:00.214Z">
+<meta property="og:updated_time" content="2019-07-24T16:05:19.497Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="问卷星自动提交脚本">
-<meta name="twitter:description" content="python实现对问卷星问卷的批量答题.思路 分析页面结构, 问题标号: q+第几题, 问题选项: q+第几题+_第几个选项.">
+<meta name="twitter:description" content="思路 分析页面结构, 问题标号: q+第几题, 问题选项: q+第几题+_第几个选项.">
 <meta name="twitter:image" content="https://i.loli.net/2019/07/24/5d38688779d8545711.png">
 
 
@@ -356,7 +356,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  331
+                  317
                 </span>
               
 
@@ -393,7 +393,8 @@
       
 
       
-        <h2 id="python实现对问卷星问卷的批量答题"><a href="#python实现对问卷星问卷的批量答题" class="headerlink" title="python实现对问卷星问卷的批量答题."></a><code>python</code>实现对问卷星问卷的批量答题.</h2><h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><ol>
+        <hr>
+<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><ol>
 <li>分析页面结构, 问题标号: <code>q+第几题</code>, 问题选项: <code>q+第几题+_第几个选项</code>.<br><img src="https://i.loli.net/2019/07/24/5d38688779d8545711.png" alt="1"><a id="more"></a></li>
 <li><p>对一次提交进行抓包, 抓取post数据包.<br><img src="https://i.loli.net/2019/07/24/5d3868b80e17938093.png" alt=""><br>对<code>submidata</code>进行解码得到如下.<br><img src="https://i.loli.net/2019/07/24/5d3868c51134133886.png" alt=""><br>明显看出是<code>题号$选项号}</code>组成的.</p>
 </li>
@@ -600,7 +601,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#python实现对问卷星问卷的批量答题"><span class="nav-number">1.</span> <span class="nav-text">python实现对问卷星问卷的批量答题.</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#思路"><span class="nav-number">2.</span> <span class="nav-text">思路</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#思路"><span class="nav-number">1.</span> <span class="nav-text">思路</span></a></li></ol></div>
             
 
           </div>
