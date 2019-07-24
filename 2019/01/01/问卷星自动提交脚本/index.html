@@ -70,7 +70,7 @@
 
 
 
-  <meta name="keywords" content="hexo acm 算法" />
+  <meta name="keywords" content="skill,Python," />
 
 
 
@@ -83,17 +83,22 @@
 
 
 
-<meta name="description" content="Your heart is free. Have the courage to follow it.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="tags">
-<meta property="og:url" content="http://linraner.github.io/tags/index.html">
+<meta name="description" content="python实现对问卷星问卷的批量答题.思路 分析页面结构, 问题标号: q+第几题, 问题选项: q+第几题+_第几个选项.">
+<meta name="keywords" content="skill,Python">
+<meta property="og:type" content="article">
+<meta property="og:title" content="问卷星自动提交脚本">
+<meta property="og:url" content="http://linraner.github.io/2019/01/01/问卷星自动提交脚本/index.html">
 <meta property="og:site_name" content="Frank">
-<meta property="og:description" content="Your heart is free. Have the courage to follow it.">
+<meta property="og:description" content="python实现对问卷星问卷的批量答题.思路 分析页面结构, 问题标号: q+第几题, 问题选项: q+第几题+_第几个选项.">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-01-05T05:06:03.457Z">
+<meta property="og:image" content="https://i.loli.net/2019/07/24/5d38688779d8545711.png">
+<meta property="og:image" content="https://i.loli.net/2019/07/24/5d3868b80e17938093.png">
+<meta property="og:image" content="https://i.loli.net/2019/07/24/5d3868c51134133886.png">
+<meta property="og:updated_time" content="2019-07-24T14:21:00.214Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="tags">
-<meta name="twitter:description" content="Your heart is free. Have the courage to follow it.">
+<meta name="twitter:title" content="问卷星自动提交脚本">
+<meta name="twitter:description" content="python实现对问卷星问卷的批量答题.思路 分析页面结构, 问题标号: q+第几题, 问题选项: q+第几题+_第几个选项.">
+<meta name="twitter:image" content="https://i.loli.net/2019/07/24/5d38688779d8545711.png">
 
 
 
@@ -123,13 +128,13 @@
 
 
 
-  <link rel="canonical" href="http://linraner.github.io/tags/"/>
+  <link rel="canonical" href="http://linraner.github.io/2019/01/01/问卷星自动提交脚本/"/>
 
 
 
 
 
-  <title>tags | Frank</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  <title>问卷星自动提交脚本 | Frank</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
   
 
 
@@ -288,40 +293,177 @@
 
   <div id="posts" class="posts-expand">
     
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://linraner.github.io/2019/01/01/问卷星自动提交脚本/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Frank">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/autor.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Frank">
+    </span>
+
     
-    
-    <div class="post-block page">
       <header class="post-header">
 
-	<h2 class="post-title" itemprop="name headline">tags</h2>
-
-
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
         
         
-          <div class="tag-cloud">
-            <div class="tag-cloud-title">
-                27 tags in total
+          <h2 class="post-title" itemprop="name headline">问卷星自动提交脚本</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  331
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  2
+                </span>
+              
             </div>
-            <div class="tag-cloud-tags">
-              <a href="/tags/Django/" style="font-size: 12px; color: #ccc">Django</a> <a href="/tags/JSP/" style="font-size: 12px; color: #ccc">JSP</a> <a href="/tags/Java/" style="font-size: 12px; color: #ccc">Java</a> <a href="/tags/Python/" style="font-size: 12px; color: #ccc">Python</a> <a href="/tags/acm/" style="font-size: 30px; color: #111">acm</a> <a href="/tags/algorithm/" style="font-size: 15.6px; color: #a7a7a7">algorithm</a> <a href="/tags/c/" style="font-size: 22.8px; color: #5c5c5c">c++</a> <a href="/tags/cpp/" style="font-size: 12px; color: #ccc">cpp</a> <a href="/tags/django/" style="font-size: 12px; color: #ccc">django</a> <a href="/tags/gfw/" style="font-size: 12px; color: #ccc">gfw</a> <a href="/tags/git/" style="font-size: 22.8px; color: #5c5c5c">git</a> <a href="/tags/interview/" style="font-size: 12px; color: #ccc">interview</a> <a href="/tags/java/" style="font-size: 15.6px; color: #a7a7a7">java</a> <a href="/tags/linux/" style="font-size: 12px; color: #ccc">linux</a> <a href="/tags/mysql/" style="font-size: 12px; color: #ccc">mysql</a> <a href="/tags/note/" style="font-size: 15.6px; color: #a7a7a7">note</a> <a href="/tags/notes/" style="font-size: 12px; color: #ccc">notes</a> <a href="/tags/python/" style="font-size: 19.2px; color: #818181">python</a> <a href="/tags/skill/" style="font-size: 26.4px; color: #363636">skill</a> <a href="/tags/tools/" style="font-size: 22.8px; color: #5c5c5c">tools</a> <a href="/tags/ubuntu/" style="font-size: 12px; color: #ccc">ubuntu</a> <a href="/tags/windows10/" style="font-size: 12px; color: #ccc">windows10</a> <a href="/tags/函数式编程/" style="font-size: 12px; color: #ccc">函数式编程</a> <a href="/tags/图论/" style="font-size: 15.6px; color: #a7a7a7">图论</a> <a href="/tags/字符串/" style="font-size: 12px; color: #ccc">字符串</a> <a href="/tags/数论/" style="font-size: 15.6px; color: #a7a7a7">数论</a> <a href="/tags/设计模式/" style="font-size: 12px; color: #ccc">设计模式</a>
-            </div>
-          </div>
-        
-      </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
       
+
+      
+        <h2 id="python实现对问卷星问卷的批量答题"><a href="#python实现对问卷星问卷的批量答题" class="headerlink" title="python实现对问卷星问卷的批量答题."></a><code>python</code>实现对问卷星问卷的批量答题.</h2><h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><ol>
+<li>分析页面结构, 问题标号: <code>q+第几题</code>, 问题选项: <code>q+第几题+_第几个选项</code>.<br><img src="https://i.loli.net/2019/07/24/5d38688779d8545711.png" alt="1"><a id="more"></a></li>
+<li><p>对一次提交进行抓包, 抓取post数据包.<br><img src="https://i.loli.net/2019/07/24/5d3868b80e17938093.png" alt=""><br>对<code>submidata</code>进行解码得到如下.<br><img src="https://i.loli.net/2019/07/24/5d3868c51134133886.png" alt=""><br>明显看出是<code>题号$选项号}</code>组成的.</p>
+</li>
+<li><p>写<code>python</code>脚本构造post请求.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> requests</div><div class="line"><span class="keyword">from</span> time <span class="keyword">import</span> *</div><div class="line"><span class="keyword">from</span> random <span class="keyword">import</span> randint</div><div class="line"></div><div class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">10</span>):</div><div class="line">    header = &#123;</div><div class="line">        <span class="string">'Host'</span>: <span class="string">'www.wjx.cn'</span>,</div><div class="line">        <span class="string">'User-Agent'</span>: <span class="string">'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:63.0) Gecko/20100101 Firefox/63.0'</span>,</div><div class="line">        <span class="string">'X-Forwarded-For'</span>: str(randint(<span class="number">1</span>, <span class="number">255</span>)) + <span class="string">'.'</span> + str(randint(<span class="number">1</span>, <span class="number">255</span>)) + <span class="string">'.'</span> + str(randint(<span class="number">1</span>, <span class="number">255</span>)) + <span class="string">'.'</span> + str(</div><div class="line">            randint(<span class="number">1</span>, <span class="number">255</span>)),</div><div class="line">        <span class="string">'Referer'</span>: <span class="string">'https://www.wjx.cn###.aspx'</span>,</div><div class="line">        <span class="string">'Cookie'</span>: <span class="string">'acw_tc=2f624a1f154##'</span>,</div><div class="line">    &#125;</div><div class="line">    print(<span class="string">"第 "</span> + str(i) + <span class="string">" 提交"</span> + <span class="string">" Using IP:"</span> + header[<span class="string">'X-Forwarded-For'</span>] + <span class="string">' to compalte this Q.'</span>)</div><div class="line">    data = <span class="string">"submitdata=1$%s&#125;2$%s&#125;3$%s&#125;4$%s&#125;5$%s&#125;6$%s&#125;7$%s&#125;8$3&#125;9$-3&#125;10$-3&#125;11$%s&#125;12$%s&#125;13$%s&#125;14$%s&#125;15$%s&#125;16$%s&#125;17$%s&#125;18$%s"</span> % (</div><div class="line">        str(randint(<span class="number">1</span>, <span class="number">7</span>)), str(randint(<span class="number">1</span>, <span class="number">9</span>)), str(randint(<span class="number">1</span>, <span class="number">4</span>)), str(randint(<span class="number">1</span>, <span class="number">3</span>)), str(randint(<span class="number">1</span>, <span class="number">4</span>)),</div><div class="line">        str(randint(<span class="number">1</span>, <span class="number">3</span>)), str(randint(<span class="number">1</span>, <span class="number">3</span>)), str(randint(<span class="number">1</span>, <span class="number">2</span>)), str(randint(<span class="number">1</span>, <span class="number">2</span>)), str(randint(<span class="number">1</span>, <span class="number">4</span>)),</div><div class="line">        str(randint(<span class="number">1</span>, <span class="number">2</span>)), str(randint(<span class="number">1</span>, <span class="number">2</span>)), str(randint(<span class="number">1</span>, <span class="number">3</span>)), str(randint(<span class="number">1</span>, <span class="number">2</span>)), str(randint(<span class="number">1</span>, <span class="number">3</span>)))</div><div class="line">    url = <span class="string">'https://www.wjx.cn/joinnew/processjq.ashx?curid=34131883&amp;starttime=2019%2F1%2F25%2021%3A37%3A12&amp;source=directphone&amp;submittype=1&amp;ktimes=213&amp;hlv=1&amp;rn=1034449004.44465961&amp;t=1548423507485&amp;jqnonce=c5825f6b-67d7-40c8-ba2e-e1ffb82c4642&amp;jqsign=%606%3B16e5a.54g4.73%60%3B.ab1f.f2eea%3B1%607571'</span></div><div class="line">    r = requests.post(url, data=data, headers=header)</div><div class="line">    <span class="comment"># print(r)</span></div><div class="line">print(<span class="string">"Complate."</span>)</div></pre></td></tr></table></figure></li>
+</ol>
+
       
     </div>
     
     
     
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/skill/" rel="tag"><i class="fa fa-tag"></i>skill</a>
+          
+            <a href="/tags/Python/" rel="tag"><i class="fa fa-tag"></i>Python</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/11/01/清除提交到github上的账号密码/" rel="next" title="清除提交到github上的账号密码">
+                <i class="fa fa-chevron-left"></i> 清除提交到github上的账号密码
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/04/01/面试-设计模式复习/" rel="prev" title="设计模式复习">
+                设计模式复习 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
   </div>
 
 
@@ -330,6 +472,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -350,8 +496,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -435,6 +590,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#python实现对问卷星问卷的批量答题"><span class="nav-number">1.</span> <span class="nav-text">python实现对问卷星问卷的批量答题.</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#思路"><span class="nav-number">2.</span> <span class="nav-text">思路</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

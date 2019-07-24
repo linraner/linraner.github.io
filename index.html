@@ -353,7 +353,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  1,789
+                  1,793
                 </span>
               
 
@@ -391,7 +391,9 @@
 
       
         
-          <h2 id="设计模式复习"><a href="#设计模式复习" class="headerlink" title="设计模式复习"></a>设计模式复习</h2><p>23种设计模式主要分为三类：创建型模式、结构型模式、行为型模式。</p>
+          
+            <hr>
+<h2 id="设计模式复习"><a href="#设计模式复习" class="headerlink" title="设计模式复习"></a>设计模式复习</h2><p>23种设计模式主要分为三类：创建型模式、结构型模式、行为型模式。</p>
 <h2 id="创建型模式"><a href="#创建型模式" class="headerlink" title="创建型模式"></a>创建型模式</h2><h3 id="单例模式"><a href="#单例模式" class="headerlink" title="单例模式"></a>单例模式</h3><blockquote>
 <p>实现单例模式的思路是：一个类能返回对象一个引用(永远是同一个)和一个获得该实例的方法（必须是静态方法，通常使用getInstance这个名称）；当我们调用这个方法时，如果类持有的引用不为空就返回这个引用，如果类保持的引用为空就创建该类的实例并将实例的引用赋予该类保持的引用；同时我们还将该类的构造函数定义为私有方法，这样其他处的代码就无法通过调用该类的构造函数来实例化该类的对象，只有通过该类提供的静态方法来得到该类的唯一实例。</p>
 </blockquote>
@@ -409,9 +411,188 @@
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="keyword">enum</span> Singleton&#123;</div><div class="line">    INSTANCE;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 </li>
 </ol>
+<p>枚举类反编译之后会被转换成形如public final class T extends Enum的定义。枚举中的各个枚举项通过static来定义。</p>
+<p>一个Java类第一次被真正使用到的时候静态资源被初始化、Java类的加载和初始化过程都是线程安全的（因为虚拟机在加载枚举的类的时候，会使用ClassLoader的loadClass方法，而这个方法使用同步代码块保证了线程安全），所以枚举类是线程安全的。</p>
+<h2 id="结构型模式"><a href="#结构型模式" class="headerlink" title="结构型模式"></a>结构型模式</h2><h3 id="代理模式"><a href="#代理模式" class="headerlink" title="代理模式"></a>代理模式</h3><blockquote>
+<p>给某一个对象提供一个代理或占位符，并由代理对象来控制对原对象的访问，必须经过代理才能访问被代理对象。在应用场景上不同于装饰者模式，更偏向于代理的含义，代理模式重点在于控制对象的行为，而装饰模式侧重于增加对象的职能，为对象增加额外的职能。</p>
+</blockquote>
+<p>结构如下：</p>
+<p><img src="https://i.loli.net/2019/07/16/5d2d6cc468f4062204.png" alt="代理模式"></p>
+<h4 id="Java中实现动态代理"><a href="#Java中实现动态代理" class="headerlink" title="Java中实现动态代理"></a>Java中实现动态代理</h4><p>Java中代理模式有动态代理、静态代理、Cglib代理。</p>
+<p>Java中实现动态代理的步骤：<br>1.定义一个委托类和公共接口。</p>
+<p>2.自己定义一个类（调用处理器类，即实现 InvocationHandler 接口），这个类的目的是指定运行时将生成的代理类需要完成的具体任务（包括Preprocess和Postprocess），即代理类调用任何方法都会经过这个调用处理器类</p>
+<p>3.生成代理对象（当然也会生成代理类），需要为他指定(1)委托对象(2)实现的一系列接口(3)调用处理器类的实例。因此可以看出一个代理对象对应一个委托对象，对应一个调用处理器实例。</p>
+<p>4.Java 实现动态代理主要涉及以下几个类：</p>
+<ol>
+<li><p>java.lang.reflect.Proxy: 这是生成代理类的主类，通过 Proxy 类生成的代理类都继承了 Proxy 类，即 DynamicProxyClass extends Proxy。</p>
+</li>
+<li><p>java.lang.reflect.InvocationHandler: 这里称他为”调用处理器”，他是一个接口，我们动态生成的代理类需要完成的具体内容需要自己定义一个类，而这个类必须实现 InvocationHandler 接口。</p>
+</li>
+</ol>
+<p>例子：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"><span class="comment"> * 接口</span></div><div class="line"><span class="comment"> */</span></div><div class="line"><span class="class"><span class="keyword">interface</span> <span class="title">Subject</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">void</span> <span class="title">request</span><span class="params">()</span></span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DynamicProxyDemo01</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">        RealSubject realSubject = <span class="keyword">new</span> RealSubject();<span class="comment">//1.创建委托对象</span></div><div class="line">        ProxyHandler handler = <span class="keyword">new</span> ProxyHandler(realSubject);<span class="comment">//2.创建调用处理器对象</span></div><div class="line">        <span class="comment">//3.动态生成代理对象</span></div><div class="line">        Subject proxySubject = (Subject) Proxy.newProxyInstance(RealSubject.class.getClassLoader(), </div><div class="line">        RealSubject.class.getInterfaces(), handler);    </div><div class="line">        proxySubject.request();    <span class="comment">//4.通过代理对象调用方法</span></div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">/**</span></div><div class="line"><span class="comment"> * 委托类</span></div><div class="line"><span class="comment"> */</span></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">RealSubject</span> <span class="keyword">implements</span> <span class="title">Subject</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">request</span><span class="params">()</span> </span>&#123;</div><div class="line">        System.out.println(<span class="string">"Real Subject Request"</span>);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">/**</span></div><div class="line"><span class="comment"> * 代理类的调用处理器</span></div><div class="line"><span class="comment"> */</span></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">ProxyHandler</span> <span class="keyword">implements</span> <span class="title">InvocationHandler</span> </span>&#123;</div><div class="line">    <span class="keyword">private</span> Subject subject;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">ProxyHandler</span><span class="params">(Subject subject)</span> </span>&#123;</div><div class="line">        <span class="keyword">this</span>.subject = subject;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> Object <span class="title">invoke</span><span class="params">(Object proxy, Method method, Object[] args)</span></span></div><div class="line"><span class="function">            <span class="keyword">throws</span> Throwable </span>&#123;</div><div class="line">        <span class="comment">//定义预处理的工作，当然你也可以根据 method 的不同进行不同的预处理工作</span></div><div class="line">        System.out.println(<span class="string">"====before===="</span>);</div><div class="line">        Object result = method.invoke(subject, args);</div><div class="line">        System.out.println(<span class="string">"====after===="</span>);</div><div class="line">        <span class="keyword">return</span> result;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h2 id="行为型模式"><a href="#行为型模式" class="headerlink" title="行为型模式"></a>行为型模式</h2><h3 id="观察者模式"><a href="#观察者模式" class="headerlink" title="观察者模式"></a>观察者模式</h3><p><img src="https://i.loli.net/2019/07/16/5d2d6cdfcf79f34132.png" alt="观察者模式"></p>
+<p>观察者模式优点：</p>
+<p>观察者模式在被观察者和观察者之间建立一个抽象的耦合。被观察者角色所知道的只是一个具体观察者列表，每一个具体观察者都符合一个抽象观察者的接口。被观察者并不认识任何一个具体观察者，它只知道它们都有一个共同的接口。由于被观察者和观察者没有紧密地耦合在一起，因此它们可以属于不同的抽象化层次。如果被观察者和观察者都被扔到一起，那么这个对象必然跨越抽象化和具体化层次。</p>
+<p>观察者模式缺点：</p>
+<p>如果一个被观察者对象有很多的直接和间接的观察者的话，将所有的观察者都通知到会花费很多时间。</p>
+<p>如果在被观察者之间有循环依赖的话，被观察者会触发它们之间进行循环调用，导致系统崩溃。在使用观察者模式是要特别注意这一点。</p>
+<p>如果对观察者的通知是通过另外的线程进行异步投递的话，系统必须保证投递是以自恰的方式进行的。</p>
+<p>虽然观察者模式可以随时使观察者知道所观察的对象发生了变化，但是观察者模式没有相应的机制使观察者知道所观察的对象是怎么发生变化的。</p>
+<h3 id="策略模式"><a href="#策略模式" class="headerlink" title="策略模式"></a>策略模式</h3><blockquote>
+<p>策略模式也叫政策模式，是一种行为型设计模式，是一种比较简单的设计模式。策略模式采用了面向对象的继承和多态机制。</p>
+</blockquote>
+<p>策略模式适合使用在：1.多个类只有在算法或行为上稍有不同的场景。2.算法需要自由切换的场景。3.需要屏蔽算法规则的场景。</p>
+<p>使用策略模式当然也有需要注意的地方，那么就是策略类不要太多，如果一个策略家族的具体策略数量超过4个，则需要考虑混合模式，解决策略类膨胀和对外暴露问题。在实际项目中，我们一般通过工厂方法模式来实现策略类的声明。</p>
+<p><img src="https://i.loli.net/2019/07/16/5d2d6ceedac8664650.png" alt="策略模式"></p>
+<p>优点：1.算法可以自由切换。2.避免使用多重条件判断。3.扩展性良好。</p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
+<li><a href="https://www.hollischuang.com/archives/2498" target="_blank" rel="noopener">为什么我墙裂建议大家使用枚举来实现单例。</a></li>
+<li><a href="https://xiazdong.github.io/2014/11/27/代理模式及Java实现动态代理/" target="_blank" rel="noopener">代理模式及Java实现动态代理</a></li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://linraner.github.io/2019/01/01/问卷星自动提交脚本/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Frank">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/autor.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Frank">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/01/01/问卷星自动提交脚本/" itemprop="url">问卷星自动提交脚本</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  331
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  2
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h2 id="python实现对问卷星问卷的批量答题"><a href="#python实现对问卷星问卷的批量答题" class="headerlink" title="python实现对问卷星问卷的批量答题."></a><code>python</code>实现对问卷星问卷的批量答题.</h2><h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><ol>
+<li>分析页面结构, 问题标号: <code>q+第几题</code>, 问题选项: <code>q+第几题+_第几个选项</code>.<br><img src="https://i.loli.net/2019/07/24/5d38688779d8545711.png" alt="1">
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2019/04/01/面试-设计模式复习/#more" rel="contents">
+            <a class="btn" href="/2019/01/01/问卷星自动提交脚本/#more" rel="contents">
               Read more &raquo;
             </a>
           </div>
@@ -660,7 +841,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  0
+                  706
                 </span>
               
 
@@ -676,7 +857,7 @@
                   <span class="post-meta-item-text">Reading time &asymp;</span>
                 
                 <span title="Reading time">
-                  1
+                  4
                 </span>
               
             </div>
@@ -699,7 +880,8 @@
       
         
           
-            
+            <h3 id="代码示例："><a href="#代码示例：" class="headerlink" title="代码示例："></a>代码示例：</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div><div class="line">135</div><div class="line">136</div><div class="line">137</div><div class="line">138</div><div class="line">139</div><div class="line">140</div><div class="line">141</div><div class="line">142</div><div class="line">143</div><div class="line">144</div><div class="line">145</div><div class="line">146</div><div class="line">147</div><div class="line">148</div><div class="line">149</div><div class="line">150</div><div class="line">151</div><div class="line">152</div><div class="line">153</div><div class="line">154</div><div class="line">155</div><div class="line">156</div><div class="line">157</div><div class="line">158</div><div class="line">159</div><div class="line">160</div><div class="line">161</div><div class="line">162</div><div class="line">163</div><div class="line">164</div><div class="line">165</div><div class="line">166</div><div class="line">167</div><div class="line">168</div><div class="line">169</div><div class="line">170</div><div class="line">171</div><div class="line">172</div><div class="line">173</div><div class="line">174</div><div class="line">175</div><div class="line">176</div><div class="line">177</div><div class="line">178</div><div class="line">179</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Java8Stream</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span> </span>&#123;</div><div class="line">        System.out.println(<span class="string">"使用 Java 7: "</span>);</div><div class="line"></div><div class="line">        <span class="comment">// 计算空字符串</span></div><div class="line">        List&lt;String&gt; strings = Arrays.asList(<span class="string">"abc"</span>, <span class="string">""</span>, <span class="string">"bc"</span>, <span class="string">"efg"</span>, <span class="string">"abcd"</span>, <span class="string">""</span>, <span class="string">"jkl"</span>);</div><div class="line">        System.out.println(<span class="string">"列表: "</span> + strings);</div><div class="line">        <span class="keyword">long</span> count = getCountEmptyStringUsingJava7(strings);</div><div class="line"></div><div class="line">        System.out.println(<span class="string">"空字符数量为: "</span> + count);</div><div class="line">        count = getCountLength3UsingJava7(strings);</div><div class="line"></div><div class="line">        System.out.println(<span class="string">"字符串长度为 3 的数量为: "</span> + count);</div><div class="line"></div><div class="line">        <span class="comment">// 删除空字符串</span></div><div class="line">        List&lt;String&gt; filtered = deleteEmptyStringsUsingJava7(strings);</div><div class="line">        System.out.println(<span class="string">"筛选后的列表: "</span> + filtered);</div><div class="line"></div><div class="line">        <span class="comment">// 删除空字符串，并使用逗号把它们合并起来</span></div><div class="line">        String mergedString = getMergedStringUsingJava7(strings, <span class="string">", "</span>);</div><div class="line">        System.out.println(<span class="string">"合并字符串: "</span> + mergedString);</div><div class="line">        List&lt;Integer&gt; numbers = Arrays.asList(<span class="number">3</span>, <span class="number">2</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">7</span>, <span class="number">3</span>, <span class="number">5</span>);</div><div class="line"></div><div class="line">        <span class="comment">// 获取列表元素平方数</span></div><div class="line">        List&lt;Integer&gt; squaresList = getSquares(numbers);</div><div class="line">        System.out.println(<span class="string">"平方数列表: "</span> + squaresList);</div><div class="line">        List&lt;Integer&gt; integers = Arrays.asList(<span class="number">1</span>, <span class="number">2</span>, <span class="number">13</span>, <span class="number">4</span>, <span class="number">15</span>, <span class="number">6</span>, <span class="number">17</span>, <span class="number">8</span>, <span class="number">19</span>);</div><div class="line"></div><div class="line">        System.out.println(<span class="string">"列表: "</span> + integers);</div><div class="line">        System.out.println(<span class="string">"列表中最大的数 : "</span> + getMax(integers));</div><div class="line">        System.out.println(<span class="string">"列表中最小的数 : "</span> + getMin(integers));</div><div class="line">        System.out.println(<span class="string">"所有数之和 : "</span> + getSum(integers));</div><div class="line">        System.out.println(<span class="string">"平均数 : "</span> + getAverage(integers));</div><div class="line">        System.out.println(<span class="string">"随机数: "</span>);</div><div class="line"></div><div class="line">        <span class="comment">// 输出10个随机数</span></div><div class="line">        Random random = <span class="keyword">new</span> Random();</div><div class="line"></div><div class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++) &#123;</div><div class="line">            System.out.println(random.nextInt());</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        System.out.println(<span class="string">"使用 Java 8: "</span>);</div><div class="line">        System.out.println(<span class="string">"列表: "</span> + strings);</div><div class="line"></div><div class="line">        count = strings.stream().filter(string -&gt; string.isEmpty()).count();</div><div class="line">        System.out.println(<span class="string">"空字符串数量为: "</span> + count);</div><div class="line"></div><div class="line">        count = strings.stream().filter(string -&gt; string.length() == <span class="number">3</span>).count();</div><div class="line">        System.out.println(<span class="string">"字符串长度为 3 的数量为: "</span> + count);</div><div class="line"></div><div class="line">        filtered = strings.stream().filter(string -&gt; !string.isEmpty()).collect(Collectors.toList());</div><div class="line">        System.out.println(<span class="string">"筛选后的列表: "</span> + filtered);</div><div class="line"></div><div class="line">        mergedString = strings.stream().filter(string -&gt; !string.isEmpty()).collect(Collectors.joining(<span class="string">", "</span>));</div><div class="line">        System.out.println(<span class="string">"合并字符串: "</span> + mergedString);</div><div class="line"></div><div class="line">        squaresList = numbers.stream().map(i -&gt; i * i).distinct().collect(Collectors.toList());</div><div class="line">        System.out.println(<span class="string">"Squares List: "</span> + squaresList);</div><div class="line">        System.out.println(<span class="string">"列表: "</span> + integers);</div><div class="line"></div><div class="line">        IntSummaryStatistics stats = integers.stream().mapToInt((x) -&gt; x).summaryStatistics();</div><div class="line"></div><div class="line">        System.out.println(<span class="string">"列表中最大的数 : "</span> + stats.getMax());</div><div class="line">        System.out.println(<span class="string">"列表中最小的数 : "</span> + stats.getMin());</div><div class="line">        System.out.println(<span class="string">"所有数之和 : "</span> + stats.getSum());</div><div class="line">        System.out.println(<span class="string">"平均数 : "</span> + stats.getAverage());</div><div class="line">        System.out.println(<span class="string">"随机数: "</span>);</div><div class="line"></div><div class="line">        random.ints().limit(<span class="number">10</span>).sorted().forEach(System.out::println);</div><div class="line"></div><div class="line">        <span class="comment">// 并行处理</span></div><div class="line">        count = strings.parallelStream().filter(string -&gt; string.isEmpty()).count();</div><div class="line">        System.out.println(<span class="string">"空字符串的数量为: "</span> + count);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">getCountEmptyStringUsingJava7</span><span class="params">(List&lt;String&gt; strings)</span> </span>&#123;</div><div class="line">        <span class="keyword">int</span> count = <span class="number">0</span>;</div><div class="line"></div><div class="line">        <span class="keyword">for</span> (String string : strings) &#123;</div><div class="line"></div><div class="line">            <span class="keyword">if</span> (string.isEmpty()) &#123;</div><div class="line">                count++;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> count;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">getCountLength3UsingJava7</span><span class="params">(List&lt;String&gt; strings)</span> </span>&#123;</div><div class="line">        <span class="keyword">int</span> count = <span class="number">0</span>;</div><div class="line"></div><div class="line">        <span class="keyword">for</span> (String string : strings) &#123;</div><div class="line"></div><div class="line">            <span class="keyword">if</span> (string.length() == <span class="number">3</span>) &#123;</div><div class="line">                count++;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> count;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> List&lt;String&gt; <span class="title">deleteEmptyStringsUsingJava7</span><span class="params">(List&lt;String&gt; strings)</span> </span>&#123;</div><div class="line">        List&lt;String&gt; filteredList = <span class="keyword">new</span> ArrayList&lt;String&gt;();</div><div class="line"></div><div class="line">        <span class="keyword">for</span> (String string : strings) &#123;</div><div class="line"></div><div class="line">            <span class="keyword">if</span> (!string.isEmpty()) &#123;</div><div class="line">                filteredList.add(string);</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> filteredList;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> String <span class="title">getMergedStringUsingJava7</span><span class="params">(List&lt;String&gt; strings, String separator)</span> </span>&#123;</div><div class="line">        StringBuilder stringBuilder = <span class="keyword">new</span> StringBuilder();</div><div class="line"></div><div class="line">        <span class="keyword">for</span> (String string : strings) &#123;</div><div class="line"></div><div class="line">            <span class="keyword">if</span> (!string.isEmpty()) &#123;</div><div class="line">                stringBuilder.append(string);</div><div class="line">                stringBuilder.append(separator);</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        String mergedString = stringBuilder.toString();</div><div class="line">        <span class="keyword">return</span> mergedString.substring(<span class="number">0</span>, mergedString.length() - <span class="number">2</span>);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> List&lt;Integer&gt; <span class="title">getSquares</span><span class="params">(List&lt;Integer&gt; numbers)</span> </span>&#123;</div><div class="line">        List&lt;Integer&gt; squaresList = <span class="keyword">new</span> ArrayList&lt;Integer&gt;();</div><div class="line"></div><div class="line">        <span class="keyword">for</span> (Integer number : numbers) &#123;</div><div class="line">            Integer square = <span class="keyword">new</span> Integer(number.intValue() * number.intValue());</div><div class="line"></div><div class="line">            <span class="keyword">if</span> (!squaresList.contains(square)) &#123;</div><div class="line">                squaresList.add(square);</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> squaresList;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">getMax</span><span class="params">(List&lt;Integer&gt; numbers)</span> </span>&#123;</div><div class="line">        <span class="keyword">int</span> max = numbers.get(<span class="number">0</span>);</div><div class="line"></div><div class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; numbers.size(); i++) &#123;</div><div class="line"></div><div class="line">            Integer number = numbers.get(i);</div><div class="line"></div><div class="line">            <span class="keyword">if</span> (number.intValue() &gt; max) &#123;</div><div class="line">                max = number.intValue();</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> max;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">getMin</span><span class="params">(List&lt;Integer&gt; numbers)</span> </span>&#123;</div><div class="line">        <span class="keyword">int</span> min = numbers.get(<span class="number">0</span>);</div><div class="line"></div><div class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; numbers.size(); i++) &#123;</div><div class="line">            Integer number = numbers.get(i);</div><div class="line"></div><div class="line">            <span class="keyword">if</span> (number.intValue() &lt; min) &#123;</div><div class="line">                min = number.intValue();</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> min;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">getSum</span><span class="params">(List numbers)</span> </span>&#123;</div><div class="line">        <span class="keyword">int</span> sum = (<span class="keyword">int</span>) (numbers.get(<span class="number">0</span>));</div><div class="line"></div><div class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; numbers.size(); i++) &#123;</div><div class="line">            sum += (<span class="keyword">int</span>) numbers.get(i);</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> sum;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">getAverage</span><span class="params">(List&lt;Integer&gt; numbers)</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> getSum(numbers) / numbers.size();</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
           
         
       
@@ -1713,155 +1895,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://linraner.github.io/2018/06/21/django链接mysql问题/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Frank">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/autor.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Frank">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/06/21/django链接mysql问题/" itemprop="url">django链接MySQL问题</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Words count in article&#58;</span>
-                
-                <span title="Words count in article">
-                  89
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Reading time &asymp;</span>
-                
-                <span title="Reading time">
-                  1
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h3 id="错误"><a href="#错误" class="headerlink" title="错误"></a>错误</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">（django.db.utils.OperationalError: (1045, &quot;Access denied for user &apos;root&apos;@&apos;localhost&apos; (using password: NO)&quot;)）</div></pre></td></tr></table></figure>
-<h3 id="环境："><a href="#环境：" class="headerlink" title="环境："></a>环境：</h3><ul>
-<li>Django2.0 </li>
-<li>MySQL8.0.11</li>
-</ul>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/06/21/django链接mysql问题/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1916,7 +1949,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">28</span>
+                  <span class="site-state-item-count">29</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -1929,7 +1962,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">26</span>
+                  <span class="site-state-item-count">27</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -2009,7 +2042,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">9.1k</span>
+    <span title="Site words total count">10.2k</span>
   
 </div>
 
