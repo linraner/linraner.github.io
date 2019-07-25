@@ -300,6 +300,176 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://linraner.github.io/2019/05/01/Java复习（一）/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Frank">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/autor.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Frank">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/05/01/Java复习（一）/" itemprop="url">Java基础复习（一）</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  4,165
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  15
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h2 id="Java基础"><a href="#Java基础" class="headerlink" title="Java基础"></a>Java基础</h2><h3 id="面向对象六原则一法则"><a href="#面向对象六原则一法则" class="headerlink" title="面向对象六原则一法则"></a>面向对象六原则一法则</h3><h4 id="单一职责原则（Single-Resposibility-Principle）"><a href="#单一职责原则（Single-Resposibility-Principle）" class="headerlink" title="单一职责原则（Single-Resposibility Principle）"></a>单一职责原则（Single-Resposibility Principle）</h4><p>一个类只做它该做的事情。（单一职责原则想表达的就是”高内聚”，写代码最终极的原则只有六个字”高内聚、低耦合”，所谓的高内聚就是一个代码模块只完成一项功能，在面向对象中，如果只让一个类完成它该做的事，而不涉及与它无关的领域就是践行了高内聚的原则，这个类就只有单一职责。另一个是模块化一个好的软件系统，它里面的每个功能模块也应该是可以轻易的拿到其他系统中使用的，这样才能实现软件复用的目标。）。</p>
+<h4 id="开放封闭原则（Open-Closed-principle）"><a href="#开放封闭原则（Open-Closed-principle）" class="headerlink" title="开放封闭原则（Open-Closed principle）"></a>开放封闭原则（Open-Closed principle）</h4><p>软件实体应当对扩展开放，对修改关闭。（在理想的状态下，当我们需要为一个软件系统增加新功能时，只需要从原来的系统派生出一些新类就可以，不需要修改原来的任何一行代码。要做到开闭有两个要点：1. 抽象是关键，一个系统中如果没有抽象类或接口系统就没有扩展点；2. 封装可变性，将系统中的各种可变因素封装到一个继承结构中，如果多个可变因素混杂在一起，系统将变得复杂而换乱，如果不清楚如何封装可变性）</p>
+<h4 id="Liskov替换原则（Liskov-Substituion-Principle）"><a href="#Liskov替换原则（Liskov-Substituion-Principle）" class="headerlink" title="Liskov替换原则（Liskov-Substituion Principle）"></a>Liskov替换原则（Liskov-Substituion Principle）</h4><p>里氏替换原则，任何时候都可以用子类型替换掉父类型。（关于里氏替换原则的描述，Barbara Liskov女士的描述比这个要复杂得多，但简单的说就是能用父类型的地方就一定能使用子类型。里氏替换原则可以检查继承关系是否合理，如果一个继承关系违背了里氏替换原则，那么这个继承关系一定是错误的，需要对代码进行重构。例如让猫继承狗，或者狗继承猫，又或者让正方形继承长方形都是错误的继承关系，因为你很容易找到违反里氏替换原则的场景。需要注意的是：子类一定是增加父类的能力而不是减少父类的能力，因为子类比父类的能力更多，把能力多的对象当成能力少的对象来用当然没有任何问题。）代表约定、代表角色，能否正确的使用接口一定是编程水平高低的重要标识。）</p>
+<h4 id="依赖倒置原则（Dependecy-Inversion-Principle）"><a href="#依赖倒置原则（Dependecy-Inversion-Principle）" class="headerlink" title="依赖倒置原则（Dependecy-Inversion Principle）"></a>依赖倒置原则（Dependecy-Inversion Principle）</h4><p>面向接口编程。（该原则说得直白和具体一些就是声明方法的参数类型、方法的返回类型、变量的引用类型时，尽可能使用抽象类型而不用具体类型，因为抽象类型可以被它的任何一个子类型所替代，请参考下面的里氏替换原则。）</p>
+<h4 id="接口隔离原则（Interface-Segregation-Principle）"><a href="#接口隔离原则（Interface-Segregation-Principle）" class="headerlink" title="接口隔离原则（Interface-Segregation Principle）"></a>接口隔离原则（Interface-Segregation Principle）</h4><p>接口要小而专，绝不能大而全。（臃肿的接口是对接口的污染，既然接口表示能力，那么一个接口只应该描述一种能力，接口也应该是高度内聚的。例如，琴棋书画就应该分别设计为四个接口，而不应设计成一个接口中的四个方法，因为如果设计成一个接口中的四个方法，那么这个接口很难用，毕竟琴棋书画四样都精通的人还是少数，而如果设计成四个接口，会几项就实现几个接口，这样的话每个接口被复用的可能性是很高的。Java中的接口代表能力、 分离的手段主要有以下两种：1. 委托分离，通过增加一个新的类型来委托客户的请求，隔离客户和接口的直接依赖，但是会增加系统的开销。2. 多重继承分离，通过接口多继承来实现客户的需求，这种方式是较好的。</p>
+<h4 id="合成聚合复用原则"><a href="#合成聚合复用原则" class="headerlink" title="合成聚合复用原则"></a>合成聚合复用原则</h4><p>优先使用聚合或合成关系复用代码。（通过继承来复用代码是面向对象程序设计中被滥用得最多的东西，因为所有的教科书都无一例外的对继承进行了鼓吹从而误导了初学者，类与类之间简单的说有三种关系，Is-A关系、Has-A关系、Use-A关系，分别代表继承、关联和依赖。其中，关联关系根据其关联的强度又可以进一步划分为关联、聚合和合成，但说白了都是Has-A关系，合成聚合复用原则想表达的是优先考虑Has-A关系而不是Is-A关系复用代码，原因嘛可以自己从百度上找到一万个理由，需要说明的是，即使在Java的API中也有不少滥用继承的例子，例如Properties类继承了Hashtable类，Stack类继承了Vector类，这些继承明显就是错误的，更好的做法是在Properties类中放置一个Hashtable类型的成员并且将其键和值都设置为字符串来存储数据，而Stack类的设计也应该是在Stack类中放一个Vector对象来存储数据。记住：任何时候都不要继承工具类，工具是可以拥有并可以使用的，而不是拿来继承的。）</p>
+<h4 id="迪米特法则"><a href="#迪米特法则" class="headerlink" title="迪米特法则"></a>迪米特法则</h4><p>迪米特法则又叫最少知识原则，一个对象应当对其他对象有尽可能少的了解。再复杂的系统都可以为用户提供一个简单的门面，Java Web开发中作为前端控制器的Servlet或Filter不就是一个门面吗，浏览器对服务器的运作方式一无所知，但是通过前端控制器就能够根据你的请求得到相应的服务。调停者模式也可以举一个简单的例子来说明，例如一台计算机，CPU、内存、硬盘、显卡、声卡各种设备需要相互配合才能很好的工作，但是如果这些东西都直接连接到一起，计算机的布线将异常复杂，在这种情况下，主板作为一个调停者的身份出现，它将各个设备连接在一起而不需要每个设备之间直接交换数据，这样就减小了系统的耦合度和复杂度。</p>
+<h3 id="Java如何实现的平台无关"><a href="#Java如何实现的平台无关" class="headerlink" title="Java如何实现的平台无关"></a>Java如何实现的平台无关</h3><ul>
+<li>Java语言规范<ul>
+<li>通过规定Java语言中基本数据类型的取值范围和行为</li>
+</ul>
+</li>
+<li>Class文件<ul>
+<li>所有Java文件要编译成统一的Class文件</li>
+</ul>
+</li>
+<li>Java虚拟机<ul>
+<li>通过Java虚拟机将Class文件转成对应平台的二进制文件等</li>
+</ul>
+</li>
+</ul>
+<p>JVM支持哪些语言（Kotlin、Groovy、JRuby、Jython、Scala）</p>
+<h3 id="值传递、引用传递"><a href="#值传递、引用传递" class="headerlink" title="值传递、引用传递"></a>值传递、引用传递</h3><p>Java中只有值传递<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">        <span class="keyword">int</span> a = <span class="number">10</span>;</div><div class="line">        Integer b = <span class="number">20</span>;</div><div class="line">        <span class="keyword">int</span>[] arr = &#123;<span class="number">1</span>, <span class="number">2</span>&#125;;</div><div class="line">        swap(a, b);</div><div class="line">        System.out.println(String.format(<span class="string">"a:%d    b:%d"</span>, a, b));</div><div class="line">        swap(arr);</div><div class="line">        System.out.println(Arrays.toString(arr));</div><div class="line">    &#125;</div><div class="line">    <span class="comment">// 对于对象而言传递的是对象引用的地址作为值</span></div><div class="line">    <span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">swap</span><span class="params">(<span class="keyword">int</span> a, Integer b)</span> </span>&#123;</div><div class="line">        <span class="keyword">int</span> t = a;</div><div class="line">        a = b;</div><div class="line">        b = t;</div><div class="line">    &#125;</div><div class="line">    <span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">swap</span><span class="params">(<span class="keyword">int</span>[] arr)</span> </span>&#123;</div><div class="line">        arr[<span class="number">0</span>] = <span class="number">996</span>;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"><span class="comment">/**</span></div><div class="line"><span class="comment">OutPut:</span></div><div class="line"><span class="comment">a:10    b:20</span></div><div class="line"><span class="comment">[996, 2]</span></div><div class="line"><span class="comment">**/</span></div></pre></td></tr></table></figure></p>
+<ul>
+<li>值传递（pass by value）是指在调用函数时将实际参数复制一份传递到函数中，这样在函数中如果对参数进行修改，将不会影响到实际参数。</li>
+<li>引用传递（pass by reference）是指在调用函数时将实际参数的地址直接传递到函数中，那么在函数中对参数所进行的修改，将影响到实际参数。
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/05/01/Java复习（一）/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://linraner.github.io/2019/04/10/数据库事务/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1720,160 +1890,11 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://linraner.github.io/2018/09/28/c++的字符串与数字的转换/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Frank">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/autor.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Frank">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/09/28/c++的字符串与数字的转换/" itemprop="url">c++的字符串与数字的转换</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Words count in article&#58;</span>
-                
-                <span title="Words count in article">
-                  189
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Reading time &asymp;</span>
-                
-                <span title="Reading time">
-                  1
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h3 id="数字转字符串"><a href="#数字转字符串" class="headerlink" title="数字转字符串"></a>数字转字符串</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;sstream&gt;</span></span></div><div class="line"><span class="keyword">double</span> a = <span class="number">123.456</span>;</div><div class="line"><span class="built_in">string</span> s;</div><div class="line"><span class="built_in">stringstream</span> ss;</div><div class="line">ss &lt;&lt; a;</div><div class="line">ss &gt;&gt; s;</div><div class="line">ss.clear();</div></pre></td></tr></table></figure>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;map&gt;</span></span></div><div class="line"><span class="built_in">map</span>&lt;<span class="keyword">int</span>, <span class="keyword">char</span>&gt; m;</div><div class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++) &#123;</div><div class="line">	m[i] = i + <span class="string">'0'</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></div><div class="line"><span class="keyword">char</span> str[<span class="number">10</span>];</div><div class="line"><span class="keyword">double</span> a = <span class="number">123.456</span>;</div><div class="line"><span class="built_in">sprintf</span>(str, <span class="string">"%.3lf"</span>, a);</div></pre></td></tr></table></figure>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">char</span> str[<span class="number">10</span>];</div><div class="line"><span class="keyword">int</span> a=<span class="number">175</span>;</div><div class="line"><span class="built_in">sprintf</span>(str,<span class="string">"%x"</span>,a);<span class="comment">//10进制转换成16进制，如果输出大写的字母是sprintf(str,"%X",a)</span></div></pre></td></tr></table></figure>
-<h3 id="字符串转数字"><a href="#字符串转数字" class="headerlink" title="字符串转数字"></a>字符串转数字</h3>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/09/28/c++的字符串与数字的转换/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1923,7 +1944,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">30</span>
+                  <span class="site-state-item-count">31</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -2016,7 +2037,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">12.2k</span>
+    <span title="Site words total count">16.4k</span>
   
 </div>
 

@@ -300,6 +300,155 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://linraner.github.io/2018/09/28/c++的字符串与数字的转换/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Frank">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/autor.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Frank">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/09/28/c++的字符串与数字的转换/" itemprop="url">c++的字符串与数字的转换</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  189
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  1
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h3 id="数字转字符串"><a href="#数字转字符串" class="headerlink" title="数字转字符串"></a>数字转字符串</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;sstream&gt;</span></span></div><div class="line"><span class="keyword">double</span> a = <span class="number">123.456</span>;</div><div class="line"><span class="built_in">string</span> s;</div><div class="line"><span class="built_in">stringstream</span> ss;</div><div class="line">ss &lt;&lt; a;</div><div class="line">ss &gt;&gt; s;</div><div class="line">ss.clear();</div></pre></td></tr></table></figure>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;map&gt;</span></span></div><div class="line"><span class="built_in">map</span>&lt;<span class="keyword">int</span>, <span class="keyword">char</span>&gt; m;</div><div class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++) &#123;</div><div class="line">	m[i] = i + <span class="string">'0'</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></div><div class="line"><span class="keyword">char</span> str[<span class="number">10</span>];</div><div class="line"><span class="keyword">double</span> a = <span class="number">123.456</span>;</div><div class="line"><span class="built_in">sprintf</span>(str, <span class="string">"%.3lf"</span>, a);</div></pre></td></tr></table></figure>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">char</span> str[<span class="number">10</span>];</div><div class="line"><span class="keyword">int</span> a=<span class="number">175</span>;</div><div class="line"><span class="built_in">sprintf</span>(str,<span class="string">"%x"</span>,a);<span class="comment">//10进制转换成16进制，如果输出大写的字母是sprintf(str,"%X",a)</span></div></pre></td></tr></table></figure>
+<h3 id="字符串转数字"><a href="#字符串转数字" class="headerlink" title="字符串转数字"></a>字符串转数字</h3>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/09/28/c++的字符串与数字的转换/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://linraner.github.io/2018/07/28/20行代码的签到脚本/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1614,156 +1763,11 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://linraner.github.io/2018/04/01/并查集/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Frank">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/autor.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Frank">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/04/01/并查集/" itemprop="url">并查集</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Words count in article&#58;</span>
-                
-                <span title="Words count in article">
-                  682
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Reading time &asymp;</span>
-                
-                <span title="Reading time">
-                  3
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h3 id="题目-L2-010-排座位"><a href="#题目-L2-010-排座位" class="headerlink" title="题目 : L2-010. 排座位"></a>题目 : <a href="https://www.patest.cn/contests/gplt/L2-010" target="_blank" rel="noopener">L2-010. 排座位</a></h3><p>布置宴席最微妙的事情，就是给前来参宴的各位宾客安排座位。无论如何，总不能把两个死对头排到同一张宴会桌旁！这个艰巨任务现在就交给你，对任何一对客人，请编写程序告诉主人他们是否能被安排同席。<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/04/01/并查集/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1813,7 +1817,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">30</span>
+                  <span class="site-state-item-count">31</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -1906,7 +1910,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">12.2k</span>
+    <span title="Site words total count">16.4k</span>
   
 </div>
 
