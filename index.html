@@ -300,6 +300,163 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://linraner.github.io/2019/07/27/Manacher-回文串/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Frank">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/autor.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Frank">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/07/27/Manacher-回文串/" itemprop="url">Manacher算法-最长回文串</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  464
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  2
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <hr>
+<h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>求解字符串最长回文串。</p>
+<p>leetcode: <a href="https://leetcode-cn.com/problems/longest-palindromic-substring/" target="_blank" rel="noopener">最长回文子串</a></p>
+<h2 id="样例"><a href="#样例" class="headerlink" title="样例"></a>样例</h2><h3 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">121</div><div class="line">1</div><div class="line">daccbba</div><div class="line">bb</div></pre></td></tr></table></figure>
+<h3 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">121</div><div class="line">1</div><div class="line">accbba</div><div class="line">bb</div></pre></td></tr></table></figure>
+<p><code>Manacher</code>算法，时间复杂度O(n), 空间复杂度O(1)。</p>
+<h3 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h3><p>先对s串处理转换为奇数长度的串。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">s = &quot;12212321&quot;</div><div class="line">==&gt;</div><div class="line">S # 1 # 2 # 2 # 1 # 2 # 3 # 2 # 1 #</div><div class="line">P 1 2 1 2 5 2 1 4 1 2 1 6 1 2 1 2 1</div></pre></td></tr></table></figure></p>
+<p>p[i]表示记录以字符S[i]为中心的最长回文子串向左或向右扩张的长度（包括S[i]）。<br>即以i为原点的最大回文半径。</p>
+<p>Manacher算法增加两个辅助变量id和mx。</p>
+<p>id代表当前“已经匹配完毕的结尾最远的回文串”中心为s的第ID位。</p>
+<p>mx = p[i] + id代表当前“已经匹配完毕的结尾最远的回文串”到达了s的第Mx位。</p>
+<p>最长回文子串长度 = p[i] - 1 = 5。</p>
+<p>2*id - i是i关于id的对称点</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/07/27/Manacher-回文串/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://linraner.github.io/2019/05/01/Java复习（一）/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1748,149 +1905,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://linraner.github.io/2018/09/28/Django重置后台密码/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Frank">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/autor.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Frank">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/09/28/Django重置后台密码/" itemprop="url">Django重置后台密码</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Words count in article&#58;</span>
-                
-                <span title="Words count in article">
-                  47
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Reading time &asymp;</span>
-                
-                <span title="Reading time">
-                  1
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>emmm时间长忘记密码了</p>
-<h3 id="执行"><a href="#执行" class="headerlink" title="执行"></a>执行</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="meta">$</span> python manage.py shell</div></pre></td></tr></table></figure>
-<h3 id="修改"><a href="#修改" class="headerlink" title="修改"></a>修改</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">In [<span class="number">1</span>]: <span class="keyword">from</span> django.contrib.auth.models <span class="keyword">import</span> User</div><div class="line">In [<span class="number">2</span>]: user = User.objects.get(username=<span class="string">'Username'</span>)</div><div class="line">In [<span class="number">3</span>]: user.set_password(<span class="string">'Password'</span>)</div><div class="line">In [<span class="number">4</span>]: user.save()</div><div class="line">In [<span class="number">5</span>]: exit()</div></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1945,7 +1959,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">31</span>
+                  <span class="site-state-item-count">32</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -1958,7 +1972,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">29</span>
+                  <span class="site-state-item-count">30</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -2038,7 +2052,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">16.4k</span>
+    <span title="Site words total count">16.8k</span>
   
 </div>
 

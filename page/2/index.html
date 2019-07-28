@@ -300,6 +300,149 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://linraner.github.io/2018/09/28/Django重置后台密码/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Frank">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/autor.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Frank">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/09/28/Django重置后台密码/" itemprop="url">Django重置后台密码</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  47
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  1
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>emmm时间长忘记密码了</p>
+<h3 id="执行"><a href="#执行" class="headerlink" title="执行"></a>执行</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="meta">$</span> python manage.py shell</div></pre></td></tr></table></figure>
+<h3 id="修改"><a href="#修改" class="headerlink" title="修改"></a>修改</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">In [<span class="number">1</span>]: <span class="keyword">from</span> django.contrib.auth.models <span class="keyword">import</span> User</div><div class="line">In [<span class="number">2</span>]: user = User.objects.get(username=<span class="string">'Username'</span>)</div><div class="line">In [<span class="number">3</span>]: user.set_password(<span class="string">'Password'</span>)</div><div class="line">In [<span class="number">4</span>]: user.save()</div><div class="line">In [<span class="number">5</span>]: exit()</div></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://linraner.github.io/2018/09/28/c++的字符串与数字的转换/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1615,154 +1758,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://linraner.github.io/2018/04/01/BFS/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Frank">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/autor.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Frank">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/04/01/BFS/" itemprop="url">BFS</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Words count in article&#58;</span>
-                
-                <span title="Words count in article">
-                  351
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Reading time &asymp;</span>
-                
-                <span title="Reading time">
-                  2
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h2 id="入门"><a href="#入门" class="headerlink" title="入门"></a>入门</h2><h3 id="迷宫问题（最短路径）"><a href="#迷宫问题（最短路径）" class="headerlink" title="迷宫问题（最短路径）"></a>迷宫问题（最短路径）</h3><h3 id="INPUT"><a href="#INPUT" class="headerlink" title="INPUT:"></a>INPUT:</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">5 5</div><div class="line">SXXXX</div><div class="line">...XX</div><div class="line">.X...</div><div class="line">..XXX</div><div class="line">....G</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">6 6</div><div class="line"></div><div class="line">......</div><div class="line">.S..X.</div><div class="line">XXX...</div><div class="line">....X.</div><div class="line">.X..XX</div><div class="line">.GX...</div></pre></td></tr></table></figure>
-<h3 id="OUPUT"><a href="#OUPUT" class="headerlink" title="OUPUT:"></a>OUPUT:</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">8</div><div class="line">10</div></pre></td></tr></table></figure>
-<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/04/01/BFS/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1817,7 +1812,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">31</span>
+                  <span class="site-state-item-count">32</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -1830,7 +1825,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">29</span>
+                  <span class="site-state-item-count">30</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -1910,7 +1905,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">16.4k</span>
+    <span title="Site words total count">16.8k</span>
   
 </div>
 
