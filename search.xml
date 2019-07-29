@@ -108,8 +108,8 @@
     <content type="text"><![CDATA[数字转字符串1234567#include &lt;sstream&gt;double a = 123.456;string s;stringstream ss;ss &lt;&lt; a;ss &gt;&gt; s;ss.clear(); 12345#include &lt;map&gt;map&lt;int, char&gt; m;for (int i = 0; i &lt; 10; i++) &#123; m[i] = i + '0';&#125; 1234#include &lt;cstdio&gt;char str[10];double a = 123.456;sprintf(str, "%.3lf", a); 123char str[10];int a=175;sprintf(str,"%x",a);//10进制转换成16进制，如果输出大写的字母是sprintf(str,"%X",a) 字符串转数字 1234567#include &lt;sstream&gt;string s = "123.456";double a;stringstream ss;ss &lt;&lt; s;ss &gt;&gt; a;ss.clear(); 12345#include &lt;map&gt;map&lt;char, int&gt; m;for (int i = 0; i &lt; 10; i++) &#123; m[i+'0'] = i;&#125; 1234#include &lt;cstdio&gt;char str[] = "123.456";double a;sscanf(str, "%lf", &amp;a); 123char str[]="AF";int a;sscanf(str,"%x",&amp;a); //16进制转换成10进制 123456#include &lt;cstdlib&gt;int a;float b;long c;a=atoi("32");b=atof("3.1415");c=atol("567283");printf ("%d\n%f\n%d\n",a,b,c);]]></content>
       <tags>
         <tag>acm</tag>
-        <tag>字符串</tag>
         <tag>c++</tag>
+        <tag>字符串</tag>
       </tags>
   </entry>
   <entry>
@@ -117,8 +117,8 @@
     <url>%2F2018%2F08%2F01%2F%E4%BD%8D%E8%BF%90%E7%AE%97%E7%AC%94%E8%AE%B0%2F</url>
     <content type="text"><![CDATA[位运算&amp; 、|、 ^12345678a &amp; a = aa | a = aa ^ a = 0a &amp; 0 = 0a | 0 = aa ^ 0 = aa | ( a &amp; b ) = aa &amp; ( a | b ) = a a、b值交换123a ^= b;b ^= a;a ^= b; 判断奇偶（取最后一位）1a &amp; 1 &lt;==&gt; a % 2 i+1位置为112// 1110 =&gt; 1111a |= 1 &lt;&lt; i i+1位置为012// 1111 =&gt; 1101a &amp;= ~(1 &lt;&lt; i) 取出i+1位12// i = 2, 7 =&gt; 4a = a &amp; (1 &lt;&lt; i) 删除最后的112// 1100 =&gt; 1000a = a &amp; (a-1) 在对应i+1位，插入b的对应位12a |= 1 &lt;&lt; i; （a的bit位置1）a &amp; (b &amp; 1&lt;&lt;i) （与b的bit位相与） 得到最高位的1123456a = a |(a&gt;&gt;1);a = a |(a&gt;&gt;2);a = a |(a&gt;&gt;4);a = a |(a&gt;&gt;8);a = a |(a&gt;&gt;16);return (a+1)&gt;&gt;1; 检测一个无符号整数是否是2^n -1的形式1x&amp;(x+1) 移位在Java中正数&gt;&gt;等价于&gt;&gt;&gt;，负数在内存中已补码形式保存，&gt;&gt;&gt;表示无符号右移。 “1”位计数统计一个字（比如32bit）中，有多少个bit是1，有多少个bit是0。 这里以32bit为例来说明算法，这里基本思想类似折半计算。算法复杂度O(lgn)12345x = (x &amp; 0x55555555) + ((x&gt;&gt;1)&amp; 0x55555555);x = (x &amp; 0x33333333) + ((x&gt;&gt;2)&amp; 0x33333333);x = (x &amp; 0x0F0F0F0F) + ((x&gt;&gt;4)&amp; 0x0F0F0F0F);x = (x &amp; 0x00FF00FF) + ((x&gt;&gt;8)&amp; 0x00FF00FF);x = (x &amp; 0x0000FFFF) + ((x&gt;&gt;16)&amp; 0x0000FFFF); 搜索—待续 参考 《Hacker’s Delight》]]></content>
       <tags>
+        <tag>algorithm</tag>
         <tag>notes</tag>
-        <tag>algprithm</tag>
       </tags>
   </entry>
   <entry>
