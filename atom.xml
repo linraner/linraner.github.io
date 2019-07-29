@@ -445,9 +445,9 @@
     </summary>
     
     
-      <category term="Django" scheme="http://linraner.github.io/tags/Django/"/>
-    
       <category term="skill" scheme="http://linraner.github.io/tags/skill/"/>
+    
+      <category term="Django" scheme="http://linraner.github.io/tags/Django/"/>
     
   </entry>
   
@@ -473,9 +473,34 @@
     
       <category term="acm" scheme="http://linraner.github.io/tags/acm/"/>
     
+      <category term="字符串" scheme="http://linraner.github.io/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
+    
       <category term="c++" scheme="http://linraner.github.io/tags/c/"/>
     
-      <category term="字符串" scheme="http://linraner.github.io/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
+  </entry>
+  
+  <entry>
+    <title>位运算笔记</title>
+    <link href="http://linraner.github.io/2018/08/01/%E4%BD%8D%E8%BF%90%E7%AE%97%E7%AC%94%E8%AE%B0/"/>
+    <id>http://linraner.github.io/2018/08/01/位运算笔记/</id>
+    <published>2018-08-01T10:16:21.000Z</published>
+    <updated>2019-07-29T11:23:16.003Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="位运算"><a href="#位运算" class="headerlink" title="位运算"></a>位运算</h2><h3 id="amp-、-、"><a href="#amp-、-、" class="headerlink" title="&amp; 、|、 ^"></a>&amp; 、|、 ^</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">a &amp; a = a</div><div class="line">a | a = a</div><div class="line">a ^ a = <span class="number">0</span></div><div class="line">a &amp; <span class="number">0</span> = <span class="number">0</span></div><div class="line">a | <span class="number">0</span> = a</div><div class="line">a ^ <span class="number">0</span> = a</div><div class="line">a | ( a &amp; b ) = a</div><div class="line">a &amp; ( a | b ) = a</div></pre></td></tr></table></figure><h3 id="a、b值交换"><a href="#a、b值交换" class="headerlink" title="a、b值交换"></a>a、b值交换</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">a ^= b;</div><div class="line">b ^= a;</div><div class="line">a ^= b;</div></pre></td></tr></table></figure><h3 id="判断奇偶（取最后一位）"><a href="#判断奇偶（取最后一位）" class="headerlink" title="判断奇偶（取最后一位）"></a>判断奇偶（取最后一位）</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">a &amp; <span class="number">1</span> &lt;==&gt; a % <span class="number">2</span></div></pre></td></tr></table></figure><h3 id="i-1位置为1"><a href="#i-1位置为1" class="headerlink" title="i+1位置为1"></a>i+1位置为1</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 1110 =&gt; 1111</span></div><div class="line">a |= <span class="number">1</span> &lt;&lt; i</div></pre></td></tr></table></figure><h3 id="i-1位置为0"><a href="#i-1位置为0" class="headerlink" title="i+1位置为0"></a>i+1位置为0</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">// 1111 =&gt; 1101</div><div class="line">a &amp;= ~(1 &lt;&lt; i)</div></pre></td></tr></table></figure><h3 id="取出i-1位"><a href="#取出i-1位" class="headerlink" title="取出i+1位"></a>取出i+1位</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// i = 2, 7 =&gt; 4</span></div><div class="line">a = a &amp; (<span class="number">1</span> &lt;&lt; i)</div></pre></td></tr></table></figure><h3 id="删除最后的1"><a href="#删除最后的1" class="headerlink" title="删除最后的1"></a>删除最后的1</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 1100 =&gt; 1000</span></div><div class="line">a = a &amp; (a-<span class="number">1</span>)</div></pre></td></tr></table></figure><h3 id="在对应i-1位，插入b的对应位"><a href="#在对应i-1位，插入b的对应位" class="headerlink" title="在对应i+1位，插入b的对应位"></a>在对应i+1位，插入b的对应位</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">a |= 1 &lt;&lt; i; （a的bit位置1）</div><div class="line">a &amp; (b &amp; 1&lt;&lt;i) （与b的bit位相与）</div></pre></td></tr></table></figure><h3 id="得到最高位的1"><a href="#得到最高位的1" class="headerlink" title="得到最高位的1"></a>得到最高位的1</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">a = a |(a&gt;&gt;<span class="number">1</span>);</div><div class="line">a = a |(a&gt;&gt;<span class="number">2</span>);</div><div class="line">a = a |(a&gt;&gt;<span class="number">4</span>);</div><div class="line">a = a |(a&gt;&gt;<span class="number">8</span>);</div><div class="line">a = a |(a&gt;&gt;<span class="number">16</span>);</div><div class="line"><span class="keyword">return</span> (a+<span class="number">1</span>)&gt;&gt;<span class="number">1</span>;</div></pre></td></tr></table></figure><h3 id="检测一个无符号整数是否是2-n-1的形式"><a href="#检测一个无符号整数是否是2-n-1的形式" class="headerlink" title="检测一个无符号整数是否是2^n -1的形式"></a>检测一个无符号整数是否是2^n -1的形式</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">x&amp;(x+<span class="number">1</span>)</div></pre></td></tr></table></figure><h3 id="移位"><a href="#移位" class="headerlink" title="移位"></a>移位</h3><p>在<code>Java</code>中正数<code>&gt;&gt;</code>等价于<code>&gt;&gt;&gt;</code>，负数在内存中已补码形式保存，<code>&gt;&gt;&gt;</code>表示无符号右移。</p><h3 id="“1”位计数"><a href="#“1”位计数" class="headerlink" title="“1”位计数"></a>“1”位计数</h3><p>统计一个字（比如32bit）中，有多少个bit是1，有多少个bit是0。</p><p>这里以32bit为例来说明算法，这里基本思想类似折半计算。算法复杂度O(lgn)<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">x = (x &amp; <span class="number">0x55555555</span>) + ((x&gt;&gt;<span class="number">1</span>)&amp; <span class="number">0x55555555</span>);</div><div class="line">x = (x &amp; <span class="number">0x33333333</span>) + ((x&gt;&gt;<span class="number">2</span>)&amp; <span class="number">0x33333333</span>);</div><div class="line">x = (x &amp; <span class="number">0x0F0F0F0F</span>) + ((x&gt;&gt;<span class="number">4</span>)&amp; <span class="number">0x0F0F0F0F</span>);</div><div class="line">x = (x &amp; <span class="number">0x00FF00FF</span>) + ((x&gt;&gt;<span class="number">8</span>)&amp; <span class="number">0x00FF00FF</span>);</div><div class="line">x = (x &amp; <span class="number">0x0000FFFF</span>) + ((x&gt;&gt;<span class="number">16</span>)&amp; <span class="number">0x0000FFFF</span>);</div></pre></td></tr></table></figure></p><h3 id="搜索"><a href="#搜索" class="headerlink" title="搜索"></a>搜索</h3><p>—待续</p><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ol><li><a href="https://book.douban.com/subject/1784887/" target="_blank" rel="noopener">《Hacker’s Delight》</a></li></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;位运算&quot;&gt;&lt;a href=&quot;#位运算&quot; class=&quot;headerlink&quot; title=&quot;位运算&quot;&gt;&lt;/a&gt;位运算&lt;/h2&gt;&lt;h3 id=&quot;amp-、-、&quot;&gt;&lt;a href=&quot;#amp-、-、&quot; class=&quot;headerlink&quot; title=&quot;&amp;amp; 、
+      
+    
+    </summary>
+    
+    
+      <category term="notes" scheme="http://linraner.github.io/tags/notes/"/>
+    
+      <category term="algprithm" scheme="http://linraner.github.io/tags/algprithm/"/>
     
   </entry>
   
@@ -497,9 +522,9 @@
     </summary>
     
     
-      <category term="skill" scheme="http://linraner.github.io/tags/skill/"/>
-    
       <category term="python" scheme="http://linraner.github.io/tags/python/"/>
+    
+      <category term="skill" scheme="http://linraner.github.io/tags/skill/"/>
     
       <category term="linux" scheme="http://linraner.github.io/tags/linux/"/>
     
@@ -652,31 +677,6 @@
     
     
       <category term="windows10" scheme="http://linraner.github.io/tags/windows10/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Python解决字符编码问题</title>
-    <link href="http://linraner.github.io/2018/05/05/Python%E8%A7%A3%E5%86%B3%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%81%E9%97%AE%E9%A2%98/"/>
-    <id>http://linraner.github.io/2018/05/05/Python解决字符编码问题/</id>
-    <published>2018-05-05T14:33:02.000Z</published>
-    <updated>2018-07-01T16:56:24.861Z</updated>
-    
-    <content type="html"><![CDATA[<p>字符串分为unicode 和 str 两种类型</p><p>文本字符和二进制数据分别用 str 和 byte表示</p><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#系统默认编码设置为utf-8</span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">import</span> sys</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>sys.getdefultencoding</div><div class="line"><span class="string">'utf-8'</span></div><div class="line">&gt;&gt;&gt;</div></pre></td></tr></table></figure><p>str 与 bytes 之间的转换可以用 encode 和从decode<br><a id="more"></a><br><img src="https://foofish.net/images/python3-str2.jpg" alt=""></p><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span>s = <span class="string">"Python测试"</span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span>s = s.encode()</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>print(s)</div><div class="line"><span class="string">b'Python\xe6\xb5\x8b\xe8\xaf\x95'</span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span>s = s.decode()</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>print(s)</div><div class="line"><span class="string">'Python测试'</span></div></pre></td></tr></table></figure><h2 id="base64"><a href="#base64" class="headerlink" title="base64"></a>base64</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">import</span> base64</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>s = <span class="string">"asdasd"</span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span>s = base64.b64encode(s)</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>print(s)</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>s = base64.b64decode(s)</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>print(s)</div></pre></td></tr></table></figure><hr><p>参考 ： <a href="https://foofish.net/how-python3-handle-charset-encoding.html" target="_blank" rel="noopener">https://foofish.net/how-python3-handle-charset-encoding.html</a></p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;字符串分为unicode 和 str 两种类型&lt;/p&gt;
-&lt;p&gt;文本字符和二进制数据分别用 str 和 byte表示&lt;/p&gt;
-&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;#系统默认编码设置为utf-8&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;&amp;gt;&amp;gt;&amp;gt; &lt;/span&gt;&lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt; sys&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;&amp;gt;&amp;gt;&amp;gt; &lt;/span&gt;sys.getdefultencoding&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;string&quot;&gt;&#39;utf-8&#39;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;str 与 bytes 之间的转换可以用 encode 和从decode&lt;br&gt;
-    
-    </summary>
-    
-    
-      <category term="skill" scheme="http://linraner.github.io/tags/skill/"/>
-    
-      <category term="python" scheme="http://linraner.github.io/tags/python/"/>
     
   </entry>
   

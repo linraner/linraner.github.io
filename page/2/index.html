@@ -592,6 +592,163 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://linraner.github.io/2018/08/01/位运算笔记/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Frank">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/autor.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Frank">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/08/01/位运算笔记/" itemprop="url">位运算笔记</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  305
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  1
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="位运算"><a href="#位运算" class="headerlink" title="位运算"></a>位运算</h2><h3 id="amp-、-、"><a href="#amp-、-、" class="headerlink" title="&amp; 、|、 ^"></a>&amp; 、|、 ^</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">a &amp; a = a</div><div class="line">a | a = a</div><div class="line">a ^ a = <span class="number">0</span></div><div class="line">a &amp; <span class="number">0</span> = <span class="number">0</span></div><div class="line">a | <span class="number">0</span> = a</div><div class="line">a ^ <span class="number">0</span> = a</div><div class="line">a | ( a &amp; b ) = a</div><div class="line">a &amp; ( a | b ) = a</div></pre></td></tr></table></figure>
+<h3 id="a、b值交换"><a href="#a、b值交换" class="headerlink" title="a、b值交换"></a>a、b值交换</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">a ^= b;</div><div class="line">b ^= a;</div><div class="line">a ^= b;</div></pre></td></tr></table></figure>
+<h3 id="判断奇偶（取最后一位）"><a href="#判断奇偶（取最后一位）" class="headerlink" title="判断奇偶（取最后一位）"></a>判断奇偶（取最后一位）</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">a &amp; <span class="number">1</span> &lt;==&gt; a % <span class="number">2</span></div></pre></td></tr></table></figure>
+<h3 id="i-1位置为1"><a href="#i-1位置为1" class="headerlink" title="i+1位置为1"></a>i+1位置为1</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 1110 =&gt; 1111</span></div><div class="line">a |= <span class="number">1</span> &lt;&lt; i</div></pre></td></tr></table></figure>
+<h3 id="i-1位置为0"><a href="#i-1位置为0" class="headerlink" title="i+1位置为0"></a>i+1位置为0</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">// 1111 =&gt; 1101</div><div class="line">a &amp;= ~(1 &lt;&lt; i)</div></pre></td></tr></table></figure>
+<h3 id="取出i-1位"><a href="#取出i-1位" class="headerlink" title="取出i+1位"></a>取出i+1位</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// i = 2, 7 =&gt; 4</span></div><div class="line">a = a &amp; (<span class="number">1</span> &lt;&lt; i)</div></pre></td></tr></table></figure>
+<h3 id="删除最后的1"><a href="#删除最后的1" class="headerlink" title="删除最后的1"></a>删除最后的1</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 1100 =&gt; 1000</span></div><div class="line">a = a &amp; (a-<span class="number">1</span>)</div></pre></td></tr></table></figure>
+<h3 id="在对应i-1位，插入b的对应位"><a href="#在对应i-1位，插入b的对应位" class="headerlink" title="在对应i+1位，插入b的对应位"></a>在对应i+1位，插入b的对应位</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">a |= 1 &lt;&lt; i; （a的bit位置1）</div><div class="line">a &amp; (b &amp; 1&lt;&lt;i) （与b的bit位相与）</div></pre></td></tr></table></figure>
+<h3 id="得到最高位的1"><a href="#得到最高位的1" class="headerlink" title="得到最高位的1"></a>得到最高位的1</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">a = a |(a&gt;&gt;<span class="number">1</span>);</div><div class="line">a = a |(a&gt;&gt;<span class="number">2</span>);</div><div class="line">a = a |(a&gt;&gt;<span class="number">4</span>);</div><div class="line">a = a |(a&gt;&gt;<span class="number">8</span>);</div><div class="line">a = a |(a&gt;&gt;<span class="number">16</span>);</div><div class="line"><span class="keyword">return</span> (a+<span class="number">1</span>)&gt;&gt;<span class="number">1</span>;</div></pre></td></tr></table></figure>
+<h3 id="检测一个无符号整数是否是2-n-1的形式"><a href="#检测一个无符号整数是否是2-n-1的形式" class="headerlink" title="检测一个无符号整数是否是2^n -1的形式"></a>检测一个无符号整数是否是2^n -1的形式</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">x&amp;(x+<span class="number">1</span>)</div></pre></td></tr></table></figure>
+<h3 id="移位"><a href="#移位" class="headerlink" title="移位"></a>移位</h3><p>在<code>Java</code>中正数<code>&gt;&gt;</code>等价于<code>&gt;&gt;&gt;</code>，负数在内存中已补码形式保存，<code>&gt;&gt;&gt;</code>表示无符号右移。</p>
+<h3 id="“1”位计数"><a href="#“1”位计数" class="headerlink" title="“1”位计数"></a>“1”位计数</h3><p>统计一个字（比如32bit）中，有多少个bit是1，有多少个bit是0。</p>
+<p>这里以32bit为例来说明算法，这里基本思想类似折半计算。算法复杂度O(lgn)<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">x = (x &amp; <span class="number">0x55555555</span>) + ((x&gt;&gt;<span class="number">1</span>)&amp; <span class="number">0x55555555</span>);</div><div class="line">x = (x &amp; <span class="number">0x33333333</span>) + ((x&gt;&gt;<span class="number">2</span>)&amp; <span class="number">0x33333333</span>);</div><div class="line">x = (x &amp; <span class="number">0x0F0F0F0F</span>) + ((x&gt;&gt;<span class="number">4</span>)&amp; <span class="number">0x0F0F0F0F</span>);</div><div class="line">x = (x &amp; <span class="number">0x00FF00FF</span>) + ((x&gt;&gt;<span class="number">8</span>)&amp; <span class="number">0x00FF00FF</span>);</div><div class="line">x = (x &amp; <span class="number">0x0000FFFF</span>) + ((x&gt;&gt;<span class="number">16</span>)&amp; <span class="number">0x0000FFFF</span>);</div></pre></td></tr></table></figure></p>
+<h3 id="搜索"><a href="#搜索" class="headerlink" title="搜索"></a>搜索</h3><p>—待续</p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ol>
+<li><a href="https://book.douban.com/subject/1784887/" target="_blank" rel="noopener">《Hacker’s Delight》</a></li>
+</ol>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://linraner.github.io/2018/07/28/20行代码的签到脚本/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1610,154 +1767,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://linraner.github.io/2018/05/05/Python解决字符编码问题/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Frank">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/autor.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Frank">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/05/05/Python解决字符编码问题/" itemprop="url">Python解决字符编码问题</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Words count in article&#58;</span>
-                
-                <span title="Words count in article">
-                  118
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Reading time &asymp;</span>
-                
-                <span title="Reading time">
-                  1
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>字符串分为unicode 和 str 两种类型</p>
-<p>文本字符和二进制数据分别用 str 和 byte表示</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#系统默认编码设置为utf-8</span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">import</span> sys</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>sys.getdefultencoding</div><div class="line"><span class="string">'utf-8'</span></div><div class="line">&gt;&gt;&gt;</div></pre></td></tr></table></figure>
-<p>str 与 bytes 之间的转换可以用 encode 和从decode<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/05/05/Python解决字符编码问题/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1812,7 +1821,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">32</span>
+                  <span class="site-state-item-count">33</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -1825,7 +1834,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">30</span>
+                  <span class="site-state-item-count">31</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -1905,7 +1914,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">16.8k</span>
+    <span title="Site words total count">17.1k</span>
   
 </div>
 
