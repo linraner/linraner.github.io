@@ -300,6 +300,252 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://linraner.github.io/2018/10/01/JSP 九大内置对象常用方法/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Frank">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/autor.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Frank">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/10/01/JSP 九大内置对象常用方法/" itemprop="url">JSP 九大内置对象常用方法</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  1,051
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  4
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h2 id="1-request-对象常用方法"><a href="#1-request-对象常用方法" class="headerlink" title="1. request 对象常用方法"></a>1. <code>request</code> 对象常用方法</h2><p><code>request</code> 是来自客户端的请求. 客户端的请求信息封装在 <code>request</code> 对象中. 以下 <code>HttpServletRequest</code> 类的实例.</p>
+<table>
+<thead>
+<tr>
+<th>方法 ( 类型 + 方法名 )</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>String getParameter(String strTextName)</td>
+<td>获取表单提交信息</td>
+</tr>
+<tr>
+<td>Enumeration getParameterNames()</td>
+<td>返回可用参数的枚举</td>
+</tr>
+<tr>
+<td>String[] getParameterValues(String name)</td>
+<td>返回包含参数 name 的所有的数组</td>
+</tr>
+<tr>
+<td>Enumeration getAttributeNames()</td>
+<td>返回所有属性名的属性值</td>
+</tr>
+<tr>
+<td>Object getAttribute(String name)</td>
+<td>返回指定属性的属性值</td>
+</tr>
+<tr>
+<td>String getCharacterEncoding()</td>
+<td>返回字节编码方式</td>
+</tr>
+<tr>
+<td>String getProtocol()</td>
+<td>获取用户使用的协议</td>
+</tr>
+<tr>
+<td>String getServletPath()</td>
+<td>获取用户提交信息的页面</td>
+</tr>
+<tr>
+<td>String getMethod()</td>
+<td>获取客户提交信息的方式</td>
+</tr>
+<tr>
+<td>BufferReader getHeader()</td>
+<td>获取 HTTP 头文件的 accept、accept-encoding 和 Host 的值</td>
+</tr>
+<tr>
+<td>String getRemoteAddr()</td>
+<td>获取客户的 IP 地址</td>
+</tr>
+<tr>
+<td>String getRemoteHost()</td>
+<td>获取客户机的名称</td>
+</tr>
+<tr>
+<td>String getserverName()</td>
+<td>获取服务器的名称</td>
+</tr>
+<tr>
+<td>int getServerPort()</td>
+<td>获取服务器端口号</td>
+</tr>
+</tbody>
+</table>
+<h2 id="2-resopnse-对象常用方法"><a href="#2-resopnse-对象常用方法" class="headerlink" title="2. resopnse 对象常用方法"></a>2. <code>resopnse</code> 对象常用方法</h2><p><code>resopnse</code> 对象代表的是对客户端的相应. 向客户端发送文字时直接使用. 以下是 <code>HttpServletResopnse</code> 类的实例.</p>
+<table>
+<thead>
+<tr>
+<th>方法 ( 类型 + 方法名 )</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>String getCharacterEncoding()</td>
+<td>返回响应用的是什么字符编码</td>
+</tr>
+<tr>
+<td>ServletOutputStream getOutputStream()</td>
+<td>返回响应的一个二进制输出流</td>
+</tr>
+<tr>
+<td>PrintWrite getWrite()</td>
+<td>返回可以向客户端输出字符的一个对象</td>
+</tr>
+<tr>
+<td>void setContentLength(int len)</td>
+<td>设置响应头长度</td>
+</tr>
+<tr>
+<td>void setContentTye(String type)</td>
+<td>设置响应的 MIME 类型</td>
+</tr>
+<tr>
+<td>void sendRedirect(Java.lang.String location)</td>
+<td>重新定向客户端的请求</td>
+</tr>
+</tbody>
+</table>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/10/01/JSP 九大内置对象常用方法/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://linraner.github.io/2018/09/28/lambda表达式/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1625,153 +1871,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://linraner.github.io/2018/05/14/c-std-ios-base-sync-with-stdio-加速输入输出/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Frank">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/autor.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Frank">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/05/14/c-std-ios-base-sync-with-stdio-加速输入输出/" itemprop="url">c++ std::ios_base::sync_with_stdio 加速输入输出</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Words count in article&#58;</span>
-                
-                <span title="Words count in article">
-                  167
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Reading time &asymp;</span>
-                
-                <span title="Reading time">
-                  1
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h3 id="static-bool-sync-with-stdio-bool-sync-true"><a href="#static-bool-sync-with-stdio-bool-sync-true" class="headerlink" title="static bool sync_with_stdio( bool sync = true );"></a><code>static bool sync_with_stdio( bool sync = true );</code></h3><p>设置标准 C++ 流是否与标准 C 流在每次输入/输出操作后同步。</p>
-<p>遇到cin TLE时可以用于取消cin同步, 取消之后不能和 scanf，sscanf, getchar, fgets 之类同用。</p>
-<h4 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h4>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/05/14/c-std-ios-base-sync-with-stdio-加速输入输出/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1826,7 +1925,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">34</span>
+                  <span class="site-state-item-count">35</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -1839,7 +1938,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">31</span>
+                  <span class="site-state-item-count">32</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -1919,7 +2018,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">18.4k</span>
+    <span title="Site words total count">18.8k</span>
   
 </div>
 
