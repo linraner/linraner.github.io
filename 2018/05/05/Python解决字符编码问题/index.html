@@ -83,19 +83,19 @@
 
 
 
-<meta name="description" content="字符串分为unicode 和 str 两种类型 文本字符和二进制数据分别用 str 和 byte表示 12345#系统默认编码设置为utf-8&amp;gt;&amp;gt;&amp;gt; import sys&amp;gt;&amp;gt;&amp;gt; sys.getdefultencoding&apos;utf-8&apos;&amp;gt;&amp;gt;&amp;gt; str 与 bytes 之间的转换可以用 encode 和从decode">
+<meta name="description" content="字符串分为 unicode 和 str 两种类型 文本字符和二进制数据分别用 str 和 byte 表示 12345# 系统默认编码设置为 utf-8&amp;gt;&amp;gt;&amp;gt; import sys&amp;gt;&amp;gt;&amp;gt; sys.getdefultencoding&apos;utf-8&apos;&amp;gt;&amp;gt;&amp;gt; str 与 bytes 之间的转换可以用 encode 和从 decode">
 <meta name="keywords" content="python,skill">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Python解决字符编码问题">
+<meta property="og:title" content="Python 解决字符编码问题">
 <meta property="og:url" content="http://linraner.github.io/2018/05/05/Python解决字符编码问题/index.html">
 <meta property="og:site_name" content="Frank">
-<meta property="og:description" content="字符串分为unicode 和 str 两种类型 文本字符和二进制数据分别用 str 和 byte表示 12345#系统默认编码设置为utf-8&amp;gt;&amp;gt;&amp;gt; import sys&amp;gt;&amp;gt;&amp;gt; sys.getdefultencoding&apos;utf-8&apos;&amp;gt;&amp;gt;&amp;gt; str 与 bytes 之间的转换可以用 encode 和从decode">
+<meta property="og:description" content="字符串分为 unicode 和 str 两种类型 文本字符和二进制数据分别用 str 和 byte 表示 12345# 系统默认编码设置为 utf-8&amp;gt;&amp;gt;&amp;gt; import sys&amp;gt;&amp;gt;&amp;gt; sys.getdefultencoding&apos;utf-8&apos;&amp;gt;&amp;gt;&amp;gt; str 与 bytes 之间的转换可以用 encode 和从 decode">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://foofish.net/images/python3-str2.jpg">
 <meta property="og:updated_time" content="2018-07-01T16:56:24.861Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Python解决字符编码问题">
-<meta name="twitter:description" content="字符串分为unicode 和 str 两种类型 文本字符和二进制数据分别用 str 和 byte表示 12345#系统默认编码设置为utf-8&amp;gt;&amp;gt;&amp;gt; import sys&amp;gt;&amp;gt;&amp;gt; sys.getdefultencoding&apos;utf-8&apos;&amp;gt;&amp;gt;&amp;gt; str 与 bytes 之间的转换可以用 encode 和从decode">
+<meta name="twitter:title" content="Python 解决字符编码问题">
+<meta name="twitter:description" content="字符串分为 unicode 和 str 两种类型 文本字符和二进制数据分别用 str 和 byte 表示 12345# 系统默认编码设置为 utf-8&amp;gt;&amp;gt;&amp;gt; import sys&amp;gt;&amp;gt;&amp;gt; sys.getdefultencoding&apos;utf-8&apos;&amp;gt;&amp;gt;&amp;gt; str 与 bytes 之间的转换可以用 encode 和从 decode">
 <meta name="twitter:image" content="https://foofish.net/images/python3-str2.jpg">
 
 
@@ -132,7 +132,7 @@
 
 
 
-  <title>Python解决字符编码问题 | Frank</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  <title>Python 解决字符编码问题 | Frank</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
   
 
 
@@ -320,7 +320,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">Python解决字符编码问题</h2>
+          <h2 class="post-title" itemprop="name headline">Python 解决字符编码问题</h2>
         
 
         <div class="post-meta">
@@ -391,12 +391,12 @@
       
 
       
-        <p>字符串分为unicode 和 str 两种类型</p>
-<p>文本字符和二进制数据分别用 str 和 byte表示</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#系统默认编码设置为utf-8</span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">import</span> sys</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>sys.getdefultencoding</div><div class="line"><span class="string">'utf-8'</span></div><div class="line">&gt;&gt;&gt;</div></pre></td></tr></table></figure>
-<p>str 与 bytes 之间的转换可以用 encode 和从decode<br><a id="more"></a><br><img src="https://foofish.net/images/python3-str2.jpg" alt=""></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span>s = <span class="string">"Python测试"</span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span>s = s.encode()</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>print(s)</div><div class="line"><span class="string">b'Python\xe6\xb5\x8b\xe8\xaf\x95'</span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span>s = s.decode()</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>print(s)</div><div class="line"><span class="string">'Python测试'</span></div></pre></td></tr></table></figure>
-<h2 id="base64"><a href="#base64" class="headerlink" title="base64"></a>base64</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">import</span> base64</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>s = <span class="string">"asdasd"</span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span>s = base64.b64encode(s)</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>print(s)</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>s = base64.b64decode(s)</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>print(s)</div></pre></td></tr></table></figure>
+        <p>字符串分为 unicode 和 str 两种类型</p>
+<p>文本字符和二进制数据分别用 str 和 byte 表示</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 系统默认编码设置为 utf-8</span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">import</span> sys</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>sys.getdefultencoding</div><div class="line"><span class="string">'utf-8'</span></div><div class="line">&gt;&gt;&gt;</div></pre></td></tr></table></figure>
+<p>str 与 bytes 之间的转换可以用 encode 和从 decode<br><a id="more"></a><br><img src="https://foofish.net/images/python3-str2.jpg" alt=""></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span>s = <span class="string">"Python 测试"</span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span>s = s.encode ()</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>print (s)</div><div class="line"><span class="string">b'Python\xe6\xb5\x8b\xe8\xaf\x95'</span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span>s = s.decode ()</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>print (s)</div><div class="line"><span class="string">'Python 测试 '</span></div></pre></td></tr></table></figure>
+<h2 id="base64"><a href="#base64" class="headerlink" title="base64"></a>base64</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">import</span> base64</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>s = <span class="string">"asdasd"</span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span>s = base64.b64encode (s)</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>print (s)</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>s = base64.b64decode (s)</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>print (s)</div></pre></td></tr></table></figure>
 <hr>
 <p>参考 ： <a href="https://foofish.net/how-python3-handle-charset-encoding.html" target="_blank" rel="noopener">https://foofish.net/how-python3-handle-charset-encoding.html</a></p>
 
@@ -633,7 +633,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">18.8k</span>
+    <span title="Site words total count">18.9k</span>
   
 </div>
 

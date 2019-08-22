@@ -353,7 +353,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  1,051
+                  1,053
                 </span>
               
 
@@ -391,74 +391,74 @@
 
       
         
-          <h2 id="1-request-对象常用方法"><a href="#1-request-对象常用方法" class="headerlink" title="1. request 对象常用方法"></a>1. <code>request</code> 对象常用方法</h2><p><code>request</code> 是来自客户端的请求. 客户端的请求信息封装在 <code>request</code> 对象中. 以下 <code>HttpServletRequest</code> 类的实例.</p>
+          <h2 id="1-request-对象常用方法"><a href="#1-request-对象常用方法" class="headerlink" title="1. request 对象常用方法"></a>1. <code>request</code> 对象常用方法</h2><p><code>request</code> 是来自客户端的请求。客户端的请求信息封装在 <code>request</code> 对象中。以下 <code>HttpServletRequest</code> 类的实例.</p>
 <table>
 <thead>
 <tr>
-<th>方法 ( 类型 + 方法名 )</th>
+<th>方法 (类型 + 方法名)</th>
 <th>描述</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>String getParameter(String strTextName)</td>
+<td>String getParameter (String strTextName)</td>
 <td>获取表单提交信息</td>
 </tr>
 <tr>
-<td>Enumeration getParameterNames()</td>
+<td>Enumeration getParameterNames ()</td>
 <td>返回可用参数的枚举</td>
 </tr>
 <tr>
-<td>String[] getParameterValues(String name)</td>
+<td>String [] getParameterValues (String name)</td>
 <td>返回包含参数 name 的所有的数组</td>
 </tr>
 <tr>
-<td>Enumeration getAttributeNames()</td>
+<td>Enumeration getAttributeNames ()</td>
 <td>返回所有属性名的属性值</td>
 </tr>
 <tr>
-<td>Object getAttribute(String name)</td>
+<td>Object getAttribute (String name)</td>
 <td>返回指定属性的属性值</td>
 </tr>
 <tr>
-<td>String getCharacterEncoding()</td>
+<td>String getCharacterEncoding ()</td>
 <td>返回字节编码方式</td>
 </tr>
 <tr>
-<td>String getProtocol()</td>
+<td>String getProtocol ()</td>
 <td>获取用户使用的协议</td>
 </tr>
 <tr>
-<td>String getServletPath()</td>
+<td>String getServletPath ()</td>
 <td>获取用户提交信息的页面</td>
 </tr>
 <tr>
-<td>String getMethod()</td>
+<td>String getMethod ()</td>
 <td>获取客户提交信息的方式</td>
 </tr>
 <tr>
-<td>BufferReader getHeader()</td>
+<td>BufferReader getHeader ()</td>
 <td>获取 HTTP 头文件的 accept、accept-encoding 和 Host 的值</td>
 </tr>
 <tr>
-<td>String getRemoteAddr()</td>
+<td>String getRemoteAddr ()</td>
 <td>获取客户的 IP 地址</td>
 </tr>
 <tr>
-<td>String getRemoteHost()</td>
+<td>String getRemoteHost ()</td>
 <td>获取客户机的名称</td>
 </tr>
 <tr>
-<td>String getserverName()</td>
+<td>String getserverName ()</td>
 <td>获取服务器的名称</td>
 </tr>
 <tr>
-<td>int getServerPort()</td>
+<td>int getServerPort ()</td>
 <td>获取服务器端口号</td>
 </tr>
 </tbody>
 </table>
-<h2 id="2-resopnse-对象常用方法"><a href="#2-resopnse-对象常用方法" class="headerlink" title="2. resopnse 对象常用方法"></a>2. <code>resopnse</code> 对象常用方法</h2><p><code>resopnse</code> 对象代表的是对客户端的相应. 向客户端发送文字时直接使用. 以下是 <code>HttpServletResopnse</code> 类的实例.</p>
+<h2 id="2-resopnse-对象常用方法"><a href="#2-resopnse-对象常用方法" class="headerlink" title="2. resopnse 对象常用方法"></a>2. <code>resopnse</code> 对象常用方法</h2><p><code>resopnse</code> 对象代表的是对客户端的相应。向客户端发送文字时直接使用。以下是 <code>HttpServletResopnse</code> 类的实例.</p>
 <table>
 <thead>
 <tr>
@@ -468,27 +468,27 @@
 </thead>
 <tbody>
 <tr>
-<td>String getCharacterEncoding()</td>
+<td>String getCharacterEncoding ()</td>
 <td>返回响应用的是什么字符编码</td>
 </tr>
 <tr>
-<td>ServletOutputStream getOutputStream()</td>
+<td>ServletOutputStream getOutputStream ()</td>
 <td>返回响应的一个二进制输出流</td>
 </tr>
 <tr>
-<td>PrintWrite getWrite()</td>
+<td>PrintWrite getWrite ()</td>
 <td>返回可以向客户端输出字符的一个对象</td>
 </tr>
 <tr>
-<td>void setContentLength(int len)</td>
+<td>void setContentLength (int len)</td>
 <td>设置响应头长度</td>
 </tr>
 <tr>
-<td>void setContentTye(String type)</td>
+<td>void setContentTye (String type)</td>
 <td>设置响应的 MIME 类型</td>
 </tr>
 <tr>
-<td>void sendRedirect(Java.lang.String location)</td>
+<td>void sendRedirect (Java.lang.String location)</td>
 <td>重新定向客户端的请求</td>
 </tr>
 </tbody>
@@ -565,7 +565,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/09/28/lambda表达式/" itemprop="url">lambda表达式</a></h2>
+                <a class="post-title-link" href="/2018/09/28/lambda表达式/" itemprop="url">lambda 表达式</a></h2>
         
 
         <div class="post-meta">
@@ -637,10 +637,10 @@
 
       
         
-          <p>lambda表达式是一行函数，是函数式编程的一种特性。</p>
-<h2 id="python"><a href="#python" class="headerlink" title="python"></a>python</h2><p>lambda &lt;参数&gt;: 表达式<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span>f = <span class="keyword">lambda</span> a,b: a + b</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>type(f)</div><div class="line"><span class="comment">#&lt;type 'function'&gt;</span></div></pre></td></tr></table></figure></p>
-<p>获取整除2的数字<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span>list(filter(<span class="keyword">lambda</span> x: x%<span class="number">2</span>==<span class="number">0</span>, range(<span class="number">10</span>)))</div><div class="line"><span class="comment">#[0, 2, 4, 6, 8]</span></div></pre></td></tr></table></figure></p>
-<p>列表并行排序<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span>list1 = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">2</span>,<span class="number">3</span>];list2 = [<span class="number">9</span>,<span class="number">4</span>,<span class="number">3</span>,<span class="number">5</span>,<span class="number">6</span>]</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>data = zip(list1, list2)</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>data = sorted(data)</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>list1, list2 = map(<span class="keyword">lambda</span> t: list(t), zip(*data))</div></pre></td></tr></table></figure></p>
+          <p>lambda 表达式是一行函数，是函数式编程的一种特性。</p>
+<h2 id="python"><a href="#python" class="headerlink" title="python"></a>python</h2><p>lambda &lt;参数&gt;: 表达式<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span>f = <span class="keyword">lambda</span> a,b: a + b</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>type (f)</div><div class="line"><span class="comment">#&lt;type 'function'&gt;</span></div></pre></td></tr></table></figure></p>
+<p>获取整除 2 的数字<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span>list (filter (<span class="keyword">lambda</span> x: x%<span class="number">2</span>==<span class="number">0</span>, range (<span class="number">10</span>)))</div><div class="line"><span class="comment">#[0, 2, 4, 6, 8]</span></div></pre></td></tr></table></figure></p>
+<p>列表并行排序<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span>list1 = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">2</span>,<span class="number">3</span>];list2 = [<span class="number">9</span>,<span class="number">4</span>,<span class="number">3</span>,<span class="number">5</span>,<span class="number">6</span>]</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>data = zip (list1, list2)</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>data = sorted (data)</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>list1, list2 = map (<span class="keyword">lambda</span> t: list (t), zip (*data))</div></pre></td></tr></table></figure></p>
 <h2 id="cpp"><a href="#cpp" class="headerlink" title="cpp"></a>cpp</h2>
           <!--noindex-->
           <div class="post-button text-center">
@@ -714,7 +714,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/09/28/Django重置后台密码/" itemprop="url">Django重置后台密码</a></h2>
+                <a class="post-title-link" href="/2018/09/28/Django重置后台密码/" itemprop="url">Django 重置后台密码</a></h2>
         
 
         <div class="post-meta">
@@ -787,9 +787,9 @@
       
         
           
-            <p>emmm时间长忘记密码了</p>
+            <p>emmm 时间长忘记密码了</p>
 <h3 id="执行"><a href="#执行" class="headerlink" title="执行"></a>执行</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="meta">$</span> python manage.py shell</div></pre></td></tr></table></figure>
-<h3 id="修改"><a href="#修改" class="headerlink" title="修改"></a>修改</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">In [<span class="number">1</span>]: <span class="keyword">from</span> django.contrib.auth.models <span class="keyword">import</span> User</div><div class="line">In [<span class="number">2</span>]: user = User.objects.get(username=<span class="string">'Username'</span>)</div><div class="line">In [<span class="number">3</span>]: user.set_password(<span class="string">'Password'</span>)</div><div class="line">In [<span class="number">4</span>]: user.save()</div><div class="line">In [<span class="number">5</span>]: exit()</div></pre></td></tr></table></figure>
+<h3 id="修改"><a href="#修改" class="headerlink" title="修改"></a>修改</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">In [<span class="number">1</span>]: <span class="keyword">from</span> django.contrib.auth.models <span class="keyword">import</span> User</div><div class="line">In [<span class="number">2</span>]: user = User.objects.get (username=<span class="string">'Username'</span>)</div><div class="line">In [<span class="number">3</span>]: user.set_password (<span class="string">'Password'</span>)</div><div class="line">In [<span class="number">4</span>]: user.save ()</div><div class="line">In [<span class="number">5</span>]: exit ()</div></pre></td></tr></table></figure>
 
           
         
@@ -857,7 +857,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/09/28/c++的字符串与数字的转换/" itemprop="url">c++的字符串与数字的转换</a></h2>
+                <a class="post-title-link" href="/2018/09/28/c++的字符串与数字的转换/" itemprop="url">c++ 的字符串与数字的转换</a></h2>
         
 
         <div class="post-meta">
@@ -891,7 +891,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  189
+                  191
                 </span>
               
 
@@ -929,10 +929,10 @@
 
       
         
-          <h3 id="数字转字符串"><a href="#数字转字符串" class="headerlink" title="数字转字符串"></a>数字转字符串</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;sstream&gt;</span></span></div><div class="line"><span class="keyword">double</span> a = <span class="number">123.456</span>;</div><div class="line"><span class="built_in">string</span> s;</div><div class="line"><span class="built_in">stringstream</span> ss;</div><div class="line">ss &lt;&lt; a;</div><div class="line">ss &gt;&gt; s;</div><div class="line">ss.clear();</div></pre></td></tr></table></figure>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;map&gt;</span></span></div><div class="line"><span class="built_in">map</span>&lt;<span class="keyword">int</span>, <span class="keyword">char</span>&gt; m;</div><div class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++) &#123;</div><div class="line">	m[i] = i + <span class="string">'0'</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></div><div class="line"><span class="keyword">char</span> str[<span class="number">10</span>];</div><div class="line"><span class="keyword">double</span> a = <span class="number">123.456</span>;</div><div class="line"><span class="built_in">sprintf</span>(str, <span class="string">"%.3lf"</span>, a);</div></pre></td></tr></table></figure>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">char</span> str[<span class="number">10</span>];</div><div class="line"><span class="keyword">int</span> a=<span class="number">175</span>;</div><div class="line"><span class="built_in">sprintf</span>(str,<span class="string">"%x"</span>,a);<span class="comment">//10进制转换成16进制，如果输出大写的字母是sprintf(str,"%X",a)</span></div></pre></td></tr></table></figure>
+          <h3 id="数字转字符串"><a href="#数字转字符串" class="headerlink" title="数字转字符串"></a>数字转字符串</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;sstream&gt;</span></span></div><div class="line"><span class="keyword">double</span> a = <span class="number">123.456</span>;</div><div class="line"><span class="built_in">string</span> s;</div><div class="line"><span class="built_in">stringstream</span> ss;</div><div class="line">ss &lt;&lt; a;</div><div class="line">ss &gt;&gt; s;</div><div class="line">ss.clear ();</div></pre></td></tr></table></figure>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;map&gt;</span></span></div><div class="line"><span class="built_in">map</span>&lt;<span class="keyword">int</span>, <span class="keyword">char</span>&gt; m;</div><div class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++) &#123;</div><div class="line">	m [i] = i + <span class="string">'0'</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></div><div class="line"><span class="keyword">char</span> str [<span class="number">10</span>];</div><div class="line"><span class="keyword">double</span> a = <span class="number">123.456</span>;</div><div class="line"><span class="built_in">sprintf</span>(str, <span class="string">"%.3lf"</span>, a);</div></pre></td></tr></table></figure>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">char</span> str [<span class="number">10</span>];</div><div class="line"><span class="keyword">int</span> a=<span class="number">175</span>;</div><div class="line"><span class="built_in">sprintf</span>(str,<span class="string">"% x"</span>,a);<span class="comment">//10 进制转换成 16 进制，如果输出大写的字母是 sprintf (str,"% X",a)</span></div></pre></td></tr></table></figure>
 <h3 id="字符串转数字"><a href="#字符串转数字" class="headerlink" title="字符串转数字"></a>字符串转数字</h3>
           <!--noindex-->
           <div class="post-button text-center">
@@ -1040,7 +1040,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  305
+                  312
                 </span>
               
 
@@ -1056,7 +1056,7 @@
                   <span class="post-meta-item-text">Reading time &asymp;</span>
                 
                 <span title="Reading time">
-                  1
+                  2
                 </span>
               
             </div>
@@ -1080,19 +1080,19 @@
         
           
             <h2 id="位运算"><a href="#位运算" class="headerlink" title="位运算"></a>位运算</h2><h3 id="amp-、-、"><a href="#amp-、-、" class="headerlink" title="&amp; 、|、 ^"></a>&amp; 、|、 ^</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">a &amp; a = a</div><div class="line">a | a = a</div><div class="line">a ^ a = <span class="number">0</span></div><div class="line">a &amp; <span class="number">0</span> = <span class="number">0</span></div><div class="line">a | <span class="number">0</span> = a</div><div class="line">a ^ <span class="number">0</span> = a</div><div class="line">a | ( a &amp; b ) = a</div><div class="line">a &amp; ( a | b ) = a</div></pre></td></tr></table></figure>
-<h3 id="a、b值交换"><a href="#a、b值交换" class="headerlink" title="a、b值交换"></a>a、b值交换</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">a ^= b;</div><div class="line">b ^= a;</div><div class="line">a ^= b;</div></pre></td></tr></table></figure>
+<h3 id="a、b-值交换"><a href="#a、b-值交换" class="headerlink" title="a、b 值交换"></a>a、b 值交换</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">a ^= b;</div><div class="line">b ^= a;</div><div class="line">a ^= b;</div></pre></td></tr></table></figure>
 <h3 id="判断奇偶（取最后一位）"><a href="#判断奇偶（取最后一位）" class="headerlink" title="判断奇偶（取最后一位）"></a>判断奇偶（取最后一位）</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">a &amp; <span class="number">1</span> &lt;==&gt; a % <span class="number">2</span></div></pre></td></tr></table></figure>
-<h3 id="i-1位置为1"><a href="#i-1位置为1" class="headerlink" title="i+1位置为1"></a>i+1位置为1</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 1110 =&gt; 1111</span></div><div class="line">a |= <span class="number">1</span> &lt;&lt; i</div></pre></td></tr></table></figure>
-<h3 id="i-1位置为0"><a href="#i-1位置为0" class="headerlink" title="i+1位置为0"></a>i+1位置为0</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">// 1111 =&gt; 1101</div><div class="line">a &amp;= ~(1 &lt;&lt; i)</div></pre></td></tr></table></figure>
-<h3 id="取出i-1位"><a href="#取出i-1位" class="headerlink" title="取出i+1位"></a>取出i+1位</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// i = 2, 7 =&gt; 4</span></div><div class="line">a = a &amp; (<span class="number">1</span> &lt;&lt; i)</div></pre></td></tr></table></figure>
-<h3 id="删除最后的1"><a href="#删除最后的1" class="headerlink" title="删除最后的1"></a>删除最后的1</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 1100 =&gt; 1000</span></div><div class="line">a = a &amp; (a-<span class="number">1</span>)</div></pre></td></tr></table></figure>
-<h3 id="在对应i-1位，插入b的对应位"><a href="#在对应i-1位，插入b的对应位" class="headerlink" title="在对应i+1位，插入b的对应位"></a>在对应i+1位，插入b的对应位</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">a |= 1 &lt;&lt; i; （a的bit位置1）</div><div class="line">a &amp; (b &amp; 1&lt;&lt;i) （与b的bit位相与）</div></pre></td></tr></table></figure>
-<h3 id="得到最高位的1"><a href="#得到最高位的1" class="headerlink" title="得到最高位的1"></a>得到最高位的1</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">a = a |(a&gt;&gt;<span class="number">1</span>);</div><div class="line">a = a |(a&gt;&gt;<span class="number">2</span>);</div><div class="line">a = a |(a&gt;&gt;<span class="number">4</span>);</div><div class="line">a = a |(a&gt;&gt;<span class="number">8</span>);</div><div class="line">a = a |(a&gt;&gt;<span class="number">16</span>);</div><div class="line"><span class="keyword">return</span> (a+<span class="number">1</span>)&gt;&gt;<span class="number">1</span>;</div></pre></td></tr></table></figure>
-<h3 id="检测一个无符号整数是否是2-n-1的形式"><a href="#检测一个无符号整数是否是2-n-1的形式" class="headerlink" title="检测一个无符号整数是否是2^n -1的形式"></a>检测一个无符号整数是否是2^n -1的形式</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">x&amp;(x+<span class="number">1</span>)</div></pre></td></tr></table></figure>
-<h3 id="移位"><a href="#移位" class="headerlink" title="移位"></a>移位</h3><p>在<code>Java</code>中正数<code>&gt;&gt;</code>等价于<code>&gt;&gt;&gt;</code>，负数在内存中已补码形式保存，<code>&gt;&gt;&gt;</code>表示无符号右移。</p>
-<h3 id="“1”位计数"><a href="#“1”位计数" class="headerlink" title="“1”位计数"></a>“1”位计数</h3><p>统计一个字（比如32bit）中，有多少个bit是1，有多少个bit是0。</p>
-<p>这里以32bit为例来说明算法，这里基本思想类似折半计算。算法复杂度O(lgn)<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">x = (x &amp; <span class="number">0x55555555</span>) + ((x&gt;&gt;<span class="number">1</span>)&amp; <span class="number">0x55555555</span>);</div><div class="line">x = (x &amp; <span class="number">0x33333333</span>) + ((x&gt;&gt;<span class="number">2</span>)&amp; <span class="number">0x33333333</span>);</div><div class="line">x = (x &amp; <span class="number">0x0F0F0F0F</span>) + ((x&gt;&gt;<span class="number">4</span>)&amp; <span class="number">0x0F0F0F0F</span>);</div><div class="line">x = (x &amp; <span class="number">0x00FF00FF</span>) + ((x&gt;&gt;<span class="number">8</span>)&amp; <span class="number">0x00FF00FF</span>);</div><div class="line">x = (x &amp; <span class="number">0x0000FFFF</span>) + ((x&gt;&gt;<span class="number">16</span>)&amp; <span class="number">0x0000FFFF</span>);</div></pre></td></tr></table></figure></p>
-<h3 id="搜索"><a href="#搜索" class="headerlink" title="搜索"></a>搜索</h3><p>—待续</p>
+<h3 id="i-1-位置为-1"><a href="#i-1-位置为-1" class="headerlink" title="i+1 位置为 1"></a>i+1 位置为 1</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 1110 =&gt; 1111</span></div><div class="line">a |= <span class="number">1</span> &lt;&lt; i</div></pre></td></tr></table></figure>
+<h3 id="i-1-位置为-0"><a href="#i-1-位置为-0" class="headerlink" title="i+1 位置为 0"></a>i+1 位置为 0</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">// 1111 =&gt; 1101</div><div class="line">a &amp;= ~(1 &lt;&lt; i)</div></pre></td></tr></table></figure>
+<h3 id="取出-i-1-位"><a href="#取出-i-1-位" class="headerlink" title="取出 i+1 位"></a>取出 i+1 位</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//i = 2, 7 =&gt; 4</span></div><div class="line">a = a &amp; (<span class="number">1</span> &lt;&lt; i)</div></pre></td></tr></table></figure>
+<h3 id="删除最后的-1"><a href="#删除最后的-1" class="headerlink" title="删除最后的 1"></a>删除最后的 1</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 1100 =&gt; 1000</span></div><div class="line">a = a &amp; (a-<span class="number">1</span>)</div></pre></td></tr></table></figure>
+<h3 id="在对应-i-1-位，插入-b-的对应位"><a href="#在对应-i-1-位，插入-b-的对应位" class="headerlink" title="在对应 i+1 位，插入 b 的对应位"></a>在对应 i+1 位，插入 b 的对应位</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">a |= 1 &lt;&lt; i; （a 的 bit 位置 1）</div><div class="line">a &amp; (b &amp; 1&lt;&lt;i) （与 b 的 bit 位相与）</div></pre></td></tr></table></figure>
+<h3 id="得到最高位的-1"><a href="#得到最高位的-1" class="headerlink" title="得到最高位的 1"></a>得到最高位的 1</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">a = a |(a&gt;&gt;<span class="number">1</span>);</div><div class="line">a = a |(a&gt;&gt;<span class="number">2</span>);</div><div class="line">a = a |(a&gt;&gt;<span class="number">4</span>);</div><div class="line">a = a |(a&gt;&gt;<span class="number">8</span>);</div><div class="line">a = a |(a&gt;&gt;<span class="number">16</span>);</div><div class="line"><span class="keyword">return</span> (a+<span class="number">1</span>)&gt;&gt;<span class="number">1</span>;</div></pre></td></tr></table></figure>
+<h3 id="检测一个无符号整数是否是-2-n-1-的形式"><a href="#检测一个无符号整数是否是-2-n-1-的形式" class="headerlink" title="检测一个无符号整数是否是 2^n -1 的形式"></a>检测一个无符号整数是否是 2^n -1 的形式</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">x&amp;(x+<span class="number">1</span>)</div></pre></td></tr></table></figure>
+<h3 id="移位"><a href="#移位" class="headerlink" title="移位"></a>移位</h3><p>在 <code>Java</code> 中正数 <code>&gt;&gt;</code> 等价于 <code>&gt;&gt;&gt;</code>，负数在内存中已补码形式保存，<code>&gt;&gt;&gt;</code> 表示无符号右移。</p>
+<h3 id="“1”-位计数"><a href="#“1”-位计数" class="headerlink" title="“1” 位计数"></a>“1” 位计数</h3><p>统计一个字（比如 32bit）中，有多少个 bit 是 1，有多少个 bit 是 0。</p>
+<p>这里以 32bit 为例来说明算法，这里基本思想类似折半计算。算法复杂度 O (lgn)<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">x = (x &amp; <span class="number">0x55555555</span>) + ((x&gt;&gt;<span class="number">1</span>)&amp; <span class="number">0x55555555</span>);</div><div class="line">x = (x &amp; <span class="number">0x33333333</span>) + ((x&gt;&gt;<span class="number">2</span>)&amp; <span class="number">0x33333333</span>);</div><div class="line">x = (x &amp; <span class="number">0x0F0F0F0F</span>) + ((x&gt;&gt;<span class="number">4</span>)&amp; <span class="number">0x0F0F0F0F</span>);</div><div class="line">x = (x &amp; <span class="number">0x00FF00FF</span>) + ((x&gt;&gt;<span class="number">8</span>)&amp; <span class="number">0x00FF00FF</span>);</div><div class="line">x = (x &amp; <span class="number">0x0000FFFF</span>) + ((x&gt;&gt;<span class="number">16</span>)&amp; <span class="number">0x0000FFFF</span>);</div></pre></td></tr></table></figure></p>
+<h3 id="搜索"><a href="#搜索" class="headerlink" title="搜索"></a>搜索</h3><p>— 待续</p>
 <h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ol>
 <li><a href="https://book.douban.com/subject/1784887/" target="_blank" rel="noopener">《Hacker’s Delight》</a></li>
 </ol>
@@ -1163,7 +1163,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/07/28/20行代码的签到脚本/" itemprop="url">20行代码的签到脚本(Python)</a></h2>
+                <a class="post-title-link" href="/2018/07/28/20行代码的签到脚本/" itemprop="url">20 行代码的签到脚本 (Python)</a></h2>
         
 
         <div class="post-meta">
@@ -1235,9 +1235,9 @@
 
       
         
-          <p>懒得每天在某个网站签到，写了一个python脚本扔在云主机上。网站很简单，代码就几十行。</p>
-<h3 id="签到脚本"><a href="#签到脚本" class="headerlink" title="签到脚本"></a>签到脚本</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> requests</div><div class="line"></div><div class="line">username = <span class="string">"####"</span></div><div class="line">password = <span class="string">"####"</span></div><div class="line">loginUrl = <span class="string">"登录路径/auth/login"</span></div><div class="line">s = requests.Session()</div><div class="line">logindata = &#123;</div><div class="line">    <span class="string">'email'</span>:username,</div><div class="line">    <span class="string">'passwd'</span>:password,</div><div class="line">    <span class="string">'remember_me'</span>:<span class="string">'ture'</span>,</div><div class="line">&#125;</div><div class="line">r = s.post(loginUrl,data=logindata)</div><div class="line">r = s.get(loginUrl)</div><div class="line">checkinUrl=<span class="string">"签到的路径/user/checkin"</span></div><div class="line">rr = s.post(checkinUrl)<span class="comment">#执行签到</span></div><div class="line">rr = s.get(loginUrl)</div><div class="line"><span class="comment"># print(rr)</span></div><div class="line"><span class="comment"># print(rr._content.decode())</span></div><div class="line">exit()</div></pre></td></tr></table></figure>
-<h3 id="在Linux上定时执行这个脚本"><a href="#在Linux上定时执行这个脚本" class="headerlink" title="在Linux上定时执行这个脚本"></a>在Linux上定时执行这个脚本</h3>
+          <p>懒得每天在某个网站签到，写了一个 python 脚本扔在云主机上。网站很简单，代码就几十行。</p>
+<h3 id="签到脚本"><a href="#签到脚本" class="headerlink" title="签到脚本"></a>签到脚本</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> requests</div><div class="line"></div><div class="line">username = <span class="string">"####"</span></div><div class="line">password = <span class="string">"####"</span></div><div class="line">loginUrl = <span class="string">"登录路径 /auth/login"</span></div><div class="line">s = requests.Session ()</div><div class="line">logindata = &#123;</div><div class="line">    <span class="string">'email'</span>:username,</div><div class="line">    <span class="string">'passwd'</span>:password,</div><div class="line">    <span class="string">'remember_me'</span>:<span class="string">'ture'</span>,</div><div class="line">&#125;</div><div class="line">r = s.post (loginUrl,data=logindata)</div><div class="line">r = s.get (loginUrl)</div><div class="line">checkinUrl=<span class="string">"签到的路径 /user/checkin"</span></div><div class="line">rr = s.post (checkinUrl)<span class="comment"># 执行签到 </span></div><div class="line">rr = s.get (loginUrl)</div><div class="line"><span class="comment"># print (rr)</span></div><div class="line"><span class="comment"># print (rr._content.decode ())</span></div><div class="line">exit ()</div></pre></td></tr></table></figure>
+<h3 id="在-Linux-上定时执行这个脚本"><a href="#在-Linux-上定时执行这个脚本" class="headerlink" title="在 Linux 上定时执行这个脚本"></a>在 Linux 上定时执行这个脚本</h3>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2018/07/28/20行代码的签到脚本/#more" rel="contents">
@@ -1310,7 +1310,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/06/21/django链接mysql问题/" itemprop="url">django链接MySQL问题</a></h2>
+                <a class="post-title-link" href="/2018/06/21/django链接mysql问题/" itemprop="url">django 链接 MySQL 问题</a></h2>
         
 
         <div class="post-meta">
@@ -1459,7 +1459,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/05/30/nothing-added-to-commit-but-untracked-files-present解决方法/" itemprop="url">nothing added to commit but untracked files present解决方法</a></h2>
+                <a class="post-title-link" href="/2018/05/30/nothing-added-to-commit-but-untracked-files-present解决方法/" itemprop="url">nothing added to commit but untracked files present 解决方法</a></h2>
         
 
         <div class="post-meta">
@@ -1493,7 +1493,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  95
+                  96
                 </span>
               
 
@@ -1532,7 +1532,7 @@
       
         
           <h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="meta">$</span> git commit                                                         </div><div class="line">On branch master                                                     </div><div class="line">                                                                     </div><div class="line">Initial commit                                                       </div><div class="line">                                                                     </div><div class="line">Untracked files:                                                     </div><div class="line">        .gitignore                                                   </div><div class="line">        Test/                                                        </div><div class="line">        blogpost/                                                    </div><div class="line">        manage.py                                                    </div><div class="line">                                                                     </div><div class="line">nothing added to commit but untracked files present</div></pre></td></tr></table></figure>
-<p><strong>文件被追踪，但是没有被添加git中</strong></p>
+<p><strong> 文件被追踪，但是没有被添加 git 中 </strong></p>
 <h2 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h2>
           <!--noindex-->
           <div class="post-button text-center">
@@ -1606,7 +1606,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/05/28/c++枚举next_premutation/" itemprop="url">c++枚举next_premutation</a></h2>
+                <a class="post-title-link" href="/2018/05/28/c++枚举next_premutation/" itemprop="url">c++ 枚举 next_premutation</a></h2>
         
 
         <div class="post-meta">
@@ -1678,10 +1678,10 @@
 
       
         
-          <h3 id="平均复杂度即为O-n"><a href="#平均复杂度即为O-n" class="headerlink" title="平均复杂度即为O(n)"></a>平均复杂度即为O(n)</h3><ul>
-<li><p>next_permutation()    会改变区间[begin,end)内的元素次序，使它们符合“下一个排列次序”；</p>
+          <h3 id="平均复杂度即为-O-n"><a href="#平均复杂度即为-O-n" class="headerlink" title="平均复杂度即为 O (n)"></a>平均复杂度即为 O (n)</h3><ul>
+<li><p>next_permutation ()    会改变区间 [begin,end) 内的元素次序，使它们符合 “下一个排列次序”；</p>
 </li>
-<li><p>prev_permutation()    会改变区间[begin,end)内的元素次序，使它们符合“上一个排列次序”；</p>
+<li><p>prev_permutation ()    会改变区间 [begin,end) 内的元素次序，使它们符合 “上一个排列次序”；</p>
 </li>
 </ul>
 <h2 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h2>
@@ -1757,7 +1757,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/05/15/Ubuntu错误-Could-not-get-lock-var-lib-dpkg-lock/" itemprop="url">Ubuntu错误-Could not get lock /var/lib/dpkg/lock</a></h2>
+                <a class="post-title-link" href="/2018/05/15/Ubuntu错误-Could-not-get-lock-var-lib-dpkg-lock/" itemprop="url">Ubuntu 错误 - Could not get lock /var/lib/dpkg/lock</a></h2>
         
 
         <div class="post-meta">
@@ -2018,7 +2018,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">18.8k</span>
+    <span title="Site words total count">18.9k</span>
   
 </div>
 

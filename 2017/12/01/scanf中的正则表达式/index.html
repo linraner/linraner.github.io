@@ -83,18 +83,18 @@
 
 
 
-<meta name="description" content="调用格式: scanf(&amp;quot;&amp;lt;格式化字符串&amp;gt;&amp;quot;, &amp;lt;地址表&amp;gt;);一、为变量赋值时表示成功读取变量的个数, &amp;lt;格式化字符串&amp;gt;与&amp;lt;地址表&amp;gt;是严格匹配的 12scanf(&quot;%c %c&quot;, &amp;amp;a, &amp;amp;b); //函数返回值是2，并丢弃不想使用的空白符scanf(&quot;%d,%d&quot;, &amp;amp;a, &amp;amp;b); //输入必须">
+<meta name="description" content="调用格式: scanf (&amp;quot;&amp;lt; 格式化字符串&amp;gt;&amp;quot;, &amp;lt; 地址表 &amp;gt;);一、为变量赋值时表示成功读取变量的个数，&amp;lt; 格式化字符串 &amp;gt; 与 &amp;lt; 地址表 &amp;gt; 是严格匹配的 12scanf(&quot;% c % c&quot;, &amp;amp;a, &amp;amp;b); // 函数返回值是 2，并丢弃不想使用的空白符 scanf(&quot;% d,% d&quot;, &amp;amp;">
 <meta name="keywords" content="acm,c++">
 <meta property="og:type" content="article">
-<meta property="og:title" content="scanf中的正则表达式">
+<meta property="og:title" content="scanf 中的正则表达式">
 <meta property="og:url" content="http://linraner.github.io/2017/12/01/scanf中的正则表达式/index.html">
 <meta property="og:site_name" content="Frank">
-<meta property="og:description" content="调用格式: scanf(&amp;quot;&amp;lt;格式化字符串&amp;gt;&amp;quot;, &amp;lt;地址表&amp;gt;);一、为变量赋值时表示成功读取变量的个数, &amp;lt;格式化字符串&amp;gt;与&amp;lt;地址表&amp;gt;是严格匹配的 12scanf(&quot;%c %c&quot;, &amp;amp;a, &amp;amp;b); //函数返回值是2，并丢弃不想使用的空白符scanf(&quot;%d,%d&quot;, &amp;amp;a, &amp;amp;b); //输入必须">
+<meta property="og:description" content="调用格式: scanf (&amp;quot;&amp;lt; 格式化字符串&amp;gt;&amp;quot;, &amp;lt; 地址表 &amp;gt;);一、为变量赋值时表示成功读取变量的个数，&amp;lt; 格式化字符串 &amp;gt; 与 &amp;lt; 地址表 &amp;gt; 是严格匹配的 12scanf(&quot;% c % c&quot;, &amp;amp;a, &amp;amp;b); // 函数返回值是 2，并丢弃不想使用的空白符 scanf(&quot;% d,% d&quot;, &amp;amp;">
 <meta property="og:locale" content="en">
 <meta property="og:updated_time" content="2018-07-01T17:00:05.467Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="scanf中的正则表达式">
-<meta name="twitter:description" content="调用格式: scanf(&amp;quot;&amp;lt;格式化字符串&amp;gt;&amp;quot;, &amp;lt;地址表&amp;gt;);一、为变量赋值时表示成功读取变量的个数, &amp;lt;格式化字符串&amp;gt;与&amp;lt;地址表&amp;gt;是严格匹配的 12scanf(&quot;%c %c&quot;, &amp;amp;a, &amp;amp;b); //函数返回值是2，并丢弃不想使用的空白符scanf(&quot;%d,%d&quot;, &amp;amp;a, &amp;amp;b); //输入必须">
+<meta name="twitter:title" content="scanf 中的正则表达式">
+<meta name="twitter:description" content="调用格式: scanf (&amp;quot;&amp;lt; 格式化字符串&amp;gt;&amp;quot;, &amp;lt; 地址表 &amp;gt;);一、为变量赋值时表示成功读取变量的个数，&amp;lt; 格式化字符串 &amp;gt; 与 &amp;lt; 地址表 &amp;gt; 是严格匹配的 12scanf(&quot;% c % c&quot;, &amp;amp;a, &amp;amp;b); // 函数返回值是 2，并丢弃不想使用的空白符 scanf(&quot;% d,% d&quot;, &amp;amp;">
 
 
 
@@ -130,7 +130,7 @@
 
 
 
-  <title>scanf中的正则表达式 | Frank</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  <title>scanf 中的正则表达式 | Frank</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
   
 
 
@@ -318,7 +318,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">scanf中的正则表达式</h2>
+          <h2 class="post-title" itemprop="name headline">scanf 中的正则表达式</h2>
         
 
         <div class="post-meta">
@@ -352,7 +352,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  257
+                  259
                 </span>
               
 
@@ -389,13 +389,13 @@
       
 
       
-        <h4 id="调用格式-scanf-quot-lt-格式化字符串-gt-quot-lt-地址表-gt"><a href="#调用格式-scanf-quot-lt-格式化字符串-gt-quot-lt-地址表-gt" class="headerlink" title="调用格式: scanf(&quot;&lt;格式化字符串&gt;&quot;, &lt;地址表&gt;);"></a><strong>调用格式:</strong> <code>scanf(&quot;&lt;格式化字符串&gt;&quot;, &lt;地址表&gt;);</code></h4><p>一、为变量赋值时表示成功读取变量的个数, &lt;格式化字符串&gt;与&lt;地址表&gt;是严格匹配的</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">scanf</span>(<span class="string">"%c %c"</span>, &amp;a, &amp;b); <span class="comment">//函数返回值是2，并丢弃不想使用的空白符</span></div><div class="line"><span class="built_in">scanf</span>(<span class="string">"%d,%d"</span>, &amp;a, &amp;b); <span class="comment">//输入必须有逗号， 多个空格为一个空格</span></div></pre></td></tr></table></figure>
-<p>二、 <code>%s</code> 读取遇到空格停止读取，因此一般可以用fgets去读取字符串<br><a id="more"></a><br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">scanf</span>(<span class="string">"%[a-z]"</span>, &amp;str);  <span class="comment">//遇到不再a-z字符停止读取</span></div><div class="line"><span class="built_in">scanf</span>(<span class="string">"666%[0-9]"</span>, &amp;str);  <span class="comment">//666开头并且在0-9字符读取，不是则停止</span></div><div class="line"><span class="built_in">scanf</span>(<span class="string">"%[^\n]"</span>, &amp;str);     <span class="comment">//^表示求反集，即这句话不是回车一直开始读取</span></div></pre></td></tr></table></figure></p>
-<p>三、压缩输入：在格式码前加上*，则用户就可以告诉scanf()读这个域，但不把它赋予任何变量。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">scanf</span>(<span class="string">"%c%*c, &amp;ch); 使用此方法可以在字符处理时吃掉多余的回车。</span></div></pre></td></tr></table></figure>
+        <h4 id="调用格式-scanf-quot-lt-格式化字符串-gt-quot-lt-地址表-gt"><a href="#调用格式-scanf-quot-lt-格式化字符串-gt-quot-lt-地址表-gt" class="headerlink" title=" 调用格式: scanf (&quot;&lt; 格式化字符串&gt;&quot;, &lt; 地址表 &gt;);"></a><strong> 调用格式:</strong> <code>scanf (&quot;&lt; 格式化字符串&gt;&quot;, &lt; 地址表 &gt;);</code></h4><p>一、为变量赋值时表示成功读取变量的个数，&lt; 格式化字符串 &gt; 与 &lt; 地址表 &gt; 是严格匹配的</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">scanf</span>(<span class="string">"% c % c"</span>, &amp;a, &amp;b); <span class="comment">// 函数返回值是 2，并丢弃不想使用的空白符 </span></div><div class="line"><span class="built_in">scanf</span>(<span class="string">"% d,% d"</span>, &amp;a, &amp;b); <span class="comment">// 输入必须有逗号， 多个空格为一个空格 </span></div></pre></td></tr></table></figure>
+<p>二、 <code>% s</code> 读取遇到空格停止读取，因此一般可以用 fgets 去读取字符串<br><a id="more"></a><br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">scanf</span>(<span class="string">"%[a-z]"</span>, &amp;str);  <span class="comment">// 遇到不再 a-z 字符停止读取 </span></div><div class="line"><span class="built_in">scanf</span>(<span class="string">"666%[0-9]"</span>, &amp;str);  <span class="comment">//666 开头并且在 0-9 字符读取，不是则停止 </span></div><div class="line"><span class="built_in">scanf</span>(<span class="string">"%[^\n]"</span>, &amp;str);     <span class="comment">//^ 表示求反集，即这句话不是回车一直开始读取 </span></div></pre></td></tr></table></figure></p>
+<p>三、压缩输入：在格式码前加上 *，则用户就可以告诉 scanf () 读这个域，但不把它赋予任何变量。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">scanf</span>(<span class="string">"% c%*c, &amp;ch); 使用此方法可以在字符处理时吃掉多余的回车。</span></div></pre></td></tr></table></figure>
 <p><a href="https://docs.microsoft.com/zh-cn/dotnet/standard/base-types/regular-expression-language-quick-reference" target="_blank" rel="noopener">更多正则表达式语言参考</a></p>
-<h4 id="sscanf、scanf的一些示例"><a href="#sscanf、scanf的一些示例" class="headerlink" title="sscanf、scanf的一些示例"></a>sscanf、scanf的一些示例</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div></pre></td></tr></table></figure>
+<h4 id="sscanf、scanf-的一些示例"><a href="#sscanf、scanf-的一些示例" class="headerlink" title="sscanf、scanf 的一些示例"></a>sscanf、scanf 的一些示例</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div></pre></td></tr></table></figure>
 
       
     </div>
@@ -428,8 +428,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/11/04/Git问题：Everything-up-to-date解决/" rel="next" title="Git问题：Everything up-to-date解决">
-                <i class="fa fa-chevron-left"></i> Git问题：Everything up-to-date解决
+              <a href="/2017/11/04/Git问题：Everything-up-to-date解决/" rel="next" title="Git 问题：Everything up-to-date 解决">
+                <i class="fa fa-chevron-left"></i> Git 问题：Everything up-to-date 解决
               </a>
             
           </div>
@@ -596,7 +596,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#调用格式-scanf-quot-lt-格式化字符串-gt-quot-lt-地址表-gt"><span class="nav-number">1.</span> <span class="nav-text">调用格式: scanf(&quot;&lt;格式化字符串&gt;&quot;, &lt;地址表&gt;);</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#sscanf、scanf的一些示例"><span class="nav-number">2.</span> <span class="nav-text">sscanf、scanf的一些示例</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#调用格式-scanf-quot-lt-格式化字符串-gt-quot-lt-地址表-gt"><span class="nav-number">1.</span> <span class="nav-text"> 调用格式: scanf (&quot;&lt; 格式化字符串&gt;&quot;, &lt; 地址表 &gt;);</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#sscanf、scanf-的一些示例"><span class="nav-number">2.</span> <span class="nav-text">sscanf、scanf 的一些示例</span></a></li></ol></div>
             
 
           </div>
@@ -630,7 +630,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">18.8k</span>
+    <span title="Site words total count">18.9k</span>
   
 </div>
 

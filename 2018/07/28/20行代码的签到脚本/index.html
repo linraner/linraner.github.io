@@ -83,18 +83,18 @@
 
 
 
-<meta name="description" content="懒得每天在某个网站签到，写了一个python脚本扔在云主机上。网站很简单，代码就几十行。 签到脚本12345678910111213141516171819import requestsusername = &quot;####&quot;password = &quot;####&quot;loginUrl = &quot;登录路径/auth/login&quot;s = requests.Session()logindata = &amp;#123;    &apos;">
+<meta name="description" content="懒得每天在某个网站签到，写了一个 python 脚本扔在云主机上。网站很简单，代码就几十行。 签到脚本12345678910111213141516171819import requestsusername = &quot;####&quot;password = &quot;####&quot;loginUrl = &quot;登录路径 /auth/login&quot;s = requests.Session ()logindata = &amp;#123;">
 <meta name="keywords" content="python,skill,linux">
 <meta property="og:type" content="article">
-<meta property="og:title" content="20行代码的签到脚本(Python)">
+<meta property="og:title" content="20 行代码的签到脚本 (Python)">
 <meta property="og:url" content="http://linraner.github.io/2018/07/28/20行代码的签到脚本/index.html">
 <meta property="og:site_name" content="Frank">
-<meta property="og:description" content="懒得每天在某个网站签到，写了一个python脚本扔在云主机上。网站很简单，代码就几十行。 签到脚本12345678910111213141516171819import requestsusername = &quot;####&quot;password = &quot;####&quot;loginUrl = &quot;登录路径/auth/login&quot;s = requests.Session()logindata = &amp;#123;    &apos;">
+<meta property="og:description" content="懒得每天在某个网站签到，写了一个 python 脚本扔在云主机上。网站很简单，代码就几十行。 签到脚本12345678910111213141516171819import requestsusername = &quot;####&quot;password = &quot;####&quot;loginUrl = &quot;登录路径 /auth/login&quot;s = requests.Session ()logindata = &amp;#123;">
 <meta property="og:locale" content="en">
 <meta property="og:updated_time" content="2018-08-15T11:09:23.004Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="20行代码的签到脚本(Python)">
-<meta name="twitter:description" content="懒得每天在某个网站签到，写了一个python脚本扔在云主机上。网站很简单，代码就几十行。 签到脚本12345678910111213141516171819import requestsusername = &quot;####&quot;password = &quot;####&quot;loginUrl = &quot;登录路径/auth/login&quot;s = requests.Session()logindata = &amp;#123;    &apos;">
+<meta name="twitter:title" content="20 行代码的签到脚本 (Python)">
+<meta name="twitter:description" content="懒得每天在某个网站签到，写了一个 python 脚本扔在云主机上。网站很简单，代码就几十行。 签到脚本12345678910111213141516171819import requestsusername = &quot;####&quot;password = &quot;####&quot;loginUrl = &quot;登录路径 /auth/login&quot;s = requests.Session ()logindata = &amp;#123;">
 
 
 
@@ -130,7 +130,7 @@
 
 
 
-  <title>20行代码的签到脚本(Python) | Frank</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  <title>20 行代码的签到脚本 (Python) | Frank</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
   
 
 
@@ -318,7 +318,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">20行代码的签到脚本(Python)</h2>
+          <h2 class="post-title" itemprop="name headline">20 行代码的签到脚本 (Python)</h2>
         
 
         <div class="post-meta">
@@ -389,11 +389,11 @@
       
 
       
-        <p>懒得每天在某个网站签到，写了一个python脚本扔在云主机上。网站很简单，代码就几十行。</p>
-<h3 id="签到脚本"><a href="#签到脚本" class="headerlink" title="签到脚本"></a>签到脚本</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> requests</div><div class="line"></div><div class="line">username = <span class="string">"####"</span></div><div class="line">password = <span class="string">"####"</span></div><div class="line">loginUrl = <span class="string">"登录路径/auth/login"</span></div><div class="line">s = requests.Session()</div><div class="line">logindata = &#123;</div><div class="line">    <span class="string">'email'</span>:username,</div><div class="line">    <span class="string">'passwd'</span>:password,</div><div class="line">    <span class="string">'remember_me'</span>:<span class="string">'ture'</span>,</div><div class="line">&#125;</div><div class="line">r = s.post(loginUrl,data=logindata)</div><div class="line">r = s.get(loginUrl)</div><div class="line">checkinUrl=<span class="string">"签到的路径/user/checkin"</span></div><div class="line">rr = s.post(checkinUrl)<span class="comment">#执行签到</span></div><div class="line">rr = s.get(loginUrl)</div><div class="line"><span class="comment"># print(rr)</span></div><div class="line"><span class="comment"># print(rr._content.decode())</span></div><div class="line">exit()</div></pre></td></tr></table></figure>
-<h3 id="在Linux上定时执行这个脚本"><a href="#在Linux上定时执行这个脚本" class="headerlink" title="在Linux上定时执行这个脚本"></a>在Linux上定时执行这个脚本</h3><a id="more"></a>
+        <p>懒得每天在某个网站签到，写了一个 python 脚本扔在云主机上。网站很简单，代码就几十行。</p>
+<h3 id="签到脚本"><a href="#签到脚本" class="headerlink" title="签到脚本"></a>签到脚本</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> requests</div><div class="line"></div><div class="line">username = <span class="string">"####"</span></div><div class="line">password = <span class="string">"####"</span></div><div class="line">loginUrl = <span class="string">"登录路径 /auth/login"</span></div><div class="line">s = requests.Session ()</div><div class="line">logindata = &#123;</div><div class="line">    <span class="string">'email'</span>:username,</div><div class="line">    <span class="string">'passwd'</span>:password,</div><div class="line">    <span class="string">'remember_me'</span>:<span class="string">'ture'</span>,</div><div class="line">&#125;</div><div class="line">r = s.post (loginUrl,data=logindata)</div><div class="line">r = s.get (loginUrl)</div><div class="line">checkinUrl=<span class="string">"签到的路径 /user/checkin"</span></div><div class="line">rr = s.post (checkinUrl)<span class="comment"># 执行签到 </span></div><div class="line">rr = s.get (loginUrl)</div><div class="line"><span class="comment"># print (rr)</span></div><div class="line"><span class="comment"># print (rr._content.decode ())</span></div><div class="line">exit ()</div></pre></td></tr></table></figure>
+<h3 id="在-Linux-上定时执行这个脚本"><a href="#在-Linux-上定时执行这个脚本" class="headerlink" title="在 Linux 上定时执行这个脚本"></a>在 Linux 上定时执行这个脚本</h3><a id="more"></a>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">crontab -e</div></pre></td></tr></table></figure>
-<p>进入编辑模式，设置每天8:00运行一次。<br>crontab的语法规范<br>分钟 小时 日期 月份 周 命令</p>
+<p>进入编辑模式，设置每天 8:00 运行一次。<br>crontab 的语法规范<br>分钟 小时 日期 月份 周 命令</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">00 8 * * * python /opt/checkin.py</div></pre></td></tr></table></figure>
       
     </div>
@@ -428,8 +428,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/06/21/django链接mysql问题/" rel="next" title="django链接MySQL问题">
-                <i class="fa fa-chevron-left"></i> django链接MySQL问题
+              <a href="/2018/06/21/django链接mysql问题/" rel="next" title="django 链接 MySQL 问题">
+                <i class="fa fa-chevron-left"></i> django 链接 MySQL 问题
               </a>
             
           </div>
@@ -596,7 +596,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#签到脚本"><span class="nav-number">1.</span> <span class="nav-text">签到脚本</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#在Linux上定时执行这个脚本"><span class="nav-number">2.</span> <span class="nav-text">在Linux上定时执行这个脚本</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#签到脚本"><span class="nav-number">1.</span> <span class="nav-text">签到脚本</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#在-Linux-上定时执行这个脚本"><span class="nav-number">2.</span> <span class="nav-text">在 Linux 上定时执行这个脚本</span></a></li></ol></div>
             
 
           </div>
@@ -630,7 +630,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">18.8k</span>
+    <span title="Site words total count">18.9k</span>
   
 </div>
 

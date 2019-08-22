@@ -83,18 +83,18 @@
 
 
 
-<meta name="description" content="位运算&amp;amp; 、|、 ^12345678a &amp;amp; a = aa | a = aa ^ a = 0a &amp;amp; 0 = 0a | 0 = aa ^ 0 = aa | ( a &amp;amp; b ) = aa &amp;amp; ( a | b ) = a a、b值交换123a ^= b;b ^= a;a ^= b; 判断奇偶（取最后一位）1a &amp;amp; 1 &amp;lt;==&amp;gt; a % 2 i+1">
+<meta name="description" content="位运算&amp;amp; 、|、 ^12345678a &amp;amp; a = aa | a = aa ^ a = 0a &amp;amp; 0 = 0a | 0 = aa ^ 0 = aa | ( a &amp;amp; b ) = aa &amp;amp; ( a | b ) = a a、b 值交换123a ^= b;b ^= a;a ^= b; 判断奇偶（取最后一位）1a &amp;amp; 1 &amp;lt;==&amp;gt; a % 2 i+">
 <meta name="keywords" content="algorithm,notes">
 <meta property="og:type" content="article">
 <meta property="og:title" content="位运算笔记">
 <meta property="og:url" content="http://linraner.github.io/2018/08/01/位运算笔记/index.html">
 <meta property="og:site_name" content="Frank">
-<meta property="og:description" content="位运算&amp;amp; 、|、 ^12345678a &amp;amp; a = aa | a = aa ^ a = 0a &amp;amp; 0 = 0a | 0 = aa ^ 0 = aa | ( a &amp;amp; b ) = aa &amp;amp; ( a | b ) = a a、b值交换123a ^= b;b ^= a;a ^= b; 判断奇偶（取最后一位）1a &amp;amp; 1 &amp;lt;==&amp;gt; a % 2 i+1">
+<meta property="og:description" content="位运算&amp;amp; 、|、 ^12345678a &amp;amp; a = aa | a = aa ^ a = 0a &amp;amp; 0 = 0a | 0 = aa ^ 0 = aa | ( a &amp;amp; b ) = aa &amp;amp; ( a | b ) = a a、b 值交换123a ^= b;b ^= a;a ^= b; 判断奇偶（取最后一位）1a &amp;amp; 1 &amp;lt;==&amp;gt; a % 2 i+">
 <meta property="og:locale" content="en">
 <meta property="og:updated_time" content="2019-07-29T11:25:17.212Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="位运算笔记">
-<meta name="twitter:description" content="位运算&amp;amp; 、|、 ^12345678a &amp;amp; a = aa | a = aa ^ a = 0a &amp;amp; 0 = 0a | 0 = aa ^ 0 = aa | ( a &amp;amp; b ) = aa &amp;amp; ( a | b ) = a a、b值交换123a ^= b;b ^= a;a ^= b; 判断奇偶（取最后一位）1a &amp;amp; 1 &amp;lt;==&amp;gt; a % 2 i+1">
+<meta name="twitter:description" content="位运算&amp;amp; 、|、 ^12345678a &amp;amp; a = aa | a = aa ^ a = 0a &amp;amp; 0 = 0a | 0 = aa ^ 0 = aa | ( a &amp;amp; b ) = aa &amp;amp; ( a | b ) = a a、b 值交换123a ^= b;b ^= a;a ^= b; 判断奇偶（取最后一位）1a &amp;amp; 1 &amp;lt;==&amp;gt; a % 2 i+">
 
 
 
@@ -352,7 +352,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  305
+                  312
                 </span>
               
 
@@ -368,7 +368,7 @@
                   <span class="post-meta-item-text">Reading time &asymp;</span>
                 
                 <span title="Reading time">
-                  1
+                  2
                 </span>
               
             </div>
@@ -390,19 +390,19 @@
 
       
         <h2 id="位运算"><a href="#位运算" class="headerlink" title="位运算"></a>位运算</h2><h3 id="amp-、-、"><a href="#amp-、-、" class="headerlink" title="&amp; 、|、 ^"></a>&amp; 、|、 ^</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">a &amp; a = a</div><div class="line">a | a = a</div><div class="line">a ^ a = <span class="number">0</span></div><div class="line">a &amp; <span class="number">0</span> = <span class="number">0</span></div><div class="line">a | <span class="number">0</span> = a</div><div class="line">a ^ <span class="number">0</span> = a</div><div class="line">a | ( a &amp; b ) = a</div><div class="line">a &amp; ( a | b ) = a</div></pre></td></tr></table></figure>
-<h3 id="a、b值交换"><a href="#a、b值交换" class="headerlink" title="a、b值交换"></a>a、b值交换</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">a ^= b;</div><div class="line">b ^= a;</div><div class="line">a ^= b;</div></pre></td></tr></table></figure>
+<h3 id="a、b-值交换"><a href="#a、b-值交换" class="headerlink" title="a、b 值交换"></a>a、b 值交换</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">a ^= b;</div><div class="line">b ^= a;</div><div class="line">a ^= b;</div></pre></td></tr></table></figure>
 <h3 id="判断奇偶（取最后一位）"><a href="#判断奇偶（取最后一位）" class="headerlink" title="判断奇偶（取最后一位）"></a>判断奇偶（取最后一位）</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">a &amp; <span class="number">1</span> &lt;==&gt; a % <span class="number">2</span></div></pre></td></tr></table></figure>
-<h3 id="i-1位置为1"><a href="#i-1位置为1" class="headerlink" title="i+1位置为1"></a>i+1位置为1</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 1110 =&gt; 1111</span></div><div class="line">a |= <span class="number">1</span> &lt;&lt; i</div></pre></td></tr></table></figure>
-<h3 id="i-1位置为0"><a href="#i-1位置为0" class="headerlink" title="i+1位置为0"></a>i+1位置为0</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">// 1111 =&gt; 1101</div><div class="line">a &amp;= ~(1 &lt;&lt; i)</div></pre></td></tr></table></figure>
-<h3 id="取出i-1位"><a href="#取出i-1位" class="headerlink" title="取出i+1位"></a>取出i+1位</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// i = 2, 7 =&gt; 4</span></div><div class="line">a = a &amp; (<span class="number">1</span> &lt;&lt; i)</div></pre></td></tr></table></figure>
-<h3 id="删除最后的1"><a href="#删除最后的1" class="headerlink" title="删除最后的1"></a>删除最后的1</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 1100 =&gt; 1000</span></div><div class="line">a = a &amp; (a-<span class="number">1</span>)</div></pre></td></tr></table></figure>
-<h3 id="在对应i-1位，插入b的对应位"><a href="#在对应i-1位，插入b的对应位" class="headerlink" title="在对应i+1位，插入b的对应位"></a>在对应i+1位，插入b的对应位</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">a |= 1 &lt;&lt; i; （a的bit位置1）</div><div class="line">a &amp; (b &amp; 1&lt;&lt;i) （与b的bit位相与）</div></pre></td></tr></table></figure>
-<h3 id="得到最高位的1"><a href="#得到最高位的1" class="headerlink" title="得到最高位的1"></a>得到最高位的1</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">a = a |(a&gt;&gt;<span class="number">1</span>);</div><div class="line">a = a |(a&gt;&gt;<span class="number">2</span>);</div><div class="line">a = a |(a&gt;&gt;<span class="number">4</span>);</div><div class="line">a = a |(a&gt;&gt;<span class="number">8</span>);</div><div class="line">a = a |(a&gt;&gt;<span class="number">16</span>);</div><div class="line"><span class="keyword">return</span> (a+<span class="number">1</span>)&gt;&gt;<span class="number">1</span>;</div></pre></td></tr></table></figure>
-<h3 id="检测一个无符号整数是否是2-n-1的形式"><a href="#检测一个无符号整数是否是2-n-1的形式" class="headerlink" title="检测一个无符号整数是否是2^n -1的形式"></a>检测一个无符号整数是否是2^n -1的形式</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">x&amp;(x+<span class="number">1</span>)</div></pre></td></tr></table></figure>
-<h3 id="移位"><a href="#移位" class="headerlink" title="移位"></a>移位</h3><p>在<code>Java</code>中正数<code>&gt;&gt;</code>等价于<code>&gt;&gt;&gt;</code>，负数在内存中已补码形式保存，<code>&gt;&gt;&gt;</code>表示无符号右移。</p>
-<h3 id="“1”位计数"><a href="#“1”位计数" class="headerlink" title="“1”位计数"></a>“1”位计数</h3><p>统计一个字（比如32bit）中，有多少个bit是1，有多少个bit是0。</p>
-<p>这里以32bit为例来说明算法，这里基本思想类似折半计算。算法复杂度O(lgn)<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">x = (x &amp; <span class="number">0x55555555</span>) + ((x&gt;&gt;<span class="number">1</span>)&amp; <span class="number">0x55555555</span>);</div><div class="line">x = (x &amp; <span class="number">0x33333333</span>) + ((x&gt;&gt;<span class="number">2</span>)&amp; <span class="number">0x33333333</span>);</div><div class="line">x = (x &amp; <span class="number">0x0F0F0F0F</span>) + ((x&gt;&gt;<span class="number">4</span>)&amp; <span class="number">0x0F0F0F0F</span>);</div><div class="line">x = (x &amp; <span class="number">0x00FF00FF</span>) + ((x&gt;&gt;<span class="number">8</span>)&amp; <span class="number">0x00FF00FF</span>);</div><div class="line">x = (x &amp; <span class="number">0x0000FFFF</span>) + ((x&gt;&gt;<span class="number">16</span>)&amp; <span class="number">0x0000FFFF</span>);</div></pre></td></tr></table></figure></p>
-<h3 id="搜索"><a href="#搜索" class="headerlink" title="搜索"></a>搜索</h3><p>—待续</p>
+<h3 id="i-1-位置为-1"><a href="#i-1-位置为-1" class="headerlink" title="i+1 位置为 1"></a>i+1 位置为 1</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 1110 =&gt; 1111</span></div><div class="line">a |= <span class="number">1</span> &lt;&lt; i</div></pre></td></tr></table></figure>
+<h3 id="i-1-位置为-0"><a href="#i-1-位置为-0" class="headerlink" title="i+1 位置为 0"></a>i+1 位置为 0</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">// 1111 =&gt; 1101</div><div class="line">a &amp;= ~(1 &lt;&lt; i)</div></pre></td></tr></table></figure>
+<h3 id="取出-i-1-位"><a href="#取出-i-1-位" class="headerlink" title="取出 i+1 位"></a>取出 i+1 位</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//i = 2, 7 =&gt; 4</span></div><div class="line">a = a &amp; (<span class="number">1</span> &lt;&lt; i)</div></pre></td></tr></table></figure>
+<h3 id="删除最后的-1"><a href="#删除最后的-1" class="headerlink" title="删除最后的 1"></a>删除最后的 1</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 1100 =&gt; 1000</span></div><div class="line">a = a &amp; (a-<span class="number">1</span>)</div></pre></td></tr></table></figure>
+<h3 id="在对应-i-1-位，插入-b-的对应位"><a href="#在对应-i-1-位，插入-b-的对应位" class="headerlink" title="在对应 i+1 位，插入 b 的对应位"></a>在对应 i+1 位，插入 b 的对应位</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">a |= 1 &lt;&lt; i; （a 的 bit 位置 1）</div><div class="line">a &amp; (b &amp; 1&lt;&lt;i) （与 b 的 bit 位相与）</div></pre></td></tr></table></figure>
+<h3 id="得到最高位的-1"><a href="#得到最高位的-1" class="headerlink" title="得到最高位的 1"></a>得到最高位的 1</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">a = a |(a&gt;&gt;<span class="number">1</span>);</div><div class="line">a = a |(a&gt;&gt;<span class="number">2</span>);</div><div class="line">a = a |(a&gt;&gt;<span class="number">4</span>);</div><div class="line">a = a |(a&gt;&gt;<span class="number">8</span>);</div><div class="line">a = a |(a&gt;&gt;<span class="number">16</span>);</div><div class="line"><span class="keyword">return</span> (a+<span class="number">1</span>)&gt;&gt;<span class="number">1</span>;</div></pre></td></tr></table></figure>
+<h3 id="检测一个无符号整数是否是-2-n-1-的形式"><a href="#检测一个无符号整数是否是-2-n-1-的形式" class="headerlink" title="检测一个无符号整数是否是 2^n -1 的形式"></a>检测一个无符号整数是否是 2^n -1 的形式</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">x&amp;(x+<span class="number">1</span>)</div></pre></td></tr></table></figure>
+<h3 id="移位"><a href="#移位" class="headerlink" title="移位"></a>移位</h3><p>在 <code>Java</code> 中正数 <code>&gt;&gt;</code> 等价于 <code>&gt;&gt;&gt;</code>，负数在内存中已补码形式保存，<code>&gt;&gt;&gt;</code> 表示无符号右移。</p>
+<h3 id="“1”-位计数"><a href="#“1”-位计数" class="headerlink" title="“1” 位计数"></a>“1” 位计数</h3><p>统计一个字（比如 32bit）中，有多少个 bit 是 1，有多少个 bit 是 0。</p>
+<p>这里以 32bit 为例来说明算法，这里基本思想类似折半计算。算法复杂度 O (lgn)<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">x = (x &amp; <span class="number">0x55555555</span>) + ((x&gt;&gt;<span class="number">1</span>)&amp; <span class="number">0x55555555</span>);</div><div class="line">x = (x &amp; <span class="number">0x33333333</span>) + ((x&gt;&gt;<span class="number">2</span>)&amp; <span class="number">0x33333333</span>);</div><div class="line">x = (x &amp; <span class="number">0x0F0F0F0F</span>) + ((x&gt;&gt;<span class="number">4</span>)&amp; <span class="number">0x0F0F0F0F</span>);</div><div class="line">x = (x &amp; <span class="number">0x00FF00FF</span>) + ((x&gt;&gt;<span class="number">8</span>)&amp; <span class="number">0x00FF00FF</span>);</div><div class="line">x = (x &amp; <span class="number">0x0000FFFF</span>) + ((x&gt;&gt;<span class="number">16</span>)&amp; <span class="number">0x0000FFFF</span>);</div></pre></td></tr></table></figure></p>
+<h3 id="搜索"><a href="#搜索" class="headerlink" title="搜索"></a>搜索</h3><p>— 待续</p>
 <h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ol>
 <li><a href="https://book.douban.com/subject/1784887/" target="_blank" rel="noopener">《Hacker’s Delight》</a></li>
 </ol>
@@ -438,8 +438,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/07/28/20行代码的签到脚本/" rel="next" title="20行代码的签到脚本(Python)">
-                <i class="fa fa-chevron-left"></i> 20行代码的签到脚本(Python)
+              <a href="/2018/07/28/20行代码的签到脚本/" rel="next" title="20 行代码的签到脚本 (Python)">
+                <i class="fa fa-chevron-left"></i> 20 行代码的签到脚本 (Python)
               </a>
             
           </div>
@@ -448,8 +448,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/09/28/c++的字符串与数字的转换/" rel="prev" title="c++的字符串与数字的转换">
-                c++的字符串与数字的转换 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/09/28/c++的字符串与数字的转换/" rel="prev" title="c++ 的字符串与数字的转换">
+                c++ 的字符串与数字的转换 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -606,7 +606,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#位运算"><span class="nav-number">1.</span> <span class="nav-text">位运算</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#amp-、-、"><span class="nav-number">1.1.</span> <span class="nav-text">&amp; 、|、 ^</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#a、b值交换"><span class="nav-number">1.2.</span> <span class="nav-text">a、b值交换</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#判断奇偶（取最后一位）"><span class="nav-number">1.3.</span> <span class="nav-text">判断奇偶（取最后一位）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#i-1位置为1"><span class="nav-number">1.4.</span> <span class="nav-text">i+1位置为1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#i-1位置为0"><span class="nav-number">1.5.</span> <span class="nav-text">i+1位置为0</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#取出i-1位"><span class="nav-number">1.6.</span> <span class="nav-text">取出i+1位</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#删除最后的1"><span class="nav-number">1.7.</span> <span class="nav-text">删除最后的1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#在对应i-1位，插入b的对应位"><span class="nav-number">1.8.</span> <span class="nav-text">在对应i+1位，插入b的对应位</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#得到最高位的1"><span class="nav-number">1.9.</span> <span class="nav-text">得到最高位的1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#检测一个无符号整数是否是2-n-1的形式"><span class="nav-number">1.10.</span> <span class="nav-text">检测一个无符号整数是否是2^n -1的形式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#移位"><span class="nav-number">1.11.</span> <span class="nav-text">移位</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#“1”位计数"><span class="nav-number">1.12.</span> <span class="nav-text">“1”位计数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#搜索"><span class="nav-number">1.13.</span> <span class="nav-text">搜索</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考"><span class="nav-number">2.</span> <span class="nav-text">参考</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#位运算"><span class="nav-number">1.</span> <span class="nav-text">位运算</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#amp-、-、"><span class="nav-number">1.1.</span> <span class="nav-text">&amp; 、|、 ^</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#a、b-值交换"><span class="nav-number">1.2.</span> <span class="nav-text">a、b 值交换</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#判断奇偶（取最后一位）"><span class="nav-number">1.3.</span> <span class="nav-text">判断奇偶（取最后一位）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#i-1-位置为-1"><span class="nav-number">1.4.</span> <span class="nav-text">i+1 位置为 1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#i-1-位置为-0"><span class="nav-number">1.5.</span> <span class="nav-text">i+1 位置为 0</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#取出-i-1-位"><span class="nav-number">1.6.</span> <span class="nav-text">取出 i+1 位</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#删除最后的-1"><span class="nav-number">1.7.</span> <span class="nav-text">删除最后的 1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#在对应-i-1-位，插入-b-的对应位"><span class="nav-number">1.8.</span> <span class="nav-text">在对应 i+1 位，插入 b 的对应位</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#得到最高位的-1"><span class="nav-number">1.9.</span> <span class="nav-text">得到最高位的 1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#检测一个无符号整数是否是-2-n-1-的形式"><span class="nav-number">1.10.</span> <span class="nav-text">检测一个无符号整数是否是 2^n -1 的形式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#移位"><span class="nav-number">1.11.</span> <span class="nav-text">移位</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#“1”-位计数"><span class="nav-number">1.12.</span> <span class="nav-text">“1” 位计数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#搜索"><span class="nav-number">1.13.</span> <span class="nav-text">搜索</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考"><span class="nav-number">2.</span> <span class="nav-text">参考</span></a></li></ol></div>
             
 
           </div>
@@ -640,7 +640,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">18.8k</span>
+    <span title="Site words total count">18.9k</span>
   
 </div>
 

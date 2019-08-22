@@ -83,18 +83,18 @@
 
 
 
-<meta name="description" content="题目求解字符串最长回文串。 leetcode: 最长回文子串 样例Input12341211daccbbabb Output12341211accbbabb Manacher算法，时间复杂度O(n), 空间复杂度O(1)。 步骤先对s串处理转换为奇数长度的串。1234s = &amp;quot;12212321&amp;quot;==&amp;gt;S # 1 # 2 # 2 # 1 # 2 # 3 # 2 # 1 #">
+<meta name="description" content="题目求解字符串最长回文串。 leetcode: 最长回文子串 样例Input12341211daccbbabb Output12341211accbbabb Manacher 算法，时间复杂度 O (n), 空间复杂度 O (1)。 步骤先对 s 串处理转换为奇数长度的串。1234s = &amp;quot;12212321&amp;quot;==&amp;gt;S # 1 # 2 # 2 # 1 # 2 # 3 #">
 <meta name="keywords" content="algorithm,Java,String">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Manacher算法-最长回文串">
+<meta property="og:title" content="Manacher 算法 - 最长回文串">
 <meta property="og:url" content="http://linraner.github.io/2019/07/27/Manacher-回文串/index.html">
 <meta property="og:site_name" content="Frank">
-<meta property="og:description" content="题目求解字符串最长回文串。 leetcode: 最长回文子串 样例Input12341211daccbbabb Output12341211accbbabb Manacher算法，时间复杂度O(n), 空间复杂度O(1)。 步骤先对s串处理转换为奇数长度的串。1234s = &amp;quot;12212321&amp;quot;==&amp;gt;S # 1 # 2 # 2 # 1 # 2 # 3 # 2 # 1 #">
+<meta property="og:description" content="题目求解字符串最长回文串。 leetcode: 最长回文子串 样例Input12341211daccbbabb Output12341211accbbabb Manacher 算法，时间复杂度 O (n), 空间复杂度 O (1)。 步骤先对 s 串处理转换为奇数长度的串。1234s = &amp;quot;12212321&amp;quot;==&amp;gt;S # 1 # 2 # 2 # 1 # 2 # 3 #">
 <meta property="og:locale" content="en">
 <meta property="og:updated_time" content="2019-07-27T12:23:57.877Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Manacher算法-最长回文串">
-<meta name="twitter:description" content="题目求解字符串最长回文串。 leetcode: 最长回文子串 样例Input12341211daccbbabb Output12341211accbbabb Manacher算法，时间复杂度O(n), 空间复杂度O(1)。 步骤先对s串处理转换为奇数长度的串。1234s = &amp;quot;12212321&amp;quot;==&amp;gt;S # 1 # 2 # 2 # 1 # 2 # 3 # 2 # 1 #">
+<meta name="twitter:title" content="Manacher 算法 - 最长回文串">
+<meta name="twitter:description" content="题目求解字符串最长回文串。 leetcode: 最长回文子串 样例Input12341211daccbbabb Output12341211accbbabb Manacher 算法，时间复杂度 O (n), 空间复杂度 O (1)。 步骤先对 s 串处理转换为奇数长度的串。1234s = &amp;quot;12212321&amp;quot;==&amp;gt;S # 1 # 2 # 2 # 1 # 2 # 3 #">
 
 
 
@@ -130,7 +130,7 @@
 
 
 
-  <title>Manacher算法-最长回文串 | Frank</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  <title>Manacher 算法 - 最长回文串 | Frank</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
   
 
 
@@ -318,7 +318,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">Manacher算法-最长回文串</h2>
+          <h2 class="post-title" itemprop="name headline">Manacher 算法 - 最长回文串</h2>
         
 
         <div class="post-meta">
@@ -352,7 +352,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  464
+                  470
                 </span>
               
 
@@ -394,21 +394,21 @@
 <p>leetcode: <a href="https://leetcode-cn.com/problems/longest-palindromic-substring/" target="_blank" rel="noopener">最长回文子串</a></p>
 <h2 id="样例"><a href="#样例" class="headerlink" title="样例"></a>样例</h2><h3 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">121</div><div class="line">1</div><div class="line">daccbba</div><div class="line">bb</div></pre></td></tr></table></figure>
 <h3 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">121</div><div class="line">1</div><div class="line">accbba</div><div class="line">bb</div></pre></td></tr></table></figure>
-<p><code>Manacher</code>算法，时间复杂度O(n), 空间复杂度O(1)。</p>
-<h3 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h3><p>先对s串处理转换为奇数长度的串。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">s = &quot;12212321&quot;</div><div class="line">==&gt;</div><div class="line">S # 1 # 2 # 2 # 1 # 2 # 3 # 2 # 1 #</div><div class="line">P 1 2 1 2 5 2 1 4 1 2 1 6 1 2 1 2 1</div></pre></td></tr></table></figure></p>
-<p>p[i]表示记录以字符S[i]为中心的最长回文子串向左或向右扩张的长度（包括S[i]）。<br>即以i为原点的最大回文半径。</p>
-<p>Manacher算法增加两个辅助变量id和mx。</p>
-<p>id代表当前“已经匹配完毕的结尾最远的回文串”中心为s的第ID位。</p>
-<p>mx = p[i] + id代表当前“已经匹配完毕的结尾最远的回文串”到达了s的第Mx位。</p>
-<p>最长回文子串长度 = p[i] - 1 = 5。</p>
-<p>2*id - i是i关于id的对称点</p>
+<p><code>Manacher</code> 算法，时间复杂度 O (n), 空间复杂度 O (1)。</p>
+<h3 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h3><p>先对 s 串处理转换为奇数长度的串。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">s = &quot;12212321&quot;</div><div class="line">==&gt;</div><div class="line">S # 1 # 2 # 2 # 1 # 2 # 3 # 2 # 1 #</div><div class="line">P 1 2 1 2 5 2 1 4 1 2 1 6 1 2 1 2 1</div></pre></td></tr></table></figure></p>
+<p>p [i] 表示记录以字符 S [i] 为中心的最长回文子串向左或向右扩张的长度（包括 S [i]）。<br>即以 i 为原点的最大回文半径。</p>
+<p>Manacher 算法增加两个辅助变量 id 和 mx。</p>
+<p>id 代表当前 “已经匹配完毕的结尾最远的回文串” 中心为 s 的第 ID 位。</p>
+<p>mx = p [i] + id 代表当前 “已经匹配完毕的结尾最远的回文串” 到达了 s 的第 Mx 位。</p>
+<p>最长回文子串长度 = p [i] - 1 = 5。</p>
+<p>2*id - i 是 i 关于 id 的对称点</p>
 <a id="more"></a>
-<p>故p[i] = min(p[2*id-i], mx-i)</p>
+<p>故 p [i] = min (p [2*id-i], mx-i)</p>
 <p>主要代码：</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//对s进行修改</span></div><div class="line">...</div><div class="line"><span class="keyword">for</span> (i = <span class="number">1</span>; i &lt; s.length()<span class="number">-1</span>; i++) </div><div class="line">&#123;</div><div class="line">    p[i] = mx &gt; i ? min(p[<span class="number">2</span> * id - i], mx - i) : <span class="number">1</span>;</div><div class="line">    <span class="keyword">while</span> (s[i + p[i]] == s[i - p[i]]) </div><div class="line">        p[i]++;</div><div class="line">    <span class="keyword">if</span> (i + p[i] &gt; mx) </div><div class="line">    &#123;</div><div class="line">        mx = i + p[i];</div><div class="line">        id = i;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">...</div><div class="line"><span class="comment">// 求结果串</span></div></pre></td></tr></table></figure>
-<p>ac代码：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div></pre></td><td class="code"><pre><div class="line">ipublic <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> InterruptedException </span>&#123;</div><div class="line">        String s = <span class="string">"12212321"</span>;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> String <span class="title">preProcess</span><span class="params">(String s)</span> </span>&#123;</div><div class="line">        <span class="keyword">int</span> n = s.length();</div><div class="line">        <span class="keyword">if</span> (n == <span class="number">0</span>) &#123;</div><div class="line">            <span class="keyword">return</span> <span class="string">"^$"</span>;</div><div class="line">        &#125;</div><div class="line">        StringBuilder ret = <span class="keyword">new</span> StringBuilder(<span class="string">"^"</span>);</div><div class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)</div><div class="line">            ret.append(<span class="string">"#"</span>).append(s.charAt(i));</div><div class="line">        ret.append(<span class="string">"#$"</span>);</div><div class="line">        <span class="keyword">return</span> ret.toString();</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">longestPalindrome</span><span class="params">(String s)</span> </span>&#123;</div><div class="line">        String t = s;</div><div class="line">        s = preProcess(s);</div><div class="line">        <span class="keyword">int</span> n = s.length();</div><div class="line">        <span class="keyword">int</span>[] p = <span class="keyword">new</span> <span class="keyword">int</span>[n];</div><div class="line">        <span class="keyword">int</span> mx = <span class="number">0</span>, id = <span class="number">0</span>;</div><div class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; n - <span class="number">1</span>; i++) &#123;</div><div class="line">            p[i] = (mx &gt; i) ? Math.min(p[<span class="number">2</span> * id - i], mx - i) : <span class="number">1</span>;</div><div class="line">            <span class="keyword">while</span> (s.charAt(i + p[i]) == s.charAt(i - p[i])) &#123;</div><div class="line">                p[i]++;</div><div class="line">            &#125;</div><div class="line">            <span class="keyword">if</span> (i + p[i] &gt; mx) &#123;</div><div class="line">                mx = i + p[i];</div><div class="line">                id = i;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">int</span> maxLen = <span class="number">0</span>;</div><div class="line">        <span class="keyword">int</span> centerIndex = <span class="number">0</span>;</div><div class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; p.length - <span class="number">1</span>; i++) &#123;</div><div class="line">            <span class="keyword">if</span> (p[i] &gt; maxLen) &#123;</div><div class="line">                maxLen = p[i];</div><div class="line">                centerIndex = i;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">int</span> start = (centerIndex - maxLen) / <span class="number">2</span>; </div><div class="line">        <span class="keyword">return</span> t.substring(start, start + maxLen - <span class="number">1</span>);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="https://segmentfault.com/a/1190000008484167" target="_blank" rel="noopener">Manacher算法</a></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 对 s 进行修改 </span></div><div class="line">...</div><div class="line"><span class="keyword">for</span> (i = <span class="number">1</span>; i &lt; s.length ()<span class="number">-1</span>; i++) </div><div class="line">&#123;</div><div class="line">    p [i] = mx &gt; i ? min (p [<span class="number">2</span> * id - i], mx - i) : <span class="number">1</span>;</div><div class="line">    <span class="keyword">while</span> (s [i + p [i]] == s [i - p [i]]) </div><div class="line">        p [i]++;</div><div class="line">    <span class="keyword">if</span> (i + p [i] &gt; mx) </div><div class="line">    &#123;</div><div class="line">        mx = i + p [i];</div><div class="line">        id = i;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">...</div><div class="line"><span class="comment">// 求结果串 </span></div></pre></td></tr></table></figure>
+<p>ac 代码：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div></pre></td><td class="code"><pre><div class="line">ipublic <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String [] args)</span> <span class="keyword">throws</span> InterruptedException </span>&#123;</div><div class="line">        String s = <span class="string">"12212321"</span>;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> String <span class="title">preProcess</span><span class="params">(String s)</span> </span>&#123;</div><div class="line">        <span class="keyword">int</span> n = s.length ();</div><div class="line">        <span class="keyword">if</span> (n == <span class="number">0</span>) &#123;</div><div class="line">            <span class="keyword">return</span> <span class="string">"^$"</span>;</div><div class="line">        &#125;</div><div class="line">        StringBuilder ret = <span class="keyword">new</span> StringBuilder (<span class="string">"^"</span>);</div><div class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)</div><div class="line">            ret.append (<span class="string">"#"</span>).append (s.charAt (i));</div><div class="line">        ret.append (<span class="string">"#$"</span>);</div><div class="line">        <span class="keyword">return</span> ret.toString ();</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">longestPalindrome</span><span class="params">(String s)</span> </span>&#123;</div><div class="line">        String t = s;</div><div class="line">        s = preProcess (s);</div><div class="line">        <span class="keyword">int</span> n = s.length ();</div><div class="line">        <span class="keyword">int</span>[] p = <span class="keyword">new</span> <span class="keyword">int</span>[n];</div><div class="line">        <span class="keyword">int</span> mx = <span class="number">0</span>, id = <span class="number">0</span>;</div><div class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; n - <span class="number">1</span>; i++) &#123;</div><div class="line">            p [i] = (mx &gt; i) ? Math.min (p [<span class="number">2</span> * id - i], mx - i) : <span class="number">1</span>;</div><div class="line">            <span class="keyword">while</span> (s.charAt (i + p [i]) == s.charAt (i - p [i])) &#123;</div><div class="line">                p [i]++;</div><div class="line">            &#125;</div><div class="line">            <span class="keyword">if</span> (i + p [i] &gt; mx) &#123;</div><div class="line">                mx = i + p [i];</div><div class="line">                id = i;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">int</span> maxLen = <span class="number">0</span>;</div><div class="line">        <span class="keyword">int</span> centerIndex = <span class="number">0</span>;</div><div class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; p.length - <span class="number">1</span>; i++) &#123;</div><div class="line">            <span class="keyword">if</span> (p [i] &gt; maxLen) &#123;</div><div class="line">                maxLen = p [i];</div><div class="line">                centerIndex = i;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">int</span> start = (centerIndex - maxLen) / <span class="number">2</span>; </div><div class="line">        <span class="keyword">return</span> t.substring (start, start + maxLen - <span class="number">1</span>);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="https://segmentfault.com/a/1190000008484167" target="_blank" rel="noopener">Manacher 算法</a></p>
 
       
     </div>
@@ -443,8 +443,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/05/01/Java复习（一）/" rel="next" title="Java基础复习（一）">
-                <i class="fa fa-chevron-left"></i> Java基础复习（一）
+              <a href="/2019/05/01/Java复习（一）/" rel="next" title="Java 基础复习（一）">
+                <i class="fa fa-chevron-left"></i> Java 基础复习（一）
               </a>
             
           </div>
@@ -453,8 +453,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/08/07/Java两个线程之间共享数据/" rel="prev" title="Java两个线程之间共享数据">
-                Java两个线程之间共享数据 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/08/07/Java两个线程之间共享数据/" rel="prev" title="Java 两个线程之间共享数据">
+                Java 两个线程之间共享数据 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -645,7 +645,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">18.8k</span>
+    <span title="Site words total count">18.9k</span>
   
 </div>
 

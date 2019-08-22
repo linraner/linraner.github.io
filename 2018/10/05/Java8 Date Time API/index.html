@@ -83,18 +83,18 @@
 
 
 
-<meta name="description" content="Java8 引入了新的时间类使用 LocalDate 和 LocalTime创建 LocalDate 对象并读取值1234567891011121314151617//2013-03-06LocalDate date = LocalDate.of(2012,03,06);//2012int year = date.getYear();//MARCHMonth month = date.getMon">
+<meta name="description" content="Java8 引入了新的时间类使用 LocalDate 和 LocalTime创建 LocalDate 对象并读取值1234567891011121314151617//2013-03-06LocalDate date = LocalDate.of (2012,03,06);//2012int year = date.getYear ();//MARCHMonth month = date.getM">
 <meta name="keywords" content="java,note">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java8 Date AND Time API">
 <meta property="og:url" content="http://linraner.github.io/2018/10/05/Java8 Date Time API/index.html">
 <meta property="og:site_name" content="Frank">
-<meta property="og:description" content="Java8 引入了新的时间类使用 LocalDate 和 LocalTime创建 LocalDate 对象并读取值1234567891011121314151617//2013-03-06LocalDate date = LocalDate.of(2012,03,06);//2012int year = date.getYear();//MARCHMonth month = date.getMon">
+<meta property="og:description" content="Java8 引入了新的时间类使用 LocalDate 和 LocalTime创建 LocalDate 对象并读取值1234567891011121314151617//2013-03-06LocalDate date = LocalDate.of (2012,03,06);//2012int year = date.getYear ();//MARCHMonth month = date.getM">
 <meta property="og:locale" content="en">
 <meta property="og:updated_time" content="2018-10-30T03:22:16.021Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java8 Date AND Time API">
-<meta name="twitter:description" content="Java8 引入了新的时间类使用 LocalDate 和 LocalTime创建 LocalDate 对象并读取值1234567891011121314151617//2013-03-06LocalDate date = LocalDate.of(2012,03,06);//2012int year = date.getYear();//MARCHMonth month = date.getMon">
+<meta name="twitter:description" content="Java8 引入了新的时间类使用 LocalDate 和 LocalTime创建 LocalDate 对象并读取值1234567891011121314151617//2013-03-06LocalDate date = LocalDate.of (2012,03,06);//2012int year = date.getYear ();//MARCHMonth month = date.getM">
 
 
 
@@ -389,11 +389,11 @@
       
 
       
-        <h2 id="Java8-引入了新的时间类"><a href="#Java8-引入了新的时间类" class="headerlink" title="Java8 引入了新的时间类"></a>Java8 引入了新的时间类</h2><h3 id="使用-LocalDate-和-LocalTime"><a href="#使用-LocalDate-和-LocalTime" class="headerlink" title="使用 LocalDate 和 LocalTime"></a>使用 <code>LocalDate</code> 和 <code>LocalTime</code></h3><p>创建 <code>LocalDate</code> 对象并读取值<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//2013-03-06</span></div><div class="line">LocalDate date = LocalDate.of(<span class="number">2012</span>,<span class="number">03</span>,<span class="number">06</span>);</div><div class="line"><span class="comment">//2012</span></div><div class="line"><span class="keyword">int</span> year = date.getYear();</div><div class="line"><span class="comment">//MARCH</span></div><div class="line">Month month = date.getMonth();</div><div class="line"><span class="comment">//TUESDAY</span></div><div class="line">DayOfWeek dow = date.getDayOfWeek();</div><div class="line"><span class="comment">//6</span></div><div class="line"><span class="keyword">int</span> day = date.getDayOfMonth();</div><div class="line"><span class="comment">//31</span></div><div class="line"><span class="keyword">int</span> len = date.lengthOfMonth();</div><div class="line"><span class="comment">//false</span></div><div class="line"><span class="keyword">boolean</span> leap = date.isLeapYear();</div><div class="line"><span class="comment">//使用工厂方法获取系统日期</span></div><div class="line">LocalDate today = LocalDate.now();</div><div class="line">LocalTime time = LocalTime.now().withNano(<span class="number">0</span>);<span class="comment">//去除毫秒</span></div></pre></td></tr></table></figure></p>
-<p><code>TemporalField</code> 是一个接口, 定义了如何访问 <code>temporal</code> 对象某个字段的值. <code>ChronoField</code> 枚举实现这一接口.</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">int</span> year = date.get(ChronoField.YEAR);</div><div class="line"><span class="keyword">int</span> month = date.get(ChronoField.MONTH_OF_YEAR);</div><div class="line"><span class="keyword">int</span> day = date.get(ChronoField.DAY_OF_MONTH);</div></pre></td></tr></table></figure>
+        <h2 id="Java8-引入了新的时间类"><a href="#Java8-引入了新的时间类" class="headerlink" title="Java8 引入了新的时间类"></a>Java8 引入了新的时间类</h2><h3 id="使用-LocalDate-和-LocalTime"><a href="#使用-LocalDate-和-LocalTime" class="headerlink" title="使用 LocalDate 和 LocalTime"></a>使用 <code>LocalDate</code> 和 <code>LocalTime</code></h3><p>创建 <code>LocalDate</code> 对象并读取值<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//2013-03-06</span></div><div class="line">LocalDate date = LocalDate.of (<span class="number">2012</span>,<span class="number">03</span>,<span class="number">06</span>);</div><div class="line"><span class="comment">//2012</span></div><div class="line"><span class="keyword">int</span> year = date.getYear ();</div><div class="line"><span class="comment">//MARCH</span></div><div class="line">Month month = date.getMonth ();</div><div class="line"><span class="comment">//TUESDAY</span></div><div class="line">DayOfWeek dow = date.getDayOfWeek ();</div><div class="line"><span class="comment">//6</span></div><div class="line"><span class="keyword">int</span> day = date.getDayOfMonth ();</div><div class="line"><span class="comment">//31</span></div><div class="line"><span class="keyword">int</span> len = date.lengthOfMonth ();</div><div class="line"><span class="comment">//false</span></div><div class="line"><span class="keyword">boolean</span> leap = date.isLeapYear ();</div><div class="line"><span class="comment">// 使用工厂方法获取系统日期 </span></div><div class="line">LocalDate today = LocalDate.now ();</div><div class="line">LocalTime time = LocalTime.now ().withNano (<span class="number">0</span>);<span class="comment">// 去除毫秒 </span></div></pre></td></tr></table></figure></p>
+<p><code>TemporalField</code> 是一个接口，定义了如何访问 <code>temporal</code> 对象某个字段的值. <code>ChronoField</code> 枚举实现这一接口.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">int</span> year = date.get (ChronoField.YEAR);</div><div class="line"><span class="keyword">int</span> month = date.get (ChronoField.MONTH_OF_YEAR);</div><div class="line"><span class="keyword">int</span> day = date.get (ChronoField.DAY_OF_MONTH);</div></pre></td></tr></table></figure>
 <p><code>LocalDate</code> 和 <code>LocalTime</code> 都可以解析字符串创建.</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">LocalDate date = LocalDate.parse(<span class="string">"2012-12-22"</span>);</div><div class="line">LocalTime time = LocalTime.parse(<span class="string">"22:22:22"</span>);</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">LocalDate date = LocalDate.parse (<span class="string">"2012-12-22"</span>);</div><div class="line">LocalTime time = LocalTime.parse (<span class="string">"22:22:22"</span>);</div></pre></td></tr></table></figure>
 <h3 id="操作、解析和格式化"><a href="#操作、解析和格式化" class="headerlink" title="操作、解析和格式化"></a>操作、解析和格式化</h3><h4 id="使用-TemporalAdjuster"><a href="#使用-TemporalAdjuster" class="headerlink" title="使用 TemporalAdjuster"></a>使用 <code>TemporalAdjuster</code></h4>
       
     </div>
@@ -628,7 +628,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">18.8k</span>
+    <span title="Site words total count">18.9k</span>
   
 </div>
 

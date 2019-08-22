@@ -83,19 +83,19 @@
 
 
 
-<meta name="description" content="事务 数据库管理系统执行过程中的一个逻辑单位，由一个有限的数据库操作序列构成。  特性事务应该具有4个属性：原子性、一致性、隔离性、持久性。 原子性（Atomicity）：数据库事务是一个不可分割的单位。只有事务中所有的数据库操作成功，才算整个事务才算成功。只读操作，保证一致性很简单，一旦出现错误，要么重试，要么返回错误代码。 一致性（Consistency）：事务将数据库从一种状态转变为下一种">
+<meta name="description" content="事务 数据库管理系统执行过程中的一个逻辑单位，由一个有限的数据库操作序列构成。  特性事务应该具有 4 个属性： 原子性 、 一致性 、 隔离性 、 持久性 。  原子性 （Atomicity）：数据库事务是一个不可分割的单位。只有事务中所有的数据库操作成功，才算整个事务才算成功。只读操作，保证一致性很简单，一旦出现错误，要么重试，要么返回错误代码。  一致性 （Consistency）：事务将">
 <meta name="keywords" content="notes,database,MySQL">
 <meta property="og:type" content="article">
 <meta property="og:title" content="数据库事务">
 <meta property="og:url" content="http://linraner.github.io/2019/04/10/数据库事务/index.html">
 <meta property="og:site_name" content="Frank">
-<meta property="og:description" content="事务 数据库管理系统执行过程中的一个逻辑单位，由一个有限的数据库操作序列构成。  特性事务应该具有4个属性：原子性、一致性、隔离性、持久性。 原子性（Atomicity）：数据库事务是一个不可分割的单位。只有事务中所有的数据库操作成功，才算整个事务才算成功。只读操作，保证一致性很简单，一旦出现错误，要么重试，要么返回错误代码。 一致性（Consistency）：事务将数据库从一种状态转变为下一种">
+<meta property="og:description" content="事务 数据库管理系统执行过程中的一个逻辑单位，由一个有限的数据库操作序列构成。  特性事务应该具有 4 个属性： 原子性 、 一致性 、 隔离性 、 持久性 。  原子性 （Atomicity）：数据库事务是一个不可分割的单位。只有事务中所有的数据库操作成功，才算整个事务才算成功。只读操作，保证一致性很简单，一旦出现错误，要么重试，要么返回错误代码。  一致性 （Consistency）：事务将">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://i.loli.net/2019/07/25/5d3880fd4ae2c60183.png">
 <meta property="og:updated_time" content="2019-07-24T16:08:59.652Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数据库事务">
-<meta name="twitter:description" content="事务 数据库管理系统执行过程中的一个逻辑单位，由一个有限的数据库操作序列构成。  特性事务应该具有4个属性：原子性、一致性、隔离性、持久性。 原子性（Atomicity）：数据库事务是一个不可分割的单位。只有事务中所有的数据库操作成功，才算整个事务才算成功。只读操作，保证一致性很简单，一旦出现错误，要么重试，要么返回错误代码。 一致性（Consistency）：事务将数据库从一种状态转变为下一种">
+<meta name="twitter:description" content="事务 数据库管理系统执行过程中的一个逻辑单位，由一个有限的数据库操作序列构成。  特性事务应该具有 4 个属性： 原子性 、 一致性 、 隔离性 、 持久性 。  原子性 （Atomicity）：数据库事务是一个不可分割的单位。只有事务中所有的数据库操作成功，才算整个事务才算成功。只读操作，保证一致性很简单，一旦出现错误，要么重试，要么返回错误代码。  一致性 （Consistency）：事务将">
 <meta name="twitter:image" content="https://i.loli.net/2019/07/25/5d3880fd4ae2c60183.png">
 
 
@@ -354,7 +354,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  2,031
+                  2,037
                 </span>
               
 
@@ -395,17 +395,17 @@
 <h2 id="事务"><a href="#事务" class="headerlink" title="事务"></a>事务</h2><blockquote>
 <p>数据库管理系统执行过程中的一个逻辑单位，由一个有限的数据库操作序列构成。</p>
 </blockquote>
-<h2 id="特性"><a href="#特性" class="headerlink" title="特性"></a>特性</h2><p>事务应该具有4个属性：<strong>原子性</strong>、<strong>一致性</strong>、<strong>隔离性</strong>、<strong>持久性</strong>。</p>
-<p><strong>原子性</strong>（Atomicity）：数据库事务是一个不可分割的单位。只有事务中所有的数据库操作成功，才算整个事务才算成功。只读操作，保证一致性很简单，一旦出现错误，要么重试，要么返回错误代码。</p>
-<p><strong>一致性</strong>（Consistency）：事务将数据库从一种状态转变为下一种一致的状态。事务开始之前和结束之后，数据库的完整性约束没有被破坏。例如，数据操作失败，表中姓名字段在唯一的情况下，撤销之后导致重复，从而破坏了事务的一致性。</p>
-<p><strong>隔离性</strong>（Isolation）：别的称呼，并发控制（concurrency control）、可串行化（serialzability）、锁（locking）等。事务隔离性要求每个读写事务对其他事务的操作对象能实现相互分离，即事务提交之前对其他事务不可见，通常使用锁实现。</p>
-<p><strong>持久性</strong>（Durability）：事务一旦提交结果是永久性的，发生宕机等事故，数据库也能将数据恢复。持久性事务保证的是高可靠性，而不是高可用性，事务本身不能完成，需要系统共同配合来实现。</p>
+<h2 id="特性"><a href="#特性" class="headerlink" title="特性"></a>特性</h2><p>事务应该具有 4 个属性：<strong> 原子性 </strong>、<strong> 一致性 </strong>、<strong> 隔离性 </strong>、<strong> 持久性 </strong>。</p>
+<p><strong> 原子性 </strong>（Atomicity）：数据库事务是一个不可分割的单位。只有事务中所有的数据库操作成功，才算整个事务才算成功。只读操作，保证一致性很简单，一旦出现错误，要么重试，要么返回错误代码。</p>
+<p><strong> 一致性 </strong>（Consistency）：事务将数据库从一种状态转变为下一种一致的状态。事务开始之前和结束之后，数据库的完整性约束没有被破坏。例如，数据操作失败，表中姓名字段在唯一的情况下，撤销之后导致重复，从而破坏了事务的一致性。</p>
+<p><strong> 隔离性 </strong>（Isolation）：别的称呼，并发控制（concurrency control）、可串行化（serialzability）、锁（locking）等。事务隔离性要求每个读写事务对其他事务的操作对象能实现相互分离，即事务提交之前对其他事务不可见，通常使用锁实现。</p>
+<p><strong> 持久性 </strong>（Durability）：事务一旦提交结果是永久性的，发生宕机等事故，数据库也能将数据恢复。持久性事务保证的是高可靠性，而不是高可用性，事务本身不能完成，需要系统共同配合来实现。</p>
 <h2 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h2><p>扁平事务、带有保存点的扁平事务、链事务、嵌套事务、分布式事务。<br><a id="more"></a></p>
 <h2 id="隔离级别"><a href="#隔离级别" class="headerlink" title="隔离级别"></a>隔离级别</h2><ul>
-<li>未提交读(Read Uncommitted)：允许脏读，也就是可能读取到其他会话中未提交事务修改的数据</li>
-<li>提交读(Read Committed)：只能读取到已经提交的数据。Oracle等多数数据库默认都是该级别 (不重复读)</li>
-<li>可重复读(Repeated Read)：可重复读。在同一个事务内的查询都是事务开始时刻一致的，InnoDB默认级别。在SQL标准中，该隔离级别消除了不可重复读，但是还存在幻象读</li>
-<li>串行读(Serializable)：完全串行化的读，每次读都需要获得表级共享锁，读写相互都会阻塞</li>
+<li>未提交读 (Read Uncommitted)：允许脏读，也就是可能读取到其他会话中未提交事务修改的数据</li>
+<li>提交读 (Read Committed)：只能读取到已经提交的数据。Oracle 等多数数据库默认都是该级别 (不重复读)</li>
+<li>可重复读 (Repeated Read)：可重复读。在同一个事务内的查询都是事务开始时刻一致的，InnoDB 默认级别。在 SQL 标准中，该隔离级别消除了不可重复读，但是还存在幻象读</li>
+<li>串行读 (Serializable)：完全串行化的读，每次读都需要获得表级共享锁，读写相互都会阻塞</li>
 </ul>
 <table>
 <thead>
@@ -432,43 +432,45 @@
 </tr>
 </tbody>
 </table>
-<p>已提交读：Read commited    |×|×    |√|√    |悲观|    ×|×<br>可重复读：Repeatable Read    |×|×    |×|    √    |悲观|    ×|×<br>可串行读：Serializable    |×    |×|×    |×|悲观    |×|×</p>
-<p>接下来详细解释，假设有下面两个事务同时执行：<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">begin</span>; <span class="comment">-- 事务1</span></div><div class="line"><span class="keyword">insert</span> <span class="keyword">into</span> table1 (somevaue); <span class="comment">-- 随意写的伪sql</span></div><div class="line"><span class="keyword">update</span> table2 <span class="keyword">set</span> aa = aa + <span class="number">1</span> <span class="keyword">where</span> <span class="keyword">id</span> = <span class="number">1</span>;</div><div class="line"><span class="keyword">commit</span>;</div><div class="line"></div><div class="line"></div><div class="line"><span class="keyword">begin</span>; <span class="comment">-- 事务2</span></div><div class="line"><span class="keyword">select</span> <span class="keyword">count</span>(*) <span class="keyword">from</span> table1; <span class="comment">-- 第一次读count</span></div><div class="line"><span class="keyword">select</span> aa <span class="keyword">from</span> table2 <span class="keyword">where</span> <span class="keyword">id</span> = <span class="number">1</span>; <span class="comment">-- 第一次读aa</span></div><div class="line"><span class="comment">-- 假设在这个点 事务1成功提交</span></div><div class="line"><span class="keyword">select</span> <span class="keyword">count</span>(*) <span class="keyword">from</span> table1; <span class="comment">-- 第二次读count</span></div><div class="line"><span class="keyword">select</span> aa <span class="keyword">from</span> table2 <span class="keyword">where</span> <span class="keyword">id</span> = <span class="number">1</span>; <span class="comment">-- 第二次读aa</span></div><div class="line"><span class="keyword">commit</span>;</div></pre></td></tr></table></figure></p>
-<p><strong>串行化</strong>不用解释了，依次执行，不会产生冲突。</p>
-<p><strong>可重复读</strong>是什么意思呢？ 事务2执行到一半时，事务1 成功提交：</p>
-<p>事务2中 第二次读count得到的值和第一次读count得到的值不一样(因为事务1新增了一条数据)，这叫幻读，不隔离新增的数据。<br>事务2中 第一次读aa 和第二次读aa得到的值是一样的，对刚更新的值不可见，隔离已经存在的数据。 可以重复读，读到的数据都是一样的。</p>
-<p><strong>读取已提交</strong>是什么意思呢？ 事务2执行到一半时，事务1 成功提交：<br>事务2中 第二次读count得到的值和第一次读count得到的值不一样(因为事务1新增了一条数据)，这叫幻读，不隔离新增的数据。<br>事务2中 第一次读aa 和第二次读aa得到的值是不一样的，对刚提交的值可见，不隔离已经存在的数据。 不可以重复读，读到的数据是不一样的(如果成功修改)。</p>
-<p><strong>读取未提交</strong>是什么意思呢？ 事务2执行到一半时，事务1 还未提交：<br>事务2中 第二次读count得到的值和第一次读count得到的值不一样(因为事务1新增了一条数据)，这叫幻读，不隔离新增的数据。<br>事务2中 第一次读aa 和第二次读aa得到的值是不一样的（事务1未提交），对最新版本的值可见，不隔离已经存在的数据。 不可以重复读，读到的数据是不一样的。如果此时事务1因为其他原因回滚了，事务2第二次读到的数据是无意义的，因为修改没有发生(回滚了)，这叫脏读 。</p>
+<p>已提交读：Read commited    |×|×    |√|√    | 悲观 |    ×|×<br>可重复读：Repeatable Read    |×|×    |×|    √    | 悲观 |    ×|×<br>可串行读：Serializable    |×    |×|×    |×| 悲观    |×|×</p>
+<p>接下来详细解释，假设有下面两个事务同时执行：<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">begin</span>; <span class="comment">-- 事务 1</span></div><div class="line"><span class="keyword">insert</span> <span class="keyword">into</span> table1 (somevaue); <span class="comment">-- 随意写的伪 sql</span></div><div class="line"><span class="keyword">update</span> table2 <span class="keyword">set</span> aa = aa + <span class="number">1</span> <span class="keyword">where</span> <span class="keyword">id</span> = <span class="number">1</span>;</div><div class="line"><span class="keyword">commit</span>;</div><div class="line"></div><div class="line"></div><div class="line"><span class="keyword">begin</span>; <span class="comment">-- 事务 2</span></div><div class="line"><span class="keyword">select</span> <span class="keyword">count</span>(*) <span class="keyword">from</span> table1; <span class="comment">-- 第一次读 count</span></div><div class="line"><span class="keyword">select</span> aa <span class="keyword">from</span> table2 <span class="keyword">where</span> <span class="keyword">id</span> = <span class="number">1</span>; <span class="comment">-- 第一次读 aa</span></div><div class="line"><span class="comment">-- 假设在这个点 事务 1 成功提交 </span></div><div class="line"><span class="keyword">select</span> <span class="keyword">count</span>(*) <span class="keyword">from</span> table1; <span class="comment">-- 第二次读 count</span></div><div class="line"><span class="keyword">select</span> aa <span class="keyword">from</span> table2 <span class="keyword">where</span> <span class="keyword">id</span> = <span class="number">1</span>; <span class="comment">-- 第二次读 aa</span></div><div class="line"><span class="keyword">commit</span>;</div></pre></td></tr></table></figure></p>
+<p><strong> 串行化 </strong> 不用解释了，依次执行，不会产生冲突。</p>
+<p><strong> 可重复读 </strong> 是什么意思呢？ 事务 2 执行到一半时，事务 1 成功提交：</p>
+<p>事务 2 中 第二次读 count 得到的值和第一次读 count 得到的值不一样 (因为事务 1 新增了一条数据)，这叫幻读，不隔离新增的数据。<br>事务 2 中 第一次读 aa 和第二次读 aa 得到的值是一样的，对刚更新的值不可见，隔离已经存在的数据。 可以重复读，读到的数据都是一样的。</p>
+<p><strong> 读取已提交 </strong> 是什么意思呢？ 事务 2 执行到一半时，事务 1 成功提交：<br>事务 2 中 第二次读 count 得到的值和第一次读 count 得到的值不一样 (因为事务 1 新增了一条数据)，这叫幻读，不隔离新增的数据。<br>事务 2 中 第一次读 aa 和第二次读 aa 得到的值是不一样的，对刚提交的值可见，不隔离已经存在的数据。 不可以重复读，读到的数据是不一样的 (如果成功修改)。</p>
+<p><strong> 读取未提交 </strong> 是什么意思呢？ 事务 2 执行到一半时，事务 1 还未提交：<br>事务 2 中 第二次读 count 得到的值和第一次读 count 得到的值不一样 (因为事务 1 新增了一条数据)，这叫幻读，不隔离新增的数据。<br>事务 2 中 第一次读 aa 和第二次读 aa 得到的值是不一样的（事务 1 未提交），对最新版本的值可见，不隔离已经存在的数据。 不可以重复读，读到的数据是不一样的。如果此时事务 1 因为其他原因回滚了，事务 2 第二次读到的数据是无意义的，因为修改没有发生 (回滚了)，这叫脏读 。</p>
 <p>在现实环境中，串行化一般不会被使用，因为性能太低。</p>
-<p>如果对一致性有要求，比如转账交易，那么要使用可重复读，并发性能相对较差。 原因是，为了实现可重复读，在对更新记录加锁时，除了使用记录锁，还可能会使用间隙锁锁住区间(看update语句的where条件)，这会增加其他事务等待时间。</p>
-<p>如果对一致性要求不高，一般使用读取已提交, 由于不考虑重复读，在加锁时一般只加记录锁，不会使用间隙锁，并发性较好，据说使用的最多。</p>
-<h2 id="持久化"><a href="#持久化" class="headerlink" title="持久化"></a>持久化</h2><p>事务隔离性由锁实现。原子性、一致性、持久性通过数据库的<code>redo log</code>（重做日志保证原子性和持久性）和<code>undo log</code>（保证一致性）完成。</p>
-<p>redo和undo都可视为恢复操作，redo恢复事务提交的页操作，undo回滚到某个特定版本。根据内容分别分为物理日志（页的物理修改操作）和逻辑日志（根据每行进行记录）</p>
-<h3 id="事务日志"><a href="#事务日志" class="headerlink" title="事务日志"></a>事务日志</h3><p>数据库通过事务日志来达到这个目标。 事务的每一个操作（增/删/改）产生一条日志，内容组成大概如下：</p>
+<p>如果对一致性有要求，比如转账交易，那么要使用可重复读，并发性能相对较差。 原因是，为了实现可重复读，在对更新记录加锁时，除了使用记录锁，还可能会使用间隙锁锁住区间 (看 update 语句的 where 条件)，这会增加其他事务等待时间。</p>
+<p>如果对一致性要求不高，一般使用读取已提交，由于不考虑重复读，在加锁时一般只加记录锁，不会使用间隙锁，并发性较好，据说使用的最多。</p>
+<h2 id="持久化"><a href="#持久化" class="headerlink" title="持久化"></a>持久化</h2><p>事务隔离性由锁实现。原子性、一致性、持久性通过数据库的 <code>redo log</code>（重做日志保证原子性和持久性）和 <code>undo log</code>（保证一致性）完成。</p>
+<p>redo 和 undo 都可视为恢复操作，redo 恢复事务提交的页操作，undo 回滚到某个特定版本。根据内容分别分为物理日志（页的物理修改操作）和逻辑日志（根据每行进行记录）</p>
+<h3 id="事务日志"><a href="#事务日志" class="headerlink" title="事务日志"></a>事务日志</h3><p>数据库通过事务日志来达到这个目标。 事务的每一个操作（增 / 删 / 改）产生一条日志，内容组成大概如下：</p>
 <ul>
-<li>LSN：一个按时间顺序分配的唯一日志序列号，靠后的操作的LSN比靠前的大。</li>
-<li>TransID：产生操作的事务ID。</li>
+<li>LSN：一个按时间顺序分配的唯一日志序列号，靠后的操作的 LSN 比靠前的大。</li>
+<li>TransID：产生操作的事务 ID。</li>
 <li>PageID：被修改的数据在磁盘上的位置，数据以页为单位存储。</li>
 <li>PrevLSN：同一个事务产生的上一条日志记录的指针。</li>
 <li>UNDO：取消本次操作的方法，按照此方法回滚。</li>
 <li>REDO：重复本次操作的方法，如有必要，重复此方法保证操作成功。</li>
 </ul>
 <p><img src="https://i.loli.net/2019/07/25/5d3880fd4ae2c60183.png" alt=""></p>
-<p>磁盘上每个页（保存数据的，不是保存日志的）都记录着最后一个修改该数据操作的LSN。数据库会通过解析事务日志，将修改真正落到磁盘上(写盘)，随后清理事务日志(正常情况下)。</p>
+<p>磁盘上每个页（保存数据的，不是保存日志的）都记录着最后一个修改该数据操作的 LSN。数据库会通过解析事务日志，将修改真正落到磁盘上 (写盘)，随后清理事务日志 (正常情况下)。</p>
 <p>这也是数据库在保证数据安全和性能这两个点之前的折中办法：</p>
 <ul>
-<li>如果每次更新都写盘，由于数据是随机的，会造成大量的随机IO，性能会非常差</li>
+<li>如果每次更新都写盘，由于数据是随机的，会造成大量的随机 IO，性能会非常差</li>
 <li>如果每次更新不马上写盘，那一旦数据库崩溃，数据就会丢失</li>
 </ul>
 <p>折中的办法就是：</p>
 <ul>
-<li>将数据的变更以事务日志的方式，按照时间先后追加到日志缓冲区，由特定算法写入事务日志，这是顺序IO，性能较好</li>
+<li>将数据的变更以事务日志的方式，按照时间先后追加到日志缓冲区，由特定算法写入事务日志，这是顺序 IO，性能较好</li>
 <li>通过数据管理器解析事务日志，由特定的算法择机进行写盘</li>
 </ul>
 <h3 id="数据库恢复"><a href="#数据库恢复" class="headerlink" title="数据库恢复"></a>数据库恢复</h3><p>当数据库从崩溃中恢复时，会有以下几个步骤：</p>
-<p>1.解析存在的事务日志，分析哪些事务需要回滚，哪些需要写盘(还没来得及写盘，数据库就崩溃了)。</p>
-<p>2.Redo，进行写盘。检测对应数据所在数据页的LSN，如果数据页的LSN&gt;=事务操作的LSN，说明已经写过盘，不然进行写盘操作。</p>
-<p>3.Undo, 按照LSN倒序进行回滚</p>
+<ol>
+<li>解析存在的事务日志，分析哪些事务需要回滚，哪些需要写盘 (还没来得及写盘，数据库就崩溃了)。</li>
+</ol>
+<p>2.Redo，进行写盘。检测对应数据所在数据页的 LSN，如果数据页的 LSN&gt;= 事务操作的 LSN，说明已经写过盘，不然进行写盘操作。</p>
+<p>3.Undo, 按照 LSN 倒序进行回滚</p>
 <h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="https://zhuanlan.zhihu.com/p/43493165" target="_blank" rel="noopener">深入理解数据库事务</a></p>
 <p><a href="https://www.jianshu.com/p/eb150b4f7ce0" target="_blank" rel="noopener">我理解的数据库事务</a></p>
 
@@ -515,8 +517,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/05/01/Java复习（一）/" rel="prev" title="Java基础复习（一）">
-                Java基础复习（一） <i class="fa fa-chevron-right"></i>
+              <a href="/2019/05/01/Java复习（一）/" rel="prev" title="Java 基础复习（一）">
+                Java 基础复习（一） <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -707,7 +709,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">18.8k</span>
+    <span title="Site words total count">18.9k</span>
   
 </div>
 
