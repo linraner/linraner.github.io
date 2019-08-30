@@ -496,9 +496,9 @@
     </summary>
     
     
-      <category term="skill" scheme="http://linraner.github.io/tags/skill/"/>
-    
       <category term="Django" scheme="http://linraner.github.io/tags/Django/"/>
+    
+      <category term="skill" scheme="http://linraner.github.io/tags/skill/"/>
     
   </entry>
   
@@ -573,9 +573,9 @@
     </summary>
     
     
-      <category term="python" scheme="http://linraner.github.io/tags/python/"/>
-    
       <category term="skill" scheme="http://linraner.github.io/tags/skill/"/>
+    
+      <category term="python" scheme="http://linraner.github.io/tags/python/"/>
     
       <category term="linux" scheme="http://linraner.github.io/tags/linux/"/>
     
