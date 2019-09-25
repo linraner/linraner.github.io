@@ -1,6 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Java 线程检测死锁]]></title>
+    <url>%2F2019%2F08%2F10%2FJava%E7%BA%BF%E7%A8%8B%E6%A3%80%E6%B5%8B%E6%AD%BB%E9%94%81%2F</url>
+    <content type="text"><![CDATA[死锁是指两个或两个以上的进程在执行过程中，由于竞争资源或者由于彼此通信而造成的一种阻塞的现象，若无外力作用，它们都将无法推进下去。此时称系统处于死锁状态或系统产生了死锁，这些永远在互相等待的进程称为死锁进程。 Java 线程中我们构造两个相互等待对方释放资源的线程就构成了死锁。代码： 12345678910111213141516171819202122232425262728293031323334353637383940public class DeadLockSimulation &#123; private static String A = "a"; private static String B = "b"; public static void main(String [] args) &#123; new DeadLockSimulation ().deadLock (); &#125; private void deadLock() &#123; Thread t1 = new Thread (new Runnable () &#123; @Override public void run() &#123; synchronized (A) &#123; try &#123; Thread.sleep (1000); &#125; catch (InterruptedException e) &#123; e.printStackTrace (); &#125; synchronized (B) &#123; System.out.println ("t1"); &#125; &#125; &#125; &#125;); Thread t2 = new Thread (new Runnable () &#123; @Override public void run() &#123; synchronized (B) &#123; synchronized (A) &#123; System.out.println ("t2"); &#125; &#125; &#125; &#125;); t1.start (); t2.start (); &#125;&#125; 运行上边的代码产生死锁。JDK 自带的工具有 jconsole、jvisualvm、jstack 等。 jvisualvm运行 jvisualvm 如下： 发现提示检测到死锁。 jstack查看进程号： 12345678jps // 查看 Java 任务进程号 2784 Jps8672 Main18068 Launcher12520 KotlinCompileDaemon16776 DeadLockSimulation957616668 RemoteMavenServer 运行 jstack。 1234567891011121314151617181920212223jstack [进程号] // 查看当前进程堆栈 Found one Java-level deadlock: ============================= "Thread-0": waiting to lock monitor 0x0000012f11b53e80 (object 0x0000000741d763e8, a java.lang.String), which is held by "Thread-1" "Thread-1": waiting to lock monitor 0x0000012f11b51e80 (object 0x0000000741d76400, a java.lang.String), which is held by "Thread-0" Java stack information for the threads listed above: =================================================== "Thread-0": at com.lin.juc.mydesign.DeadLockSimulation$1.run (DeadLockSimulation.java:28) - waiting to lock &lt;0x0000000741d763e8&gt; (a java.lang.String) - locked &lt;0x0000000741d76400&gt; (a java.lang.String) at java.lang.Thread.run (java.base@11.0.1/Thread.java:834) "Thread-1": at com.lin.juc.mydesign.DeadLockSimulation$2.run (DeadLockSimulation.java:39) - waiting to lock &lt;0x0000000741d76400&gt; (a java.lang.String) - locked &lt;0x0000000741d763e8&gt; (a java.lang.String) at java.lang.Thread.run (java.base@11.0.1/Thread.java:834) Found 1 deadlock. MXBeanMXBean 是 JDK 自带的用于扫描程序是否存在死锁包， 但是扫描的过程中存在性能损耗。 代码： 1234567891011121314151617public class ScanDeadLock &#123; public void scanDeadLock() &#123; ThreadMXBean mxBean = ManagementFactory.getThreadMXBean (); Runnable runnable = () -&gt; &#123; long[] ids = mxBean.findDeadlockedThreads (); System.out.println ("扫描死锁..."); if (ids != null) &#123; ThreadInfo [] threadInfos = mxBean.getThreadInfo (ids); for (ThreadInfo info : threadInfos) &#123; System.out.println ("info =" + info); &#125; &#125; &#125;; ExecutorService executorService = Executors.newScheduledThreadPool (4); executorService.execute (runnable); &#125;&#125; 死锁预防 避免一个线程同时获取多个锁。 避免一个线程在锁内同时占用多个资源，尽量保证每个锁只占用一个资源。 尝试使用定时锁，使用 lock.tryLock（timeout）来替代使用内部锁机制。 对于数据库锁，加锁和解锁必须在一个数据库连接里，否则会出现解锁失败的情况。]]></content>
+      <tags>
+        <tag>Java</tag>
+        <tag>notes</tag>
+        <tag>Lock</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Java 两个线程之间共享数据]]></title>
     <url>%2F2019%2F08%2F07%2FJava%E4%B8%A4%E4%B8%AA%E7%BA%BF%E7%A8%8B%E4%B9%8B%E9%97%B4%E5%85%B1%E4%BA%AB%E6%95%B0%E6%8D%AE%2F</url>
     <content type="text"><![CDATA[Java 里面进行多线程通信的主要方式就是共享内存的方式，共享内存主要的关注点有两个： 可见性 和 有序性原子性 。 Java 内存模型（JMM）解决了可见性和有序性的问题，而锁解决了原子性的问题，理想情况下我们希望做到 “同步” 和 “互斥”。 有以下常规实现方法： 一、数据抽象成一个类，对数据操作的方法封装在类里 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455public class MyData1 &#123; private int j = 0; public static void main(String [] args) &#123; MyData1 data = new MyData1 (); AddRunnable addRunnable = new AddRunnable (data); DecRunnable decRunnable = new DecRunnable (data); new Thread (addRunnable).start (); new Thread (decRunnable).start (); &#125; public synchronized void add() &#123; j++; System.out.println ("线程：" + Thread.currentThread ().getName () + "j 为：" + j); &#125; public synchronized void dec() &#123; j--; System.out.println ("线程：" + Thread.currentThread ().getName () + "j 为：" + j); &#125; public int getData() &#123; return j; &#125;&#125;class AddRunnable implements Runnable &#123; MyData1 data1 = new MyData1 (); public AddRunnable(MyData1 data1) &#123; this.data1 = data1; &#125; @Override public void run() &#123; data1.add (); &#125;&#125;class DecRunnable implements Runnable &#123; MyData1 data1 = new MyData1 (); public DecRunnable(MyData1 data1) &#123; this.data1 = data1; &#125; @Override public void run() &#123; data1.dec (); &#125;&#125; 二、Runnable 对象作为一个类的内部类，共享数据作为这个类的内部变量，每个线程对类的操作封装在外部类中，从而实现各个数据之间的互斥和同步，内部类的各个 Runnable 对象都可以调用外部方法1234567891011121314151617181920212223242526272829303132333435363738public class MyData2 &#123; private int j = 0; public synchronized void add() &#123; j++; System.out.println ("线程：" + Thread.currentThread ().getName () + "j 为：" + j); &#125; public synchronized void dec() &#123; j--; System.out.println ("线程：" + Thread.currentThread ().getName () + "j 为：" + j); &#125; public int getData() &#123; return j; &#125;&#125;class TestThread &#123; public static void main(String [] args) &#123; final MyData2 data = new MyData2 (); for (int i = 0; i &lt; 2; i++) &#123; new Thread (new Runnable () &#123; @Override public void run() &#123; data.add (); &#125; &#125;).start (); new Thread (new Runnable () &#123; @Override public void run() &#123; data.dec (); &#125; &#125;).start (); &#125; &#125;&#125;]]></content>
@@ -117,8 +127,8 @@
     <url>%2F2018%2F09%2F28%2FDjango%E9%87%8D%E7%BD%AE%E5%90%8E%E5%8F%B0%E5%AF%86%E7%A0%81%2F</url>
     <content type="text"><![CDATA[emmm 时间长忘记密码了 执行1$ python manage.py shell 修改12345In [1]: from django.contrib.auth.models import UserIn [2]: user = User.objects.get (username='Username')In [3]: user.set_password ('Password')In [4]: user.save ()In [5]: exit ()]]></content>
       <tags>
-        <tag>Django</tag>
         <tag>skill</tag>
+        <tag>Django</tag>
       </tags>
   </entry>
   <entry>
@@ -145,8 +155,8 @@
     <url>%2F2018%2F07%2F28%2F20%E8%A1%8C%E4%BB%A3%E7%A0%81%E7%9A%84%E7%AD%BE%E5%88%B0%E8%84%9A%E6%9C%AC%2F</url>
     <content type="text"><![CDATA[懒得每天在某个网站签到，写了一个 python 脚本扔在云主机上。网站很简单，代码就几十行。 签到脚本12345678910111213141516171819import requestsusername = "####"password = "####"loginUrl = "登录路径 /auth/login"s = requests.Session ()logindata = &#123; 'email':username, 'passwd':password, 'remember_me':'ture',&#125;r = s.post (loginUrl,data=logindata)r = s.get (loginUrl)checkinUrl="签到的路径 /user/checkin"rr = s.post (checkinUrl)# 执行签到 rr = s.get (loginUrl)# print (rr)# print (rr._content.decode ())exit () 在 Linux 上定时执行这个脚本 1crontab -e 进入编辑模式，设置每天 8:00 运行一次。crontab 的语法规范分钟 小时 日期 月份 周 命令 100 8 * * * python /opt/checkin.py]]></content>
       <tags>
-        <tag>skill</tag>
         <tag>python</tag>
+        <tag>skill</tag>
         <tag>linux</tag>
       </tags>
   </entry>
@@ -208,8 +218,8 @@
     <url>%2F2018%2F05%2F05%2FPython%E8%A7%A3%E5%86%B3%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%81%E9%97%AE%E9%A2%98%2F</url>
     <content type="text"><![CDATA[字符串分为 unicode 和 str 两种类型 文本字符和二进制数据分别用 str 和 byte 表示 12345# 系统默认编码设置为 utf-8&gt;&gt;&gt; import sys&gt;&gt;&gt; sys.getdefultencoding'utf-8'&gt;&gt;&gt; str 与 bytes 之间的转换可以用 encode 和从 decode 1234567&gt;&gt;&gt; s = "Python 测试"&gt;&gt;&gt; s = s.encode ()&gt;&gt;&gt; print (s)b'Python\xe6\xb5\x8b\xe8\xaf\x95'&gt;&gt;&gt; s = s.decode ()&gt;&gt;&gt; print (s)'Python 测试 ' base64123456&gt;&gt;&gt; import base64&gt;&gt;&gt; s = "asdasd"&gt;&gt;&gt; s = base64.b64encode (s)&gt;&gt;&gt; print (s)&gt;&gt;&gt; s = base64.b64decode (s)&gt;&gt;&gt; print (s) 参考 ： https://foofish.net/how-python3-handle-charset-encoding.html]]></content>
       <tags>
-        <tag>skill</tag>
         <tag>python</tag>
+        <tag>skill</tag>
       </tags>
   </entry>
   <entry>

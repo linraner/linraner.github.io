@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://linraner.github.io/"/>
-  <updated>2019-08-07T07:45:34.186Z</updated>
+  <updated>2019-09-25T01:35:07.217Z</updated>
   <id>http://linraner.github.io/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Java 线程检测死锁</title>
+    <link href="http://linraner.github.io/2019/08/10/Java%E7%BA%BF%E7%A8%8B%E6%A3%80%E6%B5%8B%E6%AD%BB%E9%94%81/"/>
+    <id>http://linraner.github.io/2019/08/10/Java线程检测死锁/</id>
+    <published>2019-08-10T02:39:53.000Z</published>
+    <updated>2019-09-25T01:35:07.217Z</updated>
+    
+    <content type="html"><![CDATA[<hr><p>死锁是指两个或两个以上的进程在执行过程中，由于竞争资源或者由于彼此通信而造成的一种阻塞的现象，若无外力作用，它们都将无法推进下去。此时称系统处于死锁状态或系统产生了死锁，这些永远在互相等待的进程称为死锁进程。</p><p>Java 线程中我们构造两个相互等待对方释放资源的线程就构成了死锁。<br><a id="more"></a><br>代码：</p><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DeadLockSimulation</span> </span>&#123;</div><div class="line">    <span class="keyword">private</span> <span class="keyword">static</span> String A = <span class="string">"a"</span>;</div><div class="line">    <span class="keyword">private</span> <span class="keyword">static</span> String B = <span class="string">"b"</span>;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String [] args)</span> </span>&#123;</div><div class="line">        <span class="keyword">new</span> DeadLockSimulation ().deadLock ();</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">deadLock</span><span class="params">()</span> </span>&#123;</div><div class="line">        Thread t1 = <span class="keyword">new</span> Thread (<span class="keyword">new</span> Runnable () &#123;</div><div class="line">            <span class="meta">@Override</span></div><div class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</div><div class="line">                <span class="keyword">synchronized</span> (A) &#123;</div><div class="line">                    <span class="keyword">try</span> &#123;</div><div class="line">                        Thread.sleep (<span class="number">1000</span>);</div><div class="line">                    &#125; <span class="keyword">catch</span> (InterruptedException e) &#123;</div><div class="line">                        e.printStackTrace ();</div><div class="line">                    &#125;</div><div class="line">                    <span class="keyword">synchronized</span> (B) &#123;</div><div class="line">                        System.out.println (<span class="string">"t1"</span>);</div><div class="line">                    &#125;</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;);</div><div class="line"></div><div class="line">        Thread t2 = <span class="keyword">new</span> Thread (<span class="keyword">new</span> Runnable () &#123;</div><div class="line">            <span class="meta">@Override</span></div><div class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</div><div class="line">                <span class="keyword">synchronized</span> (B) &#123;</div><div class="line">                    <span class="keyword">synchronized</span> (A) &#123;</div><div class="line">                        System.out.println (<span class="string">"t2"</span>);</div><div class="line">                    &#125;</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;);</div><div class="line"></div><div class="line">        t1.start ();</div><div class="line">        t2.start ();</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure><p>运行上边的代码产生死锁。<code>JDK</code> 自带的工具有 <code>jconsole</code>、<code>jvisualvm</code>、<code>jstack</code> 等。</p><h2 id="jvisualvm"><a href="#jvisualvm" class="headerlink" title="jvisualvm"></a>jvisualvm</h2><p>运行 <code>jvisualvm</code> 如下：</p><p><img src="https://i.loli.net/2019/09/24/vKgWpnUO8Je7uwE.png" alt=""></p><p>发现提示检测到死锁。</p><h2 id="jstack"><a href="#jstack" class="headerlink" title="jstack"></a>jstack</h2><p>查看进程号：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">jps // 查看 Java 任务进程号 </div><div class="line">2784 Jps</div><div class="line">8672 Main</div><div class="line">18068 Launcher</div><div class="line">12520 KotlinCompileDaemon</div><div class="line">16776 DeadLockSimulation</div><div class="line">9576</div><div class="line">16668 RemoteMavenServer</div></pre></td></tr></table></figure><p>运行 jstack。</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">jstack [进程号] // 查看当前进程堆栈 </div><div class="line"></div><div class="line">Found one Java-level deadlock:                                                                           </div><div class="line">=============================                                                                            </div><div class="line">"Thread-0":                                                                           </div><div class="line">  waiting to lock monitor 0x0000012f11b53e80 (object 0x0000000741d763e8, a java.lang.String),            </div><div class="line">  which is held by "Thread-1"                                                        </div><div class="line">"Thread-1":                                                          </div><div class="line">  waiting to lock monitor 0x0000012f11b51e80 (object 0x0000000741d76400, a java.lang.String),            </div><div class="line">  which is held by "Thread-0"                                                        </div><div class="line">Java stack information for the threads listed above:                                                     </div><div class="line">===================================================                                   </div><div class="line">"Thread-0":                                                                                              </div><div class="line">        at com.lin.juc.mydesign.DeadLockSimulation$1.run (DeadLockSimulation.java:28)                     </div><div class="line">        - waiting to lock &lt;0x0000000741d763e8&gt; (a java.lang.String)                                      </div><div class="line">        - locked &lt;0x0000000741d76400&gt; (a java.lang.String)                                               </div><div class="line">        at java.lang.Thread.run (java.base@11.0.1/Thread.java:834)                                        </div><div class="line">"Thread-1":                                                                          </div><div class="line">        at com.lin.juc.mydesign.DeadLockSimulation$2.run (DeadLockSimulation.java:39)                     </div><div class="line">        - waiting to lock &lt;0x0000000741d76400&gt; (a java.lang.String)                  </div><div class="line">        - locked &lt;0x0000000741d763e8&gt; (a java.lang.String)                           </div><div class="line">        at java.lang.Thread.run (java.base@11.0.1/Thread.java:834)                   </div><div class="line">Found 1 deadlock.</div></pre></td></tr></table></figure><h2 id="MXBean"><a href="#MXBean" class="headerlink" title="MXBean"></a>MXBean</h2><p><code>MXBean</code> 是 <code>JDK</code> 自带的用于扫描程序是否存在死锁包， 但是扫描的过程中存在性能损耗。</p><p>代码：</p><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ScanDeadLock</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">scanDeadLock</span><span class="params">()</span> </span>&#123;</div><div class="line">        ThreadMXBean mxBean = ManagementFactory.getThreadMXBean ();</div><div class="line">        Runnable runnable = () -&gt; &#123;</div><div class="line">            <span class="keyword">long</span>[] ids = mxBean.findDeadlockedThreads ();</div><div class="line">            System.out.println (<span class="string">"扫描死锁..."</span>);</div><div class="line">            <span class="keyword">if</span> (ids != <span class="keyword">null</span>) &#123;</div><div class="line">                ThreadInfo [] threadInfos = mxBean.getThreadInfo (ids);</div><div class="line">                <span class="keyword">for</span> (ThreadInfo info : threadInfos) &#123;</div><div class="line">                    System.out.println (<span class="string">"info ="</span> + info);</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;;</div><div class="line">        ExecutorService executorService = Executors.newScheduledThreadPool (<span class="number">4</span>);</div><div class="line">        executorService.execute (runnable);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure><h2 id="死锁预防"><a href="#死锁预防" class="headerlink" title="死锁预防"></a>死锁预防</h2><ul><li>避免一个线程同时获取多个锁。</li><li>避免一个线程在锁内同时占用多个资源，尽量保证每个锁只占用一个资源。</li><li>尝试使用定时锁，使用 lock.tryLock（timeout）来替代使用内部锁机制。</li><li>对于数据库锁，加锁和解锁必须在一个数据库连接里，否则会出现解锁失败的情况。</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;hr&gt;
+&lt;p&gt;死锁是指两个或两个以上的进程在执行过程中，由于竞争资源或者由于彼此通信而造成的一种阻塞的现象，若无外力作用，它们都将无法推进下去。此时称系统处于死锁状态或系统产生了死锁，这些永远在互相等待的进程称为死锁进程。&lt;/p&gt;
+&lt;p&gt;Java 线程中我们构造两个相互等待对方释放资源的线程就构成了死锁。&lt;br&gt;
+    
+    </summary>
+    
+    
+      <category term="Java" scheme="http://linraner.github.io/tags/Java/"/>
+    
+      <category term="notes" scheme="http://linraner.github.io/tags/notes/"/>
+    
+      <category term="Lock" scheme="http://linraner.github.io/tags/Lock/"/>
+    
+  </entry>
   
   <entry>
     <title>Java 两个线程之间共享数据</title>
@@ -496,9 +522,9 @@
     </summary>
     
     
-      <category term="Django" scheme="http://linraner.github.io/tags/Django/"/>
-    
       <category term="skill" scheme="http://linraner.github.io/tags/skill/"/>
+    
+      <category term="Django" scheme="http://linraner.github.io/tags/Django/"/>
     
   </entry>
   
@@ -573,9 +599,9 @@
     </summary>
     
     
-      <category term="skill" scheme="http://linraner.github.io/tags/skill/"/>
-    
       <category term="python" scheme="http://linraner.github.io/tags/python/"/>
+    
+      <category term="skill" scheme="http://linraner.github.io/tags/skill/"/>
     
       <category term="linux" scheme="http://linraner.github.io/tags/linux/"/>
     
@@ -656,29 +682,6 @@
       <category term="acm" scheme="http://linraner.github.io/tags/acm/"/>
     
       <category term="c++" scheme="http://linraner.github.io/tags/c/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Ubuntu 错误 - Could not get lock /var/lib/dpkg/lock</title>
-    <link href="http://linraner.github.io/2018/05/15/Ubuntu%E9%94%99%E8%AF%AF-Could-not-get-lock-var-lib-dpkg-lock/"/>
-    <id>http://linraner.github.io/2018/05/15/Ubuntu错误-Could-not-get-lock-var-lib-dpkg-lock/</id>
-    <published>2018-05-15T09:45:02.000Z</published>
-    <updated>2018-07-01T16:54:32.589Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="报错信息"><a href="#报错信息" class="headerlink" title="报错信息"></a>报错信息</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">E: Could not get lock /var/lib/dpkg/lock - open (11: Resource temporarily unavailable) </div><div class="line">E: Unable to lock the administration directory (/var/lib/dpkg/), is another process using it?</div></pre></td></tr></table></figure><h3 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h3><a id="more"></a><h4 id="查看运行的线程"><a href="#查看运行的线程" class="headerlink" title="查看运行的线程"></a>查看运行的线程</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">ps -A | grep apt-get</div><div class="line"><span class="meta">#</span> sudo kill processnumber</div><div class="line"><span class="meta">#</span> 关闭 apt 进程 </div></pre></td></tr></table></figure><p>我的没有发现进程， 可能是上次运行安装或更新时没有正常完成造成的</p><h4 id="终端输入"><a href="#终端输入" class="headerlink" title="终端输入"></a>终端输入</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">sudo rm /var/cache/apt/archives/lock</div><div class="line">sudo rm /var/lib/dpkg/lock</div></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;报错信息&quot;&gt;&lt;a href=&quot;#报错信息&quot; class=&quot;headerlink&quot; title=&quot;报错信息&quot;&gt;&lt;/a&gt;报错信息&lt;/h3&gt;&lt;figure class=&quot;highlight shell&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;E: Could not get lock /var/lib/dpkg/lock - open (11: Resource temporarily unavailable) &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;E: Unable to lock the administration directory (/var/lib/dpkg/), is another process using it?&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h3 id=&quot;解决办法&quot;&gt;&lt;a href=&quot;#解决办法&quot; class=&quot;headerlink&quot; title=&quot;解决办法&quot;&gt;&lt;/a&gt;解决办法&lt;/h3&gt;
-    
-    </summary>
-    
-    
-      <category term="skill" scheme="http://linraner.github.io/tags/skill/"/>
-    
-      <category term="ubuntu" scheme="http://linraner.github.io/tags/ubuntu/"/>
     
   </entry>
   
