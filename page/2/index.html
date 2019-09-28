@@ -1132,6 +1132,170 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://linraner.github.io/2018/08/15/几道SQL练习题/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Frank">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/autor.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Frank">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/08/15/几道SQL练习题/" itemprop="url">SQL 练习题</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  2,829
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  15
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <hr>
+<p>闲着没事情做几道 SQL 题。<br>Orcal SQL: <a href="https://livesql.oracle.com" target="_blank" rel="noopener">在线 SQL 测试</a></p>
+<p>MySQL 指定进入某个端口命令<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div></pre></td><td class="code"><pre><div class="line">mysql -uroot -p -P 3307</div><div class="line">```</div><div class="line"><span class="meta">#</span># 问题描述 </div><div class="line">1. 学生表 </div><div class="line">Student (SID,Sname,Sage,Ssex) --SID 学生编号，Sname 学生姓名，Sage 出生年月，Ssex 学生性别.</div><div class="line">2. 课程表 </div><div class="line">Course (CID,Cname,TID) --CID -- 课程编号，Cname 课程名称，TID 教师编号.</div><div class="line">3. 教师表 </div><div class="line">Teacher (TID,Tname) --TID 教师编号，Tname 教师姓名.</div><div class="line">4. 成绩表 </div><div class="line">SC (SID,CID,score) --SID 学生编号，CID 课程编号，score 分数.</div><div class="line"> 建表语句:</div><div class="line">```sql</div><div class="line">create table Student (SID varchar (10),Sname nvarchar (10),Sage datetime,Ssex nvarchar (10));</div><div class="line">insert into Student values ('01' , ' 赵雷 ' , '1990-01-01' , ' 男 ');</div><div class="line">insert into Student values ('02' , ' 钱电 ' , '1990-12-21' , ' 男 ');</div><div class="line">insert into Student values ('03' , ' 孙风 ' , '1990-05-20' , ' 男 ');</div><div class="line">insert into Student values ('04' , ' 李云 ' , '1990-08-06' , ' 男 ');</div><div class="line">insert into Student values ('05' , ' 周梅 ' , '1991-12-01' , ' 女 ');</div><div class="line">insert into Student values ('06' , ' 吴兰 ' , '1992-03-01' , ' 女 ');</div><div class="line">insert into Student values ('07' , ' 郑竹 ' , '1989-07-01' , ' 女 ');</div><div class="line">insert into Student values ('08' , ' 王菊 ' , '1990-01-20' , ' 女 ');</div><div class="line">create table Course (CID varchar (10),Cname nvarchar (10),TID varchar (10));</div><div class="line">insert into Course values ('01' , ' 语文 ' , '02');</div><div class="line">insert into Course values ('02' , ' 数学 ' , '01');</div><div class="line">insert into Course values ('03' , ' 英语 ' , '03');</div><div class="line">create table Teacher (TID varchar (10),Tname nvarchar (10));</div><div class="line">insert into Teacher values ('01' , ' 张三 ');</div><div class="line">insert into Teacher values ('02' , ' 李四 ');</div><div class="line">insert into Teacher values ('03' , ' 王五 ');</div><div class="line">create table SC (SID varchar (10),CID varchar (10),score decimal (18,1));</div><div class="line">insert into SC values ('01' , '01' , 80);</div><div class="line">insert into SC values ('01' , '02' , 90);</div><div class="line">insert into SC values ('01' , '03' , 99);</div><div class="line">insert into SC values ('02' , '01' , 70);</div><div class="line">insert into SC values ('02' , '02' , 60);</div><div class="line">insert into SC values ('02' , '03' , 80);</div><div class="line">insert into SC values ('03' , '01' , 80);</div><div class="line">insert into SC values ('03' , '02' , 80);</div><div class="line">insert into SC values ('03' , '03' , 80);</div><div class="line">insert into SC values ('04' , '01' , 50);</div><div class="line">insert into SC values ('04' , '02' , 30);</div><div class="line">insert into SC values ('04' , '03' , 20);</div><div class="line">insert into SC values ('05' , '01' , 76);</div><div class="line">insert into SC values ('05' , '02' , 87);</div><div class="line">insert into SC values ('06' , '01' , 31);</div><div class="line">insert into SC values ('06' , '03' , 34);</div><div class="line">insert into SC values ('07' , '02' , 89);</div><div class="line">insert into SC values ('07' , '03' , 98);</div></pre></td></tr></table></figure></p>
+<h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><ol>
+<li>查询 “01” 课程比 “02” 课程成绩高的学生的信息及课程分数</li>
+</ol>
+<ul>
+<li>查询同时存在 “01” 课程和 “02” 课程的情况<br>结果:<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">+------+-------+---------------------+------+------------+------------+</div><div class="line">| SID  | Sname | Sage                | Ssex | 01 课程分数 | 02 课程分数 |</div><div class="line">+------+-------+---------------------+------+------------+------------+</div><div class="line">| 02   | 钱电  | 1990-12-21 00:00:00 | 男   |       70.0 |       60.0 |</div><div class="line">| 04   | 李云  | 1990-08-06 00:00:00 | 男   |       50.0 |       30.0 |</div><div class="line">+------+-------+---------------------+------+------------+------------+</div><div class="line">2 rows in set (0.00 sec)</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">select</span> a.* , b.score <span class="number">01</span> 课程分数，c.score <span class="number">02</span> 课程分数 <span class="keyword">from</span> Student a, SC b, SC c</div><div class="line"><span class="keyword">where</span> a.SID=b.SID <span class="keyword">and</span> a.SID=c.SID <span class="keyword">and</span> b.CID=<span class="string">"01"</span> <span class="keyword">and</span> c.CID=<span class="string">"02"</span> <span class="keyword">and</span> b.score&gt;c.score;</div></pre></td></tr></table></figure>
+<ul>
+<li>查询同时存在 “01” 课程和 “02” 课程的情况和存在 “01” 课程但可能不存在 “02” 课程的情况 (不存在时显示为 null)(以下存在相同内容时不再解释).<br>结果:<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">+------+-------+---------------------+------+------------+------------+</div><div class="line">| SID  | Sname | Sage                | Ssex | 01 课程分数 | 02 课程分数 |</div><div class="line">+------+-------+---------------------+------+------------+------------+</div><div class="line">| 01   | 赵雷  | 1990-01-01 00:00:00 | 男   |       80.0 |       90.0 |</div><div class="line">| 02   | 钱电  | 1990-12-21 00:00:00 | 男   |       70.0 |       60.0 |</div><div class="line">| 03   | 孙风  | 1990-05-20 00:00:00 | 男   |       80.0 |       80.0 |</div><div class="line">| 04   | 李云  | 1990-08-06 00:00:00 | 男   |       50.0 |       30.0 |</div><div class="line">| 05   | 周梅  | 1991-12-01 00:00:00 | 女   |       76.0 |       87.0 |</div><div class="line">| 06   | 吴兰  | 1992-03-01 00:00:00 | 女   |       31.0 |       NULL |</div><div class="line">+------+-------+---------------------+------+------------+------------+</div><div class="line">6 rows in set (0.00 sec)</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">select</span> a.*,b.score <span class="number">01</span> 课程分数，c.score <span class="number">02</span> 课程分数 <span class="keyword">from</span> Student a</div><div class="line"><span class="keyword">left</span> <span class="keyword">join</span> SC b <span class="keyword">on</span> b.SID=a.SID <span class="keyword">and</span> b.CID=<span class="string">'01'</span></div><div class="line"><span class="keyword">left</span> <span class="keyword">join</span> SC c <span class="keyword">on</span> c.SID=a.SID <span class="keyword">and</span> c.CID=<span class="string">'02'</span></div><div class="line"><span class="keyword">where</span> b.score&gt;<span class="keyword">isnull</span>(c.score);</div></pre></td></tr></table></figure>
+<ol>
+<li>查询平均成绩大于等于 60 分的同学的学生编号和学生姓名和平均成绩.<br><code>CAST ()</code> 函数:<code>CAST (&#39;12.5&#39; AS decimal (9,2))</code><br>如果通过 <code>CAST ()</code> 函数将这个值转换为 <code>decimal</code> 表示精度与小数位数分别为 9 与 2.<br>结果:<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">+------+-------+-----------+</div><div class="line">| SID  | Sname | avg_socre |</div><div class="line">+------+-------+-----------+</div><div class="line">| 01   | 赵雷  |     89.67 |</div><div class="line">| 02   | 钱电  |     70.00 |</div><div class="line">| 03   | 孙风  |     80.00 |</div><div class="line">| 05   | 周梅  |     81.50 |</div><div class="line">| 07   | 郑竹  |     93.50 |</div><div class="line">+------+-------+-----------+</div><div class="line">5 rows in set (0.00 sec)</div></pre></td></tr></table></figure>
+</li>
+</ol>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/08/15/几道SQL练习题/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://linraner.github.io/2018/08/01/位运算笔记/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1719,157 +1883,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://linraner.github.io/2018/05/28/c++枚举next_premutation/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Frank">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/autor.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Frank">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/05/28/c++枚举next_premutation/" itemprop="url">c++ 枚举 next_premutation</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Words count in article&#58;</span>
-                
-                <span title="Words count in article">
-                  168
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Reading time &asymp;</span>
-                
-                <span title="Reading time">
-                  1
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h3 id="平均复杂度即为-O-n"><a href="#平均复杂度即为-O-n" class="headerlink" title="平均复杂度即为 O (n)"></a>平均复杂度即为 O (n)</h3><ul>
-<li><p>next_permutation ()    会改变区间 [begin,end) 内的元素次序，使它们符合 “下一个排列次序”；</p>
-</li>
-<li><p>prev_permutation ()    会改变区间 [begin,end) 内的元素次序，使它们符合 “上一个排列次序”；</p>
-</li>
-</ul>
-<h2 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h2>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/05/28/c++枚举next_premutation/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1924,7 +1937,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">36</span>
+                  <span class="site-state-item-count">37</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -1937,7 +1950,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">33</span>
+                  <span class="site-state-item-count">34</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -2017,7 +2030,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">19.5k</span>
+    <span title="Site words total count">22.4k</span>
   
 </div>
 
