@@ -127,8 +127,8 @@
     <url>%2F2018%2F09%2F28%2FDjango%E9%87%8D%E7%BD%AE%E5%90%8E%E5%8F%B0%E5%AF%86%E7%A0%81%2F</url>
     <content type="text"><![CDATA[emmm 时间长忘记密码了 执行1$ python manage.py shell 修改12345In [1]: from django.contrib.auth.models import UserIn [2]: user = User.objects.get (username='Username')In [3]: user.set_password ('Password')In [4]: user.save ()In [5]: exit ()]]></content>
       <tags>
-        <tag>Django</tag>
         <tag>skill</tag>
+        <tag>Django</tag>
       </tags>
   </entry>
   <entry>
@@ -137,8 +137,8 @@
     <content type="text"><![CDATA[数字转字符串1234567#include &lt;sstream&gt;double a = 123.456;string s;stringstream ss;ss &lt;&lt; a;ss &gt;&gt; s;ss.clear (); 12345#include &lt;map&gt;map&lt;int, char&gt; m;for (int i = 0; i &lt; 10; i++) &#123; m [i] = i + '0';&#125; 1234#include &lt;cstdio&gt;char str [10];double a = 123.456;sprintf(str, "%.3lf", a); 123char str [10];int a=175;sprintf(str,"% x",a);//10 进制转换成 16 进制，如果输出大写的字母是 sprintf (str,"% X",a) 字符串转数字 1234567#include &lt;sstream&gt;string s = "123.456";double a;stringstream ss;ss &lt;&lt; s;ss &gt;&gt; a;ss.clear (); 12345#include &lt;map&gt;map&lt;char, int&gt; m;for (int i = 0; i &lt; 10; i++) &#123; m [i+'0'] = i;&#125; 1234#include &lt;cstdio&gt;char str [] = "123.456";double a;sscanf(str, "% lf", &amp;a); 123char str []="AF";int a;sscanf(str,"% x",&amp;a); //16 进制转换成 10 进制 123456#include &lt;cstdlib&gt;int a;float b;long c;a=atoi ("32");b=atof ("3.1415");c=atol ("567283");printf ("% d\n% f\n% d\n",a,b,c);]]></content>
       <tags>
         <tag>acm</tag>
-        <tag>字符串</tag>
         <tag>c++</tag>
+        <tag>字符串</tag>
       </tags>
   </entry>
   <entry>
@@ -163,8 +163,8 @@
     <url>%2F2018%2F07%2F28%2F20%E8%A1%8C%E4%BB%A3%E7%A0%81%E7%9A%84%E7%AD%BE%E5%88%B0%E8%84%9A%E6%9C%AC%2F</url>
     <content type="text"><![CDATA[懒得每天在某个网站签到，写了一个 python 脚本扔在云主机上。网站很简单，代码就几十行。 签到脚本12345678910111213141516171819import requestsusername = "####"password = "####"loginUrl = "登录路径 /auth/login"s = requests.Session ()logindata = &#123; 'email':username, 'passwd':password, 'remember_me':'ture',&#125;r = s.post (loginUrl,data=logindata)r = s.get (loginUrl)checkinUrl="签到的路径 /user/checkin"rr = s.post (checkinUrl)# 执行签到 rr = s.get (loginUrl)# print (rr)# print (rr._content.decode ())exit () 在 Linux 上定时执行这个脚本 1crontab -e 进入编辑模式，设置每天 8:00 运行一次。crontab 的语法规范分钟 小时 日期 月份 周 命令 100 8 * * * python /opt/checkin.py]]></content>
       <tags>
-        <tag>skill</tag>
         <tag>python</tag>
+        <tag>skill</tag>
         <tag>linux</tag>
       </tags>
   </entry>
@@ -226,8 +226,8 @@
     <url>%2F2018%2F05%2F05%2FPython%E8%A7%A3%E5%86%B3%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%81%E9%97%AE%E9%A2%98%2F</url>
     <content type="text"><![CDATA[字符串分为 unicode 和 str 两种类型 文本字符和二进制数据分别用 str 和 byte 表示 12345# 系统默认编码设置为 utf-8&gt;&gt;&gt; import sys&gt;&gt;&gt; sys.getdefultencoding'utf-8'&gt;&gt;&gt; str 与 bytes 之间的转换可以用 encode 和从 decode 1234567&gt;&gt;&gt; s = "Python 测试"&gt;&gt;&gt; s = s.encode ()&gt;&gt;&gt; print (s)b'Python\xe6\xb5\x8b\xe8\xaf\x95'&gt;&gt;&gt; s = s.decode ()&gt;&gt;&gt; print (s)'Python 测试 ' base64123456&gt;&gt;&gt; import base64&gt;&gt;&gt; s = "asdasd"&gt;&gt;&gt; s = base64.b64encode (s)&gt;&gt;&gt; print (s)&gt;&gt;&gt; s = base64.b64decode (s)&gt;&gt;&gt; print (s) 参考 ： https://foofish.net/how-python3-handle-charset-encoding.html]]></content>
       <tags>
-        <tag>skill</tag>
         <tag>python</tag>
+        <tag>skill</tag>
       </tags>
   </entry>
   <entry>
