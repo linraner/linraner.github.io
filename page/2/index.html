@@ -300,6 +300,147 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://linraner.github.io/2018/10/15/Java8 Stream/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Frank">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/autor.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Frank">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/10/15/Java8 Stream/" itemprop="url">Java8 Stream</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  706
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  4
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="代码示例："><a href="#代码示例：" class="headerlink" title="代码示例："></a>代码示例：</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div><div class="line">135</div><div class="line">136</div><div class="line">137</div><div class="line">138</div><div class="line">139</div><div class="line">140</div><div class="line">141</div><div class="line">142</div><div class="line">143</div><div class="line">144</div><div class="line">145</div><div class="line">146</div><div class="line">147</div><div class="line">148</div><div class="line">149</div><div class="line">150</div><div class="line">151</div><div class="line">152</div><div class="line">153</div><div class="line">154</div><div class="line">155</div><div class="line">156</div><div class="line">157</div><div class="line">158</div><div class="line">159</div><div class="line">160</div><div class="line">161</div><div class="line">162</div><div class="line">163</div><div class="line">164</div><div class="line">165</div><div class="line">166</div><div class="line">167</div><div class="line">168</div><div class="line">169</div><div class="line">170</div><div class="line">171</div><div class="line">172</div><div class="line">173</div><div class="line">174</div><div class="line">175</div><div class="line">176</div><div class="line">177</div><div class="line">178</div><div class="line">179</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Java8Stream</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args [])</span> </span>&#123;</div><div class="line">        System.out.println (<span class="string">"使用 Java 7:"</span>);</div><div class="line"></div><div class="line">        <span class="comment">// 计算空字符串 </span></div><div class="line">        List&lt;String&gt; strings = Arrays.asList (<span class="string">"abc"</span>, <span class="string">""</span>, <span class="string">"bc"</span>, <span class="string">"efg"</span>, <span class="string">"abcd"</span>, <span class="string">""</span>, <span class="string">"jkl"</span>);</div><div class="line">        System.out.println (<span class="string">"列表:"</span> + strings);</div><div class="line">        <span class="keyword">long</span> count = getCountEmptyStringUsingJava7 (strings);</div><div class="line"></div><div class="line">        System.out.println (<span class="string">"空字符数量为:"</span> + count);</div><div class="line">        count = getCountLength3UsingJava7 (strings);</div><div class="line"></div><div class="line">        System.out.println (<span class="string">"字符串长度为 3 的数量为:"</span> + count);</div><div class="line"></div><div class="line">        <span class="comment">// 删除空字符串 </span></div><div class="line">        List&lt;String&gt; filtered = deleteEmptyStringsUsingJava7 (strings);</div><div class="line">        System.out.println (<span class="string">"筛选后的列表:"</span> + filtered);</div><div class="line"></div><div class="line">        <span class="comment">// 删除空字符串，并使用逗号把它们合并起来 </span></div><div class="line">        String mergedString = getMergedStringUsingJava7 (strings, <span class="string">","</span>);</div><div class="line">        System.out.println (<span class="string">"合并字符串:"</span> + mergedString);</div><div class="line">        List&lt;Integer&gt; numbers = Arrays.asList (<span class="number">3</span>, <span class="number">2</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">7</span>, <span class="number">3</span>, <span class="number">5</span>);</div><div class="line"></div><div class="line">        <span class="comment">// 获取列表元素平方数 </span></div><div class="line">        List&lt;Integer&gt; squaresList = getSquares (numbers);</div><div class="line">        System.out.println (<span class="string">"平方数列表:"</span> + squaresList);</div><div class="line">        List&lt;Integer&gt; integers = Arrays.asList (<span class="number">1</span>, <span class="number">2</span>, <span class="number">13</span>, <span class="number">4</span>, <span class="number">15</span>, <span class="number">6</span>, <span class="number">17</span>, <span class="number">8</span>, <span class="number">19</span>);</div><div class="line"></div><div class="line">        System.out.println (<span class="string">"列表:"</span> + integers);</div><div class="line">        System.out.println (<span class="string">"列表中最大的数 :"</span> + getMax (integers));</div><div class="line">        System.out.println (<span class="string">"列表中最小的数 :"</span> + getMin (integers));</div><div class="line">        System.out.println (<span class="string">"所有数之和 :"</span> + getSum (integers));</div><div class="line">        System.out.println (<span class="string">"平均数 :"</span> + getAverage (integers));</div><div class="line">        System.out.println (<span class="string">"随机数:"</span>);</div><div class="line"></div><div class="line">        <span class="comment">// 输出 10 个随机数 </span></div><div class="line">        Random random = <span class="keyword">new</span> Random ();</div><div class="line"></div><div class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++) &#123;</div><div class="line">            System.out.println (random.nextInt ());</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        System.out.println (<span class="string">"使用 Java 8:"</span>);</div><div class="line">        System.out.println (<span class="string">"列表:"</span> + strings);</div><div class="line"></div><div class="line">        count = strings.stream ().filter (string -&gt; string.isEmpty ()).count ();</div><div class="line">        System.out.println (<span class="string">"空字符串数量为:"</span> + count);</div><div class="line"></div><div class="line">        count = strings.stream ().filter (string -&gt; string.length () == <span class="number">3</span>).count ();</div><div class="line">        System.out.println (<span class="string">"字符串长度为 3 的数量为:"</span> + count);</div><div class="line"></div><div class="line">        filtered = strings.stream ().filter (string -&gt; !string.isEmpty ()).collect (Collectors.toList ());</div><div class="line">        System.out.println (<span class="string">"筛选后的列表:"</span> + filtered);</div><div class="line"></div><div class="line">        mergedString = strings.stream ().filter (string -&gt; !string.isEmpty ()).collect (Collectors.joining (<span class="string">","</span>));</div><div class="line">        System.out.println (<span class="string">"合并字符串:"</span> + mergedString);</div><div class="line"></div><div class="line">        squaresList = numbers.stream ().map (i -&gt; i * i).distinct ().collect (Collectors.toList ());</div><div class="line">        System.out.println (<span class="string">"Squares List:"</span> + squaresList);</div><div class="line">        System.out.println (<span class="string">"列表:"</span> + integers);</div><div class="line"></div><div class="line">        IntSummaryStatistics stats = integers.stream ().mapToInt ((x) -&gt; x).summaryStatistics ();</div><div class="line"></div><div class="line">        System.out.println (<span class="string">"列表中最大的数 :"</span> + stats.getMax ());</div><div class="line">        System.out.println (<span class="string">"列表中最小的数 :"</span> + stats.getMin ());</div><div class="line">        System.out.println (<span class="string">"所有数之和 :"</span> + stats.getSum ());</div><div class="line">        System.out.println (<span class="string">"平均数 :"</span> + stats.getAverage ());</div><div class="line">        System.out.println (<span class="string">"随机数:"</span>);</div><div class="line"></div><div class="line">        random.ints ().limit (<span class="number">10</span>).sorted ().forEach (System.out::println);</div><div class="line"></div><div class="line">        <span class="comment">// 并行处理 </span></div><div class="line">        count = strings.parallelStream ().filter (string -&gt; string.isEmpty ()).count ();</div><div class="line">        System.out.println (<span class="string">"空字符串的数量为:"</span> + count);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">getCountEmptyStringUsingJava7</span><span class="params">(List&lt;String&gt; strings)</span> </span>&#123;</div><div class="line">        <span class="keyword">int</span> count = <span class="number">0</span>;</div><div class="line"></div><div class="line">        <span class="keyword">for</span> (String string : strings) &#123;</div><div class="line"></div><div class="line">            <span class="keyword">if</span> (string.isEmpty ()) &#123;</div><div class="line">                count++;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> count;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">getCountLength3UsingJava7</span><span class="params">(List&lt;String&gt; strings)</span> </span>&#123;</div><div class="line">        <span class="keyword">int</span> count = <span class="number">0</span>;</div><div class="line"></div><div class="line">        <span class="keyword">for</span> (String string : strings) &#123;</div><div class="line"></div><div class="line">            <span class="keyword">if</span> (string.length () == <span class="number">3</span>) &#123;</div><div class="line">                count++;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> count;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> List&lt;String&gt; <span class="title">deleteEmptyStringsUsingJava7</span><span class="params">(List&lt;String&gt; strings)</span> </span>&#123;</div><div class="line">        List&lt;String&gt; filteredList = <span class="keyword">new</span> ArrayList&lt;String&gt;();</div><div class="line"></div><div class="line">        <span class="keyword">for</span> (String string : strings) &#123;</div><div class="line"></div><div class="line">            <span class="keyword">if</span> (!string.isEmpty ()) &#123;</div><div class="line">                filteredList.add (string);</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> filteredList;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> String <span class="title">getMergedStringUsingJava7</span><span class="params">(List&lt;String&gt; strings, String separator)</span> </span>&#123;</div><div class="line">        StringBuilder stringBuilder = <span class="keyword">new</span> StringBuilder ();</div><div class="line"></div><div class="line">        <span class="keyword">for</span> (String string : strings) &#123;</div><div class="line"></div><div class="line">            <span class="keyword">if</span> (!string.isEmpty ()) &#123;</div><div class="line">                stringBuilder.append (string);</div><div class="line">                stringBuilder.append (separator);</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        String mergedString = stringBuilder.toString ();</div><div class="line">        <span class="keyword">return</span> mergedString.substring (<span class="number">0</span>, mergedString.length () - <span class="number">2</span>);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> List&lt;Integer&gt; <span class="title">getSquares</span><span class="params">(List&lt;Integer&gt; numbers)</span> </span>&#123;</div><div class="line">        List&lt;Integer&gt; squaresList = <span class="keyword">new</span> ArrayList&lt;Integer&gt;();</div><div class="line"></div><div class="line">        <span class="keyword">for</span> (Integer number : numbers) &#123;</div><div class="line">            Integer square = <span class="keyword">new</span> Integer (number.intValue () * number.intValue ());</div><div class="line"></div><div class="line">            <span class="keyword">if</span> (!squaresList.contains (square)) &#123;</div><div class="line">                squaresList.add (square);</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> squaresList;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">getMax</span><span class="params">(List&lt;Integer&gt; numbers)</span> </span>&#123;</div><div class="line">        <span class="keyword">int</span> max = numbers.get (<span class="number">0</span>);</div><div class="line"></div><div class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; numbers.size (); i++) &#123;</div><div class="line"></div><div class="line">            Integer number = numbers.get (i);</div><div class="line"></div><div class="line">            <span class="keyword">if</span> (number.intValue () &gt; max) &#123;</div><div class="line">                max = number.intValue ();</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> max;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">getMin</span><span class="params">(List&lt;Integer&gt; numbers)</span> </span>&#123;</div><div class="line">        <span class="keyword">int</span> min = numbers.get (<span class="number">0</span>);</div><div class="line"></div><div class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; numbers.size (); i++) &#123;</div><div class="line">            Integer number = numbers.get (i);</div><div class="line"></div><div class="line">            <span class="keyword">if</span> (number.intValue () &lt; min) &#123;</div><div class="line">                min = number.intValue ();</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> min;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">getSum</span><span class="params">(List numbers)</span> </span>&#123;</div><div class="line">        <span class="keyword">int</span> sum = (<span class="keyword">int</span>) (numbers.get (<span class="number">0</span>));</div><div class="line"></div><div class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; numbers.size (); i++) &#123;</div><div class="line">            sum += (<span class="keyword">int</span>) numbers.get (i);</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> sum;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">getAverage</span><span class="params">(List&lt;Integer&gt; numbers)</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> getSum (numbers) /numbers.size ();</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://linraner.github.io/2018/10/05/Java8 Date Time API/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1082,170 +1223,6 @@
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2018/09/28/c++的字符串与数字的转换/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://linraner.github.io/2018/08/15/几道SQL练习题/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Frank">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/autor.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Frank">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/08/15/几道SQL练习题/" itemprop="url">SQL 练习题</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Words count in article&#58;</span>
-                
-                <span title="Words count in article">
-                  2,829
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Reading time &asymp;</span>
-                
-                <span title="Reading time">
-                  15
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <hr>
-<p>闲着没事情做几道 SQL 题。<br>Orcal SQL: <a href="https://livesql.oracle.com" target="_blank" rel="noopener">在线 SQL 测试</a></p>
-<p>MySQL 指定进入某个端口命令<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div></pre></td><td class="code"><pre><div class="line">mysql -uroot -p -P 3307</div><div class="line">```</div><div class="line"><span class="meta">#</span># 问题描述 </div><div class="line">1. 学生表 </div><div class="line">Student (SID,Sname,Sage,Ssex) --SID 学生编号，Sname 学生姓名，Sage 出生年月，Ssex 学生性别.</div><div class="line">2. 课程表 </div><div class="line">Course (CID,Cname,TID) --CID -- 课程编号，Cname 课程名称，TID 教师编号.</div><div class="line">3. 教师表 </div><div class="line">Teacher (TID,Tname) --TID 教师编号，Tname 教师姓名.</div><div class="line">4. 成绩表 </div><div class="line">SC (SID,CID,score) --SID 学生编号，CID 课程编号，score 分数.</div><div class="line"> 建表语句:</div><div class="line">```sql</div><div class="line">create table Student (SID varchar (10),Sname nvarchar (10),Sage datetime,Ssex nvarchar (10));</div><div class="line">insert into Student values ('01' , ' 赵雷 ' , '1990-01-01' , ' 男 ');</div><div class="line">insert into Student values ('02' , ' 钱电 ' , '1990-12-21' , ' 男 ');</div><div class="line">insert into Student values ('03' , ' 孙风 ' , '1990-05-20' , ' 男 ');</div><div class="line">insert into Student values ('04' , ' 李云 ' , '1990-08-06' , ' 男 ');</div><div class="line">insert into Student values ('05' , ' 周梅 ' , '1991-12-01' , ' 女 ');</div><div class="line">insert into Student values ('06' , ' 吴兰 ' , '1992-03-01' , ' 女 ');</div><div class="line">insert into Student values ('07' , ' 郑竹 ' , '1989-07-01' , ' 女 ');</div><div class="line">insert into Student values ('08' , ' 王菊 ' , '1990-01-20' , ' 女 ');</div><div class="line">create table Course (CID varchar (10),Cname nvarchar (10),TID varchar (10));</div><div class="line">insert into Course values ('01' , ' 语文 ' , '02');</div><div class="line">insert into Course values ('02' , ' 数学 ' , '01');</div><div class="line">insert into Course values ('03' , ' 英语 ' , '03');</div><div class="line">create table Teacher (TID varchar (10),Tname nvarchar (10));</div><div class="line">insert into Teacher values ('01' , ' 张三 ');</div><div class="line">insert into Teacher values ('02' , ' 李四 ');</div><div class="line">insert into Teacher values ('03' , ' 王五 ');</div><div class="line">create table SC (SID varchar (10),CID varchar (10),score decimal (18,1));</div><div class="line">insert into SC values ('01' , '01' , 80);</div><div class="line">insert into SC values ('01' , '02' , 90);</div><div class="line">insert into SC values ('01' , '03' , 99);</div><div class="line">insert into SC values ('02' , '01' , 70);</div><div class="line">insert into SC values ('02' , '02' , 60);</div><div class="line">insert into SC values ('02' , '03' , 80);</div><div class="line">insert into SC values ('03' , '01' , 80);</div><div class="line">insert into SC values ('03' , '02' , 80);</div><div class="line">insert into SC values ('03' , '03' , 80);</div><div class="line">insert into SC values ('04' , '01' , 50);</div><div class="line">insert into SC values ('04' , '02' , 30);</div><div class="line">insert into SC values ('04' , '03' , 20);</div><div class="line">insert into SC values ('05' , '01' , 76);</div><div class="line">insert into SC values ('05' , '02' , 87);</div><div class="line">insert into SC values ('06' , '01' , 31);</div><div class="line">insert into SC values ('06' , '03' , 34);</div><div class="line">insert into SC values ('07' , '02' , 89);</div><div class="line">insert into SC values ('07' , '03' , 98);</div></pre></td></tr></table></figure></p>
-<h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><ol>
-<li>查询 “01” 课程比 “02” 课程成绩高的学生的信息及课程分数</li>
-</ol>
-<ul>
-<li>查询同时存在 “01” 课程和 “02” 课程的情况<br>结果:<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">+------+-------+---------------------+------+------------+------------+</div><div class="line">| SID  | Sname | Sage                | Ssex | 01 课程分数 | 02 课程分数 |</div><div class="line">+------+-------+---------------------+------+------------+------------+</div><div class="line">| 02   | 钱电  | 1990-12-21 00:00:00 | 男   |       70.0 |       60.0 |</div><div class="line">| 04   | 李云  | 1990-08-06 00:00:00 | 男   |       50.0 |       30.0 |</div><div class="line">+------+-------+---------------------+------+------------+------------+</div><div class="line">2 rows in set (0.00 sec)</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">select</span> a.* , b.score <span class="number">01</span> 课程分数，c.score <span class="number">02</span> 课程分数 <span class="keyword">from</span> Student a, SC b, SC c</div><div class="line"><span class="keyword">where</span> a.SID=b.SID <span class="keyword">and</span> a.SID=c.SID <span class="keyword">and</span> b.CID=<span class="string">"01"</span> <span class="keyword">and</span> c.CID=<span class="string">"02"</span> <span class="keyword">and</span> b.score&gt;c.score;</div></pre></td></tr></table></figure>
-<ul>
-<li>查询同时存在 “01” 课程和 “02” 课程的情况和存在 “01” 课程但可能不存在 “02” 课程的情况 (不存在时显示为 null)(以下存在相同内容时不再解释).<br>结果:<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">+------+-------+---------------------+------+------------+------------+</div><div class="line">| SID  | Sname | Sage                | Ssex | 01 课程分数 | 02 课程分数 |</div><div class="line">+------+-------+---------------------+------+------------+------------+</div><div class="line">| 01   | 赵雷  | 1990-01-01 00:00:00 | 男   |       80.0 |       90.0 |</div><div class="line">| 02   | 钱电  | 1990-12-21 00:00:00 | 男   |       70.0 |       60.0 |</div><div class="line">| 03   | 孙风  | 1990-05-20 00:00:00 | 男   |       80.0 |       80.0 |</div><div class="line">| 04   | 李云  | 1990-08-06 00:00:00 | 男   |       50.0 |       30.0 |</div><div class="line">| 05   | 周梅  | 1991-12-01 00:00:00 | 女   |       76.0 |       87.0 |</div><div class="line">| 06   | 吴兰  | 1992-03-01 00:00:00 | 女   |       31.0 |       NULL |</div><div class="line">+------+-------+---------------------+------+------------+------------+</div><div class="line">6 rows in set (0.00 sec)</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">select</span> a.*,b.score <span class="number">01</span> 课程分数，c.score <span class="number">02</span> 课程分数 <span class="keyword">from</span> Student a</div><div class="line"><span class="keyword">left</span> <span class="keyword">join</span> SC b <span class="keyword">on</span> b.SID=a.SID <span class="keyword">and</span> b.CID=<span class="string">'01'</span></div><div class="line"><span class="keyword">left</span> <span class="keyword">join</span> SC c <span class="keyword">on</span> c.SID=a.SID <span class="keyword">and</span> c.CID=<span class="string">'02'</span></div><div class="line"><span class="keyword">where</span> b.score&gt;<span class="keyword">isnull</span>(c.score);</div></pre></td></tr></table></figure>
-<ol>
-<li>查询平均成绩大于等于 60 分的同学的学生编号和学生姓名和平均成绩.<br><code>CAST ()</code> 函数:<code>CAST (&#39;12.5&#39; AS decimal (9,2))</code><br>如果通过 <code>CAST ()</code> 函数将这个值转换为 <code>decimal</code> 表示精度与小数位数分别为 9 与 2.<br>结果:<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">+------+-------+-----------+</div><div class="line">| SID  | Sname | avg_socre |</div><div class="line">+------+-------+-----------+</div><div class="line">| 01   | 赵雷  |     89.67 |</div><div class="line">| 02   | 钱电  |     70.00 |</div><div class="line">| 03   | 孙风  |     80.00 |</div><div class="line">| 05   | 周梅  |     81.50 |</div><div class="line">| 07   | 郑竹  |     93.50 |</div><div class="line">+------+-------+-----------+</div><div class="line">5 rows in set (0.00 sec)</div></pre></td></tr></table></figure>
-</li>
-</ol>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/08/15/几道SQL练习题/#more" rel="contents">
               Read more &raquo;
             </a>
           </div>
