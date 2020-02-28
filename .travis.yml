@@ -29,4 +29,4 @@ branches:
   - doc
 env:
     global:
-       - GH_REF: https://github.com/linraner/linraner.github.io.git
+        - GH_REF: https://github.com/linraner/linraner.github.io.git
