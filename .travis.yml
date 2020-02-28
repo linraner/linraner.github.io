@@ -26,7 +26,7 @@ after_script:
 
 branches:
   only:
-  - blog  #只监测这个分支，一有动静就开始构建
+  - doc
 env:
     global:
             - GH_REF: https://github.com/linraner/linraner.github.io.git
