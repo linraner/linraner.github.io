@@ -10,7 +10,7 @@ install:
   - npm install   
 before_script:
   - npm install -g mocha
-  - git clone --branch master git@github.com:linraner/linraner.github.io.git
+  - git clone --branch master https://github.com/linraner/linraner.github.io.git
 script:
   - hexo cl   
   - hexo g   
@@ -29,4 +29,4 @@ branches:
   - blog  #只监测这个分支，一有动静就开始构建
 env:
     global:
-        - GH_REF: git@github.com:linraner/linraner.github.io.git
+            - GH_REF: https://github.com/linraner/linraner.github.io.git
