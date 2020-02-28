@@ -4,11 +4,12 @@ cache:
     directories:
         - node_modules    
 before_install:
-  - npm install -g hexo-cli
+  - sudo npm install -g hexo
+  - sudo npm install -g hexo-cli
 install:
-  - npm install   
+  - sudo npm install   
 before_script:
-  - npm install -g mocha
+  - sudo npm install -g mocha
   - git clone --branch master https://github.com/linraner/linraner.github.io.git
 script:
   - hexo cl   
@@ -17,8 +18,8 @@ script:
 after_script:
   - cd ./public
   - git init
-  - git config user.name "linran"   #修改成自己的github用户名
-  - git config user.email "linran@live.com"   #修改成自己的GitHub邮箱
+  - git config user.name "linran"  
+  - git config user.email "linran@live.com" 
   - git add .
   - git commit -m "update by Travis-CI"
   - git push --force --quiet "https://${GITHUB_TOKEN}@${GH_REF}" master:master 
