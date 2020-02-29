@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Mist","version":"7.7.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="1. request 对象常用方法request 是来自客户端的请求. 客户端的请求信息封装在 request 对象中. 以下 HttpServletRequest 类的实例.    方法 ( 类型 + 方法名 ) 描述    String getParameter(String strTextName) 获取表单提交信息   Enumeration getParameterNames() 返回可">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JSP 九大内置对象常用方法">
+<meta property="og:url" content="http://yoursite.com/2018/10/01/JSP%20%E4%B9%9D%E5%A4%A7%E5%86%85%E7%BD%AE%E5%AF%B9%E8%B1%A1%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95/index.html">
+<meta property="og:site_name" content="上善若水">
+<meta property="og:description" content="1. request 对象常用方法request 是来自客户端的请求. 客户端的请求信息封装在 request 对象中. 以下 HttpServletRequest 类的实例.    方法 ( 类型 + 方法名 ) 描述    String getParameter(String strTextName) 获取表单提交信息   Enumeration getParameterNames() 返回可">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2018-10-01T10:16:21.000Z">
+<meta property="article:modified_time" content="2020-02-28T16:10:28.958Z">
+<meta property="article:author" content="linran">
+<meta property="article:tag" content="JSP">
+<meta property="article:tag" content="Java">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://yoursite.com/2018/10/01/JSP%20%E4%B9%9D%E5%A4%A7%E5%86%85%E7%BD%AE%E5%AF%B9%E8%B1%A1%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true
+  };
+</script>
+
+  <title>JSP 九大内置对象常用方法 | 上善若水</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">上善若水</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+  <a href="https://github.com/linraner" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="en">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/01/JSP%20%E4%B9%9D%E5%A4%A7%E5%86%85%E7%BD%AE%E5%AF%B9%E8%B1%A1%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://linra-pic.oss-cn-beijing.aliyuncs.com/unnamed.jpg">
+      <meta itemprop="name" content="linran">
+      <meta itemprop="description" content="less is more.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="上善若水">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          JSP 九大内置对象常用方法
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2018-10-01 18:16:21" itemprop="dateCreated datePublished" datetime="2018-10-01T18:16:21+08:00">2018-10-01</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-02-29 00:10:28" itemprop="dateModified" datetime="2020-02-29T00:10:28+08:00">2020-02-29</time>
+              </span>
+
+          <br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">Symbols count in article: </span>
+              <span>2.4k</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">Reading time &asymp;</span>
+              <span>2 mins.</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h2 id="1-request-对象常用方法"><a href="#1-request-对象常用方法" class="headerlink" title="1. request 对象常用方法"></a>1. <code>request</code> 对象常用方法</h2><p><code>request</code> 是来自客户端的请求. 客户端的请求信息封装在 <code>request</code> 对象中. 以下 <code>HttpServletRequest</code> 类的实例.</p>
+<table>
+<thead>
+<tr>
+<th>方法 ( 类型 + 方法名 )</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>String getParameter(String strTextName)</td>
+<td>获取表单提交信息</td>
+</tr>
+<tr>
+<td>Enumeration getParameterNames()</td>
+<td>返回可用参数的枚举</td>
+</tr>
+<tr>
+<td>String[] getParameterValues(String name)</td>
+<td>返回包含参数 name 的所有的数组</td>
+</tr>
+<tr>
+<td>Enumeration getAttributeNames()</td>
+<td>返回所有属性名的属性值</td>
+</tr>
+<tr>
+<td>Object getAttribute(String name)</td>
+<td>返回指定属性的属性值</td>
+</tr>
+<tr>
+<td>String getCharacterEncoding()</td>
+<td>返回字节编码方式</td>
+</tr>
+<tr>
+<td>String getProtocol()</td>
+<td>获取用户使用的协议</td>
+</tr>
+<tr>
+<td>String getServletPath()</td>
+<td>获取用户提交信息的页面</td>
+</tr>
+<tr>
+<td>String getMethod()</td>
+<td>获取客户提交信息的方式</td>
+</tr>
+<tr>
+<td>BufferReader getHeader()</td>
+<td>获取 HTTP 头文件的 accept、accept-encoding 和 Host 的值</td>
+</tr>
+<tr>
+<td>String getRemoteAddr()</td>
+<td>获取客户的 IP 地址</td>
+</tr>
+<tr>
+<td>String getRemoteHost()</td>
+<td>获取客户机的名称</td>
+</tr>
+<tr>
+<td>String getserverName()</td>
+<td>获取服务器的名称</td>
+</tr>
+<tr>
+<td>int getServerPort()</td>
+<td>获取服务器端口号</td>
+</tr>
+</tbody></table>
+<h2 id="2-resopnse-对象常用方法"><a href="#2-resopnse-对象常用方法" class="headerlink" title="2. resopnse 对象常用方法"></a>2. <code>resopnse</code> 对象常用方法</h2><p><code>resopnse</code> 对象代表的是对客户端的相应. 向客户端发送文字时直接使用. 以下是 <code>HttpServletResopnse</code> 类的实例.</p>
+<table>
+<thead>
+<tr>
+<th>方法 ( 类型 + 方法名 )</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>String getCharacterEncoding()</td>
+<td>返回响应用的是什么字符编码</td>
+</tr>
+<tr>
+<td>ServletOutputStream getOutputStream()</td>
+<td>返回响应的一个二进制输出流</td>
+</tr>
+<tr>
+<td>PrintWrite getWrite()</td>
+<td>返回可以向客户端输出字符的一个对象</td>
+</tr>
+<tr>
+<td>void setContentLength(int len)</td>
+<td>设置响应头长度</td>
+</tr>
+<tr>
+<td>void setContentTye(String type)</td>
+<td>设置响应的 MIME 类型</td>
+</tr>
+<tr>
+<td>void sendRedirect(Java.lang.String location)</td>
+<td>重新定向客户端的请求</td>
+</tr>
+</tbody></table>
+<a id="more"></a>
+<h2 id="3-session-常用方法"><a href="#3-session-常用方法" class="headerlink" title="3. session 常用方法"></a>3. <code>session</code> 常用方法</h2><p><code>session</code> 指的是客户端与服务器的一次回话, 从客户连接到服务器的一个 WebApplication 开始, 直到客户端与服务器断开连接为止. 它是 <code>HttpSession</code> 类的实例.</p>
+<table>
+<thead>
+<tr>
+<th>方法 ( 类型 + 方法名 )</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>long getCreationTime()</td>
+<td>创建 session 创建时间</td>
+</tr>
+<tr>
+<td>public String getId()</td>
+<td>返回 session 创建时JSP引擎为它设置的唯一ID号</td>
+</tr>
+<tr>
+<td>long getLastAccessedTime()</td>
+<td>返回 session 里客户端最近一次请求时间</td>
+</tr>
+<tr>
+<td>int getMaxInactiveInterval()</td>
+<td>返回两次请求间隔多长时间此 session 被取消</td>
+</tr>
+<tr>
+<td>String[] getValueNames()</td>
+<td>返回一个包含此 session 中所有可用属性的数组</td>
+</tr>
+<tr>
+<td>void invalidate()</td>
+<td>取消 session , 使 session 不可用</td>
+</tr>
+<tr>
+<td>boolean isNew()</td>
+<td>返回服务器创建爱你的一个 session , 客户端是否已经加入</td>
+</tr>
+<tr>
+<td>void removeValue(String name)</td>
+<td>删除 session 中指定的属性</td>
+</tr>
+<tr>
+<td>void setMaxInactiveInterval()</td>
+<td>session 被取消 (ms)</td>
+</tr>
+</tbody></table>
+<h2 id="4-out-常用方法"><a href="#4-out-常用方法" class="headerlink" title="4. out 常用方法"></a>4. <code>out</code> 常用方法</h2><p><code>out</code> 对象是 <code>JspWriter</code> 类的实例, 是向客户端输出内容常用的对象.</p>
+<table>
+<thead>
+<tr>
+<th>方法 ( 类型 + 方法名 )</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>void clear()</td>
+<td>清除缓冲区的内容</td>
+</tr>
+<tr>
+<td>void clearBuffer()</td>
+<td>清除缓冲区的当前内容</td>
+</tr>
+<tr>
+<td>void flush()</td>
+<td>清空流</td>
+</tr>
+<tr>
+<td>int getBufferSize()</td>
+<td>返回缓冲区以字节数的大小,如果不设置为0</td>
+</tr>
+<tr>
+<td>int getRemaining()</td>
+<td>返回缓冲区还有多少剩余可用</td>
+</tr>
+<tr>
+<td>bool isAutoFlush()</td>
+<td>返回缓冲区满时,是自动清空还是抛出异常</td>
+</tr>
+<tr>
+<td>void close()</td>
+<td>关闭输出流</td>
+</tr>
+</tbody></table>
+<h2 id="5-page-常用方法"><a href="#5-page-常用方法" class="headerlink" title="5. page 常用方法"></a>5. <code>page</code> 常用方法</h2><p><code>page</code> 指当前 <code>JSP</code> 页面本身, 有点像类中的 <code>this</code> 指针, 它是 <code>java.langlObject</code> 类的实例. 「page」对象代表正在运行的由 <code>jsp</code> 文件产生的类对象.</p>
+<table>
+<thead>
+<tr>
+<th>方法 ( 类型 + 方法名 )</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>class getClass()</td>
+<td>返回此 Object 的类</td>
+</tr>
+<tr>
+<td>int hashCode()</td>
+<td>返回此 Object 的 hash 码</td>
+</tr>
+<tr>
+<td>boolean equals(Object obj)</td>
+<td>判断此 Object 是否与指定的 Object 对象相等</td>
+</tr>
+<tr>
+<td>void copy(Object obj)</td>
+<td>把此 Object 拷贝到指定的 Object 对象中</td>
+</tr>
+<tr>
+<td>Object clone()</td>
+<td>克隆此 Object 对象</td>
+</tr>
+<tr>
+<td>String toString()</td>
+<td>把此 Object 对象转换成 String 类的对象</td>
+</tr>
+<tr>
+<td>void notify()</td>
+<td>唤醒一个等待的进程</td>
+</tr>
+<tr>
+<td>void notifyAll()</td>
+<td>唤醒所有等待的进程</td>
+</tr>
+<tr>
+<td>void wait(int timeout)</td>
+<td>使一个进程处于等待直到 timeout 结束或者被唤醒</td>
+</tr>
+<tr>
+<td>void wait()</td>
+<td>使一个线程处于等待直到被唤醒</td>
+</tr>
+<tr>
+<td>void enterMonitor()</td>
+<td>对 Object 进行加锁</td>
+</tr>
+<tr>
+<td>void exitMonitor()</td>
+<td>对 Object 进行开锁</td>
+</tr>
+</tbody></table>
+<h2 id="6-application-常用方法"><a href="#6-application-常用方法" class="headerlink" title="6. application 常用方法"></a>6. <code>application</code> 常用方法</h2><p><code>application</code> 实现了用户间数据的共享, 可存放全局变量. 它开始于服务器的启动, 直到服务器的关闭, 在此期间, 此对象将一直存在; 这样在用户的前后连接或者不同用户之间的连接中, 可以对此对象的同一属性进行操作; 在任何地方对此对象属性的操作, 都将影响到其他对象对此的访问. 服务器的启动和关闭决定了 <code>application</code> 对象的生命. 它是 <code>ServletContest</code>类的实例.</p>
+
+    </div>
+
+    
+    
+    
+        
+
+  <div class="followme">
+    <p>Welcome to my other publishing channels</p>
+
+    <div class="social-list">
+
+            <div class="social-item">
+              <a target="_blank" class="social-link" href="https://t.me/Frank_Lis">
+                <span class="icon">
+                  <i class="fa fa-telegram"></i>
+                </span>
+
+                <span class="label">Telegram</span>
+              </a>
+            </div>
+
+            <div class="social-item">
+              <a target="_blank" class="social-link" href="/atom.xml">
+                <span class="icon">
+                  <i class="fa fa-rss"></i>
+                </span>
+
+                <span class="label">RSS</span>
+              </a>
+            </div>
+    </div>
+  </div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/JSP/" rel="tag"><i class="fa fa-tag"></i>JSP</a>
+              <a href="/tags/Java/" rel="tag"><i class="fa fa-tag"></i>Java</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2018/08/01/%E4%BD%8D%E8%BF%90%E7%AE%97%E7%AC%94%E8%AE%B0/" rel="prev" title="位运算笔记">
+      <i class="fa fa-chevron-left"></i> 位运算笔记
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2018/10/05/Java8%20Date%20Time%20API/" rel="next" title="Java8 Date AND Time API">
+      Java8 Date AND Time API <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-request-对象常用方法"><span class="nav-number">1.</span> <span class="nav-text">1. request 对象常用方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-resopnse-对象常用方法"><span class="nav-number">2.</span> <span class="nav-text">2. resopnse 对象常用方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-session-常用方法"><span class="nav-number">3.</span> <span class="nav-text">3. session 常用方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-out-常用方法"><span class="nav-number">4.</span> <span class="nav-text">4. out 常用方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-page-常用方法"><span class="nav-number">5.</span> <span class="nav-text">5. page 常用方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-application-常用方法"><span class="nav-number">6.</span> <span class="nav-text">6. application 常用方法</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="linran"
+      src="https://linra-pic.oss-cn-beijing.aliyuncs.com/unnamed.jpg">
+  <p class="site-author-name" itemprop="name">linran</p>
+  <div class="site-description" itemprop="description">less is more.</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">38</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">34</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/linraner" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;linraner" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:linran@live.com" title="E-Mail → mailto:linran@live.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://stackoverflow.com/yourname" title="StackOverflow → https:&#x2F;&#x2F;stackoverflow.com&#x2F;yourname" rel="noopener" target="_blank"><i class="fa fa-fw fa-stack-overflow"></i>StackOverflow</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-linran"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">create this blog</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    <span title="Symbols count total">69k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="Reading time total">1:03</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/pjax/pjax.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+<script src="/js/bookmark.js"></script>
+
+  <script>
+var pjax = new Pjax({
+  selectors: [
+    'head title',
+    '#page-configurations',
+    '.content-wrap',
+    '.post-toc-wrap',
+    '#pjax'
+  ],
+  switches: {
+    '.post-toc-wrap': Pjax.switches.innerHTML
+  },
+  analytics: false,
+  cacheBust: false,
+  scrollTo : !CONFIG.bookmark.enable
+});
+
+window.addEventListener('pjax:success', () => {
+  document.querySelectorAll('script[pjax], script#page-configurations, #pjax script').forEach(element => {
+    var code = element.text || element.textContent || element.innerHTML || '';
+    var parent = element.parentNode;
+    parent.removeChild(element);
+    var script = document.createElement('script');
+    if (element.id) {
+      script.id = element.id;
+    }
+    if (element.className) {
+      script.className = element.className;
+    }
+    if (element.type) {
+      script.type = element.type;
+    }
+    if (element.src) {
+      script.src = element.src;
+      // Force synchronous loading of peripheral JS.
+      script.async = false;
+    }
+    if (element.getAttribute('pjax') !== null) {
+      script.setAttribute('pjax', '');
+    }
+    if (code !== '') {
+      script.appendChild(document.createTextNode(code));
+    }
+    parent.appendChild(script);
+  });
+  NexT.boot.refresh();
+  // Define Motion Sequence & Bootstrap Motion.
+  if (CONFIG.motion.enable) {
+    NexT.motion.integrator
+      .init()
+      .add(NexT.motion.middleWares.subMenu)
+      .add(NexT.motion.middleWares.postList)
+      .bootstrap();
+  }
+  NexT.utils.updateSidebarPosition();
+});
+</script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div id="pjax">
+  
+
+  
+
+    </div>
+</body>
+</html>
