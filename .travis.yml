@@ -12,7 +12,7 @@ before_script:
   - sudo npm install -g mocha
   - git clone --branch master https://github.com/linraner/linraner.github.io.git
 script:
-  - hexo cl   
+  - hexo clean   
   - hexo g   
 
 after_script:
