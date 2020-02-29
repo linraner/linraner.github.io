@@ -1,19 +1,28 @@
-language: node_js  
-node_js: stable     
+language: node_js
+node_js: 
+  - "8.11.4"
+
+
 cache:
-    directories:
-        - node_modules    
-before_install:
-  - sudo npm install -g hexo
-  - sudo npm install -g hexo-cli
+  directories:
+    - node_modules
+    
+
 install:
-  - sudo npm install   
-before_script:
-  - sudo npm install -g mocha
+  - npm install -g hexo
+  - npm install
+  
+  
+ before_script:
+  - npm install hexo-deployer-git --save
+  - npm install hexo-asset-image --save
+  - npm install mocha --save
   - git clone --branch master https://github.com/linraner/linraner.github.io.git
+
 script:
-  - hexo clean   
-  - hexo g   
+  - hexo clean
+  - hexo g
+
 
 after_script:
   - cd ./public
